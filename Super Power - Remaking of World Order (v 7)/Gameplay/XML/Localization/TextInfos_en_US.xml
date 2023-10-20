@@ -12,7 +12,7 @@
 			<Text>[COLOR_YELLOW]Important Notes:[ENDCOLOR][NEWLINE]1. Check the saved file size. [NEWLINE]2. Check the Civilopedia before play (Hotkey [COLOR_POSITIVE_TEXT]F1[ENDCOLOR]). [NEWLINE]3. If always crash or saved files damaged, try Dx9.</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_VERSION">
-			<Text>[COLOR_YELLOW]Version 9.2[ENDCOLOR]</Text>
+			<Text>[COLOR_YELLOW]Version 9.3[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MOD_SETUP">
@@ -1799,7 +1799,7 @@
 			<Text>[COLOR_POSITIVE_TEXT]Establish Corps[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_CORPS">
-			<Text>Combine two same type of Units in this tile into Corps: +100% Max. HP, +10% [ICON_STRENGTH] Combat Strength.</Text>
+			<Text>Combine two same type of Units in this tile into Corps or Consume a Great Prople to Upgrade a Unit: +100% Max. HP, +10% [ICON_STRENGTH] Combat Strength.</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_CORPS_EXTRA">
 			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]The number of remaining Corps you can Establish : {1_name}[ENDCOLOR]</Text>
@@ -1808,7 +1808,7 @@
 			<Text>[COLOR_POSITIVE_TEXT]Establish Armee[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_ARMEE">
-			<Text>Add one same type Unit in this tile into Corps to become an Armee: +100% Max. HP, +15% [ICON_STRENGTH] Combat Strength.</Text>
+			<Text>Add one same type Unit in this tile into Corps to become an Armee or Consume a Great Prople to Upgrade a Unit: +100% Max. HP, +15% [ICON_STRENGTH] Combat Strength.</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_ARMEE_EXTRA">
 			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]The number of remaining Armee you can Establish : {1_name}[ENDCOLOR]</Text>
@@ -1817,13 +1817,22 @@
 			<Text>[COLOR_POSITIVE_TEXT]Establish Fleet[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_FLEET">
-			<Text>Combine two same type of Units in this tile into Fleet: +100% Max. HP, +10% [ICON_STRENGTH] Combat Strength.</Text>
+			<Text>Combine two same type of Units in this tile into Fleet or Consume a Great Prople to Upgrade a Unit: +100% Max. HP, +10% [ICON_STRENGTH] Combat Strength.</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_ARMADA_SHORT">
 			<Text>[COLOR_POSITIVE_TEXT]Establish Armada[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_ARMADA">
-			<Text>Add one same type Unit in this tile into Fleet to become an Armada: +100% Max. HP, +15% [ICON_STRENGTH] Combat Strength.</Text>
+			<Text>Add one same type Unit in this tile into Fleet to become an Armada or Consume a Great Prople to Upgrade a Unit: +100% Max. HP, +15% [ICON_STRENGTH] Combat Strength.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_CORPS_OR_ARMEE_TIP_1">
+			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]Consume a Great Prople to Upgrade a Unit need Arsenal in this City[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_CORPS_OR_ARMEE_TIP_2">
+			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]Combine two same type of Units in this tile into Corps need Arsenal in this City[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_CORPS_OR_ARMEE_TIP_3">
+			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]Add one same type Unit in this tile into Corps to become an Armee need MilitaryBase in this City[ENDCOLOR]</Text>
 		</Row>
 		
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_FULLATTACK_ON_SHORT">
@@ -2781,7 +2790,6 @@
 		<Replace Tag="TXT_KEY_BUILDING_STONE_WORKS_HELP">
 			<Text>
 				+1 [ICON_PRODUCTION] Production for each source of [ICON_RES_MARBLE] Marble and [ICON_RES_STONE] Stone worked by this city.[NEWLINE][NEWLINE]City must have at least one of these resources improved with a Quarry.
-				[NEWLINE][NEWLINE]City must NOT be built on a Plain Tile.
 				[NEWLINE][NEWLINE]Upon discovering Dynamite, this kind of building becomes [COLOR_NEGATIVE_TEXT]obsolete[ENDCOLOR] (it is no longer allowed to build and its bonuses are lost).
 				[NEWLINE][NEWLINE]+2 [ICON_TOURISM] Tourism after discovering Internet.</Text>
 		</Replace>
@@ -2972,32 +2980,6 @@
 			[NEWLINE][NEWLINE]Requires 1 [ICON_RES_ELECTRICITY] Electricity.</Text>
 		</Row>
 
-
-
-		<Row>
-			<Tag>TXT_KEY_BUILDING_SONGHAI_ISLAM_MINT</Tag>
-			<Text>[ICON_RES_OIL][ICON_CONNECTED] Nigeria Petroleum Company</Text>
-		</Row>
-		<Row>
-			<Tag>TXT_KEY_BUILDING_SONGHAI_ISLAM_MINT_HELP</Tag>
-			<Text>
-				+5 additional [ICON_RES_OIL] Oil.
-				[NEWLINE][NEWLINE]+3 [ICON_PRODUCTION] Production and +3 [ICON_GOLD] Gold for every [ICON_RES_OIL] Oil resource worked by this city.
-				[NEWLINE][NEWLINE]Each Nigeria Petroleum Company provides +5% [ICON_GOLD] Gold from [ICON_CONNECTED] City Connections.
-				[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]Pollution[ENDCOLOR] will cause -5% [ICON_FOOD] Food Growth.
-				[NEWLINE][NEWLINE]Requires 1 [ICON_RES_ELECTRICITY] Electricity.
-			</Text>
-		</Row>
-		<Row>
-			<Tag>TXT_KEY_CIV5_BUILDINGS_SONGHAI_ISLAM_MINT_TEXT</Tag>
-			<Text>
-				Economic trade existed throughout the Songhai Empire, due to the standing army stationed in the provinces. Central to the regional economy were independent gold fields.
-			</Text>
-		</Row>
-
-
-
-
 		<Row>
 			<Tag>TXT_KEY_BUILDING_STEEL_MILL</Tag>
 			<Text>[ICON_PRODUCTION][ICON_RES_URANIUM] Uraninite Refinery</Text>
@@ -3086,6 +3068,7 @@
 
 		<Replace Tag="TXT_KEY_BUILDING_PAPER_MAKER_HELP">
 			<Text>Allows for movement of [ICON_PRODUCTION] Production via trade routes from this city. This build Won't becomes obsolete. 
+      [NEWLINE][NEWLINE] Each paper maker reduces unit, building, and project production costs nationwide by -2%, capped at -50%.
 			[NEWLINE][NEWLINE]+2 [ICON_TOURISM] Tourism after discovering Internet.</Text>
 		</Replace>
 
@@ -3359,9 +3342,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_BUILDING_MOROCCO_MARKET_HELP">
 			<Text>
-				+1 [ICON_GOLD] Gold for every 4 [ICON_CITIZEN] Citizens in the city.
-				[NEWLINE][NEWLINE]+25%[ICON_GOLD] Gold output in this city.
-				[NEWLINE][NEWLINE]1 extra luxury resource from each improved luxury near the city.
+				[ICON_BULLET]+1 [ICON_GOLD] Gold for every 4 [ICON_CITIZEN] Citizens in the city.
+				[NEWLINE][ICON_BULLET]+25%[ICON_GOLD] Gold output in this city.
+				[NEWLINE][ICON_BULLET]1 extra luxury resource from each improved luxury near the city.
 			</Text>
 		</Row>
 		<Row>
@@ -3370,7 +3353,24 @@
 				A souq or souk (Arabic: سوق‎, Hindi: सूक, Hebrew: שוק‎ sūq, also spelled shuk, shooq, soq, esouk, suk, sooq, suq) is an open-air marketplace or commercial quarter in Western Asian and North African cities. The equivalent Persian term is "bazaar".
 			</Text>
 		</Row>
-		
+
+		<Row Tag="TXT_KEY_BUILDING_SONGHAI_MARKET">
+			<Text>[ICON_GOLD]Wangara Entrepot</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_SONGHAI_MARKET_HELP">
+			<Text>
+				[ICON_BULLET]+1 [ICON_GOLD] Gold for every 4 [ICON_CITIZEN] Citizens in the city.
+				[NEWLINE][ICON_BULLET]Receive one-time 150 [ICON_GOLD] Gold (at Normal Game Speed) after a Wangara Entrepot is built.
+				[NEWLINE][ICON_BULLET]all Land International Trade produces +2 [ICON_GOLD] Gold.
+				[NEWLINE][ICON_BULLET]+3 [ICON_GOLD] Gold for each local Merchant.
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDING_SONGHAI_MARKET_TEXT">
+			<Text>
+			The Wangara are Soninke subgroups and later ethno-Linguistically assimilated merchant class that specialized in both Trans-Saharan and Secret Trade of Gold Dust Their diaspora operated all throughout West Africa Sahel-Sudan.   Fostering regionally organized trade networks and archhedure projects, but based in the many Sahelian and Niger-Volta-Sene-Gambia river city-states.
+			[NEWLINE][NEWLINE]During the Songhai Empire, the Wangara operated as traveling merchants who primarily engaged in the trade of minerals such as gold and salt. They established diaspora communities throughout West Africa and constructed merchant guilds as well as mosques in the cities where they settled.
+			</Text>
+		</Row>
 		
 		<Replace>
 			<Tag>TXT_KEY_BUILDING_BANK_HELP</Tag>
@@ -3391,24 +3391,6 @@
 			<Tag>TXT_KEY_BUILDING_BANK_OF_ENGLAND_HELP</Tag>
 			<Text>+4% [ICON_GOLD] Gold output in all cities. However it won't offer local [ICON_GOLD] Gold bonus.</Text>
 		</Row>
-
-
-		<Row>
-			<Tag>TXT_KEY_BUILDING_PERSIA_TRADEPOST</Tag>
-			<Text>[ICON_GOLD] Persia Tradepost</Text>
-		</Row>
-		<Row>
-			<Tag>TXT_KEY_CIV5_BUILDINGS_PERSIA_TRADEPOST_TEXT</Tag>
-			<Text>
-				WIP
-			</Text>
-		</Row>
-		<Row>
-			<Tag>TXT_KEY_BUILDING_PERSIA_TRADEPOST_HELP</Tag>
-			<Text>+1 [ICON_GOLD] Gold for every 4 [ICON_CITIZEN] Citizens in the city. [NEWLINE][NEWLINE]+2%  [ICON_GOLDEN_AGE] Golden Age length. </Text>
-		</Row>
-
-
 
 		<Replace>
 			<Tag>TXT_KEY_BUILDING_STOCK_EXCHANGE_HELP</Tag>
@@ -3469,8 +3451,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_RUSSIAN_BALLET_HALL_HELP</Tag>
-			<Text>+3% [ICON_CULTURE] Culture output in all cities. 
-			[NEWLINE][NEWLINE]City must have an Amphitheater.</Text>
+			<Text>+3% [ICON_CULTURE] Culture output in all cities. </Text>
 		</Row>
 
 		<Row>
@@ -4151,11 +4132,11 @@
 		<!-- Help tags -->
 		<Row Tag="TXT_KEY_WONDER_SAN_MARCO_HELP">
 			<Text>
-				+50% [ICON_TOURISM] Tourism output from Great Works in all cities.
-				[NEWLINE][NEWLINE]+50% [ICON_CULTURE] Culture output in the city.
-				[NEWLINE][NEWLINE]Two Great Artist appear in the city where the building is built.
+				[ICON_BULLET]+50% [ICON_TOURISM] Tourism output from Great Works in the city.
+				[NEWLINE][ICON_BULLET]+50% [ICON_CULTURE] Culture output in the city.
+				[NEWLINE][ICON_BULLET]Two Great Artist appear in the city where the building is built.
+				[NEWLINE][ICON_BULLET]+1 city work range.
 				[NEWLINE][NEWLINE]Must have built a Museum in Venice.
-				[NEWLINE][NEWLINE]+1 city work range.
 			</Text>
 		</Row>
 
@@ -4179,7 +4160,7 @@
 		</Row>
 		<!-- Help tags -->
 		<Row Tag="TXT_KEY_WONDER_PORT_OF_ROTTERDAM_HELP">
-			<Text>Gain an additional Trade Route slot and all International Trade produces +5 [ICON_GOLD] Gold. 
+			<Text>Gain an additional Trade Route slot and all International Trade produces +8 [ICON_GOLD] Gold. 
 			[NEWLINE][NEWLINE]City must be built on the coast.</Text>
 		</Row>
 		<!-- Quote tags -->
@@ -4737,24 +4718,6 @@
 			<Text>A convention center (American English, conference centre outside the USA) is a large building that is designed to hold a convention, where individuals and groups gather to promote and share common interests. </Text>
 		</Row>
 
-		<!-- Description tags --><!--
-		<Row Tag="TXT_KEY_BUILDING_NATIONAL_FINANCE">
-			<Text>National Industrial Park</Text>
-		</Row>
-		--><!-- Help tags --><!--
-		<Row Tag="TXT_KEY_BUILDING_NATIONAL_FINANCE_HELP">
-			<Text>+1 [ICON_PRODUCTION] Production per 1 [ICON_CITIZEN] Citizen in this city. [NEWLINE][NEWLINE]Must have a Factory in all Cities. The cost goes up the more cities there are in the empire.</Text>
-		</Row>
-		<Row>
-			<Tag>TXT_KEY_BUILDING_NATIONAL_FINANCE_STRATEGY</Tag>
-			<Text>National Industrial Park can greatly improve the production in large cities. </Text>
-		</Row>
-		--><!-- Pedia tags --><!--
-		<Row Tag="TXT_KEY_BUILDING_NATIONAL_FINANCE_PEDIA">
-			<Text>An industrial park (also known as industrial estate, trading estate) is an area zoned and planned for the purpose of industrial development. </Text>
-		</Row>-->
-
-
 		<!-- Description tags -->
 		<Row Tag="TXT_KEY_BUILDING_NATIONAL_STOCK_EXCHANGE">
 			<Text>National Stock Exchange</Text>
@@ -5210,15 +5173,6 @@
 
 
 	<!-- ***************************New Buildings for Special Building Effects***************************-->
-		<Row>
-			<Tag>TXT_KEY_BUILDING_TRADEINCOME_BOST</Tag>
-			<Text>+8 [ICON_GOLD] Gold for each International Trade Route from this city.</Text>
-		</Row>
-		<Row>
-			<Tag>TXT_KEY_BUILDING_TOURISM_GREATWORKS</Tag>
-			<Text>The [ICON_TOURISM] Tourism output from Great Works +50% in this city.</Text>
-		</Row>
-
 		<Row>
 			<Tag>TXT_KEY_BUILDING_MANPOWER_BONUS</Tag>
 			<Text>Provides additional [ICON_RES_MANPOWER] Manpower.</Text>
@@ -7061,7 +7015,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_SP_RESOURCE_ELECTRICITY_HELP">
 			<Text>
-				In SuperPower Mod, after entering the Modern Era, the Electricity System will be functional. [ICON_RES_ELECTRICITY] Electricity is a very important resource in the late-game. A modern civilization cannot survive without enough power supply.
+				In SuperPower Mod, after entering the Electric Era, the Electricity System will be functional. [ICON_RES_ELECTRICITY] Electricity is a very important resource in the late-game. A modern civilization cannot survive without enough power supply.
 
 				[NEWLINE][NEWLINE]1. The use of Electricity:
 				[NEWLINE][ICON_BULLET]City population size. Larger cities will consume more [ICON_RES_ELECTRICITY] Electricity.
@@ -8158,7 +8112,7 @@
 		</Replace>
 
 		<Replace Tag="TXT_KEY_POLICY_RESETTLEMENT_HELP" >
-			<Text>[COLOR_POSITIVE_TEXT]Resettlement[ENDCOLOR][NEWLINE]Settler equals 3 [ICON_CITIZEN] Population (New city start with 3 [ICON_CITIZEN] Population or add 3 [ICON_CITIZEN] Population when joining the existing city). Reduces the [ICON_FOOD] Food Growth loss due to the Pollution by 15% in all cities.</Text>
+			<Text>[COLOR_POSITIVE_TEXT]Resettlement[ENDCOLOR][NEWLINE]Settler equals 3 [ICON_CITIZEN] Population (New city start with 3 [ICON_CITIZEN] Population or add 3 [ICON_CITIZEN] Population when joining the existing city). -100% [ICON_HAPPINESS_4] Unhappiness from Setter</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_POLICY_ACADEMY_SCIENCES">
@@ -8256,7 +8210,11 @@
 
 
 		<Replace Tag="TXT_KEY_POLICY_POLICE_STATE_HELP" >
-			<Text>[COLOR_POSITIVE_TEXT]Police State[ENDCOLOR][NEWLINE]+3 [ICON_HAPPINESS_1] Local Happiness from every Courthouse, Constabulary, Sheriff Office, Police Station and Procuratorate. -50% extra [ICON_GOLD] Maintenance Cost added by cities' [ICON_CITIZEN] Population for these buildings.</Text>
+			<Text>
+			[COLOR_POSITIVE_TEXT]Police State[ENDCOLOR]
+			[NEWLINE]+3 [ICON_HAPPINESS_1] Local Happiness from every Courthouse, Constabulary, Sheriff Office, Police Station and Procuratorate. 
+			+200% [ICON_PRODUCTION] Production when constructing these buildings.
+			</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_POLICY_CULT_PERSONALITY_HELP" >
@@ -8327,50 +8285,6 @@
 			<Text>[ICON_GREAT_WRITER] Theocracy</Text>
 		</Row>
 
-		<Row Tag="TXT_KEY_BUILDING_POLICY_MERCHANT_CONFEDERACY" >
-			<Text>Merchant Confederacy</Text>
-		</Row>
-		<Row Tag="TXT_KEY_BUILDING_POLICY_MERCHANT_CONFEDERACY_HELP" >
-			<Text>+2% [ICON_PRODUCTION] Production for all cities from each trade route with City-States.</Text>
-		</Row>
-		<!--<Row Tag="TXT_KEY_BUILDING_POLICY_ORGANIZED_RELIGION_DESC" >
-			<Text>Organized Religion</Text>
-		</Row>
-		<Row Tag="TXT_KEY_BUILDING_POLICY_ORGANIZED_RELIGION_HELP" >
-			<Text>Religious pressure incresing speed +50% in all cities.</Text>
-		</Row>-->
-		
-		<Row Tag="TXT_KEY_BUILDING_REPRESENTATION_CULTURE" >
-			<Text>+5% [ICON_CULTURE] Culture Cost for New Policies.</Text>
-		</Row>
-		
-		<Row Tag="TXT_KEY_BUILDING_UNITED_FRONT_HELP" >
-			<Text>+50% Food Growth until the Population reaches 20.</Text>
-		</Row>
-		
-		<Row Tag="TXT_KEY_BUILDING_POLICE_STATE_LV2" >
-			<Text>-50% extra [ICON_GOLD] Maintenance Cost for [ICON_CITYBANNER_CITY_LV2] Constabulary</Text>
-		</Row>
-		<Row Tag="TXT_KEY_BUILDING_POLICE_STATE_LV3" >
-			<Text>-50% extra [ICON_GOLD] Maintenance Cost for [ICON_CITYBANNER_CITY_LV3] Sheriff Office</Text>
-		</Row>
-		<Row Tag="TXT_KEY_BUILDING_POLICE_STATE_LV4" >
-			<Text>-50% extra [ICON_GOLD] Maintenance Cost for [ICON_CITYBANNER_CITY_LV4] Police Station</Text>
-		</Row>
-		<Row Tag="TXT_KEY_BUILDING_POLICE_STATE_LV5" >
-			<Text>-50% extra [ICON_GOLD] Maintenance Cost for [ICON_CITYBANNER_CITY_LV5] Procuratorate</Text>
-		</Row>
-		<Row Tag="TXT_KEY_BUILDING_POLICE_STATE" >
-			<Text>-50% extra [ICON_GOLD] Maintenance Cost added by cities' Population for AC buildings.</Text>
-		</Row>
-
-
-		<Row Tag="TXT_KEY_BUILDING_MONARCHY_CULTURE" >
-			<Text>Monarchy</Text>
-		</Row>
-		<Row Tag="TXT_KEY_BUILDING_MONARCHY_CULTURE_HELP" >
-			<Text>+50% [ICON_TOURISM] Tourism in the Capital.</Text>
-		</Row>
 		<Row Tag="TXT_KEY_BUILDING_FAMILY_PRODUCTION" >
 			<Text>[ICON_RESEARCH] Imperial Academy</Text>
 		</Row>
@@ -8400,14 +8314,6 @@
 		<Row Tag="TXT_KEY_BUILDING_AUTOCRACY_FIREWALL_HELP" >
 			<Text>Negates the Tourism bonus from other players' technologies.</Text>
 		</Row>
-
-		<Row Tag="TXT_KEY_BUILDING_SCHOLASTICISM" >
-			<Text>[ICON_CULTURE][ICON_PEACE] Scholasticism</Text>
-		</Row>
-		<Row Tag="TXT_KEY_BUILDING_SCHOLASTICISM_HELP" >
-			<Text>+1% [ICON_CULTURE] Culture and [ICON_PEACE] Faith output in all cities.</Text>
-		</Row>
-
 
 <!-- ProjectTexts -->
 
@@ -9142,14 +9048,8 @@
 			<Text>+1% [ICON_RESEARCH] Science for each follower (max +30%)</Text>
 		</Row>
 
-		<Row Tag="TXT_KEY_EXTRA_RELIGION_SPREADS">
-			<Text>+1 Extra Religion Spread</Text>
-		</Row>
 		<Row Tag="TXT_KEY_EXTRA_RELIGION_SPREADS_2">
 			<Text>+2 Extra Religion Spread</Text>
-		</Row>
-		<Row Tag="TXT_KEY_EXTRA_RELIGION_SPREADS_4">
-			<Text>+4 Extra Religion Spread</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_UNIT_TEUTONIC_KNIGHT_STRATEGY">
@@ -10244,7 +10144,7 @@
 		<Replace Tag="TXT_KEY_TRAIT_ART_OF_WAR">
 			<Text>
 				[ICON_BULLET]During a [ICON_GOLDEN_AGE] Golden Age, China receive additional +20% [ICON_RESEARCH] Science and +20% [ICON_FOOD] Food nationwide.
-				[NEWLINE][ICON_BULLET]All Land Units can earn points toward a [ICON_GOLDEN_AGE] Golden Age for each enemy killed (50% of its [ICON_STRENGTH] Combat Strength).
+				[NEWLINE][ICON_BULLET]In the Golden Age, the [ICON_CITIZEN] population growth of all cities requires -20% food, eliminates the [ICON_RESEARCH] increase in scientific research expenditures from the number of cities, and [ICON_RESEARCH] the total scientific research expenditure -20%.
 			</Text>
 		</Replace>
 
@@ -10252,7 +10152,9 @@
 			<Text>Pax Sinica!</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_UA_CHINA_GOLDENAGE_EFFECTS">
-			<Text>The mighty Chinese empire is now in [ICON_GOLDEN_AGE] [COLOR_POSITIVE_TEXT]Pax Sinica[ENDCOLOR]! [NEWLINE][NEWLINE]Every tile in your empire that produces at least 1 [ICON_GOLD] Gold produces 1 extra. +20% [ICON_PRODUCTION] Production, [ICON_RESEARCH] Science, [ICON_CULTURE] Culture, [ICON_FOOD] Food empire-wide.</Text>
+      <Text>
+        China has entered a new [ICON_GOLDEN_AGE][COLOR_POSITIVE_TEXT]prosperity[ENDCOLOR]! [NEWLINE][NEWLINE]All gold-producing plots have an additional +1[ICON_GOLD] gold production, +20% national [ICON_PRODUCTION] production capacity, and [ICON_CULTURE] culture. The [ICON_CITIZEN] population growth of all cities requires -20% food, eliminates the [ICON_RESEARCH] increase in scientific research expenditure from the number of cities, and [ICON_RESEARCH] total scientific research expenditure -20%.
+      </Text>
 		</Row>
 
 		<Replace Tag="TXT_KEY_TRAIT_RIVER_EXPANSION_SHORT">
@@ -10371,10 +10273,9 @@
 
 		<Replace Tag="TXT_KEY_TRAIT_RAZE_AND_HORSES">
 			<Text>
-				[ICON_BULLET]Defeated Barbarian unit in encampments will join you. 
+				[ICON_BULLET]Defeated Barbarian unit in encampments will join you. Borrow City names from other in-game Civs.
 				[NEWLINE][ICON_BULLET]Receive [ICON_CULTURE] Culture, [ICON_RESEARCH] Science, [ICON_GOLD] Gold and [ICON_PEACE] Faith after destroying a city (amount = 10*turn, 1,000 maximum). 
-        [NEWLINE][ICON_BULLET] When razing a city, for every one population reduction, all combat units located on the city's work plot will have +2 maximum HP, and the upper limit of this effect is 150.
-				[NEWLINE][ICON_BULLET]Borrow City names from other in-game Civs.
+       			[NEWLINE][ICON_BULLET]When razing a city, for every one population reduction, all combat units located on the city's work plot will have +2 maximum [ICON_SILVER_FIST] HP, and the upper limit of this effect is 150.
 			</Text>
 		</Replace>
 
@@ -10433,7 +10334,7 @@
 		<Replace Tag="TXT_KEY_TRAIT_SPICE">
 			<Text>
 				[ICON_BULLET]The first 3 cities founded on continents other than where Indonesia started each provide 2 unique Luxury Resources. These 3 cities are free from Corruption and Public Security problems, cost No [ICON_GOLD] Gold maintance and can never be razed.
-				[NEWLINE][ICON_BULLET] For each luxury resource with a quantity greater than 1, the influence of [ICON_INFLUENCE] obtained by completing the city-state task +5%, the upper limit is 40%.
+				[NEWLINE][ICON_BULLET] For each luxury resource with a quantity greater than 1, the influence of [ICON_INFLUENCE] obtained by completing the city-state task +10%, the upper limit is 100%.
 			</Text>
 		</Replace>
 
@@ -10463,7 +10364,9 @@
 		<Replace Tag="TXT_KEY_TRAIT_AMPHIB_WARLORD">
 			<Text>
 				[ICON_BULLET]Rivers and adjacent difficult terrain count as clear terrain for [ICON_MOVES] Movement. 
-				[NEWLINE][ICON_BULLET]Rivers extend length of land trade routes as if they were roads. +1 [ICON_GOLD] Gold for every Trading Post.
+				[NEWLINE][ICON_BULLET]Rivers extend length of land trade routes as if they were roads. 
+				[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] Gold for every Trading Post.
+				[NEWLINE][ICON_BULLET]-200 Administrative cost for City onrivers.
 			</Text>
 		</Replace>
 
@@ -15946,7 +15849,10 @@
 			<Text>The Galloping Ghost</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_GALLOPING_GHOST_HELP">
-			<Text>+2[ICON_MOVES]Movements and +2 Eye Sights. Can See Submarine.</Text>
+			<Text>
+			+2[ICON_MOVES]Movements. Can See Submarine.
+			[NEWLINE]6 tiles in every direction always visible.
+			</Text>
 		</Row>
 		
 		
@@ -17139,8 +17045,28 @@
 			<Text>Cause extra 15% Damage to all enemy units [COLOR_POSITIVE_TEXT]Adjacent[ENDCOLOR] to the target unit.</Text>
 		</Replace>
 
-    <Replace Tag="TXT_KEY_CIV5_HUN_HORSE_ARCHER_HELP_TEXT">
-      <Text>Every time you kill an enemy, +2 melee and long-range combat strength. The accumulated combat strength upgrade can be inherited, but cannot be increased. {TXT_KEY_PROMOTION_HITANDRUN_HELP}</Text>
-    </Replace>
+		<Replace Tag="TXT_KEY_CIV5_HUN_HORSE_ARCHER_HELP_TEXT">
+			<Text>Every time you kill an enemy, +2 melee and long-range combat strength. The accumulated combat strength upgrade can be inherited, but cannot be increased. {TXT_KEY_PROMOTION_HITANDRUN_HELP}</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_PROMOTION_EXTRA_MOVE_HALF">
+			<Text>+0.25 Moves</Text>
+		</Replace>
+
+		<Replace Tag="TXT_KEY_PRODUCTION_NEEDED_UNIT_MODIFIER">
+			<Text>Global Unit [ICON_PRODUCTION] Cost:{1_Num}%</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_PRODUCTION_NEEDED_BUILDING_MODIFIER">
+			<Text>Global Building [ICON_PRODUCTION] Cost:{1_Num}%</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_PRODUCTION_NEEDED_PROJECT_MODIFIER">
+			<Text>Global Project [ICON_PRODUCTION] Cost:{1_Num}%</Text>
+		</Replace>
+
+		<Replace Tag="TXT_KEY_DIPLO_TO_TRADE_CITY_TT">
+			<Text>
+			Trade a city
+			[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]City needs to Founded by either side or has 4+ Population and not in Resistance[ENDCOLOR]
+			</Text>
+		</Replace>
 	</Language_en_US>
 </GameData>

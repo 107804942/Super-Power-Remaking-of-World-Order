@@ -12,7 +12,7 @@
 			<Text>[COLOR_YELLOW]注意事项：[ENDCOLOR][NEWLINE]1、检查存档文件大小。[NEWLINE]2、查阅文明百科（快捷键[COLOR_POSITIVE_TEXT]F1[ENDCOLOR]）[NEWLINE]3、如果始终发生游戏崩溃或存档损坏，尝试Dx9。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_VERSION">
-			<Text>[COLOR_YELLOW]版本号 9.2[ENDCOLOR]</Text>
+			<Text>[COLOR_YELLOW]版本号 9.3[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MOD_SETUP">
@@ -352,7 +352,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_GRAIN_MILL_HELP</Tag>
-			<Text>城市+10%[ICON_FOOD]食物产出。本城必须拥有已开发的[ICON_RES_COW]牛，[ICON_RES_SHEEP]羊或[ICON_RES_HORSE]马资源且这些资源+1[ICON_FOOD]食物。[NEWLINE][NEWLINE]研发工业化之后[COLOR_NEGATIVE_TEXT]过期[ENDCOLOR]（不再提供产出且不能建造）。[NEWLINE][NEWLINE]研发大众传媒后+1[ICON_TOURISM]魅力。</Text>
+			<Text>城市+5%[ICON_FOOD]食物产出。本城必须拥有已开发的[ICON_RES_COW]牛，[ICON_RES_SHEEP]羊或[ICON_RES_HORSE]马资源且这些资源+1[ICON_FOOD]食物。[NEWLINE][NEWLINE]研发工业化之后[COLOR_NEGATIVE_TEXT]过期[ENDCOLOR]（不再提供产出且不能建造）。[NEWLINE][NEWLINE]研发大众传媒后+1[ICON_TOURISM]魅力。</Text>
 		</Row>
 
 		<Row>
@@ -486,7 +486,12 @@
 		</Row>
 
 		<Replace Tag="TXT_KEY_BUILDING_STONE_WORKS_HELP">
-			<Text>所在城市每处已开发的[ICON_RES_MARBLE]大理石和[ICON_RES_STONE]花岗岩资源+1[ICON_PRODUCTION]产能。[NEWLINE][NEWLINE]城市必须至少拥有一处已修建采石场的上述资源。[NEWLINE][NEWLINE]不能建造于平原城市。[NEWLINE][NEWLINE]研发炸药之后[COLOR_NEGATIVE_TEXT]过期[ENDCOLOR]（不再提供产出且不能建造）。[NEWLINE][NEWLINE]研发因特网后+2[ICON_TOURISM]魅力。</Text>
+			<Text>
+			所在城市每处已开发的[ICON_RES_MARBLE]大理石和[ICON_RES_STONE]花岗岩资源+1[ICON_PRODUCTION]产能。
+			[NEWLINE][NEWLINE]城市必须至少拥有一处已修建采石场的上述资源。
+			[NEWLINE][NEWLINE]研发炸药之后[COLOR_NEGATIVE_TEXT]过期[ENDCOLOR]（不再提供产出且不能建造）。
+			[NEWLINE][NEWLINE]研发因特网后+2[ICON_TOURISM]魅力。
+			</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_BUILDING_WORKSHOP_HELP">
@@ -693,7 +698,11 @@
 		</Row>
 
 		<Replace Tag="TXT_KEY_BUILDING_PAPER_MAKER_HELP">
-			<Text>允许在本国的商路之间输送[ICON_PRODUCTION]产能。该建筑不会过期。[NEWLINE][NEWLINE]研发因特网后+2[ICON_TOURISM]魅力。</Text>
+      <Text>
+        允许在本国的商路之间输送[ICON_PRODUCTION]产能。该建筑不会过期。
+        [NEWLINE][NEWLINE]每一座造纸坊使全国范围内的单位、建筑和项目的产能花费-2%，这个效果的上限是-50%。
+        [NEWLINE][NEWLINE]研发因特网后+2[ICON_TOURISM]魅力。
+      </Text>
 		</Replace>
 
 		<Row>
@@ -925,13 +934,33 @@
 		</Row>
 		<Row Tag="TXT_KEY_BUILDING_MOROCCO_MARKET_HELP">
 			<Text>
-				本城每4[ICON_CITIZEN]人口+1[ICON_GOLD]金钱产出。[NEWLINE][NEWLINE]本城市所有拥有的奢侈资源数量+1。
+				[ICON_BULLET]本城每4[ICON_CITIZEN]人口+1[ICON_GOLD]金钱产出。
+				[NEWLINE][ICON_BULLET]城市+25%[ICON_GOLD]金钱产出。
+				[NEWLINE][ICON_BULLET]本城市所有拥有的奢侈资源数量+1。
 			</Text>
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_CIV5_BUILDING_MOROCCO_MARKET_TEXT</Tag>
 			<Text>
 				苏克，即街市或集市（阿拉伯语:سوق‎,印地语:सूक,希伯来语:שוק‎sūq,也拼shuk,shooq,soq,esouk,suk,sooq），是北非或者西亚城市用于商业的露天市场。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_BUILDING_SONGHAI_MARKET">
+			<Text>[ICON_GOLD]旺加拉集市</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_SONGHAI_MARKET_HELP">
+			<Text>
+				[ICON_BULLET]本城每4[ICON_CITIZEN]人口+1[ICON_GOLD]金钱产出。
+				[NEWLINE][ICON_BULLET]每座旺加拉集市建成时获得一次性的150[ICON_GOLD]金钱奖励（标速下）。
+				[NEWLINE][ICON_BULLET]所有陆地国际商路+2[ICON_GOLD]金钱。
+				[NEWLINE][ICON_BULLET]每个本地商业家+3[ICON_GOLD]金钱。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDING_SONGHAI_MARKET_TEXT">
+			<Text>
+			旺加拉人是索宁克人的分支，作为散居在整个西非萨赫勒-苏丹地区的商人阶层专门从事跨撒哈拉和金粉秘密贸易。
+			[NEWLINE][NEWLINE]在桑海帝国时期，旺加拉人主要从事黄金和盐等矿物的贸易。他们在西非各地建立了散居社区，并在他们定居的城市建立了商会和清真寺。
 			</Text>
 		</Row>
 
@@ -951,19 +980,6 @@
 		<Row>
 			<Tag>TXT_KEY_BUILDING_BANK_OF_ENGLAND_HELP</Tag>
 			<Text>所有城市+4%[ICON_GOLD]金钱产出。但不提供本城的[ICON_GOLD]金钱加成。</Text>
-		</Row>
-
-		<Row>
-			<Tag>TXT_KEY_BUILDING_PERSIA_TRADEPOST</Tag>
-			<Text>[ICON_GOLD]腓尼基商会</Text>
-		</Row>
-		<Row>
-			<Tag>TXT_KEY_CIV5_BUILDINGS_PERSIA_TRADEPOST_TEXT</Tag>
-			<Text>腓尼基人被并入波斯帝国之后，腓尼基商人获得了一个巨大的内陆贸易区，同时，在地中海上，在与其商业竞争对手希腊人的斗争中，他们也争取到了波斯的支援。与腓尼基人一样，亚洲希腊人也成了波斯的子民，不过，是不驯顺的子民；而叙利亚的腓尼基人却帮了波斯人的大忙，并得到其青睐。3个叙利亚腓尼基城邦国家阿腊杜斯、提尔和西顿，被授予小型地方自治王国的地位。腓尼基人并不打算背叛波斯人，因而，波斯人不必担心殖民地中的腓尼基城邦会介入叙利亚事务。波斯人并不想把利比亚的腓尼基人和叙利亚的腓尼基人并入他们的帝国，相反在公元前6世纪末叶，他们与迦太基人订立了反希腊协定，当时殖民地中的腓尼基人城邦在迦太基的领导之下组成了一个统一阵线。</Text>
-		</Row>
-		<Row>
-			<Tag>TXT_KEY_BUILDING_PERSIA_TRADEPOST_HELP</Tag>
-			<Text>本城市每4[ICON_CITIZEN]人口+1[ICON_GOLD]金钱。[NEWLINE][NEWLINE][ICON_GOLDEN_AGE]黄金时代长度+2%。</Text>
 		</Row>
 
 		<Replace>
@@ -1011,7 +1027,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_RUSSIAN_BALLET_HALL_HELP</Tag>
-			<Text>所有城市+3%[ICON_CULTURE]文化产出。[NEWLINE][NEWLINE]城市必须拥有画廊。</Text>
+			<Text>所有城市+3%[ICON_CULTURE]文化产出。</Text>
 		</Row>
 
 		<Row>
@@ -1606,7 +1622,14 @@
 		</Row>
 		<!-- Help tags -->
 		<Row Tag="TXT_KEY_WONDER_SAN_MARCO_HELP">
-			<Text>所有城市杰作[ICON_TOURISM]魅力产出+50%，本城市[ICON_CULTURE]文化产出+50%。[NEWLINE][NEWLINE]建成奇观的城市附近出现两位大艺术家。[NEWLINE]拥有4个美术杰作展位。[NEWLINE][NEWLINE]必须在威尼斯拥有博物馆才能建造。+1城市工作范围。</Text>
+			<Text>
+			[ICON_BULLET]本城市杰作[ICON_TOURISM]魅力产出+50%。
+			[NEWLINE][ICON_BULLET]本城市[ICON_CULTURE]文化产出+50%。
+			[NEWLINE][ICON_BULLET]城市附近出现两位大艺术家。
+			[NEWLINE][ICON_BULLET]拥有4个美术杰作展位。
+			[NEWLINE][ICON_BULLET]本城市工作范围+1。
+			[NEWLINE][NEWLINE]必须在威尼斯拥有博物馆才能建造。
+			</Text>
 		</Row>
 		<!-- Pedia tags -->
 		<Row Tag="TXT_KEY_WONDER_SAN_MARCO_PEDIA">
@@ -2518,16 +2541,6 @@
 
 		<!-- ***************************New Buildings for Special Building Effects***************************-->
 		<Row>
-			<Tag>TXT_KEY_BUILDING_TRADEINCOME_BOST</Tag>
-			<Text>国际商路+8[ICON_GOLD]金钱</Text>
-		</Row>
-
-		<Row>
-			<Tag>TXT_KEY_BUILDING_TOURISM_GREATWORKS</Tag>
-			<Text>杰作[ICON_TOURISM]魅力值+50%</Text>
-		</Row>
-
-		<Row>
 			<Tag>TXT_KEY_BUILDING_MANPOWER_BONUS</Tag>
 			<Text>提供额外[ICON_RES_MANPOWER]人力</Text>
 		</Row>
@@ -3155,24 +3168,6 @@
 		<Replace Tag="TXT_KEY_BUILDING_MINT_HELP">
 			<Text>城市中每有3[ICON_CITIZEN]人口+1[ICON_GOLD]金钱产出。本城市的每处[ICON_RES_GOLD]黄金、[ICON_RES_SILVER]白银和[ICON_RES_COPPER]赤铜+3[ICON_GOLD]金钱。[NEWLINE][NEWLINE]只能在小型城市（6人口）建造。</Text>
 		</Replace>
-
-		<Row>
-			<Tag>TXT_KEY_BUILDING_SONGHAI_ISLAM_MINT</Tag>
-			<Text>[ICON_GOLD][ICON_RES_OIL]尼日利亚石油公司</Text>
-		</Row>
-		<Row>
-			<Tag>TXT_KEY_BUILDING_SONGHAI_ISLAM_MINT_HELP</Tag>
-			<Text>提供5单位额外[ICON_RES_OIL]石油资源。[NEWLINE]本城每处有市民工作的[ICON_RES_OIL]石油资源+3[ICON_PRODUCTION]产能+3[ICON_GOLD]金钱。[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]污染[ENDCOLOR]将会导致[ICON_FOOD]食物累积-5%。[NEWLINE][NEWLINE]需要1单位[ICON_RES_ELECTRICITY]电力。[NEWLINE][NEWLINE]每座尼日利亚石油公司会使[ICON_CONNECTED]城市连接+5%[ICON_GOLD]金钱产出。</Text>
-		</Row>
-		<Row>
-			<Tag>TXT_KEY_CIV5_BUILDINGS_SONGHAI_ISLAM_MINT_TEXT</Tag>
-			<Text>尼日利亚是非洲能源资源大国，是非洲第一大石油生产和出口大国。截止2014年已探明石油储量居非洲第二、世界第十。尼日利亚国家石油公司(Nigerian National Petroleum Corporation,NNPC)是尼日利亚从事石油工业的石油总公司，总部位于阿布贾。该公司于1977年4月1日由尼日利亚国家石油公司和尼日利亚联邦矿业和钢铁部合并而来。尼日利亚国家石油公司负责管理尼日利亚联邦政府和一些外国跨国公司，通过与这些公司合作，尼日利亚政府方便进行石油勘探和生产。</Text>
-		</Row>
-		<!--<Row>
-			<Tag>TXT_KEY_CIV5_BUILDINGS_SONGHAI_ISLAM_MINT_TEXT</Tag>
-			<Text>与迦纳和马利一样，桑海的繁荣主要依靠的是对穿越撒哈拉商路的控制。桑海帝国地处西苏丹萨赫勒地区的中部，是南北交通要冲，得撒哈拉商道之利，贸易十分发达。尼日河由西向东流经桑海，也方便了交通运输，两岸的肥沃土地是精耕细作的良田。[NEWLINE][NEWLINE]西苏丹和萨赫勒地区的城镇，如瓦拉塔、廷巴克图、杰内和加奥（此为规模宏大的穿越撒哈拉贸易的几个中心），与撒哈拉、北非以及远至地中海沿岸地区的许多大市场联系在一起。一些商人有完善的组织，在许多城市中设有分理处，在尼日河上有商船队，骆驼和牛是他们最重要的运输工具。[NEWLINE][NEWLINE]有的交易采取传统的以物易物方式，更多的则是采用货币形式。小笔买卖多用玛瑙贝，大宗生意则多用黄金、食盐或铜币。输入桑海的商品主要有盐、武器、马匹、铜、玻璃器皿、糖和北非的手工业品，如鞋类和羊毛制品，以及欧洲的布匹。对外则出口黄金、奴隶、象牙、香料、柯拉果和棉织品。除商业外，桑海帝国的采金业、制盐业和纺织业也较发达。
-			</Text>
-		</Row>-->
 
 		<Replace Tag="TXT_KEY_BUILDING_IRON_PROVIDER">
 			<Text>[ICON_RES_IRON]冶铁坊</Text>
@@ -5032,7 +5027,7 @@
 			<Text>[COLOR_POSITIVE_TEXT]建立军团[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_CORPS">
-			<Text>将该地格上两个相同的单位合并为军团：+100%最大生命值，+10%[ICON_STRENGTH]战斗力。</Text>
+			<Text>将该地格上两个相同的单位合并为军团或者消耗伟人将一个单位升级为军团：+100%最大生命值，+10%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_CORPS_EXTRA">
 			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]当前可组建军团数:{1_name}[ENDCOLOR]</Text>
@@ -5041,7 +5036,7 @@
 			<Text>[COLOR_POSITIVE_TEXT]建立集团军[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_ARMEE">
-			<Text>将该地格上一个相同的单位合入军团以建立集团军：+100%最大生命值，+15%[ICON_STRENGTH]战斗力。</Text>
+			<Text>将该地格上一个相同的单位合入军团以建立集团军或者消耗伟人将一个单位升级为集团军：+100%最大生命值，+15%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_ARMEE_EXTRA">
 			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]当前可组建集团军数:{1_name}[ENDCOLOR]</Text>
@@ -5050,13 +5045,22 @@
 			<Text>[COLOR_POSITIVE_TEXT]建立舰队[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_FLEET">
-			<Text>将该地格上两个相同的单位合并为舰队：+100%最大生命值，+10%[ICON_STRENGTH]战斗力。</Text>
+			<Text>将该地格上两个相同的单位合并为舰队或者消耗伟人将一个单位升级为舰队：+100%最大生命值，+10%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_ARMADA_SHORT">
 			<Text>[COLOR_POSITIVE_TEXT]建立大舰队[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_ARMADA">
-			<Text>将该地格上一个相同的单位合入舰队以建立大舰队：+100%最大生命值，+15%[ICON_STRENGTH]战斗力。</Text>
+			<Text>将该地格上一个相同的单位合入舰队以建立大舰队或者消耗伟人将一个单位升级为大舰队：+100%最大生命值，+15%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_CORPS_OR_ARMEE_TIP_1">
+			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]使用伟人升级集团军需要所在城市拥有兵工厂[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_CORPS_OR_ARMEE_TIP_2">
+			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]组建军团需要所在城市市拥有兵工厂[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_CORPS_OR_ARMEE_TIP_3">
+			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]组建集团军需要所在城市市拥有军事基地[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_FULLATTACK_ON_SHORT">
@@ -5534,14 +5538,14 @@
 		<Replace Tag="TXT_KEY_TRAIT_ART_OF_WAR">
 			<Text>
 				[ICON_BULLET]所有陆军单位都自带消灭敌人后，获得相当于敌单位战斗力数值50%的[ICON_GOLDEN_AGE]黄金时代点数的晋升。
-				[NEWLINE][ICON_BULLET]黄金时代中，所有城市的[ICON_RESEARCH]科研产出、[ICON_FOOD]食物累积+20%。
+				[NEWLINE][ICON_BULLET]黄金时代中，所有城市的[ICON_CITIZEN]人口增长所需粮食-20%，消除来自城市数量的[ICON_RESEARCH]科研花费增加，[ICON_RESEARCH]总科研花费-20%。
 			</Text>
 		</Replace>
 		<Row Tag="TXT_KEY_SP_UA_CHINA_GOLDENAGE_ANNOUNCE">
 			<Text>盛世来临！</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_UA_CHINA_GOLDENAGE_EFFECTS">
-			<Text>中国进入了一个崭新的[ICON_GOLDEN_AGE][COLOR_POSITIVE_TEXT]盛世[ENDCOLOR]！[NEWLINE][NEWLINE]所有金钱产出的地块额外+1[ICON_GOLD]金钱产出，全国+20%[ICON_PRODUCTION]产能，[ICON_RESEARCH]科研，[ICON_CULTURE]文化，[ICON_FOOD]食物。</Text>
+			<Text>中国进入了一个崭新的[ICON_GOLDEN_AGE][COLOR_POSITIVE_TEXT]盛世[ENDCOLOR]！[NEWLINE][NEWLINE]所有金钱产出的地块额外+1[ICON_GOLD]金钱产出，全国+20%[ICON_PRODUCTION]产能，[ICON_CULTURE]文化。所有城市的[ICON_CITIZEN]人口增长所需粮食-20%，消除来自城市数量的[ICON_RESEARCH]科研花费增加， [ICON_RESEARCH]总科研花费-20%。</Text>
 		</Row>
 
 		<Replace Tag="TXT_KEY_TRAIT_RIVER_EXPANSION_SHORT">
@@ -5664,10 +5668,9 @@
 
 		<Replace Tag="TXT_KEY_TRAIT_RAZE_AND_HORSES">
 			<Text>
-				[ICON_BULLET]击败蛮族营寨中的单位会加入匈人军队。
-				[NEWLINE][ICON_BULLET]夷平城市后获得当前回合数*10的[ICON_GOLD]金钱、[ICON_RESEARCH]科研、[ICON_CULTURE]文化、[ICON_PEACE]信仰值（最多1000）。
-				[NEWLINE][ICON_BULLET]夷平城市时，每减少一人口，所有位于该城市工作地块上的战斗单位+2最大生命值，该效果的上限是150。
-				[NEWLINE][ICON_BULLET]城市名从其他文明借用。
+				[ICON_BULLET]击败蛮族营寨中的单位会加入匈人军队，城市名从其他文明借用。
+				[NEWLINE][ICON_BULLET]夷平城市后获得当前回合数*10的[ICON_GOLD][ICON_RESEARCH][ICON_CULTURE][ICON_PEACE]一次性产出，上限1000点。
+				[NEWLINE][ICON_BULLET]夷平城市时，每减少一人口，所有位于该城市工作地块上的战斗单位+2最大[ICON_SILVER_FIST]生命值，上限150。
 			</Text>
 		</Replace>
 
@@ -5725,7 +5728,7 @@
 		<Replace Tag="TXT_KEY_TRAIT_SPICE">
 			<Text>
 				[ICON_BULLET]在非出生地大陆建造的前三座城市可以提供2份独有奢侈资源，这三座城市无法被摧毁且没有额外的管理成本。
-				[NEWLINE][ICON_BULLET]每拥有一种数量大于1的奢侈资源，完成城邦任务获得的[ICON_INFLUENCE]影响力+5%，上限为40%
+				[NEWLINE][ICON_BULLET]每拥有一种数量大于1的奢侈资源，完成城邦任务获得的[ICON_INFLUENCE]影响力+10%，上限为100%
 			</Text>
 		</Replace>
 
@@ -5758,6 +5761,7 @@
 				[ICON_BULLET]河流及其相邻区块不会阻碍己方单位[ICON_MOVES]移动。
 				[NEWLINE][ICON_BULLET]陆地商路能够通过河流线延长（视为道路）。
 				[NEWLINE][ICON_BULLET]所有贸易站+1[ICON_GOLD]金钱产出。
+				[NEWLINE][ICON_BULLET]沿河城市减少200点离心倾向。
 			</Text>
 		</Replace>
 
@@ -7180,7 +7184,7 @@
 		</Replace>
 
 		<Replace Tag="TXT_KEY_POLICY_RESETTLEMENT_HELP" >
-			<Text>[COLOR_POSITIVE_TEXT]移民安置[ENDCOLOR][NEWLINE]移民等同于3[ICON_CITIZEN]人口（生产移民城市失去3[ICON_CITIZEN]人口，新建城市直接获得3[ICON_CITIZEN]人口，移民加入新城市也会增加其3[ICON_CITIZEN]人口）。所有城市因污染导致的[ICON_FOOD]食物损失-15%。</Text>
+			<Text>[COLOR_POSITIVE_TEXT]移民安置[ENDCOLOR][NEWLINE]移民等同于3[ICON_CITIZEN]人口（生产移民城市失去3[ICON_CITIZEN]人口，新建城市直接获得3[ICON_CITIZEN]人口，移民加入新城市也会增加其3[ICON_CITIZEN]人口）。移民不再产生[ICON_HAPPINESS_4]不满。</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_POLICY_ACADEMY_SCIENCES">
@@ -7285,7 +7289,7 @@
 		<Replace Tag="TXT_KEY_POLICY_POLICE_STATE_HELP" >
 			<Text>
 				[COLOR_POSITIVE_TEXT]警察国家[ENDCOLOR]
-				[NEWLINE]法院、治安署、审计署、警察局和地检署+3[ICON_HAPPINESS_1]本地快乐。这些建筑因[ICON_CITIZEN]人口造成的[ICON_GOLD]维护费减半。
+				[NEWLINE]法院、治安署、审计署、警察局和地检署+3[ICON_HAPPINESS_1]本地快乐。建造这些建筑+200%[ICON_PRODUCTION]产能积累。
 			</Text>
 		</Replace>
 
@@ -7352,51 +7356,6 @@
 			<Text>[ICON_GREAT_WRITER]神权政治</Text>
 		</Row>
 
-		<Row Tag="TXT_KEY_BUILDING_POLICY_MERCHANT_CONFEDERACY" >
-			<Text>商人公会</Text>
-		</Row>
-		<Row Tag="TXT_KEY_BUILDING_POLICY_MERCHANT_CONFEDERACY_HELP" >
-			<Text>每条与城邦的商路+2%的全国[ICON_PRODUCTION]产能。</Text>
-		</Row>
-
-		<!--<Row Tag="TXT_KEY_BUILDING_POLICY_ORGANIZED_RELIGION_DESC" >
-			<Text>教会组织</Text>
-		</Row>
-		<Row Tag="TXT_KEY_BUILDING_POLICY_ORGANIZED_RELIGION_HELP" >
-			<Text>本城市的宗教压力+50%。</Text>
-		</Row>-->
-
-		<Row Tag="TXT_KEY_BUILDING_REPRESENTATION_CULTURE" >
-			<Text>新政策成本+5%[ICON_CULTURE]文化</Text>
-		</Row>
-
-		<Row Tag="TXT_KEY_BUILDING_UNITED_FRONT_HELP" >
-			<Text>人口到达20前+50%食物累积</Text>
-		</Row>
-
-		<Row Tag="TXT_KEY_BUILDING_POLICE_STATE_LV2" >
-			<Text>[ICON_CITYBANNER_CITY_LV2]治安署维护费-50%</Text>
-		</Row>
-		<Row Tag="TXT_KEY_BUILDING_POLICE_STATE_LV3" >
-			<Text>[ICON_CITYBANNER_CITY_LV3]审计署维护费-50%</Text>
-		</Row>
-		<Row Tag="TXT_KEY_BUILDING_POLICE_STATE_LV4" >
-			<Text>[ICON_CITYBANNER_CITY_LV4]警察局维护费-50%</Text>
-		</Row>
-		<Row Tag="TXT_KEY_BUILDING_POLICE_STATE_LV5" >
-			<Text>[ICON_CITYBANNER_CITY_LV5]地检署维护费-50%</Text>
-		</Row>
-		<Row Tag="TXT_KEY_BUILDING_POLICE_STATE" >
-			<Text>强化管理类建筑因[ICON_CITIZEN]人口造成的[ICON_GOLD]维护费-50%</Text>
-		</Row>
-
-		<Row Tag="TXT_KEY_BUILDING_MONARCHY_CULTURE" >
-			<Text>君主政体</Text>
-		</Row>
-		<Row Tag="TXT_KEY_BUILDING_MONARCHY_CULTURE_HELP" >
-			<Text>首都+50%[ICON_TOURISM]魅力产出。</Text>
-		</Row>
-
 		<Row Tag="TXT_KEY_BUILDING_FAMILY_PRODUCTION" >
 			<Text>[ICON_RESEARCH]府学</Text>
 		</Row>
@@ -7426,13 +7385,6 @@
 		</Row>
 		<Row Tag="TXT_KEY_BUILDING_AUTOCRACY_FIREWALL_HELP" >
 			<Text>消除来自其他文明掌握科技所带来的魅力加成。</Text>
-		</Row>
-
-		<Row Tag="TXT_KEY_BUILDING_SCHOLASTICISM" >
-			<Text>[ICON_CULTURE][ICON_PEACE]经院哲学</Text>
-		</Row>
-		<Row Tag="TXT_KEY_BUILDING_SCHOLASTICISM_HELP" >
-			<Text>所有城市+1%[ICON_CULTURE]文化和[ICON_PEACE]信仰产出。</Text>
 		</Row>
 
 		<!--Projects-->
@@ -8122,14 +8074,8 @@
 			<Text>每个信徒增加本城+1%[ICON_RESEARCH]科研产出(最大+30%)</Text>
 		</Row>
 
-		<Row Tag="TXT_KEY_EXTRA_RELIGION_SPREADS">
-			<Text>+1次宗教传播次数</Text>
-		</Row>
 		<Row Tag="TXT_KEY_EXTRA_RELIGION_SPREADS_2">
 			<Text>+2次宗教传播次数</Text>
-		</Row>
-		<Row Tag="TXT_KEY_EXTRA_RELIGION_SPREADS_4">
-			<Text>+4次宗教传播次数</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_UNIT_TEUTONIC_KNIGHT_STRATEGY">
@@ -8180,27 +8126,50 @@
 			<Text>人力</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_RESOURCE_MANPOWER_HELP">
-			<Text>人力资源（人力）是超级大国模组中极为重要的一种资源。绝大部分军事单位和世纪奇观都会消耗你的人力资源。[NEWLINE][NEWLINE]人力资源主要通过城市和人口提供，部分建筑也可以提供。</Text>
+			<Text>
+			人力资源是超级大国模组中极为重要的一种资源。
+			[NEWLINE][ICON_BULLET]绝大部分军事单位和世界奇观都会消耗你的人力资源。
+			[NEWLINE][ICON_BULLET]人力资源主要通过城市和人口提供，部分建筑和奇观也可以提供。
+			[NEWLINE]
+			[NEWLINE][ICON_BULLET]人力资源充足时(数量>25)，玩家使用[ICON_GOLD]金钱购买单位和建筑获得打折加成，公式为P= 5*n/c/2，其中为n电力资源数量，c为城市数量。
+			[NEWLINE][ICON_BULLET]人力资源至多带来35%的购买减成。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_RESOURCE_ELECTRICITY">
 			<Text>电力</Text>
 		</Row>
-		<Row Tag="TXT_KEY_SP_RESOURCE_ELECTRICITY_HELP">
+		<Row Tag="TXT_KEY_SP_RESOURCE_ELECTRICITY_TEXT">
 			<Text>电力是以电能作为动力的能源。发明于19世纪70年代，电力的发明和应用掀起了第二次工业化高潮。成为人类历史18世纪以来，世界发生的三次科技革命之一，从此科技改变了人们的生活。产生的方式主要有：火力发电(煤等可燃烧物)、太阳能发电、大容量风力发电技术、核能发电、氢能发电、水利发电等，21世纪能源科学将为人类文明再创辉煌。燃料电池燃料电池是将氢、天然气、煤气、甲醇、肼等燃料的化学能直接转换成电能的一类化学电源。生物质能的高效和清洁利用技术生物质能是以生物质为载体的能量。</Text>
 		</Row>
-		<Row Tag="TXT_KEY_SP_RESOURCE_ELECTRICITY_TEXT">
-			<Text>电力资源是超级大国模组后期极为重要的一种资源。你的城市和现代建筑都需要电力来维持运转。[NEWLINE][NEWLINE]电力只能够通过发电站设施产出。需要注意的是，绝大部分的发电站设施都会产生污染，降低城市的食物累积速率。</Text>
+		<Row Tag="TXT_KEY_SP_RESOURCE_ELECTRICITY_HELP">
+			<Text>
+			电力资源是超级大国模组后期极为重要的一种资源，玩家进入电气时代且拥有50个科技后电力资源全局效果启用。
+			[NEWLINE][ICON_BULLET]你的城市规模和近现代建筑都需要消耗电力来维持。
+			[NEWLINE][ICON_BULLET]电力只能够通过发电站设施产出。需要注意的是，绝大部分的发电站设施都会产生污染，降低城市的食物累积速率。
+			[NEWLINE]
+			[NEWLINE][ICON_BULLET]电力充足时(数量>25)，国家会获得全局[ICON_RESEARCH]科研加成，公式为P= n/c，其中n为电力资源数量，c为城市数量。
+			[NEWLINE][ICON_BULLET]电力资源不足时，国家获得全局[ICON_RESEARCH]科研[ICON_PRODUCTION]产能减成，公式为P= n*(c/10)，其中n为电力资源数量，c为城市数量。
+			[NEWLINE][ICON_BULLET]电力资源加减成的限制公式为P= (t-50)*5，其中t为玩家拥有科技数，且上限至多为50%，下限至多为-75%。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_RESOURCE_CONSUMER">
 			<Text>商品</Text>
 		</Row>
-		<Row Tag="TXT_KEY_SP_RESOURCE_CONSUMER_HELP">
+		<Row Tag="TXT_KEY_SP_RESOURCE_CONSUMER_TEXT">
 			<Text>商业，是一种有组织的提供顾客所需的商品与服务行为。大多数的商业行为是通过以成本以上的价格卖出商品或服务来赢利，如微软、索尼、IBM、联想、通用都是盈利性的商业组织典型的代表。然而某些商业行为只是为了提供运营商业所需的基本资金，一般称这种商业行为为非赢利性的，如各种基金会，以及红十字会等。一般认为，商业源于原始社会以物易物的交换行为，它的本质是交换，而且是基于人们对价值的认识的等价交换。</Text>
 		</Row>
-		<Row Tag="TXT_KEY_SP_RESOURCE_CONSUMER_TEXT">
-			<Text>商品是超级大国模组中极为重要的一种资源。大规模城市会消耗巨量的商品，如果不能满足商品需求，你的人民满意度会急剧降低。[NEWLINE][NEWLINE]商品主要通过市场建筑和商业家提供。</Text>
+		<Row Tag="TXT_KEY_SP_RESOURCE_CONSUMER_HELP">
+			<Text>
+			商品是超级大国模组中极为重要的一种资源。
+			[NEWLINE][ICON_BULLET]大规模城市会消耗巨量的商品，如果不能满足商品需求，你的人民满意度会急剧降低。
+			[NEWLINE][ICON_BULLET]商品主要通过市场建筑和商业家提供。
+			[NEWLINE]
+			[NEWLINE][ICON_BULLET]商品充足时(数量>25)，国家会获得全局[ICON_CONNECTED]城市连接加成以及[ICON_HAPPINESS_4]不满减成，公式为P= n/c，其中n为商品资源数量，c为城市数量。
+			[NEWLINE][ICON_BULLET]商品资源不足时，国家获得全局[ICON_HAPPINESS_4]不满加成，公式为P= n*(c/10)，其中n为商品资源数量，c为城市数量。
+			[NEWLINE][ICON_BULLET]商品资源的全局不满加减成至多为+-50%。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_TROOPS">
@@ -8219,8 +8188,8 @@
 				人类玩家也可以组建军团和集团军，不过只能在有兵工厂和军事基地的城市范围内通过两个相同单位合成或者消耗陆军统帅实现；[NEWLINE]
 				使用相同单位合成军团可以同时合并两个单位的晋升，并由此得到一个强力单位，而消耗陆军统帅会直接赋予单位军团/集团军晋升；[NEWLINE][NEWLINE]
 				引入“兵力”设定，兵力决定你总共能拥有的军事单位数量，兵力点满后获取军事单位将变得非常困难，新建的军事单位也会被清除，AI兵力点满后也将停止刷出单位，分三个游戏选项档：[NEWLINE]
-				[ICON_BULLET]高：除小镇以外的每个城市规模等级提供4兵力点，玩家初始24点，AI初始32点，每个兵工厂/军事基地分别提供2点军团/集团军组建上限 ——适合高配置玩家；[NEWLINE]
-				[ICON_BULLET]中：除小镇以外的每个城市规模等级提供2兵力点，玩家初始12点，AI初始16点，每个兵工厂/军事基地分别提供1点军团/集团军组建上限 ——适合中配置玩家（默认情况）；[NEWLINE]
+				[ICON_BULLET]高：除小镇以外的每个城市规模等级提供4兵力点，玩家初始24点，AI初始32点，每个兵工厂/军事基地分别提供3点军团/集团军组建上限 ——适合高配置玩家；[NEWLINE]
+				[ICON_BULLET]中：除小镇以外的每个城市规模等级提供2兵力点，玩家初始12点，AI初始16点，每个兵工厂/军事基地分别提供2点军团/集团军组建上限 ——适合中配置玩家（默认情况）；[NEWLINE]
 				[ICON_BULLET]低：除小镇以外的每个城市规模等级提供1兵力点，玩家初始 6点，AI初始 8点，每个兵工厂/军事基地分别提供1点军团/集团军组建上限 ——适合低配置玩家或和平主义者；[NEWLINE][NEWLINE]
 				特别注意，“军团”或者“集团军”的上限只与兵工厂或者军事基地的数量有关，消耗陆军统帅可以无视数量上限组建，但是并不会增加上限（你会看到组建按钮显示可组建数量为负数）；[NEWLINE]
 				消耗陆军统帅组建“集团军”仍然需要城市拥有兵工厂；[NEWLINE]
@@ -13696,7 +13665,10 @@
 			<Text>飞驰的幽灵</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_GALLOPING_GHOST_HELP">
-			<Text>+2[ICON_MOVES]移动，+2视野。能发现潜艇。</Text>
+			<Text>
+			+2[ICON_MOVES]移动。能发现潜艇。
+			[NEWLINE]6格范围内可见。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_ENCOURAGE_AND_AWE">
@@ -15225,7 +15197,28 @@
 		</Replace>
 
 		<Replace Tag="TXT_KEY_CIV5_HUN_HORSE_ARCHER_HELP_TEXT">
-      <Text>每杀死一名敌军，+2近战和远程战斗力，积累的战斗力升级可继承，但是不能再增加。{TXT_KEY_PROMOTION_HITANDRUN_HELP}</Text>
+    		<Text>每杀死一名敌军，+2近战和远程战斗力，积累的战斗力升级可继承，但是不能再增加。{TXT_KEY_PROMOTION_HITANDRUN_HELP}</Text>
+		</Replace>
+
+		<Replace Tag="TXT_KEY_PROMOTION_EXTRA_MOVE_HALF">
+			<Text>移动力+0.25</Text>
+		</Replace>
+
+		<Replace Tag="TXT_KEY_PRODUCTION_NEEDED_UNIT_MODIFIER">
+			<Text>全国单位[ICON_PRODUCTION]花费:{1_Num}%</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_PRODUCTION_NEEDED_BUILDING_MODIFIER">
+			<Text>全国建筑[ICON_PRODUCTION]花费:{1_Num}%</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_PRODUCTION_NEEDED_PROJECT_MODIFIER">
+			<Text>全国项目[ICON_PRODUCTION]花费:{1_Num}%</Text>
+		</Replace>
+
+		<Replace Tag="TXT_KEY_DIPLO_TO_TRADE_CITY_TT">
+			<Text>
+			交易城市
+			[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]若城市非双方建立且人口小于4或者处于抵抗，交易不可进行[ENDCOLOR]
+			</Text>
 		</Replace>
 
 	</Language_zh_CN>

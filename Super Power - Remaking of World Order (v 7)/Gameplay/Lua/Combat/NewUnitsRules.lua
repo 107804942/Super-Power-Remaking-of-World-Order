@@ -21,7 +21,6 @@ local RangeBanID = GameInfo.UnitPromotions["PROMOTION_RANGE_BAN"].ID
 local LuckyCarrierID = GameInfo.UnitPromotions["PROMOTION_LUCKY_CARRIER"].ID
 
 local ForeignLandsID = GameInfo.UnitPromotions["PROMOTION_FOREIGN_LANDS"].ID
-local ExtraRSID = GameInfo.UnitPromotions["PROMOTION_EXTRA_RELIGION_SPREADS"].ID
 
 local CorpsID = GameInfo.UnitPromotions["PROMOTION_CORPS_1"].ID
 local ArmeeID = GameInfo.UnitPromotions["PROMOTION_CORPS_2"].ID
@@ -29,15 +28,8 @@ local ArmeeID = GameInfo.UnitPromotions["PROMOTION_CORPS_2"].ID
 local CitadelID = GameInfo.UnitPromotions["PROMOTION_CITADEL_DEFENSE"].ID
 
 
-function NewUnitCreationRules() ------------------------Human Player's units rule & AI units assistance--
-	local iTurnTrigger = 10;
-	local iTurnsElapsed = Game.GetElapsedGameTurns();
-	local IsTimetoCheckPromotion = false;
-	if iTurnsElapsed % iTurnTrigger == 9 then
-		IsTimetoCheckPromotion = true;
-		print("It's Time to Check Unit Promotion");
-	end
-
+-- Human Player's units rule & AI units assistance
+function NewUnitCreationRules()
 	for playerID, player in pairs(Players) do
 		if player and player:IsAlive() and not player:IsMinorCiv() and player:GetNumUnits() > 0 then --  and not player:IsBarbarian() then
 			print("Player " .. playerID .. " - Unit Counts: " .. player:GetNumUnits());

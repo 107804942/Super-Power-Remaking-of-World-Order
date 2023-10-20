@@ -104,14 +104,6 @@
 			<BuildingClassType>BUILDINGCLASS_AMPHITHEATER</BuildingClassType>
 			<BuildingType>BUILDING_ZULU_IZIKO</BuildingType>
 		</Row>
-		
-		
-		<!--<Row>
-			<CivilizationType>CIVILIZATION_PERSIA</CivilizationType>
-			<BuildingClassType>BUILDINGCLASS_BANK</BuildingClassType>
-			<BuildingType>BUILDING_PERSIA_TRADEPOST</BuildingType>
-		</Row>-->
-
 
 		<Row>
 			<CivilizationType>CIVILIZATION_EGYPT</CivilizationType>
@@ -132,6 +124,11 @@
 			<CivilizationType>CIVILIZATION_MOROCCO</CivilizationType>
 			<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
 			<BuildingType>BUILDING_MOROCCO_MARKET</BuildingType>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_SONGHAI</CivilizationType>
+			<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
+			<BuildingType>BUILDING_SONGHAI_MARKET</BuildingType>
 		</Row>
 		<Row>
 			<CivilizationType>CIVILIZATION_MOROCCO</CivilizationType>
@@ -334,12 +331,7 @@
 			<BuildingClassType>BUILDINGCLASS_SHRINE</BuildingClassType>
 			<BuildingType>BUILDING_MUD_PYRAMID_MOSQUE</BuildingType>
 		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_SONGHAI</CivilizationType>
-			<BuildingClassType>BUILDINGCLASS_OIL_REFINERY</BuildingClassType>
-			<BuildingType>BUILDING_SONGHAI_ISLAM_MINT</BuildingType>
-		</Row>
-
+		
 		<Row>
 			<CivilizationType>CIVILIZATION_ETHIOPIA</CivilizationType>
 			<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
