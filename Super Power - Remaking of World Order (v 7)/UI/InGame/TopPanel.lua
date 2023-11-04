@@ -219,8 +219,8 @@ function UpdateData()
 					iNumAvailable = pPlayer:GetNumResourceAvailable(iResourceLoop, true);
 					
 					if pResource.Type == "RESOURCE_TROOPS" then
-						iNumAvailable = math.abs(iNumAvailable);
-						if iNumAvailable == 0 then
+						iNumAvailable = pPlayer:GetDomainTroopsActive();
+						if PreGame.GetGameOption("GAMEOPTION_SP_CORPS_MODE_DISABLE") == 1 then
 							bShowResource = false;
 						else
 							bShowResource = true;
@@ -233,7 +233,7 @@ function UpdateData()
 						strMinText = string.format("%i%s ", iNumAvailable, pResource.IconString);
 						
 						-- Colorize for amount available
-						if     (iNumAvailable > 0) then
+						if (iNumAvailable > 0) then
 							strMinText = "[COLOR_POSITIVE_TEXT]".. strMinText .."[ENDCOLOR] ";
 						elseif (iNumAvailable < 0) then
 							strMinText = "[COLOR_WARNING_TEXT]".. strMinText .."[ENDCOLOR] ";
@@ -280,22 +280,49 @@ function UpdateData()
 		local turn = Locale.ConvertTextKey("TXT_KEY_TP_TURN_COUNTER", Game.GetGameTurn());
 		Controls.CurrentTurn:SetText(turn);
 		
-		-- Update Unit Supply
-		local iUnitSupplyMod = pPlayer:GetUnitProductionMaintenanceMod();
-		if (iUnitSupplyMod ~= 0) then
-			local iUnitsSupplied = pPlayer:GetNumUnitsSupplied();
-			local iUnitsOver = pPlayer:GetNumUnitsOutOfSupply();
-			local strUnitSupplyToolTip = Locale.ConvertTextKey("TXT_KEY_UNIT_SUPPLY_REACHED_TOOLTIP", iUnitsSupplied, iUnitsOver, -iUnitSupplyMod);
-			
-			Controls.UnitSupplyString:SetToolTipString(strUnitSupplyToolTip);
-			Controls.UnitSupplyString:SetHide(false);
+		-- Update Unit Supply / Troop Supply
+		if PreGame.GetGameOption("GAMEOPTION_SP_CORPS_MODE_DISABLE") == 1 then
+			local iUnitSupplyMod = pPlayer:GetUnitProductionMaintenanceMod();
+			if (iUnitSupplyMod ~= 0) then
+				local iUnitsSupplied = pPlayer:GetNumUnitsSupplied();
+				local iUnitsOver = pPlayer:GetNumUnitsOutOfSupply();
+				local strUnitSupplyToolTip = Locale.ConvertTextKey("TXT_KEY_UNIT_SUPPLY_REACHED_TOOLTIP", iUnitsSupplied, iUnitsOver, -iUnitSupplyMod);
+				
+				Controls.UnitSupplyString:SetToolTipString(strUnitSupplyToolTip);
+				Controls.UnitSupplyString:SetHide(false);
+			else
+				Controls.UnitSupplyString:SetHide(true);
+			end
+
+		--Using Crops Mod
 		else
-			Controls.UnitSupplyString:SetHide(true);
+			local iUnitSupplyMod = pPlayer:GetUnitProductionMaintenanceMod();
+			local bIsLackingTroops = pPlayer:IsLackingTroops()
+			if (iUnitSupplyMod ~= 0 or bIsLackingTroops) then
+				local strUnitSupplyToolTip = ""
+				if iUnitSupplyMod ~= 0 then
+					local iUnitsSupplied = pPlayer:GetNumUnitsSupplied();
+					local iUnitsOver = pPlayer:GetNumUnitsOutOfSupply();
+					strUnitSupplyToolTip = strUnitSupplyToolTip .. Locale.ConvertTextKey("TXT_KEY_UNIT_SUPPLY_REACHED_TOOLTIP", iUnitsSupplied, iUnitsOver, -iUnitSupplyMod);
+				end
+				if bIsLackingTroops then
+					if iUnitSupplyMod ~= 0 then
+						strUnitSupplyToolTip = strUnitSupplyToolTip .. "[NEWLINE][NEWLINE]"
+					end
+					strUnitSupplyToolTip = strUnitSupplyToolTip .. Locale.ConvertTextKey("TXT_KEY_LACKING_TROOPS_TOOLTIP")
+				end
+				
+				Controls.UnitSupplyString:SetTexture("OverSupplyLimit.dds")
+				Controls.UnitSupplyString:SetToolTipString(strUnitSupplyToolTip);
+				Controls.UnitSupplyString:SetHide(false);
+			else
+				--TODO:
+				--Controls.UnitSupplyString:SetTexture("TroopsTop.dds")
+				--Controls.UnitSupplyString:SetToolTipString()
+				--Controls.UnitSupplyString:SetHide(false);
+				Controls.UnitSupplyString:SetHide(true);
+			end
 		end
-		
-		
-		
-		
 		
 		
 		-- Update date
@@ -546,7 +573,29 @@ function ScienceTipHandler( control )
 	
 			strText = strText .. Locale.ConvertTextKey("TXT_KEY_TP_SCIENCE_FROM_RESEARCH_AGREEMENTS", iScienceFromRAs / 100);
 		end
-		
+
+		-- Show Research Agreements
+		local tips = {}
+		local activeTeam = Teams[pPlayer:GetTeam()]
+		local iRemainingTurn = Game.GetDealDuration() - Game.GetGameTurn() + 1
+
+		for playerID = 0, GameDefines.MAX_MAJOR_CIVS-1 do
+			local player = Players[playerID]
+			local teamID = player:GetTeam()
+
+			if playerID ~= iPlayerID and player:IsAlive() and activeTeam:IsHasMet(teamID) then
+				if activeTeam:IsHasResearchAgreement(teamID) then
+					table.insert(tips, "[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]" .. player:GetName() 
+					.. "[ENDCOLOR]" .. "(" .. iRemainingTurn + activeTeam:GetResearchAgreementStartTurn(teamID) ..")")
+				else
+					table.insert(tips, "[NEWLINE][ICON_BULLET][COLOR_WARNING_TEXT]" .. player:GetName() .. "[ENDCOLOR]")
+				end
+			end
+		end
+		if #tips > 0 then
+			strText = strText .. "[NEWLINE][NEWLINE]" .. Locale.ConvertTextKey("TXT_KEY_DO_RESEARCH_AGREEMENT") .. table.concat(tips)
+		end
+
 		-- Let people know that building more cities makes techs harder to get
 		if (not OptionsManager.IsNoBasicHelp()) then
 			strText = strText .. "[NEWLINE][NEWLINE]";
@@ -710,10 +759,8 @@ function HappinessTipHandler( control )
 		local iMinorCivHappiness = pPlayer:GetHappinessFromMinorCivs();
 		local iLeagueHappiness = pPlayer:GetHappinessFromLeagues();
 		local iFaithHappiness = pPlayer:GetHappinessFromFaith();
-	
---		local iHandicapHappiness = pPlayer:GetHappiness() - iPoliciesHappiness - iResourcesHappiness - iCityHappiness - iBuildingHappiness - iTradeRouteHappiness - iReligionHappiness - iNaturalWonderHappiness - iMinorCivHappiness - iExtraHappinessPerCity - iLeagueHappiness;
 
---	SP Flat Hadicap Happiness
+		--SP Flat Hadicap Happiness
 		local iHandicapHappiness = 11
 
 	
@@ -834,17 +881,11 @@ function HappinessTipHandler( control )
 		strText = strText .. "[NEWLINE]";
 		strText = strText .. "  [ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_TP_HAPPINESS_DIFFICULTY_LEVEL", iHandicapHappiness);
 		strText = strText .. "[/COLOR]";
-	
 
---		local iUnhappinessFromCityCount = Locale.ToNumber( pPlayer:GetUnhappinessFromCityCount() / 100, "#.##" );
-		
 		local iUnhappinessFromCityCount = SPUnhappinessFromCitiesCount (pPlayer)
 	
 		
-		
-		
-		
-			-- Unhappiness
+		-- Unhappiness
 		local iTotalUnhappiness = pPlayer:GetUnhappiness() + iUnhappinessFromCityCount
 		
 		
@@ -902,25 +943,6 @@ function HappinessTipHandler( control )
 			strText = strText .. "  [ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_TP_UNHAPPINESS_PUBLIC_OPINION", iUnhappinessPublicOpinion);
 		end		
 		
-		
-		-----------------------------SP Consumer Goods UnHappiness----------------------------------------
---		local strSPConsumerUnHappiness = Locale.ConvertTextKey("TXT_KEY_SP_UI_UNHAPPINESS_CONSUMERGOODS_LOW")
---		local ConsumerAmount = pPlayer:GetNumResourceAvailable(GameInfoTypes["RESOURCE_CONSUMER"], true)
---		
---		
---		if ConsumerAmount < -50 then
---			strSPConsumerUnHappiness = Locale.ConvertTextKey("TXT_KEY_SP_UI_UNHAPPINESS_CONSUMERGOODS_HIGH")
---		elseif ConsumerAmount < -10 and ConsumerAmount >= -50 then
---			strSPConsumerUnHappiness = Locale.ConvertTextKey("TXT_KEY_SP_UI_UNHAPPINESS_CONSUMERGOODS_MID")
---		end
---
---    	if ConsumerAmount < 0 then
---			strText = strText .. "[NEWLINE]";
---			strText = strText .. "  [ICON_BULLET]"  .. strSPConsumerUnHappiness;
---		end
---				
-				-----------------------------SP Consumer Goods UnHappiness END----------------------------------------
-		
 		strText = strText .. "[/COLOR]";
 	
 	
@@ -945,7 +967,7 @@ function HappinessTipHandler( control )
 			strText = strText .. strSPConsumerPenalty .." " ..ConsumerUnhappinessMod.."%";			
 		end
 	
-	--------------------------------------SP Additional Happiness by Extra Consumer Goods END-----------------------------
+		--------------------------------------SP Additional Happiness by Extra Consumer Goods END-----------------------------
 
 		-- Basic explanation of Happiness
 		if (not OptionsManager.IsNoBasicHelp()) then
@@ -1429,31 +1451,30 @@ function ResourcesTipHandler( control )
 			    iNumTotal = pPlayer:GetNumResourceTotal(iResourceLoop, true);
 			    
 				if pResource.Type == "RESOURCE_TROOPS" then
-					iNumAvailable = math.abs(iNumAvailable);
-					iNumTotal = pPlayer:GetNumResourceUsed(iResourceLoop);
-					iNumUsed  = pPlayer:GetNumResourceTotal(iResourceLoop, true);
-					if (iNumUsed ~= 0 or iNumAvailable ~= 0) and not bThisIsFirstResourceShown then
-						strText = strText .. "[NEWLINE][NEWLINE]"
-						bShowResource = true;
+					iNumAvailable = pPlayer:GetDomainTroopsActive();
+					iNumTotal = pPlayer:GetDomainTroopsTotal();
+					iNumUsed  = pPlayer:GetDomainTroopsUsed();
+					if PreGame.GetGameOption("GAMEOPTION_SP_CORPS_MODE_DISABLE") == 1 then
+						bShowResource = false;
 					end
 				end
 			    
 			    if (bShowResource) then
-				-- Add newline to the front of all entries that AREN'T the first
-				if (bThisIsFirstResourceShown) then
-					strText = "";
-					bThisIsFirstResourceShown = false;
-				else
-					strText = strText .. "[NEWLINE][NEWLINE]";
-				end
-				
-				strText = strText .. iNumAvailable .. " " .. pResource.IconString .. " " .. Locale.ConvertTextKey(pResource.Description);
-				
-				-- Details
-				if (iNumUsed ~= 0 or iNumTotal ~= 0) then
-					strText = strText .. ": ";
-					strText = strText .. Locale.ConvertTextKey("TXT_KEY_TP_RESOURCE_INFO", iNumTotal, iNumUsed);
-				end
+					-- Add newline to the front of all entries that AREN'T the first
+					if (bThisIsFirstResourceShown) then
+						strText = "";
+						bThisIsFirstResourceShown = false;
+					else
+						strText = strText .. "[NEWLINE][NEWLINE]";
+					end
+					
+					strText = strText .. iNumAvailable .. " " .. pResource.IconString .. " " .. Locale.ConvertTextKey(pResource.Description);
+					
+					-- Details
+					if (iNumUsed ~= 0 or iNumTotal ~= 0) then
+						strText = strText .. ": ";
+						strText = strText .. Locale.ConvertTextKey("TXT_KEY_TP_RESOURCE_INFO", iNumTotal, iNumUsed);
+					end
 			    end
 			end
 		end
@@ -1550,31 +1571,7 @@ Events.SerialEventCityInfoDirty.Add(OnTopPanelDirty);
 UpdateData();
 DoInitTooltips();
 
-
-
-
-
-
-
-
-
-
-
-
-		
-		
-
-
-
-		-------------SP Unhappiness from city levels Count-------------------
---		
---		local Lv1CitiesUnhappiness = pPlayer:GetPlayerBuildingClassHappiness(GameInfo.BuildingClasses.BUILDINGCLASS_CITY_HALL_LV1.ID)
---		local Lv2CitiesUnhappiness = pPlayer:GetPlayerBuildingClassHappiness(GameInfo.BuildingClasses.BUILDINGCLASS_CITY_HALL_LV2.ID)
---		local Lv3CitiesUnhappiness = pPlayer:GetPlayerBuildingClassHappiness(GameInfo.BuildingClasses.BUILDINGCLASS_CITY_HALL_LV3.ID)
---		local Lv4CitiesUnhappiness = pPlayer:GetPlayerBuildingClassHappiness(GameInfo.BuildingClasses.BUILDINGCLASS_CITY_HALL_LV4.ID)
---		local Lv5CitiesUnhappiness = pPlayer:GetPlayerBuildingClassHappiness(GameInfo.BuildingClasses.BUILDINGCLASS_CITY_HALL_LV5.ID)	
-		
-
+-------------SP Unhappiness from city levels Count-------------------
 function SPUnhappinessFromCitiesCount (pPlayer)
 		local Lv1CitiesCount = pPlayer:GetBuildingClassCount(GameInfo.BuildingClasses.BUILDINGCLASS_CITY_HALL_LV1.ID)
 		local Lv2CitiesCount = pPlayer:GetBuildingClassCount(GameInfo.BuildingClasses.BUILDINGCLASS_CITY_HALL_LV2.ID)
@@ -1589,11 +1586,11 @@ function SPUnhappinessFromCitiesCount (pPlayer)
 		local Lv4CitiesUnhappiness = 8 * Lv4CitiesCount
 		local Lv5CitiesUnhappiness = 10 * Lv5CitiesCount
 		
-		print ("Lv1CitiesCount:"..Lv1CitiesCount)
-		print ("Lv2CitiesCount:"..Lv2CitiesCount)
-		print ("Lv3CitiesCount:"..Lv3CitiesCount)
-		print ("Lv4CitiesCount:"..Lv4CitiesCount)
-		print ("Lv5CitiesCount:"..Lv5CitiesCount)	
+		--print ("Lv1CitiesCount:"..Lv1CitiesCount)
+		--print ("Lv2CitiesCount:"..Lv2CitiesCount)
+		--print ("Lv3CitiesCount:"..Lv3CitiesCount)
+		--print ("Lv4CitiesCount:"..Lv4CitiesCount)
+		--print ("Lv5CitiesCount:"..Lv5CitiesCount)	
 			
 		local SPCitiesUnhappinessTotal = Lv1CitiesUnhappiness + Lv2CitiesUnhappiness + Lv3CitiesUnhappiness + Lv4CitiesUnhappiness + Lv5CitiesUnhappiness
 		
@@ -1603,15 +1600,12 @@ function SPUnhappinessFromCitiesCount (pPlayer)
 			SPCitiesUnhappinessMod = SPCitiesUnhappinessMod - 0.5		
 		end
 		
-		
 		if pPlayer:GetBuildingClassCount(GameInfo.BuildingClasses.BUILDINGCLASS_FORBIDDEN_PALACE.ID) >= 1 then
 			SPCitiesUnhappinessMod = SPCitiesUnhappinessMod - 0.5
 		end
 
-		
-	
-		print ("CitiesUnhappinessTotal:"..SPCitiesUnhappinessTotal)
-		print ("CitiesUnhappinessMod:"..SPCitiesUnhappinessMod)
+		--print ("CitiesUnhappinessTotal:"..SPCitiesUnhappinessTotal)
+		--print ("CitiesUnhappinessMod:"..SPCitiesUnhappinessMod)
 		
 		SPCitiesUnhappinessTotal = SPCitiesUnhappinessTotal * SPCitiesUnhappinessMod
 		

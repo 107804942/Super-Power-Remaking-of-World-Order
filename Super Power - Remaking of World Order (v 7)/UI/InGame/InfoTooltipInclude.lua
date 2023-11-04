@@ -1805,7 +1805,8 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 	-- Yield modifiers enhanced by Policy
 	for row in GameInfo.Policy_BuildingClassYieldModifiers( thisBuildingClassType ) do
 		if row.PolicyType and (row.YieldMod or 0) ~= 0 
-		and  GameInfo.Policies[ row.PolicyType].Dummy~=1  --New
+		and GameInfo.Policies[ row.PolicyType].Dummy~=1  --New
+		and row.PolicyType:match("^[POLICY_AI_]+.") == nil
 		then
 			items[row.PolicyType] = format( "%s %+i%%%s", items[row.PolicyType] or "", row.YieldMod, YieldIcons[row.YieldType] or "?" )
 		end
@@ -1813,7 +1814,10 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 	if IsCiv5 then
 		if IsCiv5BNW then
 			for row in GameInfo.Policy_BuildingClassTourismModifiers( thisBuildingClassType ) do
-				if row.PolicyType and (row.TourismModifier or 0) ~= 0 then
+				if row.PolicyType and (row.TourismModifier or 0) ~= 0
+				and GameInfo.Policies[ row.PolicyType].Dummy~=1  --New
+				and row.PolicyType:match("^[POLICY_AI_]+.") == nil
+				then
 					items[row.PolicyType] = format( "%s %+i%%[ICON_TOURISM]", items[row.PolicyType] or "", row.TourismModifier )
 				end
 			end
@@ -3358,7 +3362,7 @@ if Game then
 		end
 
 		-- Techs Known
-		local tips = { team:GetTeamTechs():GetNumTechsKnown() .. " " .. TechColor( Locale_ToLower("TXT_KEY_VP_TECH") ) }
+		local tips = {}
 		-- Policies
 		for policyBranch in GameInfo.PolicyBranchTypes() do
 			local policyCount = 0
@@ -3391,13 +3395,32 @@ if Game then
 				insert( wonders, BuildingColor( L(building.Description) ) )
 			end
 		end
+		table.sort(wonders)
+		local project = {}
+		for iProject in GameInfo.Projects() do
+			if team:GetProjectCount(iProject.ID) > 0
+			then
+				if iProject.MaxGlobalInstances == 1 then
+					insert( project, BuildingColor(L(iProject.Description)))
+				elseif iProject.MaxTeamInstances == 1 then
+					insert( project, BuildColor(L(iProject.Description)))
+				end
+			end
+		end
+		table.sort(project)
 		-- Population
-		insert( tips, player:GetTotalPopulation() .. "[ICON_CITIZEN]"
+		insert( tips, 
+				team:GetTeamTechs():GetNumTechsKnown() .. " " .. TechColor( Locale_ToLower("TXT_KEY_VP_TECH") ) 
+				.. ", "
+				.. player:GetTotalPopulation() .. "[ICON_CITIZEN]"
 				.. ", "
 				.. L("{1} {1: plural 1?{TXT_KEY_CITY:lower}; 2?{TXT_KEY_VP_CITIES:lower};}", player:GetNumCities() )
-				.. ", "
+				.. "[NEWLINE]"
 				.. player:GetNumWorldWonders() .. " " .. L("{TXT_KEY_VP_WONDERS:lower}")
-				.. (#wonders>0 and ": " .. concat( wonders, ", " ) or "") )
+				.. (#wonders>0 and ": " .. concat( wonders, ", " ) or "")
+				.. "[NEWLINE]"
+				.. #project .. " " .. L("{TXT_KEY_WONDER_SECTION_3:lower}")
+				.. (#project>0 and ": " .. concat( project, ", " ) or ""))
 	--[[ too much info
 		local cities = {}
 		for city in player:Cities() do
@@ -3552,7 +3575,12 @@ if Game then
 				end
 			end
 	-- todo !!!
-			append( tips, concat(luxuries) .. concat(strategic) )
+			if #luxuries > 0 then
+				insert( tips, "[ICON_BULLET]" .. L"TXT_KEY_LUXURIES_SHORT" .. ":" .. concat(luxuries))
+			end
+			if #strategic > 0 then
+				insert( tips, "[ICON_BULLET]" .. L"TXT_KEY_STRATEGIC_SHORT" .. ":" .. concat(strategic))
+			end
 
 		else  --if teamID ~= activeTeamID then
 
@@ -3577,7 +3605,12 @@ if Game then
 						end
 					end
 				end
-				append( tips, concat(luxuries) .. concat(strategic) )
+				if #luxuries > 0 then
+					insert( tips, "[ICON_BULLET]" .. L"TXT_KEY_LUXURIES_SHORT" .. ":" .. concat(luxuries))
+				end
+				if #strategic > 0 then
+					insert( tips, "[ICON_BULLET]" .. L"TXT_KEY_STRATEGIC_SHORT" .. ":" .. concat(strategic))
+				end
 
 				-- Resources they would like from us
 				luxuries = {}
@@ -3592,7 +3625,14 @@ if Game then
 					end
 				end
 				if #luxuries > 0 or #strategic > 0 then
-					insert( tips, L"TXT_KEY_DIPLO_YOUR_ITEMS_LABEL" .. ": " .. concat(luxuries) .. concat(strategic) )
+					insert( tips, "----------------" .. "[NEWLINE][COLOR_POSITIVE_TEXT]" .. L"TXT_KEY_DIPLO_YOUR_ITEMS_LABEL" .. "[ENDCOLOR]")
+					if #luxuries > 0 then
+						insert( tips, "[ICON_BULLET]" .. L"TXT_KEY_LUXURIES_SHORT" .. ":" .. concat(luxuries))
+					end
+					if #strategic > 0 then
+						insert( tips, "[ICON_BULLET]" .. L"TXT_KEY_STRATEGIC_SHORT" .. ":" .. concat(strategic))
+					end
+					insert( tips, "----------------")
 				end
 
 				-- Treaties
