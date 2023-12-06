@@ -511,21 +511,34 @@ function ScienceTipHandler( control )
 			strText = strText .. Locale.ConvertTextKey("TXT_KEY_TP_SCIENCE_FROM_CITIES", iScienceFromCities / 100);
 			strText = strText .. "[NEWLINE]";
 		end
-	
+
 		-- Science from Trade Routes
-		local iScienceFromTrade = pPlayer:GetScienceFromCitiesTimes100(false) - iScienceFromCities;
+		local iScienceFromTrade = pPlayer:GetAllTradeValueTimes100(GameInfoTypes["YIELD_SCIENCE"])
 		if (iScienceFromTrade ~= 0) then
 			if (bFirstEntry) then
 				bFirstEntry = false;
 			else
 				strText = strText .. "[NEWLINE]";
 			end			
-			
-			
-			------------SP Policy Effects-----------------------
-			strText = strText .. Locale.ConvertTextKey("TXT_KEY_TP_SCIENCE_FROM_ITR", iScienceFromTrade / 100 );
+			strText = strText .. Locale.ConvertTextKey("TXT_KEY_TP_SCIENCE_FROM_ITR", iScienceFromTrade / 100.0);
 			strText = strText .. "[NEWLINE]";
-			------------SP Policy Effects END-----------------------
+		end
+
+		local tScienceTimes100FromFriendsTable = pPlayer:GetScienceTimes100FromFriendsTable();
+		-- for each row in the table, ConvertTextKey args is index and value
+		local bFirstEntryScienceFromFriends = true
+		for playerID = 0, GameDefines.MAX_MAJOR_CIVS - 1 do
+			local value = tScienceTimes100FromFriendsTable[playerID]
+			local player = Players[playerID]
+			if value ~= nil and value ~= 0 and player ~= nil then
+				if bFirstEntryScienceFromFriends then
+					strText = strText .. Locale.ConvertTextKey("TXT_KEY_TP_TITLE_SCIENCE_FROM_FRIENDS")
+					bFirstEntryScienceFromFriends = false
+				end
+
+				local civName = player:GetCivilizationShortDescription()
+				strText = strText .. Locale.ConvertTextKey("TXT_KEY_TP_SCIENCE_FROM_FRIENDS", civName, value / 100.0)
+			end
 		end
 		
 
@@ -761,7 +774,7 @@ function HappinessTipHandler( control )
 		local iFaithHappiness = pPlayer:GetHappinessFromFaith();
 
 		--SP Flat Hadicap Happiness
-		local iHandicapHappiness = 11
+		local iHandicapHappiness = Game.GetHappinessFromHandicap();
 
 	
 		if (pPlayer:IsEmpireVeryUnhappy()) then

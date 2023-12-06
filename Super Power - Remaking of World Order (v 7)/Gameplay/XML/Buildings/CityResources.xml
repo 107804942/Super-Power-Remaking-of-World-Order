@@ -120,12 +120,6 @@
 			<DefaultBuilding>BUILDING_SUPERCONDUCTING_CABLE</DefaultBuilding>
 			<Description>TXT_KEY_BUILDING_SUPERCONDUCTING_CABLE</Description>
 		</Row>
-
-		<Row>
-			<Type>BUILDINGCLASS_TROOPS</Type>
-			<DefaultBuilding>BUILDING_TROOPS_DEBUFF</DefaultBuilding>
-			<Description>TXT_KEY_SP_TROOPS</Description>
-		</Row>
 	</BuildingClasses>
 	
 	
@@ -417,48 +411,6 @@
 			<IconAtlas>SPBuildings_ATLAS</IconAtlas>
 			<PortraitIndex>51</PortraitIndex>
 		</Row>
-		
-		<Row>
-			<Type>BUILDING_TROOPS</Type>
-			<BuildingClass>BUILDINGCLASS_COUNT_BUILIDNGS</BuildingClass>
-			<Cost>-1</Cost>
-			<FaithCost>-1</FaithCost>
-			<NukeImmune>true</NukeImmune>
-			<NeverCapture>true</NeverCapture>
-			<Help>TXT_KEY_SP_TROOPS_HELP</Help>
-			<Description>TXT_KEY_SP_TROOPS</Description>
-			<Civilopedia>TXT_KEY_SP_TROOPS_TEXT</Civilopedia>
-			<IconAtlas>CIVIL_WAR_RESOURCE_ATLAS_EXP2</IconAtlas>
-			<PortraitIndex>0</PortraitIndex>
-			<GreatWorkCount>-2</GreatWorkCount>
-		</Row>
-		<Row>
-			<Type>BUILDING_TROOPS_USED</Type>
-			<BuildingClass>BUILDINGCLASS_COUNT_BUILIDNGS</BuildingClass>
-			<Cost>-1</Cost>
-			<FaithCost>-1</FaithCost>
-			<NukeImmune>true</NukeImmune>
-			<NeverCapture>true</NeverCapture>
-			<Help>TXT_KEY_SP_TROOPS_USED_HELP</Help>
-			<Description>TXT_KEY_SP_TROOPS_USED</Description>
-			<Civilopedia>TXT_KEY_SP_TROOPS_TEXT</Civilopedia>
-			<IconAtlas>SP_BUILDING_ATLAS_DLC_07</IconAtlas>
-			<PortraitIndex>3</PortraitIndex>
-			<GreatWorkCount>-2</GreatWorkCount>
-		</Row>
-		<Row>
-			<Type>BUILDING_TROOPS_DEBUFF</Type>
-			<BuildingClass>BUILDINGCLASS_TROOPS</BuildingClass>
-			<Cost>-1</Cost>
-			<FaithCost>-1</FaithCost>
-			<NukeImmune>true</NukeImmune>
-			<NeverCapture>true</NeverCapture>
-			<Description>TXT_KEY_SP_TROOPS_DEBUFF</Description>
-			<Civilopedia>TXT_KEY_SP_TROOPS_TEXT</Civilopedia>
-			<IconAtlas>SP_BUILDING_ATLAS_DLC_07</IconAtlas>
-			<PortraitIndex>3</PortraitIndex>
-			<GreatWorkCount>-1</GreatWorkCount>
-		</Row>
 	</Buildings>
 
 
@@ -621,11 +573,6 @@
 			<ResourceType>RESOURCE_ELECTRICITY</ResourceType>
 			<Quantity>100</Quantity>
 		</Row>
-		<Row>
-			<BuildingType>BUILDING_TROOPS_USED</BuildingType>
-			<ResourceType>RESOURCE_TROOPS</ResourceType>
-			<Quantity>1</Quantity>
-		</Row>
 	</Building_ResourceQuantity>
 
 
@@ -680,11 +627,6 @@
 		<Row>
 			<BuildingType>BUILDING_NUCLEAR_PLANT_EXTEND</BuildingType>
 			<ResourceType>RESOURCE_URANIUM</ResourceType>
-			<Cost>1</Cost>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_TROOPS</BuildingType>
-			<ResourceType>RESOURCE_TROOPS</ResourceType>
 			<Cost>1</Cost>
 		</Row>
 	</Building_ResourceQuantityRequirements>
@@ -785,6 +727,11 @@
 			<Flavor>90</Flavor>
 		</Row>
 		<Row>
+			<BuildingType>BUILDING_COAL_PLANT</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>90</Flavor>
+		</Row>
+		<Row>
 			<BuildingType>BUILDING_COAL_PLANT_EXTEND</BuildingType>
 			<FlavorType>FLAVOR_GROWTH</FlavorType>
 			<Flavor>40</Flavor>
@@ -793,6 +740,11 @@
 			<BuildingType>BUILDING_COAL_PLANT_EXTEND</BuildingType>
 			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 			<Flavor>40</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_COAL_PLANT_EXTEND</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>90</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_COAL_PLANT_EXTEND_IZ</BuildingType>
@@ -805,6 +757,11 @@
 			<Flavor>40</Flavor>
 		</Row>
 		<Row>
+			<BuildingType>BUILDING_COAL_PLANT_EXTEND_IZ</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>90</Flavor>
+		</Row>
+		<Row>
 			<BuildingType>BUILDING_WIND_PLANT</BuildingType>
 			<FlavorType>FLAVOR_GROWTH</FlavorType>
 			<Flavor>150</Flavor>
@@ -812,6 +769,11 @@
 		<Row>
 			<BuildingType>BUILDING_WIND_PLANT</BuildingType>
 			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>150</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_WIND_PLANT</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
 			<Flavor>150</Flavor>
 		</Row>
 		<Row>
@@ -824,7 +786,11 @@
 			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 			<Flavor>150</Flavor>
 		</Row>
-
+		<Row>
+			<BuildingType>BUILDING_DANISH_WIND_TURBINE</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>150</Flavor>
+		</Row>
 
 		<Row>
 			<BuildingType>BUILDING_HYDRO_PLANT</BuildingType>
@@ -834,6 +800,11 @@
 		<Row>
 			<BuildingType>BUILDING_HYDRO_PLANT</BuildingType>
 			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>180</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_HYDRO_PLANT</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
 			<Flavor>180</Flavor>
 		</Row>
 
@@ -845,6 +816,11 @@
 		<Row>
 			<BuildingType>BUILDING_OIL_PLANT</BuildingType>
 			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_OIL_PLANT</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
 			<Flavor>5</Flavor>
 		</Row>
 		<Row>
@@ -855,6 +831,11 @@
 		<Row>
 			<BuildingType>BUILDING_GAS_PLANT</BuildingType>
 			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<Flavor>160</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_GAS_PLANT</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
 			<Flavor>160</Flavor>
 		</Row>
 	
@@ -870,6 +851,11 @@
 			<Flavor>120</Flavor>
 		</Row>
 		<Row>
+			<BuildingType>BUILDING_SOLAR_PLANT</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>120</Flavor>
+		</Row>
+		<Row>
 			<BuildingType>BUILDING_SPAIN_SOLAR10</BuildingType>
 			<FlavorType>FLAVOR_GROWTH</FlavorType>
 			<Flavor>120</Flavor>
@@ -877,6 +863,11 @@
 		<Row>
 			<BuildingType>BUILDING_SPAIN_SOLAR10</BuildingType>
 			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>120</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_SPAIN_SOLAR10</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
 			<Flavor>120</Flavor>
 		</Row>
 		
@@ -892,6 +883,12 @@
 			<Flavor>180</Flavor>
 		</Row>
 		<Row>
+			<BuildingType>BUILDING_TIDAL_PLANT</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>180</Flavor>
+		</Row>
+
+		<Row>
 			<BuildingType>BUILDING_DUTCH_DTP</BuildingType>
 			<FlavorType>FLAVOR_GROWTH</FlavorType>
 			<Flavor>180</Flavor>
@@ -901,6 +898,12 @@
 			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 			<Flavor>180</Flavor>
 		</Row>
+		<Row>
+			<BuildingType>BUILDING_DUTCH_DTP</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>180</Flavor>
+		</Row>
+
 		
 		<Row>
 			<BuildingType>BUILDING_NUCLEAR_PLANT</BuildingType>
@@ -913,6 +916,12 @@
 			<Flavor>60</Flavor>
 		</Row>
 		<Row>
+			<BuildingType>BUILDING_NUCLEAR_PLANT</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>180</Flavor>
+		</Row>
+
+		<Row>
 			<BuildingType>BUILDING_NUCLEAR_PLANT_EXTEND</BuildingType>
 			<FlavorType>FLAVOR_GROWTH</FlavorType>
 			<Flavor>90</Flavor>
@@ -920,6 +929,11 @@
 		<Row>
 			<BuildingType>BUILDING_NUCLEAR_PLANT_EXTEND</BuildingType>
 			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>90</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NUCLEAR_PLANT_EXTEND</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
 			<Flavor>90</Flavor>
 		</Row>
 
@@ -934,6 +948,11 @@
 			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 			<Flavor>250</Flavor>
 		</Row>
+		<Row>
+			<BuildingType>BUILDING_FUSION_PLANT</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>250</Flavor>
+		</Row>
 
 		<Row>
 			<BuildingType>BUILDING_SUPERCONDUCTING_CABLE</BuildingType>
@@ -943,6 +962,11 @@
 		<Row>
 			<BuildingType>BUILDING_SUPERCONDUCTING_CABLE</BuildingType>
 			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>250</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_SUPERCONDUCTING_CABLE</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
 			<Flavor>250</Flavor>
 		</Row>
 	</Building_Flavors>

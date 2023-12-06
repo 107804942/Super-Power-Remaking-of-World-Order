@@ -1160,6 +1160,7 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 		TradeRouteLandDistanceModifier = L"TXT_KEY_TRLDM1" .. "%+i%%",		-- TOTO
 	--y	TradeRouteLandGoldBonus = L"TXT_KEY_TRLGB1" .. "%+i%%[ICON_GOLD]",	-- TOTO 
 		CityStateTradeRouteProductionModifier = L"TXT_KEY_CSTRPM1111" .. "%+i%%[ICON_PRODUCTION]",-- TOTO
+		CityStateTradeRouteProductionModifierGlobal = L"TXT_KEY_CSTRPMG" .. "%+i%%[ICON_PRODUCTION]",-- TOTO
 		GreatScientistBeakerModifier = L"TXT_KEY_GSBM4" .. "%+i%%[ICON_RESEARCH]",-- TOTO
 	--y	TechEnhancedTourism = "",
 	--y	SpecialistCount = "",
@@ -1771,6 +1772,15 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 	insertLocalizedIfNonZero( tips, "TXT_KEY_PRODUCTION_NEEDED_UNIT_MODIFIER", building.GlobalProductionNeededUnitModifier or 0 )
 	insertLocalizedIfNonZero( tips, "TXT_KEY_PRODUCTION_NEEDED_BUILDING_MODIFIER", building.GlobalProductionNeededBuildingModifier or 0 )
 	insertLocalizedIfNonZero( tips, "TXT_KEY_PRODUCTION_NEEDED_PROJECT_MODIFIER", building.GlobalProductionNeededProjectModifier or 0 )
+
+	if PreGame.GetGameOption("GAMEOPTION_SP_CORPS_MODE_DISABLE") == 0 then
+		local TroopRow = GameInfo.Building_DomainTroops{BuildingType = buildingType, DomainType = "DOMAIN_SEA"}()
+		if TroopRow then
+			insertLocalizedIfNonZero( tips, "TXT_KEY_BASE_TROOPS", TroopRow.NumTroop or 0 )
+		end
+		insertLocalizedIfNonZero( tips, "TXT_KEY_BASE_CROPS", building.NumCrops  or 0 )
+		insertLocalizedIfNonZero( tips, "TXT_KEY_BASE_ARMEE", building.NumArmee or 0 )
+	end
 
 	--New for Yield From Other Yield
 	for row in GameInfo.Building_YieldFromOtherYield(thisBuildingType) do
@@ -2409,24 +2419,7 @@ function GetHelpTextForImprovement( improvementID )
 		insert( tips, L"TXT_KEY_ABLTY_RIVER_SIDE_STRING_SP"..tip)
 	end
 
-	-- -----------------New for Improvement_YieldAdjacentImprovementType---------------------------------------------
-	--items = {}
-	--condition = { ImprovementType = improvement.Type }
-	--for row in GameInfo.Improvement_YieldAdjacentImprovementType( thisImprovementType ) do
-		--SetKey( items, row.Improvement )
-	--end
-	--for Improvement in pairs( items ) do
-		--item = GameInfo.Improvements[ Improvement ]
-		--if item then
-			--condition.Improvement = Improvement
-			--tip = GetYieldString( GameInfo.Improvement_YieldAdjacentImprovementType( condition ) )
-			--if tip~="" then
-				--insert( tips, "[ICON_BULLET]" .. L(item.Description) .. tip )
-			--end
-		--end
-	--end
-
-	-- -----------------New for Improvement_RouteYieldChanges---------------------------------------------------------
+	-- -----------------New for Improvement_RouteYieldChanges--------------------------------------------------------
 	items = {}
 	condition = { ImprovementType = improvement.Type }
 	for row in GameInfo.Improvement_RouteYieldChanges( thisImprovementType ) do
@@ -2442,6 +2435,16 @@ function GetHelpTextForImprovement( improvementID )
 			end
 		end
 	end
+
+	-- -----------------New for Improvement_FeatureYieldChanges------------------------------------------------------
+
+	-- -----------------New for Improvement_AdjacentTerrainYieldChanges----------------------------------------------
+
+	-- -----------------New for Improvement_AdjacentFeatureYieldChanges----------------------------------------------
+
+	-- -----------------New for Improvement_AdjacentResourceYieldChanges---------------------------------------------
+
+	-- -----------------New for Improvement_AdjacentImprovementYieldChanges------------------------------------------
 
 	-- Tech yield changes
 	items = {}
@@ -3421,7 +3424,7 @@ if Game then
 				.. "[NEWLINE]"
 				.. #project .. " " .. L("{TXT_KEY_WONDER_SECTION_3:lower}")
 				.. (#project>0 and ": " .. concat( project, ", " ) or ""))
-	--[[ too much info
+		--[[ too much info
 		local cities = {}
 		for city in player:Cities() do
 			-- Name & population
@@ -3446,7 +3449,7 @@ if Game then
 		elseif #cities ==1 then
 			insert( tips, cities[1] )
 		end
-	--]]
+		--]]
 
 		-- Gold (can be seen in diplo relation ship)
 		insert( tips, format( "%i%s(%+i)", player:GetGold(), g_currencyIcon, player:CalculateGoldRate() ) )
@@ -3539,6 +3542,7 @@ if Game then
 			end
 		end
 
+		--[[ too much info
 		local tip
 		if bnw_be then
 			for _, route in ipairs( activePlayer:GetTradeRoutes() ) do
@@ -3558,6 +3562,7 @@ if Game then
 				end
 			end
 		end
+		]]
 
 		if isUs then
 

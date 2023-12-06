@@ -12,7 +12,7 @@
 			<Text>[COLOR_YELLOW]注意事項：[ENDCOLOR][NEWLINE]1、檢查存檔文件大小。[NEWLINE]2、查閱文明百科（快捷鍵[COLOR_POSITIVE_TEXT]F1[ENDCOLOR]）[NEWLINE]3、如果始終發生遊戲崩潰或存檔損壞，嘗試Dx9。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_VERSION">
-			<Text>[COLOR_YELLOW]版本號 9.4[ENDCOLOR]</Text>
+			<Text>[COLOR_YELLOW]版本號 9.5[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MOD_SETUP">
@@ -676,8 +676,8 @@
 		<Replace Tag="TXT_KEY_BUILDING_PAPER_MAKER_HELP">
       <Text>
         允許在本國的商路之間輸送[ICON_PRODUCTION]生產力。該建築不會過期。
-        [NEWLINE][NEWLINE]每一座造紙坊使全國範圍內的單位、建築和項目產能花費-2%，這個效果的上限是-50%。
-          [NEWLINE][NEWLINE]研發因特網後+2[ICON_TOURISM]旅遊業績。
+        [NEWLINE][NEWLINE]每一座造紙坊使全國範圍內的單位、建築和項目產能花費-2%，這個效果的上限是-30%。
+		[NEWLINE][NEWLINE]研發因特網後+2[ICON_TOURISM]旅遊業績。
       </Text>
 		</Replace>
 		
@@ -3105,14 +3105,19 @@
 			<Text>[ICON_RES_IRON]冶鐵坊</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_IRON_PROVIDER_HELP">
-			<Text>提供5單位[ICON_RES_IRON]鐵資源。[NEWLINE][NEWLINE]只能在小型城市（6人口）建造。</Text>
+			<Text>
+			提供5單位[ICON_RES_IRON]鐵資源。
+			[NEWLINE][ICON_BULLET]本城每處[ICON_RES_IRON]鐵資源+1[ICON_PRODUCTION]產能。
+			[NEWLINE][ICON_BULLET]本城必須擁有已開發的[ICON_RES_IRON]鐵。
+			[NEWLINE][ICON_BULLET]只能在小型城市（6人口）建造。
+			</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_BUILDING_RECYCLING_CENTER">
 			<Text>[ICON_RES_ALUMINUM]回收中心</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_RECYCLING_CENTER_HELP">
-			<Text>提供5單位[ICON_RES_ALUMINUM]鋁資源。[NEWLINE][NEWLINE]只能在小型城市（6人口）建造。</Text>
+			<Text>提供3單位[ICON_RES_ALUMINUM]鋁資源。[NEWLINE][NEWLINE]只能在小型城市（6人口）建造。</Text>
 		</Replace>
 		
 		<Row>
@@ -3125,7 +3130,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_COAL_COMPANY_HELP</Tag>
-			<Text>提供5單位的[ICON_RES_COAL]煤炭。[NEWLINE]只能在小型城市（6人口）建造。</Text>
+			<Text>提供3單位的[ICON_RES_COAL]煤炭。[NEWLINE]只能在小型城市（6人口）建造。</Text>
 		</Row>
 		
 		<Row>
@@ -3826,6 +3831,7 @@
 				[NEWLINE][NEWLINE]將間諜移動到你的城市可以降低城市的腐敗等級，具體效果如下：
 				[NEWLINE]一級和二級間諜：城市腐敗等級降低一級，且至多降低為一級城市。
 				[NEWLINE]三級間諜：完全消除城市腐敗等級。
+				[NEWLINE][NEWLINE][COLOR_YELLOW]註[ENDCOLOR]：在當前版本中，腐敗已經使用「腐敗分數」來表示，原先的1格地圖距離提供100腐敗分數（「離心傾向」），腐敗閾值也和過去相等（僅數值提高100倍），腐敗分數相比過去可以得到更多方式減成，具體可以查看城市橫幅下的UI面板的腐敗報告/預覽。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CONCEPT_CITIES_CORRUPTION_ADVISOR_QUESTION">
@@ -4955,6 +4961,9 @@
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_CORPS_OR_ARMEE_TIP_3">
 			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]組建集團軍需要所在城市市擁有軍事基地[ENDCOLOR]</Text>
 		</Row>
+		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_CORPS_OR_ARMEE_TIP_4">
+			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]單位有待選擇晉升[ENDCOLOR]</Text>
+		</Row>
 		
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_FULLATTACK_ON_SHORT">
 			<Text>啟動火力全開模式</Text>
@@ -5098,14 +5107,6 @@
 		</Row>
 		
 		<!--********************************************** New Trait&Policy Notification Texts ********************************************** -->
-
-		<Row Tag="TXT_KEY_SP_TRAIT_CULTURE_FROM_UNIT">
-			<Text>板載!{@2_name}訓練完成，獲得{@1_num}[ICON_CULTURE]文化值！</Text>
-		</Row>
-		<Row Tag="TXT_KEY_SP_POLICY_CULTURE_FROM_UNIT">
-			<Text>{@2_name}訓練完成，獲得{@1_num}[ICON_CULTURE]文化值！</Text>
-		</Row>
-
 		<Row Tag="TXT_KEY_SP_NOTIFICATION_TRAIT_OUTPUT_FROM_RAZING">
 			<Text>在屠城中，你的軍隊劫掠到了{@1_num}點[ICON_GOLD]金幣、[ICON_CULTURE]文物、[ICON_RESEARCH]書籍和[ICON_PEACE]教器！</Text>
 		</Row>
@@ -5427,7 +5428,7 @@
 		<Replace Tag="TXT_KEY_TRAIT_ART_OF_WAR">
 			<Text>
 				[ICON_BULLET]所有陸軍單位都自帶消滅敵人後，獲得相當於敵單位戰鬥力數值50%的[ICON_GOLDEN_AGE]黃金時代點數的晉升。
-				[NEWLINE][ICON_BULLET]黃金時代中，所有城市的[ICON_CITIZEN]人口增長所需糧食-20%，總[ICON_RESEARCH]科研花費-20%，消除來自城市數量的[ICON_RESEARCH]科研花費增加。
+				[NEWLINE][ICON_BULLET]黃金時代中，所有城市的[ICON_CITIZEN]人口增長所需糧食-20%，消除來自城市數量的[ICON_RESEARCH]科研花費增加。
 			</Text>
 		</Replace>
 		<Row Tag="TXT_KEY_SP_UA_CHINA_GOLDENAGE_ANNOUNCE">
@@ -5437,7 +5438,7 @@
 			<Text>
 			中國進入了一個嶄新的[ICON_GOLDEN_AGE][COLOR_POSITIVE_TEXT]盛世[ENDCOLOR]！
 			[NEWLINE][NEWLINE]所有金錢產出的地塊額外+1[ICON_GOLD]金錢產出，全國+20%[ICON_PRODUCTION]產能，[ICON_CULTURE]文化。
-			[NEWLINE]所有城市的[ICON_CITIZEN]人口成長所需糧食-20%，總[ICON_RESEARCH]科研花費-20%，消除來自城市數量的[ICON_RESEARCH]科研花費增加。
+			[NEWLINE]所有城市的[ICON_CITIZEN]人口成長所需糧食-20%，消除來自城市數量的[ICON_RESEARCH]科研花費增加。
 			</Text>
 		</Row>
 
@@ -5711,7 +5712,7 @@
 		<Replace Tag="TXT_KEY_TRAIT_DIPLOMACY_GREAT_PEOPLE">
 			<Text>
 				[ICON_BULLET]所有達到小型城市（6[ICON_CITIZEN]人口）規模的城市中每2[ICON_CITIZEN]人口+1[ICON_RESEARCH]科研。
-				[NEWLINE][ICON_BULLET]當宣友時，瑞典和他的盟友得到+10%的[ICON_GREAT_PEOPLE]偉人點數。
+				[NEWLINE][ICON_BULLET]當宣友時，瑞典和他的盟友得到+10%的[ICON_GREAT_PEOPLE]偉人點數，+10%對方的[ICON_RESEARCH]科研。
 			</Text>
 		</Replace>
 
@@ -5741,6 +5742,7 @@
 		<Replace Tag="TXT_KEY_TRAIT_SEVEN_CITIES">
 			<Text>
 				[ICON_BULLET]發現自然奇觀時獲得[ICON_GOLD]金錢獎勵(首先發現則可獲得更多)，自然奇觀提供的地塊產出加倍。
+				[NEWLINE][ICON_BULLET]城市二環範圍內的自然奇觀為该城市-50%管理成本。
 				[NEWLINE][ICON_BULLET]每處[ICON_RES_COW]牛和[ICON_RES_BISON]野牛資源+2[ICON_GOLD]金錢、+2[ICON_CULTURE]文化產出。
 			</Text>
 		</Replace>
@@ -6249,7 +6251,7 @@
 			<Text>
 				[COLOR_POSITIVE_TEXT]君主政體[ENDCOLOR]
 				[NEWLINE][ICON_BULLET]城市規模導致的[ICON_HAPPINESS_4]不滿減半。
-				[NEWLINE][ICON_BULLET][ICON_CAPITAL]首都每個[ICON_CITIZEN]人口+1[ICON_GOLD]金錢，每2個[ICON_CITIZEN]人口+1[ICON_FOOD]食物、[ICON_CULTURE]文化、[ICON_PRODUCTION]產能、[ICON_RESEARCH]科研。
+				[NEWLINE][ICON_BULLET][ICON_CAPITAL]首都每個[ICON_CITIZEN]人口+1[ICON_GOLD]金錢，每3個[ICON_CITIZEN]人口+1[ICON_FOOD]食物、[ICON_CULTURE]文化、[ICON_PRODUCTION]產能、[ICON_RESEARCH]科研。
 			</Text>
 		</Replace>
 
@@ -7635,18 +7637,6 @@
 		<Row Tag="TXT_KEY_PROJECT_PARTICLE_CANNON_PEDIA">
 			<Text>粒子束武器是利用加速器把質子和中子等粒子加速到數萬-20萬km/s的高速，並通過電極或磁集束形成非常細的粒子束流發射出去，用於轟擊目標。按粒子是否帶電可分為帶電粒子束武器和中性粒子束武器。粒子束武器在太空可以破壞數十公里以外的目標；但在大氣中威力衰減，只能攻擊數公里以外的目標。[NEWLINE][NEWLINE]21世紀，武器的發展已經進入原子和分子世界，核武器就是應用了原子理論。原子物質中央的質子帶正電，電子帶負電，中子是中性的。被稱為粒子的物質是指電子、質子、中子和其它帶正、負電的離子。粒子只有被加速到光速才能作為武器使用。粒子束髮射到空間，可熔化或破壞目標，而且在命中目標後，還會發生二次磁場作用，對目標進行破壞。[NEWLINE][NEWLINE]粒子束武器發射出高能定向強流、接近光速的亞原子束（帶電粒子束和中性粒子束），以巨大的動能擊毀衛星和來襲的洲際彈道導彈。即使不能直接摧毀核彈頭，粒子束產生的強大電磁場脈衝熱也會把導彈的電子設備燒毀，或利用目標周圍發生的γ射線和X射線使目標的電子設備失效或受到破壞。帶電粒子束武器通常在大氣層內使用。中性粒子束武器在大氣層外使用，主要用於攔截助推段和中段飛行的洲際彈道導彈。</Text>
 		</Row>
-		
-		<!--<Row Tag="TXT_KEY_PROJECT_ORBITAL_STRIKE">
-			<Text>天基武器系統</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROJECT_ORBITAL_STRIKE_HELP">
-			<Text>只有[COLOR_POSITIVE_TEXT]首個[ENDCOLOR]完成此項目的文明可以建造天基打擊裝置：[COLOR_YIELD_GOLD]上帝之杖[ENDCOLOR]。
-			</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROJECT_ORBITAL_STRIKE_PEDIA">
-			<Text>上帝之杖全名為上帝之杖天基動能武器系統，該系統由位於低軌道的兩顆衛星平臺組成，其中一顆衛星搭載有名為“上帝之杖”的金屬棒，該金屬棒由鎢、鈦或鈾金屬製成，直徑30釐米、長6.1米、重量達幾噸。上帝之杖天基動能武器系統將在太空發射，其發射的鎢杆彈能以流星的速度（39000km/h）擊中目標，其設想攻擊能力強大、打擊範圍廣，未來可用於替代核武器。[NEWLINE][NEWLINE]事實上,金屬棒所具有的動能遠遠小於核武器能釋放的能量，並且因為動能釋放時間越短造成的瞬時壓力才能越大，“上帝之杖”的效果可能並不如預期。</Text>
-		</Row>-->
-		
 		<Row Tag="TXT_KEY_PROJECT_NAVAL_EXPLORATION">
 			<Text>新航路開闢</Text>
 		</Row>
@@ -7695,10 +7685,10 @@
 			<Text>荒漠+1[ICON_PEACE]信仰，綠洲額外+1[ICON_CULTURE]文化、+1[ICON_PEACE]信仰</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_GOD_KING">
-			<Text>宮殿+3[ICON_PEACE]信仰、+1[ICON_FOOD]食物、[ICON_PRODUCTION]產能，[ICON_CITYBANNER_CITY_LV1]一級城市+1[ICON_FOOD]食物、[ICON_PRODUCTION]產能、[ICON_CULTURE]文化</Text>
+			<Text>宮殿+3[ICON_PEACE]信仰、+1[ICON_FOOD]食物、[ICON_PRODUCTION]產能，[ICON_CITYBANNER_CITY_LV1]一級城市+1[ICON_FOOD]食物、[ICON_PRODUCTION]產能、[ICON_PEACE]信仰</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_GODDESS_HUNT">
-			<Text>獵場+1[ICON_FOOD]食物、+1[ICON_PEACE]信仰，[ICON_RES_BISON]野牛+1[ICON_FOOD]食物，[ICON_RES_DEER]野鹿+1[ICON_PRODUCTION]產能</Text>
+			<Text>獵場+1[ICON_FOOD]食物、+1[ICON_PEACE]信仰，[ICON_RES_BISON]野牛、[ICON_RES_DEER]野鹿+1[ICON_CULTURE]文化</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_SACRED_PATH">
 			<Text>叢林+1[ICON_CULTURE]文化、+1[ICON_PEACE]信仰</Text>
@@ -7755,7 +7745,7 @@
 			<Text>商賈信使</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BELIEF_GOD_OF_COMMERCE">
-			<Text>[ICON_RES_IVORY]象牙、[ICON_RES_TRUFFLES]松露、[ICON_RES_FUR]毛皮+2[ICON_GOLD]金錢、+2[ICON_GOLDEN_AGE]黃金時代點數</Text>
+			<Text>[ICON_RES_IVORY]象牙、[ICON_RES_TRUFFLES]松露、[ICON_RES_FUR]毛皮+3[ICON_GOLD]金錢、+3[ICON_GOLDEN_AGE]黃金時代點數</Text>
 		</Row>
 		<Replace Tag="TXT_KEY_BELIEF_GURUSHIP">
 			<Text>城市有專業人員時+2[ICON_PEACE]信仰，+1[ICON_CULTURE]文化、[ICON_PRODUCTION]產能、[ICON_RESEARCH]科研</Text>
@@ -7791,7 +7781,7 @@
 			<Text>神祠和神廟+2[ICON_FOOD]食物</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_MONUMENT_GODS">
-			<Text>紀念碑+2[ICON_PEACE]信仰，首都+1[ICON_CULTURE]文化</Text>
+			<Text>紀念碑+2[ICON_PEACE]信仰，首都+2[ICON_CULTURE]文化</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_STONE_CIRCLES">
 			<Text>采石場和石工坊+2[ICON_PEACE]信仰，[ICON_RES_MARBLE]大理石+1[ICON_PRODUCTION]產能</Text>
@@ -7858,7 +7848,7 @@
 			<Text>宗教殖民</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BELIEF_RELIGIOUS_COLONIZATION">
-			<Text>在聖城可以使用信仰[ICON_PEACE]購買[COLOR_POSITIVE_TEXT]移民[ENDCOLOR]，采用自主的「集體統治」政策後購買價格下降</Text>
+			<Text>在聖城可以使用信仰[ICON_PEACE]購買[COLOR_POSITIVE_TEXT]移民[ENDCOLOR]，采用自主的「集體統治」政策後購買價格下降，該移民不消耗人口且不可進行移民安置</Text>
 		</Row>
 		<Row Tag="TXT_KEY_RELIGIOUS_SCIENCE_SHORT">
 			<Text>宗教科學</Text>
@@ -8089,15 +8079,6 @@
 				（平民、要塞及空軍單位不計入兵力消耗，也不進行單位合並操作）
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_SP_TROOPS_USED">
-			<Text>已用兵力</Text>
-		</Row>
-		<Row Tag="TXT_KEY_SP_TROOPS_USED_HELP">
-			<Text>標記允許軍事單位的數量上限。</Text>
-		</Row>
-		<Row Tag="TXT_KEY_SP_TROOPS_DEBUFF">
-			<Text>兵力 - 超限減益</Text>
-		</Row>
 		
 		<Row Tag="TXT_KEY_SP_RESOURCE_NATRUALGAS">
 			<Text>天然氣</Text>
@@ -8293,21 +8274,6 @@
 			<Text>除了浪費食物之外他們一無是處，趕緊給他們找工作吧！</Text>
 		</Replace>
 		
-		
-		<Row Tag="TXT_KEY_SP_UI_BTN_EMERGENCYRESET_SHORT">
-			<Text>[COLOR_NEGATIVE_TEXT]重置[ENDCOLOR]</Text>
-		</Row>
-		<Row Tag="TXT_KEY_SP_UI_BTN_EMERGENCYRESET">
-			<Text>如果遊戲在AI的行動回合閃退，請讀檔在自己回合點擊此按鈕重置AI單位，以此來使遊戲正常運行！
-			[NEWLINE]如果遊戲在AI的行動回合卡住無法順利通過回合，請“快速保存”后重啟遊戲讀取此存檔！
-			[NEWLINE]PS：[COLOR_YELLOW]請不要嘗試在過回合的時候點擊此按鈕！如果此按鈕依然無法解決閃退情況，請及時聯繫管理員提交BUG以尋求解決辦法！[ENDCOLOR]</Text>
-		</Row>
-		
-		
-		
-		
-		
-		
 <!--Technologys-->
 		
 		<!--*******************Era Texts*******************-->
@@ -8315,9 +8281,15 @@
 		<Replace Tag="TXT_KEY_ERA_3">
 			<Text>啟蒙時代</Text>
 		</Replace>
+		<Replace Tag="TXT_KEY_ERA_3_SHORT">
+			<Text>啟蒙</Text>
+		</Replace>
 
 		<Replace Tag="TXT_KEY_ERA_5">
 			<Text>電氣時代</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_ERA_5_SHORT">
+			<Text>電氣</Text>
 		</Replace>
 		
 		<Replace Tag="TXT_KEY_ERA_6">
@@ -9019,7 +8991,9 @@
 		<Row Tag="TXT_KEY_CIV5_IMPROVEMENT_MAYA_ALTAR_HELP">
 			<Text>
 				只能建在叢林或森林。
-				[NEWLINE][NEWLINE]瑪雅祭壇每鄰近1座山脈+1[ICON_RESEARCH]科技值產出。
+				[NEWLINE][NEWLINE]不能同時在相鄰的地塊建造瑪雅祭壇。
+				[NEWLINE][NEWLINE]瑪雅祭壇每鄰近一處叢林+1[ICON_RESEARCH]科研產出。
+				[NEWLINE][NEWLINE]瑪雅祭壇上的每一位大先知提供+2[ICON_RESEARCH][ICON_PEACE][ICON_GOLDEN_AGE]產出。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_IMPROVEMENT_MAYA_ALTAR_TEXT">
@@ -10313,17 +10287,6 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SAM_INFANTRY_PEDIA">
 			<Text>步兵支援車就是伴隨坦克衝鋒時提供火力支援的裝甲車，自行輪式/履帶突擊炮衛坦克提供遠程直射火力支援，自行防空車為坦克提供近程低空域的防空能力。</Text>
-		</Row>
-		
-		<Row Tag="TXT_KEY_UNIT_SWEDISH_GUSTAV_RECOILESS_GUN">
-			<Text>卡爾古斯塔夫無後坐力炮</Text>
-			<Plurality>2</Plurality>
-		</Row>
-		<Row Tag="TXT_KEY_UNIT_SWEDISH_GUSTAV_RECOILESS_GUN_HEADING">
-			<Text>卡爾古斯塔夫炮</Text>
-		</Row>
-		<Row Tag="TXT_KEY_UNIT_SWEDISH_GUSTAV_RECOILESS_GUN_PEDIA">
-			<Text>卡爾•古斯塔夫（英語：Carl(-)Gustav，又稱M2CG）是一枝由瑞典薩博博福斯動力公司（原本是波佛斯反裝甲公司）生產、並且是較常見的單兵攜帶多用途無後座力炮，發射84 x 246 毫米炮彈。卡爾•古斯塔夫的第一枝原型是在1946年製造，雖然在該時代的類似武器已經在現在普遍消失，卡爾•古斯塔夫直到今天仍然被廣泛使用。</Text>
 		</Row>
 		
 		<Row Tag="TXT_KEY_UNIT_ATGM_VEHICLE">
@@ -12047,7 +12010,7 @@
 		<Row Tag="TXT_KEY_PROMOTION_INFANTRY_COMBAT_HELP">
 			<Text>
 			主力步兵單位，擅長進攻和防守任務。
-			[ICON_BULLET]面對[COLOR_POSITIVE_TEXT]城市[ENDCOLOR]+50%[ICON_STRENGTH]戰鬥力。
+			[NEWLINE][ICON_BULLET]面對[COLOR_POSITIVE_TEXT]城市[ENDCOLOR]+50%[ICON_STRENGTH]戰鬥力。
 			[NEWLINE][ICON_BULLET]防禦[COLOR_POSITIVE_TEXT]反騎兵/反坦克單位[ENDCOLOR]以及[COLOR_POSITIVE_TEXT]民兵單位[ENDCOLOR]時+25%[ICON_STRENGTH]戰鬥力。
 			</Text>
 		</Row>
@@ -12058,7 +12021,7 @@
 		<Row Tag="TXT_KEY_PROMOTION_GUNPOWDER_INFANTRY_COMBAT_HELP">
 			<Text>
 			主力步兵單位，擅長進攻和防守任務。
-			[ICON_BULLET]近戰開始之前進行一輪[COLOR_POSITIVE_TEXT]遠程攻擊[ENDCOLOR]。
+			[NEWLINE][ICON_BULLET]近戰開始之前進行一輪[COLOR_POSITIVE_TEXT]遠程攻擊[ENDCOLOR]。
 			[NEWLINE][ICON_BULLET]進攻[COLOR_POSITIVE_TEXT]城市[ENDCOLOR]+50%[ICON_STRENGTH]戰鬥力。
 			[NEWLINE][ICON_BULLET]防禦[COLOR_POSITIVE_TEXT]反騎兵/反坦克單位[ENDCOLOR]以及[COLOR_POSITIVE_TEXT]民兵單位[ENDCOLOR]時+25%[ICON_STRENGTH]戰鬥力。
 			</Text>
@@ -13864,7 +13827,10 @@
 			<Text>陸地商路</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_CSTRPM1111">
-			<Text>每條城邦商路使全國:</Text>
+			<Text>每條城邦商路使城市:</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_CSTRPMG">
+			<Text>每条城邦商路使全國:</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_GSBM4">
 			<Text>大科研究新科技時</Text>
@@ -14502,6 +14468,42 @@
 			</Text>
 		</Row>
 
+		<Row Tag="TXT_KEY_GAME_OPTION_HUMAN_ALL_UC">
+			<Text>
+        SP-開啟 [COLOR_YELLOW]人類玩家全UC[ENDCOLOR]
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_HUMAN_ALL_UC_HELP">
+			<Text>
+			開啟後，允許人類玩家建造或訓練所有文明的特殊建築、改良設施和單位。
+			[NEWLINE][COLOR_YELLOW]註[ENDCOLOR]：部分建築特效生效的前提是該文明在場，如伊斯蘭大學和諾曼營地等，若文明不在場，玩家只能取得其基礎產出。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_GAME_OPTION_CIV_CONQUER">
+			<Text>
+        SP-開啟 [COLOR_YELLOW]文明征服[ENDCOLOR]
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_GAME_OPTION_CIV_CONQUER_HELP">
+			<Text>
+        開啟後，佔領文明的原始首都後，解鎖該文明的特殊建築、改良設施和單位。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_GAME_OPTION_PROJECT_CAPTURE">
+			<Text>
+			SP-開啟 [COLOR_YELLOW]精英工程獲取[ENDCOLOR]
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_GAME_OPTION_PROJECT_CAPTURE_HELP">
+			<Text>
+			開啟後允許玩家在攻占擁有精英工程的城市後在自己首都得到相同的精英工程（原擁有者不會失去工程）。
+			</Text>
+		</Row>
+
 		<Row Tag="TXT_KEY_GAME_OPTION_ABLE_GIFT_MILITIA">
 			<Text>
 				SP-開啟 [COLOR_YELLOW]贈送民兵單位[ENDCOLOR]
@@ -14700,12 +14702,6 @@
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_MOVELIFT_V_HELP">
 			<Text>具有該晉升的單位-5[ICON_MOVES]移動力剩余！</Text>
-		</Replace>
-		<Replace Tag="TXT_KEY_PROMOTION_GROUP_BUILD">
-			<Text>集群建造標記</Text>
-		</Replace>
-		<Replace Tag="TXT_KEY_PROMOTION_GROUP_BUILD_HELP">
-			<Text>該單位正在集群建造設施！</Text>
 		</Replace>
 		
 		<!-- UI - Super Group Manager -->
@@ -14947,8 +14943,8 @@
 			[NEWLINE]偉人所建設施可為周圍改良設施提供對應[ICON_RESEARCH][ICON_PRODUCTION][ICON_GOLD][ICON_PEACE]產出。
 			[NEWLINE]每處偉人設施提供以下額外效果：
 			[NEWLINE][ICON_BULLET]學院可在消耗大科學家獲取科技的時候額外+5%[ICON_RESEARCH]科研產出。
-			[NEWLINE][ICON_BULLET]製造中心可為所在城市建造奇觀時額外+10%[ICON_PRODUCTION]產能積累。
-			[NEWLINE][ICON_BULLET]海關提供額外+15[ICON_RES_CONSUMER]商品。
+			[NEWLINE][ICON_BULLET]製造中心提供額外+10[ICON_RES_MANPOWER]人力，所在城市建造奇觀時額外+10%[ICON_PRODUCTION]產能積累。
+			[NEWLINE][ICON_BULLET]海關提供額外+20[ICON_RES_CONSUMER]商品。
 			[NEWLINE][ICON_BULLET]聖地可為停留的單位移除[COLOR_POSITIVE_TEXT]負面狀態[ENDCOLOR]並使周圍單位恢復5HP。
 			</Text>
 		</Replace>
@@ -15116,6 +15112,112 @@
 		</Row>
 		<Row Tag="TXT_KEY_DO_RESEARCH_AGREEMENT_WITH">
 			<Text>[COLOR_POSITIVE_TEXT]合作研究-{1_CivName:textkey}[ENDCOLOR]</Text>
-		</Row>	
+		</Row>
+		<Row Tag="TXT_KEY_GOODY_SCIENCE">
+			<Text>你發現了大量先進的工具！</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GOODY_CHOOSE_SCIENCE">
+			<Text>研究他們的工具，獲得[ICON_RESEARCH]科研值。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GOODY_PRODUCTION">
+			<Text>你發現了許多能夠使用的建造材料！</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GOODY_CHOOSE_PRODUCTION">
+			<Text>將遺跡中的建造材料運至最近城市，以獲得[ICON_PRODUCTION]產能值。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_BTNNOTE_SETTLER_INTO_CITY_DISABLE_1">
+			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]該單位建造時沒有消耗人口[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_BTNNOTE_SETTLER_INTO_CITY_DISABLE_2">
+			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]這個城市沒有足夠的公共衛生醫療設施[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BASE_TROOPS">
+			<Text>[ICON_RES_TROOPS]兵力基數:{1_Num}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BASE_CROPS">
+			<Text>[ICON_PROMOTION_ELITE]軍團基數:{1_Num}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BASE_ARMEE">
+			<Text>[ICON_PROMOTION_GROUP]集團軍基數:{1_Num}</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_TP_TITLE_SCIENCE_FROM_FRIENDS">
+			<Text>[NEWLINE][NEWLINE]來自盟友：</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_SCIENCE_FROM_FRIENDS">
+			<Text>[NEWLINE][ICON_BULLET]{1_CivName} {2_value}[ICON_RESEARCH]</Text>
+		</Row>
+		<Replace Tag="TXT_KEY_RESOURCE_TOOLTIP_IMPROVED_WORKED">
+			<Text>資源基礎產出:</Text>
+		</Replace>
+
+        <Row Tag="TXT_KEY_BUILDING_SWEDEN_NOBEL_PRIZE">
+            <Text>[ICON_RESEARCH][ICON_GREAT_PEOPLE][COLOR_CYAN]諾貝爾獎[ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="TXT_KEY_BUILDING_SWEDEN_NOBEL_PRIZE_HELP">
+            <Text>
+                [ICON_BULLET]只需26人口即可建造。
+                [NEWLINE][ICON_BULLET]瑞典或盟友誕生一位大科學家時，為雙方帶來一次性[ICON_RESEARCH]科研產出，數值相當於該大科學家當前強度的20%。
+            </Text>
+        </Row>
+		<Row Tag="TXT_KEY_YIELD_OVERFLOW">
+			<Text>[COLOR_POSITIVE_TEXT]{1_Num}{2_IconString} 溢出[ENDCOLOR]</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_EUPANEL_NO_CAPTURE_SP" >
+			<Text>[COLOR_CYAN]不可被俘[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_CHANGE_DAMAGEVALUE_SUPPORT_SP" >
+			<Text>[COLOR_CYAN]受到的最終傷害{1_Num}[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_RANGED_SUPPORT_SP" >
+			<Text>[COLOR_CYAN]額外遠程攻擊能力[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_NO_RS_PSH_SP" >
+			<Text>[COLOR_CYAN]無視資源懲罰[ENDCOLOR]</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_EUPANEL_PLAYER_ORIGINAL_CAPITAL_BONUS_SP" >
+			<Text>原始首都數量加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_PLAYER_GOLDENAGE_BONUS_SP" >
+			<Text>黃金時代加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_MOVES_LEFT_BONUS_SP" >
+			<Text>剩余移動力加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_MOVES_USED_BONUS_SP" >
+			<Text>已用移動力加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_PLAYER_GREATWORK_BONUS_SP" >
+			<Text>傑作數量加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_NUM_ENARBYENEMY_BONUS_SP" >
+			<Text>臨近敵軍數量加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_LEFT_HITPOINT_BONUS_SP" >
+			<Text>損失血量加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_PLAYER_WORLDWONDER_BONUS_SP" >
+			<Text>世界奇觀數量加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_PLAYER_SPY_BONUS_SP" >
+			<Text>間諜數量加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_ATTACK_BUFF_SPY_SP" >
+			<Text>間諜加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_UNIT_PROMOTION_NEAR_SP" >
+			<Text>臨近晉升加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNITCOMBAT_DAMAGE_MODIFIER_SP">
+			<Text>單位生命值</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_RESOURCE_MODIFIER">
+			<Text>額外資源加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_EXCESS_HAPINESS_MODIFIER">
+			<Text>額外快樂度加成</Text>
+		</Row>
 	</Language_zh_Hant_HK>
 </GameData>

@@ -12,7 +12,7 @@
 			<Text>[COLOR_YELLOW]Important Notes:[ENDCOLOR][NEWLINE]1. Check the saved file size. [NEWLINE]2. Check the Civilopedia before play (Hotkey [COLOR_POSITIVE_TEXT]F1[ENDCOLOR]). [NEWLINE]3. If always crash or saved files damaged, try Dx9.</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_VERSION">
-			<Text>[COLOR_YELLOW]Version 9.4[ENDCOLOR]</Text>
+			<Text>[COLOR_YELLOW]Version 9.5[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MOD_SETUP">
@@ -237,6 +237,9 @@
 			<Text>Land Trade Route </Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_CSTRPM1111">
+			<Text>Each Trade Route to City States Makes Cities: </Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_CSTRPMG">
 			<Text>Each Trade Route to City States Makes All Cities: </Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_GSBM4">
@@ -475,7 +478,12 @@
 				[NEWLINE]1/8 of the map length (at least 14 tiles, at most 18 tiles) - low corruption
 				[NEWLINE]1/5 of the map length(at least 26 tiles) - medium corruption
 				[NEWLINE]more than 1/3 of the map length (at least 36 tiles) - heavy corruption
-				[NEWLINE][NEWLINE]Corruption will cause the output of Production, Gold, Science lost in those cities by a certain percent.</Text>
+				[NEWLINE][NEWLINE]Corruption will cause the output of Production, Gold, Science lost in those cities by a certain percent.
+				[NEWLINE][NEWLINE]Moving Spies to your city reduces the corruption level of your city, as follows:
+				[NEWLINE]Level 1 and Level 2 Spies: The city corruption level is reduced by one level and at most reduce to LV 1.
+				[NEWLINE]Level 3 Spy: Completely eliminate city corruption levels.
+				[NEWLINE][NEWLINE][COLOR_YELLOW]Note[ENDCOLOR]: In the current version, corruption has been represented by the "corruption score", the past 1-tile map distance provides 100 corruption scores ("Administrative cost"), the corruption threshold is also the same as in the past (only increased by 100 times), the corruption score can be reduced in more ways now than in the past, you can see the corruption report/preview in the UI panel below City Banner.
+			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CONCEPT_CITIES_CORRUPTION_ADVISOR_QUESTION">
 			<Text>What is Corruption?</Text>
@@ -1066,19 +1074,6 @@
 			<Text>You have performed a Land Buyout recently, and may not do so again for another {1_Num} turns.</Text>
 		</Replace>
 
-
-<!-- ModOptionsTexts -->
-	<Row Tag="TXT_KEY_SP_UI_BTN_EMERGENCYRESET_SHORT">
-		<Text>[COLOR_NEGATIVE_TEXT]Reset[ENDCOLOR]</Text>
-	</Row>
-	<Row Tag="TXT_KEY_SP_UI_BTN_EMERGENCYRESET">
-		<Text>If the game freezes during AI turns, click this to do a force reset to make the game run again!
-		[NEWLINE]If the game is unable to pass the round in the AI action round, please "save it quickly" and restart the game to read this archive!
-		[NEWLINE]PS：[COLOR_YELLOW]Please do not try to click this button at the end of the round! If this button is still unable to solve the flashback situation, please contact the administrator in time to submit BUG to find a solution![ENDCOLOR]
-		</Text>
-	</Row>
-
-
 <!-- New CivilopediaScreen Text -->
 	<!--******** New Automation Texts ************************** -->
 		<Replace Tag="TXT_KEY_CURRENTLY_SELECTED_UNIT">
@@ -1525,8 +1520,8 @@
 		
 		<!-- New Cultural Influential Dialog-->
 		<Update>
-			<Where Tag="TXT_KEY_GENERIC_INFLUENTIAL_ON_AI_1"/>
-			<Set Text="Our people are now buying your blue jeans and listening to your pop music. I worry the rest of the world will also succumb to the influence of your culture."/>
+			<Where Tag="TXT_KEY_GENERIC_INFLUENTIAL_ON_AI_1" />
+			<Set Text="Our people are now buying your blue jeans and listening to your pop music. I worry the rest of the world will also succumb to the influence of your culture." />
 		</Update>
 		<Row Tag="TXT_KEY_CO_IMMIGRATION_COUNTER_HEADER">
 			<Text>[ICON_TEAM_4] / [ICON_TEAM_2]</Text>
@@ -1827,6 +1822,9 @@
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_CORPS_OR_ARMEE_TIP_3">
 			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]Add a same type Unit in this tile into Corps to become an Armee need MilitaryBase in this City[ENDCOLOR]</Text>
 		</Row>
+		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_ESTABLISH_CORPS_OR_ARMEE_TIP_4">
+			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]Unit has Promotions to be selected[ENDCOLOR]</Text>
+		</Row>
 		
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_FULLATTACK_ON_SHORT">
 			<Text>[COLOR_POSITIVE_TEXT]Full Attack Mode ON[ENDCOLOR] </Text>
@@ -2039,14 +2037,6 @@
 
 
 		<!--********************************************** New Trait&Policy Notification Texts ********************************************** -->
-
-		<Row Tag="TXT_KEY_SP_TRAIT_CULTURE_FROM_UNIT">
-			<Text>Banzai! You received {@1_num} [ICON_CULTURE] Culture from building a {@2_name}!</Text>
-		</Row>
-		<Row Tag="TXT_KEY_SP_POLICY_CULTURE_FROM_UNIT">
-			<Text>You received {@1_num} [ICON_CULTURE] Culture from building a {@2_name}!</Text>
-		</Row>
-
 		<Row Tag="TXT_KEY_SP_NOTIFICATION_TRAIT_OUTPUT_FROM_RAZING">
 			<Text>You received {@1_num} [ICON_GOLD] Gold, [ICON_CULTURE] Culture, [ICON_RESEARCH] Science and [ICON_PEACE] Faith from destroying a city!</Text>
 		</Row>
@@ -3061,7 +3051,7 @@
 
 		<Replace Tag="TXT_KEY_BUILDING_PAPER_MAKER_HELP">
 			<Text>Allows for movement of [ICON_PRODUCTION] Production via trade routes from this city. This build Won't becomes obsolete. 
-      [NEWLINE][NEWLINE] Each paper maker reduces unit, building, and project production costs nationwide by -2%, capped at -50%.
+			[NEWLINE][NEWLINE] Each paper maker reduces unit, building, and project production costs nationwide by -2%, capped at -30%.
 			[NEWLINE][NEWLINE]+2 [ICON_TOURISM] Tourism after discovering Internet.</Text>
 		</Replace>
 
@@ -3834,7 +3824,6 @@
 			<Set Text="+1 [ICON_HAPPINESS_1] Happiness for every Shrine, Temple and Religious Building purchased with [ICON_PEACE] Faith.[NEWLINE][NEWLINE]+4 [ICON_TOURISM] Tourism when Scientific Theory is discovered. " />
 		</Update>
 		<Update>
-			
 			<Where Tag="TXT_KEY_WONDER_CHICHEN_ITZA_HELP" />
 			<Set Text="Requires Liberty. 3 Free Workers appear near this city.
 			[NEWLINE]+1 [ICON_MOVES] Movement for all Civilian Units. +25% Tile Improvement construction speed. [NEWLINE][NEWLINE]+2 [ICON_TOURISM] Tourism when Archaeology is discovered." />
@@ -6000,14 +5989,19 @@
 			<Text>[ICON_RES_IRON] Steel Warehouse</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_IRON_PROVIDER_HELP">
-			<Text>+5 additional [ICON_RES_IRON] Iron.[NEWLINE][NEWLINE]Must be built in Small Cities.</Text>
+			<Text>
+			+5 additional [ICON_RES_IRON] Iron.
+			[NEWLINE][ICON_BULLET]+1 [ICON_PRODUCTION] Production from each source of [ICON_RES_IRON] Iron worked by this City. 
+			[NEWLINE][ICON_BULLET]City must have at least an improvement of [ICON_RES_IRON] Iron.
+			[NEWLINE][ICON_BULLET]Must be built in Small Cities.
+			</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_BUILDING_RECYCLING_CENTER">
 			<Text>[ICON_RES_ALUMINUM] Recycling Center</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_RECYCLING_CENTER_HELP">
-			<Text>+5 additional [ICON_RES_ALUMINUM] Aluminum.[NEWLINE][NEWLINE]Must be built in Small Cities.</Text>
+			<Text>+3 additional [ICON_RES_ALUMINUM] Aluminum.[NEWLINE][NEWLINE]Must be built in Small Cities.</Text>
 		</Replace>
 
 
@@ -6024,7 +6018,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_COAL_COMPANY_HELP</Tag>
-			<Text>+5 additional [ICON_RES_COAL] Coal. [NEWLINE][NEWLINE]Must be built in Small Cities.</Text>
+			<Text>+3 additional [ICON_RES_COAL] Coal. [NEWLINE][NEWLINE]Must be built in Small Cities.</Text>
 		</Row>
 
 
@@ -7102,15 +7096,6 @@
 			Troop level low: Initially 12 troops provided for players. Cities with city size higher than "town" provide 2 extra troops per city size they acquire. [NEWLINE]
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_SP_TROOPS_USED">
-			<Text>Troops Used</Text>
-		</Row>
-		<Row Tag="TXT_KEY_SP_TROOPS_USED_HELP">
-			<Text>Sign the count of military units.</Text>
-		</Row>
-		<Row Tag="TXT_KEY_SP_TROOPS_DEBUFF">
-			<Text>Troops - Overrun Debuff</Text>
-		</Row>
 
 
 		<Row Tag="TXT_KEY_SP_RESOURCE_NATRUALGAS">
@@ -7258,7 +7243,7 @@
 			<Text>
 				[COLOR_POSITIVE_TEXT]Monarchy[ENDCOLOR]
 				[NEWLINE][ICON_BULLET]-50% extra [ICON_HAPPINESS_4] Unhappiness due to city's Population Size.
-				[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] Gold for every [ICON_CITIZEN] Citizens and +1 [ICON_FOOD] Food, [ICON_CULTURE] Culture, [ICON_PRODUCTION] Production, [ICON_RESEARCH] Science for every 2 [ICON_CITIZEN] Citizens in the [ICON_CAPITAL] Capital.
+				[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] Gold for every [ICON_CITIZEN] Citizens and +1 [ICON_FOOD] Food, [ICON_CULTURE] Culture, [ICON_PRODUCTION] Production, [ICON_RESEARCH] Science for every 3 [ICON_CITIZEN] Citizens in the [ICON_CAPITAL] Capital.
 			</Text>
 		</Replace>
 
@@ -8704,24 +8689,6 @@
 		<Row Tag="TXT_KEY_PROJECT_PARTICLE_CANNON_PEDIA">
 			<Text>A particle-beam weapon uses a high-energy beam of atomic or subatomic particles to damage the target by disrupting its atomic and/or molecular structure. A particle-beam weapon is a type of directed-energy weapon, which directs energy in a particular and focused direction using particles with negligible mass. </Text>
 		</Row>
-		
-
-		<!--<Row Tag="TXT_KEY_PROJECT_ORBITAL_STRIKE">
-			<Text>Kinetic Bombardment System Project</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROJECT_ORBITAL_STRIKE_HELP">
-			<Text>Only the [COLOR_POSITIVE_TEXT]First[ENDCOLOR] civilization finishing this project is allowed to build the kinetic orbital strike unit: [COLOR_YIELD_GOLD]Kinetic Bombardment System[ENDCOLOR].
-			</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROJECT_ORBITAL_STRIKE_PEDIA">
-			<Text>A kinetic bombardment or a kinetic orbital strike is the hypothetical act of attacking a planetary surface with an inert projectile, where the destructive force comes from the kinetic energy of the projectile impacting at very high velocities. The concept is often encountered in science fiction and originated during the Cold War.</Text>
-		</Row>-->
-		
-		
-		
-		
-		
-		
 
 		<Row Tag="TXT_KEY_PROJECT_NAVAL_EXPLORATION">
 			<Text>Naval Exploration Project</Text>
@@ -8798,7 +8765,7 @@
 			<Text>+1 [ICON_PEACE] Faith and +1 [ICON_FOOD] Food for each Spices, Citrus, Banana and Cotton resource</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_GODDESS_HUNT">
-			<Text>+1 [ICON_FOOD] Food and +1 [ICON_PEACE] Faith from Camps, +1 [ICON_FOOD] Food from [ICON_RES_BISON], +1 [ICON_PRODUCTION] Production from [ICON_RES_DEER]</Text>
+			<Text>+1 [ICON_FOOD] Food and +1 [ICON_PEACE] Faith from Camps, +1 [ICON_CULTURE] Culture from [ICON_RES_BISON] and [ICON_RES_DEER]</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_GURUSHIP">
 			<Text>+2 [ICON_PEACE] Faith, +1 [ICON_CULTURE] Culture, +1 [ICON_PRODUCTION] Production and +1 [ICON_RESEARCH] Science if city has a Specialist</Text>
@@ -8851,7 +8818,7 @@
 			<Text>+2 [ICON_PEACE] Faith for every Granary, +1 [ICON_PEACE] Faith from [ICON_RES_WHEAT] Wheat</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_MONUMENT_GODS">
-			<Text>+2 [ICON_PEACE] Faith for every Monument, +1 [ICON_CULTURE] Culture in Capital City</Text>
+			<Text>+2 [ICON_PEACE] Faith for every Monument, +2 [ICON_CULTURE] Culture in Capital City</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_STONE_CIRCLES">
 			<Text>+2 [ICON_PEACE] Faith from Quarries and +2 [ICON_PEACE] Faith for every Stone Works, +1 [ICON_PRODUCTION] Production from each [ICON_RES_MARBLE] Marble</Text>
@@ -8884,7 +8851,7 @@
 			<Text>+2 [ICON_PEACE] Faith and +2 [ICON_CULTURE] Culture for every Gem and Pearl</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_GOD_KING">
-			<Text>Palace provides +3 [ICON_PEACE] Faith, +1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production, +1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production and +1 [ICON_CULTURE] Culture from each [ICON_CITYBANNER_CITY_LV1] City Hall [COLOR_NEGATIVE_TEXT](Lv1)[ENDCOLOR]</Text>
+			<Text>Palace provides +3 [ICON_PEACE] Faith, +1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production, +1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production and +1 [ICON_PEACE] Faith from each [ICON_CITYBANNER_CITY_LV1] City Hall [COLOR_NEGATIVE_TEXT](Lv1)[ENDCOLOR]</Text>
 		</Replace>
 		
 		<Replace Tag="TXT_KEY_BELIEF_PAPAL_PRIMACY">
@@ -8924,7 +8891,7 @@
 			<Text>Religious Colonization</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BELIEF_RELIGIOUS_COLONIZATION">
-			<Text>Use [ICON_PEACE] Faith to purchase [COLOR_POSITIVE_TEXT]Settler[ENDCOLOR] in Holy City, the cost will decrease after you adopt the policy Collective Rule</Text>
+			<Text>Use [ICON_PEACE] Faith to purchase [COLOR_POSITIVE_TEXT]Settler[ENDCOLOR] in Holy City, the cost will decrease after you adopt the policy Collective Rule, This Settler does not consume population and cannot join city</Text>
 		</Row>
 		<Row Tag="TXT_KEY_RELIGIOUS_SCIENCE_SHORT">
 			<Text>Religious Sciece</Text>
@@ -9003,7 +8970,7 @@
 			<Text>God of Commerce</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BELIEF_GOD_OF_COMMERCE">
-			<Text>+2 [ICON_GOLD] Gold, +2 [ICON_GOLDEN_AGE] Golden Age Point from [ICON_RES_IVORY] Ivory, [ICON_RES_TRUFFLES] Truffles and [ICON_RES_FUR] Fur.</Text>
+			<Text>+3 [ICON_GOLD] Gold, +3 [ICON_GOLDEN_AGE] Golden Age Point from [ICON_RES_IVORY] Ivory, [ICON_RES_TRUFFLES] Truffles and [ICON_RES_FUR] Fur.</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BELIEF_RIVER_CRAFTSMAN_SHORT">
 			<Text>Sudoku</Text>
@@ -9273,6 +9240,10 @@
 		<Replace Tag="TXT_KEY_ERA_5">
 			<Text>Electric Era</Text>
 		</Replace>
+		<Replace Tag="TXT_KEY_ERA_5_SHORT">
+			<Text>Electric</Text>
+		</Replace>
+
 		<Replace Tag="TXT_KEY_ERA_6">
 			<Text>World War Era</Text>
 		</Replace>
@@ -10070,7 +10041,9 @@
 		<Row Tag="TXT_KEY_CIV5_IMPROVEMENT_MAYA_ALTAR_HELP">
 			<Text>
 				Can only be built in Jungle or Forest.
-				[NEWLINE][NEWLINE] Each adjacent mountain will provides +1 [ICON_RESEARCH] Science output for the Altar.
+				[NEWLINE][NEWLINE]May not be constructed adjacent to another Altar.
+				[NEWLINE][NEWLINE]Each adjacent Jungle will provides +1 [ICON_RESEARCH] Science output for the Altar.
+				[NEWLINE][NEWLINE]Each Prophet in Altar provide +2 [ICON_RESEARCH][ICON_PEACE][ICON_GOLDEN_AGE] Output.
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_IMPROVEMENT_MAYA_ALTAR_TEXT">
@@ -10144,8 +10117,8 @@
 		</Replace>
 		<Replace Tag="TXT_KEY_TRAIT_ART_OF_WAR">
 			<Text>
-			[ICON_BULLET]During a [ICON_GOLDEN_AGE] Golden Age, China receive additional +20% [ICON_RESEARCH] Science and +20% [ICON_FOOD] Food nationwide.
-			[NEWLINE][ICON_BULLET]In the Golden Age, the [ICON_CITIZEN] population growth of all cities requires -20% food, the total [ICON_RESEARCH] Research expenditure -20%, eliminates the [ICON_RESEARCH] increase in Research expenditures from the number of cities.
+			[ICON_BULLET]All Land Units can earn points toward a [ICON_GOLDEN_AGE] Golden Age for each enemy killed (50% of its [ICON_STRENGTH] Combat Strength).
+			[NEWLINE][ICON_BULLET]In the Golden Age, the [ICON_CITIZEN] population growth of all cities requires -20% food, eliminates the [ICON_RESEARCH] increase in Research expenditures from the number of cities.
 			</Text>
 		</Replace>
 
@@ -10156,7 +10129,7 @@
 			<Text>
 			China has entered a new [ICON_GOLDEN_AGE][COLOR_POSITIVE_TEXT]prosperity[ENDCOLOR]! 
 			[NEWLINE][NEWLINE]All gold-producing plots have an additional +1[ICON_GOLD] gold production, +20% national [ICON_PRODUCTION] production capacity, and [ICON_CULTURE] culture. 
-			[NEWLINE]The [ICON_CITIZEN] population growth of all cities requires -20% food, total [ICON_RESEARCH] Research expenditure -20%, eliminates the increase in [ICON_RESEARCH] Research expenditure from the number of cities.
+			[NEWLINE]The [ICON_CITIZEN] population growth of all cities requires -20% food, eliminates the increase in [ICON_RESEARCH] Research expenditure from the number of cities.
 			</Text>
 		</Row>
 
@@ -10431,7 +10404,7 @@
 
 		<Replace Tag="TXT_KEY_TRAIT_DIPLOMACY_GREAT_PEOPLE">
 			<Text>
-				[ICON_BULLET]When declaring friendship, Sweden and their friend gain a +10% boost to [ICON_GREAT_PEOPLE] Great Person generation.
+				[ICON_BULLET]When declaring friendship, Sweden and their friend gain a +10% boost to [ICON_GREAT_PEOPLE] Great Person generation and +10% of the other's [ICON_RESEARCH] research.
 				[NEWLINE][ICON_BULLET]Every 2 [ICON_CITIZEN] Citizens in Small Cities (6+ Population) provide +1 [ICON_RESEARCH] Science Output. 
 			</Text>
 		</Replace>
@@ -10459,7 +10432,9 @@
 		<Replace Tag="TXT_KEY_TRAIT_SEVEN_CITIES">
 			<Text>
 				[ICON_BULLET]Receive [ICON_GOLD] Gold bonus for discovering a Natural Wonder (bonus enhanced if first to discover it) and tile yields from Natural Wonders are doubled. 
-				[NEWLINE][ICON_BULLET]+2 [ICON_GOLD] Gold and +2 [ICON_CULTURE] Culture output for each source of [ICON_RES_COW] Cattle and [ICON_RES_BISON] Bison.</Text>
+				[NEWLINE][ICON_BULLET]Natural Wonder Within 2 ring plots -50% corruption score of this City.
+				[NEWLINE][ICON_BULLET]+2 [ICON_GOLD] Gold and +2 [ICON_CULTURE] Culture output for each source of [ICON_RES_COW] Cattle and [ICON_RES_BISON] Bison.
+			</Text>
 		</Replace>
 		
 		<Replace Tag="TXT_KEY_TRAIT_GREAT_ANDEAN_ROAD">
@@ -12227,19 +12202,6 @@
 	</Row>
 
 
-
-		
-		<Row Tag="TXT_KEY_UNIT_SWEDISH_GUSTAV_RECOILESS_GUN">
-			<Text>Carl Gustav Recoilless Rifle</Text>
-			<Plurality>2</Plurality>
-		</Row>
-		<Row Tag="TXT_KEY_UNIT_SWEDISH_GUSTAV_RECOILESS_GUN_HEADING">
-			<Text>Carl Gustav Recoilless Rifle</Text>
-		</Row>
-		<Row Tag="TXT_KEY_UNIT_SWEDISH_GUSTAV_RECOILESS_GUN_PEDIA">
-			<Text>The Carl Gustaf (Swedish pronunciation: [ˈkʰɑːɭ ˈɡɵ̞stɑːv]; also known as, Gustaf Bazooka and M2CG) is an 84 mm man-portable reusable anti-tank recoilless rifle produced by Saab Bofors Dynamics (formerly Bofors Anti-Armour AB) in Sweden. Although most rounds fired by the Carl Gustav work on the classic recoilless principle, modern rounds sometimes add a post-firing booster that technically make it a rocket launcher.</Text>
-		</Row>
-		
 
 		<Row Tag="TXT_KEY_UNIT_ATGM_VEHICLE">
 			<Text>Anti-tank Missile</Text>
@@ -14931,9 +14893,9 @@
 		<Replace Tag="TXT_KEY_PROMOTION_EVASION_II" >
 			<Text>Evasion (50)</Text>
 		</Replace>
-		<!--<Row Tag="TXT_KEY_PROMOTION_EVASION_III" >
+		<Row Tag="TXT_KEY_PROMOTION_EVASION_III" >
 			<Text>Evasion (100)</Text>
-		</Row>-->
+		</Row>
 
 		<Replace Tag="TXT_KEY_PROMOTION_OCEAN_IMPASSABLE" >
 			<Text>Cannot enter Ocean Tiles [COLOR_NEGATIVE_TEXT]Outside[ENDCOLOR] YOUR Territory.</Text>
@@ -16525,6 +16487,41 @@
 			</Text>
 		</Row>
 
+		<Row Tag="TXT_KEY_GAME_OPTION_HUMAN_ALL_UC">
+			<Text>
+				SP - [COLOR_YELLOW] All human players are UC[ENDCOLOR]
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_HUMAN_ALL_UC_HELP">
+			<Text>
+				When turned on, human players are allowed to build or train special buildings, improvements, and units for all civilizations.
+				[NEWLINE][COLOR_YELLOW]Note[ENDCOLOR]: Some building special effects require the presence of the civilization, such as Islamic University and Norman Camp. If the civilization is not present, players can only obtain its basic output.
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_GAME_OPTION_CIV_CONQUER">
+			<Text>
+				SP - [COLOR_YELLOW]Civilization Conquest[ENDCOLOR]
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_CIV_CONQUER_HELP">
+			<Text>
+				Once activated, after capturing the original capital of a civilization, you will unlock the civilization's special buildings, improvements, and units.
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_GAME_OPTION_PROJECT_CAPTURE">
+			<Text>
+			SP - [COLOR_YELLOW]Elite Project Capture[ENDCOLOR]
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_GAME_OPTION_PROJECT_CAPTURE_HELP">
+			<Text>
+			Once activated, allows the player to get a same Elite project in their own capital after capturing the city with the Elite Project (the original owner will not lose the project).
+			</Text>
+		</Row>
+
 		<Row Tag="TXT_KEY_GAME_OPTION_ABLE_GIFT_MILITIA">
 			<Text>
 				SP - [COLOR_YELLOW]Enable giving militia units [ENDCOLOR]
@@ -16724,12 +16721,7 @@
 		<Replace Tag="TXT_KEY_PROMOTION_MOVELIFT_V_HELP">
 			<Text>Unit with this Promotion will -5 [ICON_MOVES] Move Lift!</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_PROMOTION_GROUP_BUILD">
-			<Text>Group Build Mark</Text>
-		</Replace>
-		<Replace Tag="TXT_KEY_PROMOTION_GROUP_BUILD_HELP">
-			<Text>Unit with this Promotion is building Improvement in Group!</Text>
-		</Replace>
+		
 		<!-- UI - Super Group Manager -->
 		<Replace Tag="TXT_KEY_AIRCRAFT_ON_TT">
 			<Text>Add this Unit into formation.</Text>
@@ -16967,8 +16959,8 @@
 			[NEWLINE]Great Tile Improvements will provide extra [ICON_RESEARCH][ICON_PRODUCTION][ICON_GOLD][ICON_PEACE] Output for surrounding Improvements.
 			[NEWLINE]Each Great Tile Improvements will also provide the following additional effects:
 			[NEWLINE][ICON_BULLET]Academy can make Great Scientists provide 5% more [ICON_RESEARCH] Science when used to discover new technology.
-			[NEWLINE][ICON_BULLET]Manufactory can provide +10% [ICON_PRODUCTION] Production when constructing Wonders in located city.
-			[NEWLINE][ICON_BULLET]Costoms House provide +15 additional [ICON_RES_CONSUMER] Consumer.
+			[NEWLINE][ICON_BULLET]Manufactory provide +10 additional [ICON_RES_MANPOWER] Manpower, +10% [ICON_PRODUCTION] Production when constructing Wonders in located city.
+			[NEWLINE][ICON_BULLET]Costoms House provide +20 additional [ICON_RES_CONSUMER] Consumer.
 			[NEWLINE][ICON_BULLET]Holy Site will remove all [COLOR_POSITIVE_TEXT]Debuff Conditions[ENDCOLOR] and Heal +5 HP for units in adjacent tiles or in the same tile per turn.
 			</Text>
 		</Replace>
@@ -17122,6 +17114,112 @@
 		</Row>
 		<Row Tag="TXT_KEY_DO_RESEARCH_AGREEMENT_WITH">
 			<Text>[COLOR_POSITIVE_TEXT]Research Agreement - {1_CivName:textkey}[ENDCOLOR]</Text>
-		</Row>	
+		</Row>
+		<Row Tag="TXT_KEY_GOODY_SCIENCE">
+			<Text>You find a lot of advanced tools! Get {1_Num} [ICON_RESEARCH] Science!</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GOODY_CHOOSE_SCIENCE">
+			<Text>Study their tools to get [ICON_RESEARCH] Science.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GOODY_PRODUCTION">
+			<Text>You found a lot materials that you can use!</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GOODY_CHOOSE_PRODUCTION">
+			<Text>Transported Building materials from the GoodyHut to the nearest city and Get [ICON_PRODUCTION] Production.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_BTNNOTE_SETTLER_INTO_CITY_DISABLE_1">
+			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]This unit was built without population consumption[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_BTNNOTE_SETTLER_INTO_CITY_DISABLE_2">
+			<Text>[NEWLINE][COLOR_NEGATIVE_TEXT]Not enough Public Health and Sanitary Service Buildings in this city[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BASE_TROOPS">
+			<Text>[ICON_RES_TROOPS]Troops Base:{1_Num}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BASE_CROPS">
+			<Text>[ICON_PROMOTION_ELITE]Crops Base:{1_Num}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BASE_ARMEE">
+			<Text>[ICON_PROMOTION_GROUP]Armee Base:{1_Num}</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_TP_TITLE_SCIENCE_FROM_FRIENDS">
+			<Text>[NEWLINE][NEWLINE]From Allies:</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_SCIENCE_FROM_FRIENDS">
+			<Text>[NEWLINE][ICON_BULLET]{1_CivName} {2_value}[ICON_RESEARCH]</Text>
+		</Row>
+		<Replace Tag="TXT_KEY_RESOURCE_TOOLTIP_IMPROVED_WORKED">
+			<Text>Base Yield from Resouce:</Text>
+		</Replace>
+
+        <Row Tag="TXT_KEY_BUILDING_SWEDEN_NOBEL_PRIZE">
+            <Text>[ICON_RESEARCH][ICON_GREAT_PEOPLE][COLOR_CYAN]Nobel Prize[ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="TXT_KEY_BUILDING_SWEDEN_NOBEL_PRIZE_HELP">
+            <Text>
+                [ICON_BULLET] Requires only 26 people to build.
+                [NEWLINE][ICON_BULLET] When a great scientist is born in Sweden or an ally, it will bring one-time [ICON_RESEARCH] scientific research output to both parties, equivalent to 20% of the great scientist's current strength.
+            </Text>
+        </Row>
+		<Row Tag="TXT_KEY_YIELD_OVERFLOW">
+			<Text>[COLOR_POSITIVE_TEXT]{1_Num}{2_IconString} Overflow[ENDCOLOR]</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_EUPANEL_NO_CAPTURE_SP">
+			<Text>[COLOR_CYAN]Cannot be Captured [ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_CHANGE_DAMAGEVALUE_SUPPORT_SP">
+			<Text>[COLOR_CYAN]Change Final Damage {1_Num}[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_RANGED_SUPPORT_SP">
+			<Text>[COLOR_CYAN]Additional Range Attack[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_NO_RS_PSH_SP">
+			<Text>[COLOR_CYAN]Ignore Resource Penalty[ENDCOLOR]</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_EUPANEL_PLAYER_ORIGINAL_CAPITAL_BONUS_SP">
+			<Text>Original Capitals Bonus</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_PLAYER_GOLDENAGE_BONUS_SP">
+			<Text>Golden Age Bonus</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_MOVES_LEFT_BONUS_SP">
+			<Text>Left Movements Bonus</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_MOVES_USED_BONUS_SP">
+			<Text>Movements Bonus</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_PLAYER_GREATWORK_BONUS_SP">
+			<Text>GreatWorks Bonus</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_NUM_ENARBYENEMY_BONUS_SP">
+			<Text>Num of nearby enemies Bonus</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_LEFT_HITPOINT_BONUS_SP">
+			<Text>Current Hit Points Bonus</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_PLAYER_WORLDWONDER_BONUS_SP">
+			<Text>Num of Wonders Bonus</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_PLAYER_SPY_BONUS_SP">
+			<Text>Num of Spies Bonus</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_ATTACK_BUFF_SPY_SP">
+			<Text>Spy Bonus</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_UNIT_PROMOTION_NEAR_SP">
+			<Text>Near promotions Bonus</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNITCOMBAT_DAMAGE_MODIFIER_SP">
+			<Text>Hit Points Modify</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_RESOURCE_MODIFIER">
+			<Text>Extra Resouces Bonus</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_EXCESS_HAPINESS_MODIFIER">
+			<Text>Extra Happiness Bonus</Text>
+		</Row>
 	</Language_en_US>
 </GameData>

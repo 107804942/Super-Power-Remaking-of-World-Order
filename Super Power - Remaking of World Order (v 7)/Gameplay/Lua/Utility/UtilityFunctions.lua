@@ -7,31 +7,21 @@
 -------------If two players are AT WAR?
 
 function PlayersAtWar(iPlayer, ePlayer)
-	local iTeam = Teams[iPlayer:GetTeam()];
-	local eTeamIndex = ePlayer:GetTeam();
-	if iTeam:IsAtWar(eTeamIndex) then
-		return true;
-	else
-		return false;
-	end
+	return iPlayer:IsAtWarWith(ePlayer:GetID())
 end
 
 ---------If the AI player is at war with Human?
 
 function PlayerAtWarWithHuman(player)
 	local CurrentPlayerTeam = Teams[player:GetTeam()]
-	local IsWarWithHuman = false;
-
+	
 	for playerID, HumanPlayer in pairs(Players) do
-		if IsWarWithHuman then
-			break;
-		end
 		if HumanPlayer:IsHuman() and CurrentPlayerTeam:IsAtWar(HumanPlayer:GetTeam()) then
 			print("Human is at war with this AI!")
-			IsWarWithHuman = true;
+			return true;
 		end
 	end
-	return IsWarWithHuman;
+	return false;
 end
 
 ---------If the AI has the chance to become the Boss?
@@ -60,8 +50,7 @@ function AICanBeBoss(player)
 	if Players[Game.GetActivePlayer()] ~= nil and Players[Game.GetActivePlayer()]:GetCapitalCity() ~= nil and player:GetCapitalCity() ~= nil then
 		local HumanCapital  = Players[Game.GetActivePlayer()]:GetCapitalCity();
 		local ThisAICapital = player:GetCapitalCity();
-		CapitalDistance     = Map.PlotDistance(HumanCapital:GetX(), HumanCapital:GetY(), ThisAICapital:GetX(),
-			ThisAICapital:GetY())
+		CapitalDistance     = Map.PlotDistance(HumanCapital:GetX(), HumanCapital:GetY(), ThisAICapital:GetX(), ThisAICapital:GetY())
 	end
 	if AICityCount >= 15 or AICityCount >= WorldCityTotal / MajorCivNum or AIPopCount >= WorldPopTotal / MajorCivNum or CapitalDistance >= WorldSizeLength / 3 then
 		print("This AI can become a Boss!")
@@ -73,6 +62,9 @@ end
 
 -----------------------------------------------Plot Functions------------------------------------------------------
 function PlotIsVisibleToHuman(plot) --------------------Is the plot can be seen by Human
+	if Players[Game.GetActivePlayer()]:IsObserver() then
+		return false
+	end
 	for playerID, HumanPlayer in pairs(Players) do
 		if HumanPlayer:IsHuman() then
 			local HumanPlayerTeamIndex = HumanPlayer:GetTeam()
@@ -1155,7 +1147,4 @@ function CarrierRestore(iPlayerID, iUnitID, iCargoUnit)
 end
 
 -- MOD End   by CaptainCWB
-function RemoveErrorPromotion(iPlayerID, iUnitID)
-	-- keep for compatibility
-end
 print("UtilityFunctions Check Pass!")

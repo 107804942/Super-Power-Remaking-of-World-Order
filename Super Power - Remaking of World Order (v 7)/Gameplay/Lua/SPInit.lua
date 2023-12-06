@@ -22,7 +22,6 @@ include("NewCityRule");
 include("NewPolicyEffects");
 include("SP8PolicyEffects");
 include("NewReligionRule.lua");
-include("NewPopulationRule");
 include("NewTraitEffects");
 include("NuclearWinter");
 include("NewBuildingRule");
@@ -34,4 +33,3 @@ include("UnitSpecialButtons_SP8");
 include("Policy_FreeBuildingClass");
 -- CSD
 include("NewCityStateDiplomaticRule");
-ContextPtr:LoadNewContext("ModOptions");

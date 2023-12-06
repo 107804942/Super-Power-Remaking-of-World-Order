@@ -295,6 +295,30 @@
 			<Where Name="INTERNATIONAL_IMMIGRATION_FOR_SP"/>
 			<Set Value="1"/>
 		</Update>
+		<Update>
+			<Where Name="IMPROVEMENTS_YIELD_CHANGE_PER_UNIT"/>
+			<Set Value="1"/>
+		</Update>
+		<Update>
+			<Where Name="EVENTS_UNIT_UPGRADES"/>
+			<Set Value="1"/>
+		</Update>
+		<Update>
+			<Where Name="EVENTS_UNIT_CREATED"/>
+			<Set Value="1"/>
+		</Update>
+		<Update>
+			<Where Name="EVENTS_NEW_ERA"/>
+			<Set Value="1"/>
+		</Update>
+		<Update>
+			<Where Name="EVENTS_PLAYER_SET_HAS_TECH"/>
+			<Set Value="1"/>
+		</Update>
+		<Update>
+			<Where Name="EVENTS_PLAYER_TURN"/>
+			<Set Value="1"/>
+		</Update>
 	</CustomModOptions>
 
 
@@ -403,6 +427,23 @@
 			<Type>GAMEOPTION_ABLE_GIFT_MILITIA</Type>
 			<Description>TXT_KEY_GAME_OPTION_ABLE_GIFT_MILITIA</Description>
 			<Help>TXT_KEY_GAME_OPTION_ABLE_GIFT_MILITIA_HELP</Help>
+		</Row>
+
+		<Row>
+			<Type>GAMEOPTION_CIV_CONQUER</Type>
+			<Description>TXT_KEY_GAME_OPTION_CIV_CONQUER</Description>
+			<Help>TXT_KEY_GAME_OPTION_CIV_CONQUER_HELP</Help>
+		</Row>
+		<Row>
+			<Type>GAMEOPTION_HUMAN_ALL_UC</Type>
+			<Description>TXT_KEY_GAME_OPTION_HUMAN_ALL_UC</Description>
+			<Help>TXT_KEY_GAME_OPTION_HUMAN_ALL_UC_HELP</Help>
+		</Row>
+
+		<Row>
+			<Type>GAMEOPTION_PROJECT_CAPTURE</Type>
+			<Description>TXT_KEY_GAME_OPTION_PROJECT_CAPTURE</Description>
+			<Help>TXT_KEY_GAME_OPTION_PROJECT_CAPTURE_HELP</Help>
 		</Row>
 
 		<Update>

@@ -409,6 +409,11 @@
 			<BuildingType>BUILDING_GRAIN_MILL</BuildingType>
 			<ResourceType>RESOURCE_SHEEP</ResourceType>
 		</Row>
+
+		<Row>
+			<BuildingType>BUILDING_IRON_PROVIDER</BuildingType>
+			<ResourceType>RESOURCE_IRON</ResourceType>
+		</Row>
 	</Building_LocalResourceOrs>
 
 	
@@ -969,11 +974,6 @@
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<Yield>2</Yield>
 		</Row>
-		<!--<Row>
-			<BuildingType>BUILDING_CARAVANSARY</BuildingType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>2</Yield>
-		</Row>-->
 		<Row><!-- new yield for national shrine and grand temple -->
 			<BuildingType>BUILDING_GRAND_TEMPLE</BuildingType>
 			<YieldType>YIELD_FAITH</YieldType>
@@ -1621,11 +1621,6 @@
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_RED_FORT</BuildingType>
-			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_HANSE</BuildingType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<Yield>1</Yield>
 		</Row>
@@ -2615,6 +2610,13 @@
 		</Row>
 
 		<Row>
+			<BuildingType>BUILDING_IRON_PROVIDER</BuildingType>
+			<ResourceType>RESOURCE_IRON</ResourceType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+
+		<Row>
 			<BuildingType>BUILDING_MAUSOLEUM_HALICARNASSUS</BuildingType>
 			<ResourceType>RESOURCE_MARBLE</ResourceType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
@@ -3221,43 +3223,6 @@
 			<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<Yield>2</Yield>
-		</Row>
-		
-		<Row>
-			<BuildingType>BUILDING_BELIEF_TO_GLORY_OF_GOD</BuildingType>
-			<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
-			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_BELIEF_TO_GLORY_OF_GOD</BuildingType>
-			<SpecialistType>SPECIALIST_WRITER</SpecialistType>
-			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_BELIEF_TO_GLORY_OF_GOD</BuildingType>
-			<SpecialistType>SPECIALIST_MUSICIAN</SpecialistType>
-			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_BELIEF_TO_GLORY_OF_GOD</BuildingType>
-			<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
-			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_BELIEF_TO_GLORY_OF_GOD</BuildingType>
-			<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
-			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_BELIEF_TO_GLORY_OF_GOD</BuildingType>
-			<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
-			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>1</Yield>
 		</Row>
 	</Building_SpecialistYieldChanges>
 
@@ -5043,6 +5008,12 @@
 			<Flavor>10</Flavor>
 		</Row>
 		<Row>
+			<BuildingType>BUILDING_MARKET</BuildingType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>120</Flavor>
+		</Row>
+
+		<Row>
 			<BuildingType>BUILDING_MOROCCO_MARKET</BuildingType>
 			<FlavorType>FLAVOR_GOLD</FlavorType>
 			<Flavor>45</Flavor>
@@ -5061,6 +5032,11 @@
 			<BuildingType>BUILDING_MOROCCO_MARKET</BuildingType>
 			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
 			<Flavor>10</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_MOROCCO_MARKET</BuildingType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>120</Flavor>
 		</Row>
 
 		<Row>
@@ -5083,22 +5059,10 @@
 			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
 			<Flavor>10</Flavor>
 		</Row>
-		
-		
 		<Row>
-			<BuildingType>BUILDING_BAZAAR</BuildingType>
-			<FlavorType>FLAVOR_GOLD</FlavorType>
-			<Flavor>25</Flavor>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_BAZAAR</BuildingType>
-			<FlavorType>FLAVOR_I_TRADE_ORIGIN</FlavorType>
-			<Flavor>25</Flavor>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_BAZAAR</BuildingType>
-			<FlavorType>FLAVOR_I_TRADE_DESTINATION</FlavorType>
-			<Flavor>25</Flavor>
+			<BuildingType>BUILDING_SONGHAI_MARKET</BuildingType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>120</Flavor>
 		</Row>
 		
 		<Row>
@@ -6624,22 +6588,27 @@
 		<Row>
 			<BuildingType>BUILDING_CARAVANSARY</BuildingType>
 			<FlavorType>FLAVOR_GOLD</FlavorType>
-			<Flavor>10</Flavor>
+			<Flavor>20</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_CARAVANSARY</BuildingType>
 			<FlavorType>FLAVOR_I_LAND_TRADE_ROUTE</FlavorType>
-			<Flavor>10</Flavor>
+			<Flavor>20</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_CARAVANSARY</BuildingType>
 			<FlavorType>FLAVOR_I_TRADE_ORIGIN</FlavorType>
-			<Flavor>10</Flavor>
+			<Flavor>20</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_CARAVANSARY</BuildingType>
 			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
 			<Flavor>20</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CARAVANSARY</BuildingType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>60</Flavor>
 		</Row>
 
 		<Row>
@@ -6656,6 +6625,32 @@
 			<BuildingType>BUILDING_VENICE_FONDACO</BuildingType>
 			<FlavorType>FLAVOR_I_TRADE_ORIGIN</FlavorType>
 			<Flavor>20</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_VENICE_FONDACO</BuildingType>
+			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<Flavor>200</Flavor>
+		</Row>
+
+		<Row>
+			<BuildingType>BUILDING_BAZAAR</BuildingType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>25</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_BAZAAR</BuildingType>
+			<FlavorType>FLAVOR_I_TRADE_ORIGIN</FlavorType>
+			<Flavor>25</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_BAZAAR</BuildingType>
+			<FlavorType>FLAVOR_I_TRADE_DESTINATION</FlavorType>
+			<Flavor>25</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_BAZAAR</BuildingType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>60</Flavor>
 		</Row>
 
 
@@ -6833,7 +6828,7 @@
 		<Row>
 			<BuildingType>BUILDING_GARMENT_WORKSHOP</BuildingType>
 			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-			<Flavor>15</Flavor>
+			<Flavor>60</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_FOOD_MARKET</BuildingType>
@@ -6896,12 +6891,6 @@
 			<BuildingType>BUILDING_OIL_REFINERY</BuildingType>
 			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
 			<Flavor>200</Flavor>
-		</Row>
-
-		<Row>
-			<BuildingType>BUILDING_COAL_COMPANY</BuildingType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-			<Flavor>15</Flavor>
 		</Row>
 
 		<Row>
@@ -7072,6 +7061,11 @@
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_YANGTZE</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>150</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_YANGTZE</BuildingType>
 			<FlavorType>FLAVOR_WONDER</FlavorType>
 			<Flavor>50</Flavor>
 		</Row>
@@ -7225,11 +7219,27 @@
 			<Flavor>250</Flavor>
 		</Row>
 
-		<!--<Row>
+		<Row>
 			<BuildingType>BUILDING_NATIONAL_LIBRARY</BuildingType>
-			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<FlavorType>FLAVOR_CULTURE</FlavorType>
 			<Flavor>250</Flavor>
-		</Row>-->
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_IRONWORKS</BuildingType>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>200</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_INTELLIGENCE_AGENCY</BuildingType>
+			<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+			<Flavor>300</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NATIONAL_EPIC</BuildingType>
+			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
+			<Flavor>150</Flavor>
+		</Row>
+
 		<Row>
 			<BuildingType>BUILDING_HARVARD</BuildingType>
 			<FlavorType>FLAVOR_SCIENCE</FlavorType>
@@ -7309,6 +7319,11 @@
 		<Row>
 			<BuildingType>BUILDING_HOOVER_DAM</BuildingType>
 			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>50</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_HOOVER_DAM</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
 			<Flavor>50</Flavor>
 		</Row>
 		<Row>

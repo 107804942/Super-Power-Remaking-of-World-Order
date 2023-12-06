@@ -5,7 +5,7 @@ include("UtilityFunctions.lua");
 include("PlotIterators.lua");
 -------------------------------------------------------------------------New Trait Effects-----------------------------------------------------------------------
 if Game.GetGameSpeedType() == 3 then
-	Events.SerialEventUnitCreated.Add(
+	GameEvents.UnitCreated.Add(
 		function(iPlayerID, iUnitID)
 			local pPlayer = Players[iPlayerID]
 			if pPlayer == nil then return end
@@ -48,62 +48,6 @@ Events.SerialEventGameMessagePopup.Add(OnPopupMessageCA);
 
 
 if Game.IsCivEverActive(GameInfoTypes.CIVILIZATION_JAPAN) then
-	function JapanCultureUnit(iPlayer, iCity, iUnit, bGold, bFaith) -- Japan can gain Culture from building units
-		local pPlayer = Players[iPlayer];
-		if pPlayer == nil then return end
-		;
-		local pUnit = pPlayer:GetUnitByID(iUnit);
-		if pUnit == nil then return end
-		;
-
-		---------Brazil Minas Geraes add Golden Age Points
-		if pUnit:GetUnitType() == GameInfoTypes.UNIT_BRAZILIAN_MINAS_GERAES then
-			pPlayer:ChangeGoldenAgeProgressMeter(280);
-			print("Brazil Minas Geraes created! Golden Age Progress Changed!");
-		end
-
-		if GameInfo.Leader_Traits { LeaderType = GameInfo.Leaders[pPlayer:GetLeaderType()].Type, TraitType =
-			"TRAIT_FIGHT_WELL_DAMAGED" } ()
-			and (GameInfo.Traits["TRAIT_FIGHT_WELL_DAMAGED"].PrereqPolicy == nil or (GameInfo.Traits["TRAIT_FIGHT_WELL_DAMAGED"].PrereqPolicy
-				and pPlayer:HasPolicy(GameInfoTypes[GameInfo.Traits["TRAIT_FIGHT_WELL_DAMAGED"].PrereqPolicy])))
-			and (pUnit:GetBaseCombatStrength() > 0 or pUnit:GetBaseRangedCombatStrength() > 0)
-		then
-			local currentCulture = pPlayer:GetJONSCulture();
-			local BaseCulture = math.max(pUnit:GetBaseCombatStrength(), pUnit:GetBaseRangedCombatStrength());
-			local bonusCulture = math.ceil(BaseCulture * 1);
-
-			-- Give the culture
-			pPlayer:SetJONSCulture(currentCulture + bonusCulture);
-
-			-- Notification
-			if pPlayer:IsHuman() then
-				local text = Locale.ConvertTextKey("TXT_KEY_SP_TRAIT_CULTURE_FROM_UNIT", tostring(bonusCulture),
-					pUnit:GetName());
-				Events.GameplayAlertMessage(text);
-			end
-		end
-
-		-- Get Culture from Policy - Coastal Adminstration
-		if pPlayer:HasPolicy(GameInfoTypes["POLICY_NAVIGATION_SCHOOL"]) and pUnit:GetDomainType() == DomainTypes.DOMAIN_SEA and not pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_OCEAN_IMPASSABLE"]) then
-			local currentCulture = pPlayer:GetJONSCulture();
-			local BaseCulture = math.max(pUnit:GetBaseCombatStrength(), pUnit:GetBaseRangedCombatStrength());
-			local bonusCulture = math.ceil(BaseCulture * 1);
-
-			-- Give the culture
-			pPlayer:SetJONSCulture(currentCulture + bonusCulture);
-
-			-- Notification
-			if pPlayer:IsHuman() then
-				local text = Locale.ConvertTextKey("TXT_KEY_SP_POLICY_CULTURE_FROM_UNIT", tostring(bonusCulture),
-					pUnit:GetName());
-				Events.GameplayAlertMessage(text);
-			end
-		end
-	end
-
-	GameEvents.CityTrained.Add(JapanCultureUnit)
-
-
 	function JapanReligionEnhancedUA(iPlayer, eReligion, iBelief1, iBelief2)
 		-- Add Random Pantheon
 		if Game.IsOption(GameOptionTypes.GAMEOPTION_NO_RELIGION) or Players[iPlayer] == nil or not Players[iPlayer]:HasCreatedReligion() then
@@ -200,22 +144,21 @@ if Game.IsCivEverActive(GameInfoTypes.CIVILIZATION_HUNS) then
 	Events.SerialEventCityDestroyed.Add(HunDestroyCity)
 end
 
-----Reddit to avoid triggering when getting city peacefully---By HMS
+----Reddit to avoid triggering when getting city peacefully
 if Game.IsCivEverActive(GameInfoTypes.CIVILIZATION_ASSYRIA) then
-	function AssyriaCityCapture(oldPlayerID, bIsCapital, iX, iY, newPlayerID, bConquest, iGreatWorksPresent,
-								iGreatWorksXferred) -- Assyria gain population after capturing cities
-		print("conquested")
+	-- Assyria gain population after capturing cities
+	function AssyriaCityCapture(oldPlayerID, bIsCapital, iX, iY, newPlayerID, iOldPopulation, bConquest, iGreatWorksPresent, iGreatWorksXferred)
+		if not bConquest then
+			print("trading city is not availiable for assyria'ua")
+			return
+		end
+		
 		local NewPlayer = Players[newPlayerID]
 		local pPlot = Map.GetPlot(iX, iY)
 		local pCity = pPlot:GetPlotCity()
 		local OldPlayer = Players[oldPlayerID]
 		if NewPlayer == nil or OldPlayer == nil then
 			print("No players")
-			return
-		end
-
-		if not PlayersAtWar(NewPlayer, OldPlayer) then
-			print("trading city is not availiable for assyria'ua")
 			return
 		end
 
@@ -245,8 +188,7 @@ end
 -- Austria UA effects
 -- TODO(catgrep): will implement in DLL in the future
 if Game.IsCivEverActive(GameInfoTypes.CIVILIZATION_AUSTRIA) then
-	function AustriaAnnexCityState(oldPlayerID, bIsCapital, iX, iY, newPlayerID, bConquest, iGreatWorksPresent,
-								   iGreatWorksXferred)
+	function AustriaAnnexCityState(oldPlayerID, bIsCapital, iX, iY, newPlayerID, iOldPopulation, bConquest, iGreatWorksPresent, iGreatWorksXferred)
 		local NewPlayer = Players[newPlayerID];
 		local pPlot = Map.GetPlot(iX, iY);
 		local pCity = pPlot:GetPlotCity();
@@ -266,14 +208,10 @@ if Game.IsCivEverActive(GameInfoTypes.CIVILIZATION_AUSTRIA) then
 end
 
 if Game.IsCivEverActive(GameInfoTypes.CIVILIZATION_NETHERLANDS) then
-	function SPTraitsTech(iTeam, eTech, bAdopted)
-		local Team = Teams[iTeam]
-		if Team == nil then
-			return
-		end
-
+	function SPTraitsTech(ePlayer, eTech, bAdopted)
+		
 		-- Nederland Set Buildings
-		local player = Players[Team:GetLeaderID()];
+		local player = Players[ePlayer];
 		if player == nil or player:IsMinorCiv() or player:IsBarbarian() then
 			return
 		end
@@ -304,7 +242,7 @@ if Game.IsCivEverActive(GameInfoTypes.CIVILIZATION_NETHERLANDS) then
 		end
 	end
 
-	GameEvents.TeamSetHasTech.Add(SPTraitsTech)
+	GameEvents.PlayerSetHasTech.Add(SPTraitsTech)
 end
 
 if Game.IsCivEverActive(GameInfoTypes.CIVILIZATION_RUSSIA) then
@@ -323,20 +261,6 @@ if Game.IsCivEverActive(GameInfoTypes.CIVILIZATION_RUSSIA) then
 			local hex = ToHexFromGrid(Vector2(iPlotX, iPlotY));
 			Events.AddPopupTextEvent(HexToWorld(hex),
 				Locale.ConvertTextKey("[COLOR_BLUE]+{1_Num}[ICON_RESEARCH][ENDCOLOR]", iBonus));
-		end
-	end)
-
-	GameEvents.TeamSetHasTech.Add(function(iTeam, eTech, bAdopted)
-		if not (bAdopted and eTech == GameInfoTypes.TECH_INDUSTRIALIZATION) then
-			return;
-		end
-
-		for playerID, pPlayer in pairs(Players) do
-			if pPlayer:GetTeam() == iTeam and pPlayer:GetCivilizationType() == GameInfoTypes.CIVILIZATION_RUSSIA then
-				local capital = pPlayer:GetCapitalCity();
-				capital:SetNumRealBuilding(GameInfoTypes.BUILDING_TB_STRATEGIC_RICHES_IDEOLOGY, 1);
-				print("Russia: Strategic Riches ideology building added to capital");
-			end
 		end
 	end)
 end
