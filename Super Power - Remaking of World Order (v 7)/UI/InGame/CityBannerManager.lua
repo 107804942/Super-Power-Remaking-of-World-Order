@@ -707,7 +707,7 @@ function RefreshCityBanner(cityBanner, iActiveTeam, iActivePlayer)
 					controls.CityBannerLeftBackground:SetToolTipString(tooltipString)
 				elseif city:IsProductionProject() then
 					local cityProductionProject = city:GetProductionProject()
-					local tooltipString = GetHelpTextForProject(cityProductionProject)
+					local tooltipString = GetHelpTextForProject(cityProductionProject, true, city)
 					controls.CityBannerLeftBackground:SetToolTipString(tooltipString)
 				else
 					if cityProductionName == "TXT_KEY_PRODUCTION_NO_PRODUCTION" then
@@ -1405,7 +1405,7 @@ function OnBannerClick(x, y)
 					Data2 = -1,
 					Data3 = -1,
 					Option1 = false,
-					Option2 = false,
+					Option2 = false;
 				}
 				Events.SerialEventGameMessagePopup(popupInfo)
 			else

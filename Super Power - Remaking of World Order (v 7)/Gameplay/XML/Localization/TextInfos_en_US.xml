@@ -2917,11 +2917,14 @@
 		<Row>
 			<Tag>TXT_KEY_BUILDING_METAL_FACTORY_HELP</Tag>
 			<Text>
-				+5 [ICON_RES_MANPOWER] Manpower.
-				[NEWLINE][NEWLINE]+2 [ICON_PRODUCTION] Production from each source of [ICON_RES_IRON] Iron, [ICON_RES_COPPER] Copper, [ICON_RES_COAL] Coal, [ICON_RES_ALUMINUM] Aluminum and [ICON_RES_URANIUM] Uranium.
-				[NEWLINE][NEWLINE]+15% [ICON_PRODUCTION] Production when building Military Units.
-				[NEWLINE][NEWLINE]City must have an improved source of at least one of these resources nearby.
-				[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]Pollution[ENDCOLOR] will cause -5% [ICON_FOOD] Food Growth.[NEWLINE][NEWLINE]Requires 1 [ICON_RES_ELECTRICITY] Electricity.</Text>
+				[ICON_BULLET]+5 [ICON_RES_MANPOWER] Manpower.
+				[NEWLINE][ICON_BULLET]+1 [ICON_PRODUCTION] Production from each source of [ICON_RES_IRON] Iron, [ICON_RES_COPPER] Copper, [ICON_RES_COAL] Coal, [ICON_RES_ALUMINUM] Aluminum and [ICON_RES_URANIUM] Uranium.
+				[NEWLINE][ICON_BULLET]+1 [ICON_PRODUCTION] Production from each Mine.
+				[NEWLINE][ICON_BULLET]+15% [ICON_PRODUCTION] Production when building Military Units.
+				[NEWLINE][ICON_BULLET]City must have an improved source of at least one of these resources nearby.
+				[NEWLINE][ICON_BULLET][COLOR_NEGATIVE_TEXT]Pollution[ENDCOLOR] will cause -5% [ICON_FOOD] Food Growth.
+				[NEWLINE][ICON_BULLET]Requires 1 [ICON_RES_ELECTRICITY] Electricity.
+			</Text>
 		</Row>
 
 		
@@ -3135,7 +3138,10 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_INCA_QURIKANCHA_HELP</Tag>
-			<Text>Qurikancha can be built without nearby mountains.</Text>
+			<Text>
+				[ICON_BULLET]Qurikancha can be built without nearby mountains.
+				[NEWLINE][ICON_BULLET]Add 2 Scientist Slots in City.
+			</Text>
 		</Row>
 		
 
@@ -3151,7 +3157,9 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_SWEDISH_LABORATORY_SERVICES_HELP</Tag>
-			<Text>+25% [ICON_GREAT_PEOPLE] Great People generation rate in the city. </Text>
+			<Text>
+				+33% [ICON_RESEARCH] Science output and +25% [ICON_GREAT_PEOPLE] Great People generation rate in the city. 
+			</Text>
 		</Row>
 
 
@@ -3187,7 +3195,10 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_VENICE_FONDACO_HELP</Tag>
-			<Text>Sea and land trade routes originating from this city have a 50% increase in range. [NEWLINE][NEWLINE]Serve as a [COLOR_YELLOW]Public Health and Sanitary Service Building[ENDCOLOR] for cities to continue its [ICON_CITIZEN] Population Growth.</Text>
+			<Text>
+				Sea and land trade routes originating from this city have a 50% increase in range. 
+				[NEWLINE][ICON_BULLET]Serve as a [COLOR_YELLOW]Public Health and Sanitary Service Building[ENDCOLOR] for cities to continue its [ICON_CITIZEN] Population Growth.
+			</Text>
 		</Row>
 		
 		
@@ -3643,21 +3654,6 @@
 				 [NEWLINE][NEWLINE]Allows you to train [COLOR_YELLOW]Special Forces Units[ENDCOLOR] in this city. 
 				 [NEWLINE][NEWLINE]Must be built by a Great General or Great Admiral." />
 		</Update>
-
-
-		<Row>
-			<Tag>TXT_KEY_BUILDING_AZTEC_ANCIENT_BARRACKS</Tag>
-			<Text>[ICON_WAR] Templo Mayor</Text>
-		</Row>
-		<Row>
-			<Tag>TXT_KEY_CIV5_BUILDINGS_AZTEC_ANCIENT_BARRACKS_TEXT</Tag>
-			<Text>
-				The Templo Mayor (Spanish for "Great Temple") was one of the main temples of the Aztecs in their capital city of Tenochtitlan, which is now Mexico City. Its architectural style belongs to the late Postclassic period of Mesoamerica. The temple was called the huei teocalli [ˈwei teoˈkalːi].
-			</Text>
-		</Row>
-	
-
-
 
 		<Row>
 			<Tag>TXT_KEY_BUILDING_WOOD_DOCK</Tag>
@@ -9636,7 +9632,7 @@
 		<Replace Tag="TXT_KEY_CHOOSE_ARCH_ARTIFACT_RESULT">
 			<Text>Artifact will be placed in nearest Great Work of Art slot. Artifact provides +4 [ICON_CULTURE] Culture and +2 [ICON_TOURISM] Tourism. Archaeologist will be consumed.</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_CHOOSE_ARCH_ARTIFACT_RESULT">
+		<Replace Tag="TXT_KEY_CHOOSE_ARCH_WRITTEN_ARTIFACT_RESULT">
 			<Text>Ancient writing will be placed in nearest Great Work of Writing slot. Writing provides +4 [ICON_CULTURE] Culture and +2 [ICON_TOURISM] Tourism. Archaeologist will be consumed.</Text>
 		</Replace>
 		
@@ -10212,8 +10208,8 @@
 		<Replace Tag="TXT_KEY_TRAIT_FIGHT_WELL_DAMAGED">
 			<Text>
 				[ICON_BULLET]Units fight as though they were at full strength even when damaged. 
-				[NEWLINE][ICON_BULLET]Gain [ICON_CULTURE] Culture when you build a Military Unit (100% of its [ICON_STRENGTH] Combat Strength). 
-				[NEWLINE][ICON_BULLET]Add a random unselected Pantheon when you enhance a religion.
+				[NEWLINE][ICON_BULLET]When a Unit dies in combat, its adjacent Units gain a 10% attack bonus (this value is reduced by 10% per turn).
+				[NEWLINE][ICON_BULLET]Gain [ICON_CULTURE] Culture when you build or purchase a Military Unit (100% of its [ICON_STRENGTH] Combat Strength). 
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_TRAIT_BUFFALO_HORNS">
@@ -11439,7 +11435,7 @@
 				[NEWLINE][ICON_BULLET]Flagship
 
 				[NEWLINE][NEWLINE][COLOR_YIELD_FOOD]Operation:[ENDCOLOR]
-				[NEWLINE][ICON_BULLET]Automatically resupply its Carrier-based Aircrafts (One Aircraft Unit per turn) when it is inside Friendly Territory. After gained "Carrier Supply III" promotion, it can resupply its Carrier-based Aircrafts even outside Friendly Territory.
+				[NEWLINE][ICON_BULLET]To purchase its Carrier-based Aircrafts, Carrier should stay inside Friendly Territory and not in a City plot (you need have a city that can buy land-based attack Aircraft at least). After gained "Carrier Supply III" promotion, it can resupply its Carrier-based Aircrafts even outside Friendly Territory.
 				[NEWLINE][ICON_BULLET]EXP earned by its Carrier-based Aircrafts will transfer to the Aircraft Carrier. So the Aircraft Carrier will earn the promotions. Even the Carrier-based Aircrafts are all shot down, those promotions will not lose.
 				[NEWLINE][ICON_BULLET]New Carrier-based Aircrafts added to the Aircraft Carrier CANNOT move until NEXT turn and it will automatically inherit all available promotions in the NEXT turn.
 				[NEWLINE][ICON_BULLET]if the Aircraft Carrier is destroyed, it will lose all of its Carrier-based Aircrafts on board.
@@ -12986,9 +12982,9 @@
 			[NEWLINE][ICON_BULLET]The explorer can be upgraded to an Archaeologist unit. 
 		</Text>
 	</Row>
-		<Row Tag="TXT_KEY_UNIT_EXPLORERX_TEXT">
-			<Text>Exploration is the act of searching for the purpose of discovery of information or resources. Exploration occurs in all non-sessile animal species, including humans. In human history, its most dramatic rise was during the Age of Discovery when European explorers sailed and charted much of the rest of the world for a variety of reasons. Since then, major explorations after the Age of Discovery have occurred for reasons mostly aimed at information discovery.</Text>
-		</Row>
+	<Row Tag="TXT_KEY_UNIT_EXPLORERX_TEXT">
+		<Text>Exploration is the act of searching for the purpose of discovery of information or resources. Exploration occurs in all non-sessile animal species, including humans. In human history, its most dramatic rise was during the Age of Discovery when European explorers sailed and charted much of the rest of the world for a variety of reasons. Since then, major explorations after the Age of Discovery have occurred for reasons mostly aimed at information discovery.</Text>
+	</Row>
 		
 
 	<Row Tag="TXT_KEY_UNIT_RECON_CAVALRY">
@@ -13239,15 +13235,15 @@
 		</Replace>
 		
 
-	<Replace Tag="TXT_KEY_UNIT_HELP_EGYPTIAN_WAR_CHARIOT">
+		<Replace Tag="TXT_KEY_UNIT_HELP_EGYPTIAN_WAR_CHARIOT">
 			<Text>Egyptian unique early hit-and-run unit. Replaces the Chariot Archer. It is faster than the generic chariot and hitting the enemy with strong ranged attacks. </Text>
 		</Replace>
-	<Replace Tag="TXT_KEY_UNIT_HELP_HUN_HORSE_ARCHER">
+		<Replace Tag="TXT_KEY_UNIT_HELP_HUN_HORSE_ARCHER">
 			<Text>Unique Hunnic early hit-and-run unit. Replaces the Chariot Archer. It is stronger but cheaper than the generic chariot.</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_STRATEGY">
-			<Text>The Conquistador is a multi-purpose unit that is strong both on land and at sea. Replacing the Knight, it is a great scout on land with strong combat strength and extra visibility. It has stronger combat and also has the ability to found new cities, but only on a foreign continent that does not contain the Spanish capital. The Conquistador can move faster when embarking in the water. Earns 50% of opponents' strength as [ICON_GOLD] Gold for kills.(Not inheritable)</Text>
+			<Text>The Conquistador is a multi-purpose unit that is strong both on land and at sea. Replacing the Knight, it is a great scout with extra visibility on land and can move faster when embarking in the water. It has stronger combat and also has the ability to found new cities, but only on a foreign continent that does not contain the Spanish capital. Earns 50% of opponents' strength as [ICON_GOLD] Gold for kills(Not inheritable).</Text>
 		</Replace>
 
 
@@ -14867,7 +14863,7 @@
 			<Text>In the same order, destroy 1 more building in the [COLOR_POSITIVE_TEXT]Target City[ENDCOLOR].+100%[ICON_STRENGTH]Strength Attacking Citadel.</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_AIR_SIEGE_3_HELP" >
-			<Text>In the same order, destroy 1 more building in the [COLOR_POSITIVE_TEXT]Target City[ENDCOLOR].+100%[ICON_STRENGTH]Strength Attacking Citadel.</Text>
+			<Text>In the same order, destroy 1 more building in the [COLOR_POSITIVE_TEXT]Target City[ENDCOLOR].+200%[ICON_STRENGTH]Strength Attacking Citadel.</Text>
 		</Replace>
 
 
@@ -15615,8 +15611,8 @@
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_JAGUAR_HELP">
 			<Text>
-				+50% [ICON_STRENGTH] Combat Strength when fighting in Jungle and Forest.
-				Double [ICON_MOVES]Movement in Forest and Jungle.
+				[ICON_BULLET]+50% [ICON_STRENGTH] Combat Strength when fighting in Jungle and Forest.
+				[NEWLINE][ICON_BULLET]Double [ICON_MOVES]Movement in Forest and Jungle.
 			</Text>
 		</Replace>
 		
@@ -15628,7 +15624,13 @@
 			<Text>+15% [ICON_STRENGTH] Combat Strength when fighting outside Friendly Territory.</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_INVISIBLE_FOREST">
-			<Text>Invisible in Forest and Jungle</Text>
+			<Text>Forest Invisible</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_INVISIBLE_FOREST_HELP">
+			<Text>
+				[ICON_BULLET]Invisible in Forest and Jungle
+				[NEWLINE][ICON_BULLET]Can spot enemy stealthy units
+			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SAME_CONTINENT">
 			<Text>Continental Overlord</Text>
@@ -15642,6 +15644,12 @@
 		<Row Tag="TXT_KEY_PROMOTION_OTHER_CONTINENT_HELP">
 			<Text>+15% [ICON_STRENGTH] Combat Strength when fighting outside Capital's continent.</Text>
 		</Row>
+		<Replace Tag="TXT_KEY_PROMOTION_OCEAN_MOVEMENT">
+			<Text>Ocean Movement</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_PROMOTION_OCEAN_MOVEMENT_HELP">
+			<Text>+2 Extra Movement for Ocean</Text>
+		</Replace>
 
 
 		<Row Tag="TXT_KEY_PROMOTION_ANTI_RIOT_BONUS">
@@ -16437,7 +16445,7 @@
 			[ICON_BULLET] Get two missionaries and all cities get free temples.
 			[NEWLINE][ICON_BULLET] New land army units in this city have +15 experience.
 			[NEWLINE][ICON_BULLET] Allow Faith to buy Cougar and Eagle Warriors.
-			[NEWLINE][ICON_BULLET] can move the army military unit to this city for human sacrifice, and get [ICON_CULTURE] culture and [ICON_PEACE] belief equivalent to 300% of the combat power of the military unit.
+			[NEWLINE][ICON_BULLET] Can move the land regular military unit to this city for human sacrifice, and get [ICON_CULTURE] culture and [ICON_PEACE] belief equivalent to 300% of the combat power of the military unit.
 			The unit has a 20% chance of surviving, and it will be promoted to [The Power of the God of War Zilopochtli], +50 maximum HP, and +10% combat power.
 			</Text>
 		</Row>
@@ -16721,6 +16729,12 @@
 		<Replace Tag="TXT_KEY_PROMOTION_MOVELIFT_V_HELP">
 			<Text>Unit with this Promotion will -5 [ICON_MOVES] Move Lift!</Text>
 		</Replace>
+		<Replace Tag="TXT_KEY_PROMOTION_GROUP_BUILD">
+			<Text>Group Build Mark</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_PROMOTION_GROUP_BUILD_HELP">
+			<Text>Unit with this Promotion is building Improvement in Group!</Text>
+		</Replace>
 		
 		<!-- UI - Super Group Manager -->
 		<Replace Tag="TXT_KEY_AIRCRAFT_ON_TT">
@@ -16888,7 +16902,14 @@
 			<Text>
 			[ICON_BULLET]Alternative to the amphitheater, cheaper to build.
 			[NEWLINE][ICON_BULLET] +15% training speed of [ICON_WAR]military units in this city.
-			[NEWLINE][ICON_BULLET] When a military unit is upgraded, each Ithaca gets a one-time [ICON_CULTURE]culture boost, which varies with the era.
+			[NEWLINE][ICON_BULLET] When a military unit is upgraded, get a one-time [ICON_CULTURE]culture boost with half of Current Era (at least 1) from each Ithaca.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BUILDING_ZULU_IZIKO_TEXT">
+			<Text>
+				An Iziko is a simple hearth used as a gathering place for Zulu communities。The fireplace was revered as a source for food，warmth，dreams，and ancestral ties。It is from these gatherings that a sense of community and identity was formed，and young Zulus could perform and bond。[NEWLINE][NEWLINE]
+				The fireplace is used metaphorically for the "cooking of songs" in isicathamiya stage performances，a modern offshoot of traditional Zulu music。Dreams were an essential part of communicating with ancestors and formed part of a deeply rooted Zulu religion。Some isicathamiya musicians claim some of their songs were created in the spiritual realm or given to them by their ancestors。[NEWLINE][NEWLINE]
+				"A person is a person because of other people"[NEWLINE]-Zulu proverb
 			</Text>
 		</Replace>
 
@@ -17159,7 +17180,7 @@
         <Row Tag="TXT_KEY_BUILDING_SWEDEN_NOBEL_PRIZE_HELP">
             <Text>
                 [ICON_BULLET] Requires only 26 people to build.
-                [NEWLINE][ICON_BULLET] When a great scientist is born in Sweden or an ally, it will bring one-time [ICON_RESEARCH] scientific research output to both parties, equivalent to 20% of the great scientist's current strength.
+                [NEWLINE][ICON_BULLET] When a great scientist is born in Sweden or an ally, it will bring one-time [ICON_RESEARCH] scientific research output to both parties, equivalent to 15% of the great scientist's current strength.
             </Text>
         </Row>
 		<Row Tag="TXT_KEY_YIELD_OVERFLOW">
@@ -17220,6 +17241,71 @@
 		</Row>
 		<Row Tag="TXT_KEY_EUPANEL_EXCESS_HAPINESS_MODIFIER">
 			<Text>Extra Happiness Bonus</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TECH_HELP_PROGRESS_WITH_OVERFLOW">
+			<Text>[ICON_BULLET]Progress: {1_Num} of {2_Num} [ICON_RESEARCH] Science (Overflow: {3_Num})</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_RANGED_ATTACK_FLANK_MODIFIER_SP">
+			<Text>Range Flanking Bonus</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_DEATH_ATTACK_MODIFIER">
+			<Text>Death Unit Bonus</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_CO_SP_MOVE_TEAMMATE_STOPPED">
+			<Text>No Immigration because we are in the same team.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_MISSION_BATCH_MOVE">
+			<Text>Batch Move</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_MISSION_BATCH_MOVE_TOOLTIP">
+			<Text>Move Unit and its surrounding same-Domain Units to the target plot</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_MISSION_BATCH_MOVE_ON">
+			<Text>[COLOR_POSITIVE_TEXT]Batch Move: On[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_MISSION_BATCH_MOVE_OFF">
+			<Text>[COLOR_NEGATIVE_TEXT]Batch Move: Off[ENDCOLOR]</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_1">
+			<Text>In SP game, the Corruption level distance depending on the Map size</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_2">
+			<Text>To Establish Crops, the City where the Units is located must have an Arsenal, and the number of Units on the Plot must be 2</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_3">
+			<Text>Razing city can be completed in 1 turn after you discover "Dynamite" technology</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_4">
+			<Text>You can improve all plots in country with one click of Workers after you discover "Automation" technology</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_5">
+			<Text>Polynesian Coastal City and Land City can be separated by as little as 3 plots</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_6">
+			<Text>The range between Cities in SP is at least 4, but the intercontinental Cities can be shortened to 3</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_7">
+			<Text>Move your mouse over the puppet logo before Annexing the City to see a preview of the level of City Hall</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_8">
+			<Text>The Electricity BUFF will only take effect after the player reaches the Electric Age or has 50 technologies</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_9">
+			<Text>Each of the Allied Minors will provide you with strategic Resources, and the amount will increase with the Era</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_10">
+			<Text>Adopting the "Military Training" Policy of the Honor Policy Tree and your Siege Units will make extra damage from City max HitPoint</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_11">
+			<Text>Purchase Carrier-based Aircraft requires the Carrier is not in a City plot, and you need have a city that can buy land-based attack Aircraft at least</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_12">
+			<Text>Keep your Carrier in friendly-territory, and the Carrier-based Aircraft will automatically upgrade in the next Turn</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_13">
+			<Text>After the upgrade, Hwacha will no longer be able to select unique Promotions, but existing unique Promotions will not be removed</Text>
 		</Row>
 	</Language_en_US>
 </GameData>

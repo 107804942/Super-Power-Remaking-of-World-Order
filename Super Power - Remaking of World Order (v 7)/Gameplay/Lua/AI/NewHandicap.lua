@@ -294,6 +294,16 @@ function PlayerIntoNewEra(playerID, era) -- AI will get bonus when Human Player 
 end
 GameEvents.PlayerSetEra.Add(PlayerIntoNewEra)
 
+function AINewEraBonus()
+    if Game.GetElapsedGameTurns() ~= 0 then return end
+    for pID, player in pairs(Players) do
+        if player and player:IsMajorCiv() and player:IsAlive() and not player:IsHuman() then
+            PlayerIntoNewEra(pID, player:GetCurrentEra())
+        end
+    end
+end
+Events.SequenceGameInitComplete.Add(AINewEraBonus)
+
 ------------------------------------------------------------ AI will annex the city to recover quikly------------------------------------------------
 function AIAutoAnnexCity(hexX, hexY, population, citySize)
     if hexX == nil or hexY == nil then
@@ -917,11 +927,8 @@ function AIBossBonus(HumanScore, TotalScore, TotalMajCiv, AIplayer)
         return
     end
 
-    print("Total Score:" .. TotalScore)
-    print("Total Major Civs:" .. TotalMajCiv)
     local AvgScore = TotalScore / TotalMajCiv
     print("Average Score:" .. AvgScore)
-    print("Human Score:" .. HumanScore)
 
     ---------AI enhancement for human's score
     if HumanScore >= AvgScore * 2 then

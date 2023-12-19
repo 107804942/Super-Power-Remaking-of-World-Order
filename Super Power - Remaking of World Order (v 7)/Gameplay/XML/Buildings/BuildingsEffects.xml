@@ -1726,7 +1726,7 @@
 		<Row>
 			<BuildingType>BUILDING_INCA_QURIKANCHA</BuildingType>
 			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>3</Yield>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_INCA_QURIKANCHA</BuildingType>
@@ -2110,7 +2110,7 @@
 		<Row>
 			<BuildingType>BUILDING_SWEDISH_LABORATORY_SERVICES</BuildingType>
 			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>50</Yield>
+			<Yield>33</Yield>
 		</Row>
 
 		<Row>
@@ -2758,31 +2758,31 @@
 			<BuildingType>BUILDING_METAL_FACTORY</BuildingType>
 			<ResourceType>RESOURCE_IRON</ResourceType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_METAL_FACTORY</BuildingType>
 			<ResourceType>RESOURCE_COAL</ResourceType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_METAL_FACTORY</BuildingType>
 			<ResourceType>RESOURCE_COPPER</ResourceType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_METAL_FACTORY</BuildingType>
 			<ResourceType>RESOURCE_ALUMINUM</ResourceType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_METAL_FACTORY</BuildingType>
 			<ResourceType>RESOURCE_URANIUM</ResourceType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 		
 		<Row>
@@ -2906,6 +2906,15 @@
 			<Yield>2</Yield>
 		</Row>
 	</Building_ResourceYieldChanges>
+
+	<Building_ImprovementYieldChanges>
+		<Row>
+			<BuildingType>BUILDING_METAL_FACTORY</BuildingType>
+			<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Building_ImprovementYieldChanges>
 
 
 	<Building_FeatureYieldChanges>
@@ -4541,21 +4550,6 @@
 			<FlavorType>FLAVOR_DEFENSE</FlavorType>
 			<Flavor>60</Flavor>
 		</Row>
-		<!--<Row>
-			<BuildingType>BUILDING_AZTEC_ANCIENT_BARRACKS</BuildingType>
-			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
-			<Flavor>90</Flavor>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_AZTEC_ANCIENT_BARRACKS</BuildingType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>30</Flavor>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_AZTEC_ANCIENT_BARRACKS</BuildingType>
-			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>20</Flavor>
-		</Row>-->
 
 		<Row>
 			<BuildingType>BUILDING_ARMORY</BuildingType>
@@ -7464,6 +7458,11 @@
 			<BuildingType>BUILDING_SONGHAI_MARKET</BuildingType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>150</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_SATELLITE_SPUTNIK</BuildingType>
+			<YieldType>YIELD_TOURISM</YieldType>
+			<Yield>10000</Yield>
 		</Row>
 	</Building_InstantYield>
 	<Building_SpecialistYieldChangesLocal>

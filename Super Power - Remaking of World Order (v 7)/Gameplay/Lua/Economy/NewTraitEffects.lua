@@ -5,93 +5,16 @@ include("UtilityFunctions.lua");
 include("PlotIterators.lua");
 -------------------------------------------------------------------------New Trait Effects-----------------------------------------------------------------------
 if Game.GetGameSpeedType() == 3 then
-	GameEvents.UnitCreated.Add(
+	local QuickGameSpeedID = GameInfo.UnitPromotions["PROMOTION_GAME_QUICKSPEED"].ID
+	Events.SerialEventUnitCreated.Add(
 		function(iPlayerID, iUnitID)
 			local pPlayer = Players[iPlayerID]
 			if pPlayer == nil then return end
 			local pUnit = pPlayer:GetUnitByID(iUnitID)
 			if pUnit == nil then return end
-
-			local GameSpeed = Game.GetGameSpeedType()
-			local QuickGameSpeedID = GameInfo.UnitPromotions["PROMOTION_GAME_QUICKSPEED"].ID
-
-			if GameSpeed == 3 then
-				pUnit:SetHasPromotion(QuickGameSpeedID, true)
-			end
+			pUnit:SetHasPromotion(QuickGameSpeedID, true)
 		end
 	)
-end
-
--- Fix the "Archaeological Dig Finished" Freeze
-function OnPopupMessageCA(popupInfo)
-	local popupType = popupInfo.Type;
-	if popupType ~= ButtonPopupTypes.BUTTONPOPUP_CHOOSE_ARCHAEOLOGY then
-		return;
-	end
-
-	local iUnit = popupInfo.Data2;
-	if (iUnit == nil or iUnit == -1) and Players[Game.GetActivePlayer()]:GetUnitClassCount(GameInfoTypes.UNITCLASS_ARCHAEOLOGIST) == 1 then
-		for pUnit in Players[Game.GetActivePlayer()]:Units() do
-			if pUnit and pUnit:GetUnitClassType() == GameInfoTypes.UNITCLASS_ARCHAEOLOGIST
-				and pUnit:GetPlot():GetImprovementType() == GameInfoTypes["IMPROVEMENT_ARCHAEOLOGICAL_DIG"]
-			then
-				local iX, iY = pUnit:GetX(), pUnit:GetY();
-				pUnit:Kill();
-				Players[Game.GetActivePlayer()]:InitUnit(GameInfoTypes.UNIT_ARCHAEOLOGIST, iX, iY):SetMoves(0);
-				break;
-			end
-		end
-	end
-end
-
-Events.SerialEventGameMessagePopup.Add(OnPopupMessageCA);
-
-
-if Game.IsCivEverActive(GameInfoTypes.CIVILIZATION_JAPAN) then
-	function JapanReligionEnhancedUA(iPlayer, eReligion, iBelief1, iBelief2)
-		-- Add Random Pantheon
-		if Game.IsOption(GameOptionTypes.GAMEOPTION_NO_RELIGION) or Players[iPlayer] == nil or not Players[iPlayer]:HasCreatedReligion() then
-			return;
-		end
-		local pPlayer = Players[iPlayer];
-		if GameInfo.Leader_Traits { LeaderType = GameInfo.Leaders[pPlayer:GetLeaderType()].Type, TraitType =
-			"TRAIT_FIGHT_WELL_DAMAGED" } ()
-			and (GameInfo.Traits["TRAIT_FIGHT_WELL_DAMAGED"].PrereqPolicy == nil or (GameInfo.Traits["TRAIT_FIGHT_WELL_DAMAGED"].PrereqPolicy
-				and pPlayer:HasPolicy(GameInfoTypes[GameInfo.Traits["TRAIT_FIGHT_WELL_DAMAGED"].PrereqPolicy])))
-		then
-			local iBeliefsCount = 0;
-			for i, v in ipairs(Game.GetBeliefsInReligion(eReligion)) do
-				local belief = GameInfo.Beliefs[v];
-				if belief ~= nil and not belief.Reformation then
-					iBeliefsCount = iBeliefsCount + 1;
-				end
-			end
-			if pPlayer:IsTraitBonusReligiousBelief() then
-				iBeliefsCount = iBeliefsCount - 1;
-			end
-			if iBeliefsCount ~= 5 then
-				return;
-			end
-
-			local availableBeliefs = {};
-			for i, v in ipairs(Game.GetAvailablePantheonBeliefs()) do
-				local belief = GameInfo.Beliefs[v];
-				if belief ~= nil and belief.Pantheon
-				then
-					table.insert(availableBeliefs, belief.ID);
-				end
-			end
-
-			print("Nums of available Pantheon Beliefs: " .. #availableBeliefs);
-			if #availableBeliefs > 0 then
-				local chooseBeliefRandNum = Game.Rand(#availableBeliefs,
-					"At NewTraitEffects.lua JapanReligionEnhancedUA(), choose belief") + 1
-				Game.EnhanceReligion(iPlayer, eReligion, availableBeliefs[chooseBeliefRandNum], -1);
-			end
-		end
-	end
-
-	GameEvents.ReligionEnhanced.Add(JapanReligionEnhancedUA);
 end
 
 -- Hun UA effects

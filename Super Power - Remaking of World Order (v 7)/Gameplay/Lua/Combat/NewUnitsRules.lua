@@ -96,11 +96,6 @@ function NewUnitCreationRules(playerID)
 				end
 			end
 
-			-- Add 2 Movements for Embarked Conquistador
-			if unit:GetUnitType() == GameInfoTypes.UNIT_SPANISH_CONQUISTADOR and unit:IsEmbarked() then
-				unit:SetMoves(unit:GetMoves() + 2 * GameDefines["MOVE_DENOMINATOR"]);
-			end
-
 			-- Carriers & Cargos Setting System
 			local sSpecialCargo   = GameInfo.Units[unit:GetUnitType()].SpecialCargo;
 			local sSpecial        = GameInfo.Units[unit:GetUnitType()].Special;
@@ -117,8 +112,10 @@ function NewUnitCreationRules(playerID)
 				local iCost = -1;
 
 				if not player:IsHuman() 
-				and not PlayerAtWarWithHuman(player) 
-				and not Players[Game.GetActivePlayer()]:IsObserver() then
+				and not PlayerAtWarWithHuman(player)
+				--Single Observer (Test Mod): All AI should buy aircraft for Cargos
+				and not (Players[Game.GetActivePlayer()]:IsObserver() and not Game.IsGameMultiPlayer())
+				then
 					--Do Nothing
 				elseif sSpecialCargo == "SPECIALUNIT_FIGHTER"
 				and g_CargoSetList[playerID][1] and g_CargoSetList[playerID][1] ~= -1
