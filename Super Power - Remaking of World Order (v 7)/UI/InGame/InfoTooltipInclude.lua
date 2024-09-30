@@ -1070,6 +1070,8 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 		AllowsFoodTradeRoutes = "[ICON_INTERNATIONAL_TRADE][ICON_FOOD]" .. L"TXT_KEY_TRADE_ROUTES_HEADING2_TITLE", --TXT_KEY_DECLARE_WAR_TRADE_ROUTES_HEADER
 		AllowsProductionTradeRoutes = "[ICON_INTERNATIONAL_TRADE][ICON_PRODUCTION]" .. L"TXT_KEY_TRADE_ROUTES_HEADING2_TITLE", --TXT_KEY_DECLARE_WAR_TRADE_ROUTES_HEADER
 		InstantMilitaryIncrease = L"TXT_KEY_IMI11",				-- TOTO
+		EnableAlwaysImmigrantIn = L"TXT_KEY_IMMIGRANT_ALL_SCALE",
+		NoNuclearWinterLocal = L"TXT_KEY_NO_NUCLEAR_WINTER_LOCAL"
 	--n	CityWall = "",
 	--n	ArtInfoCulturalVariation = "",
 	--n	ArtInfoEraVariation = "",
@@ -1123,6 +1125,7 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 		CityConnectionTradeRouteModifier = L"TXT_KEY_CCTRM22" .. "%+i%%[ICON_GOLD]",-- TOTO
 		CapturePlunderModifier = L"TXT_KEY_CPM3" .. "%+i%%[ICON_GOLD]",		-- TOTO
 		PolicyCostModifier = L"TXT_KEY_PCM22" .. "%+i%%[ICON_CULTURE]",		-- TOTO
+		CorruptionPolicyCostModifier = L"TXT_KEY_CPCM22" .. "%+i%%[ICON_CULTURE]",		-- TOTO
 		PlotCultureCostModifier = L"TXT_KEY_PCCM4" .. "%+i%%[ICON_CULTURE]",	-- TOTO
 		GlobalPlotCultureCostModifier = L"TXT_KEY_GLOBAL1" .. L"TXT_KEY_PCCM4" .. "%+i%%[ICON_CULTURE]",-- TOTO
 		PlotBuyCostModifier = L"TXT_KEY_PBCM5" .. "%+i%%[ICON_GOLD]",		-- TOTO
@@ -1137,8 +1140,10 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 		Gold = L"TXT_KEY_PEDIA_GOLD_LABEL" .. " %i",				-- TOTO
 	--y	Defense = "",
 	--y	ExtraCityHitPoints = "",
-		GlobalDefenseMod = L"TXT_KEY_GLOBAL1" .. L"TXT_KEY_DM_0" .. "%+i%%[ICON_STRENGTH]",-- TOTO
+		GlobalDefenseMod = L"TXT_KEY_EXIST_CITY" .. L"TXT_KEY_DM_0" .. "%+i%%[ICON_STRENGTH]",-- TOTO
+		CityDefenseModifierGlobal = L"TXT_KEY_GLOBAL1" .. L"TXT_KEY_DM_0" .. "%+i%%[ICON_STRENGTH]",-- TOTO
 		MinorFriendshipChange = L"TXT_KEY_MFC_23" .. "%+i%%",			-- TOTO
+		MinorFriendshipAnchorChange = L"TXT_KEY_MFAC_23" .. "%+i",			-- TOTO
 	--	VictoryPoints = L"TXT_KEY_VP_00",					-- TOTO
 		ExtraMissionarySpreads = L"TXT_KEY_EMS_5" .. " %+i".."[ICON_MISSIONARY]",-- TOTO
 		ReligiousPressureModifier = L"TXT_KEY_RPM_10" .. "%+i%%",		-- TOTO
@@ -1645,6 +1650,11 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 	if tip ~= "" then
 		insert( tips, L"TXT_KEY_SV_ICONS_GLOBAL_SP" .. ":" .. tip )
 	end
+	-- Local Total Yields enhanced by Building
+	tip = GetYieldStringSpecial( "Yield", "%s %+i%%%s", GameInfo.Building_YieldMultiplier( thisBuildingType ) )
+	if tip ~= "" then
+		insert( tips, L"TXT_KEY_SV_ICONS_LOCAL_SP" .." ".. L"TXT_KEY_YIELD_MULTIPLIER" .. ":" .. tip )
+	end
 
 	-- victory requisite
 	item = building.VictoryPrereq and GameInfo.Victories[ building.VictoryPrereq ]
@@ -1773,6 +1783,8 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 	insertLocalizedIfNonZero( tips, "TXT_KEY_PRODUCTION_NEEDED_BUILDING_MODIFIER", building.GlobalProductionNeededBuildingModifier or 0 )
 	insertLocalizedIfNonZero( tips, "TXT_KEY_PRODUCTION_NEEDED_PROJECT_MODIFIER", building.GlobalProductionNeededProjectModifier or 0 )
 
+	insertLocalizedIfNonZero( tips, "TXT_KEY_GLOBAL_GROWTH_FOOD_NEEDED_MODIFIER", building.GlobalGrowthFoodNeededModifier or 0 )
+
 	if PreGame.GetGameOption("GAMEOPTION_SP_CORPS_MODE_DISABLE") == 0 then
 		local TroopRow = GameInfo.Building_DomainTroops{BuildingType = buildingType, DomainType = "DOMAIN_SEA"}()
 		if TroopRow then
@@ -1791,6 +1803,14 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 		end
 	end
 
+	for row in GameInfo.Building_TradeRouteFromTheCityYields(thisBuildingType) do
+		local yieldInfo = GameInfo.Yields[row.YieldType]
+		local value = row.YieldValue or 0
+		if yieldInfo and (value or 0) > 0 then
+			insert(tips,
+				("[ICON_INTERNATIONAL_TRADE]" .. L("TXT_KEY_TRADE_TO_OTHER_CITY_BONUS") .. " +" .. value .. L(yieldInfo.IconString) .. " [ICON_ARROW_LEFT]"))
+		end
+	end
 
 	-- Yields enhanced by Technology
 	if techFilter( enhancedYieldTech ) then
@@ -1816,7 +1836,7 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 	for row in GameInfo.Policy_BuildingClassYieldModifiers( thisBuildingClassType ) do
 		if row.PolicyType and (row.YieldMod or 0) ~= 0 
 		and GameInfo.Policies[ row.PolicyType].Dummy~=1  --New
-		and row.PolicyType:match("^[POLICY_AI_]+.") == nil
+		and row.PolicyType:match("^POLICY_AI_+.") == nil
 		then
 			items[row.PolicyType] = format( "%s %+i%%%s", items[row.PolicyType] or "", row.YieldMod, YieldIcons[row.YieldType] or "?" )
 		end
@@ -1826,7 +1846,7 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 			for row in GameInfo.Policy_BuildingClassTourismModifiers( thisBuildingClassType ) do
 				if row.PolicyType and (row.TourismModifier or 0) ~= 0
 				and GameInfo.Policies[ row.PolicyType].Dummy~=1  --New
-				and row.PolicyType:match("^[POLICY_AI_]+.") == nil
+				and row.PolicyType:match("^POLICY_AI_+.") == nil
 				then
 					items[row.PolicyType] = format( "%s %+i%%[ICON_TOURISM]", items[row.PolicyType] or "", row.TourismModifier )
 				end
@@ -2185,6 +2205,9 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 	if building.AnyWater==1 then
 		insert( terrains, L"TXT_KEY_BUILDING_NEED_ANY_WATER" )
 	end
+	if building.RiverOrCoastal==1 then
+		insert( terrains, L"TXT_KEY_BUILDING_NEED_RIVER_OR_COASTAL" )
+	end
 
 	if building.NearbyMountainRequired then
 		insert( terrains, L"TXT_KEY_TERRAIN_MOUNTAIN" .. "[ICON_RANGE_STRENGTH]2" )
@@ -2537,6 +2560,24 @@ function GetHelpTextForImprovement( improvementID )
 
 	end
 
+	-- Building yield changes
+	items = {}
+	condition = { ImprovementType = improvement.Type }
+	for row in GameInfo.Building_ImprovementYieldChanges( thisImprovementType ) do
+		SetKey( items, row.BuildingType )
+	end
+	for buildingType in pairs( items ) do
+		item = GameInfo.Buildings[ buildingType ]
+		if item then
+			tip = ""
+			condition.BuildingType = buildingType
+			tip = GetYieldString( GameInfo.Building_ImprovementYieldChanges( condition ) )
+			if tip~="" then
+				insert( tips, "[ICON_BULLET]" .. BuildingColor( L(item.Description) ) .. tip )
+			end
+		end
+	end
+
 	-- Resource Yields
 	local thisImprovementAndResourceTypes = { ImprovementType = improvement.Type or -1 }
 	for resource in GameInfo.Resources() do
@@ -2769,6 +2810,12 @@ if Game then
 			[ TradeableItems.TRADE_ITEM_RESEARCH_AGREEMENT or-1] = function( from, item )
 				return ScratchDeal:AddResearchAgreement( from, item[2] )
 			end,
+			[ TradeableItems.TRADE_ITEM_DIPLOMATIC_MARRIAGE or-1] = function( from, item )
+				return ScratchDeal:AddDiplomaticMarriage( from, item[2] )
+			end,
+			[ TradeableItems.TRADE_ITEM_DUAL_EMPIRE_TREATY or-1] = function( from, item )
+				return ScratchDeal:AddDualEmpireTreaty( from )
+			end,
 			[ TradeableItems.TRADE_ITEM_ALLOW_EMBASSY or-1] = function( from )
 				return ScratchDeal:AddAllowEmbassy( from )
 			end,
@@ -2777,25 +2824,6 @@ if Game then
 			end,
 			[ TradeableItems.TRADE_ITEM_VOTE_COMMITMENT or-1] = function( from, item )
 				return ScratchDeal:AddVoteCommitment( from, item[4], item[5], item[6], item[7] )
-			end,
-			-- civ be
-			[ TradeableItems.TRADE_ITEM_ENERGY or-1] = function( from, item )
-				return ScratchDeal:AddGoldTrade( from, item[4] )
-			end,
-			[ TradeableItems.TRADE_ITEM_ENERGY_PER_TURN or-1] = function( from, item )
-				return ScratchDeal:AddGoldPerTurnTrade( from, item[4], item[2] )
-			end,
-			[ TradeableItems.TRADE_ITEM_ALLIANCE or-1] = function( from, item )
-				return ScratchDeal:AddAlliance( from, item[2] )
-			end,
-			[ TradeableItems.TRADE_ITEM_COOPERATION_AGREEMENT or-1] = function( from )
-				return ScratchDeal:AddCooperationAgreement( from )
-			end,
-			[ TradeableItems.TRADE_ITEM_FAVOR or-1] = function( from, item )
-				return ScratchDeal:AddFavorTrade( from, item[4] )
-			end,
-			[ TradeableItems.TRADE_ITEM_RESEARCH_PER_TURN or-1] = function( from, item )
-				return ScratchDeal:AddResearchPerTurnTrade( from, item[4], item[2] )
 			end,
 			-- cdf / cp / cbp
 			[ TradeableItems.TRADE_ITEM_VASSALAGE or-1] = function( from )
@@ -2853,7 +2881,7 @@ if Game then
 						print( "Cannot restore deal trade", unpack(item) )
 					end
 				end
-		--print( "Restored deal#", #g_savedDealStack ) ScratchDeal:ResetIterator() repeat local item = { ScratchDeal:GetNextItem() } print( unpack(item) ) until #item < 1
+			--print( "Restored deal#", #g_savedDealStack ) ScratchDeal:ResetIterator() repeat local item = { ScratchDeal:GetNextItem() } print( unpack(item) ) until #item < 1
 			else
 				print( "Cannot pop scratch deal" )
 			end
@@ -2924,7 +2952,7 @@ if Game then
 		-- Food eaten by pop
 		if yieldID == YieldTypes.YIELD_FOOD then
 			insertLocalizedBulletIfNonZero( tips, "TXT_KEY_FOOD_FROM_TRADE_ROUTES", city:GetYieldRate( yieldID, false ) - city:GetYieldRate( yieldID, true ) )
-			strModifiersString = "[NEWLINE][ICON_BULLET]" .. L( "TXT_KEY_YIELD_EATEN_BY_POP", city:FoodConsumption( true, 0 ), yieldIconString ) .. strModifiersString
+			strModifiersString = "[NEWLINE][ICON_BULLET]" .. L( "TXT_KEY_YIELD_EATEN_BY_POP_PULS", city:FoodConsumption( true, 0 ), yieldIconString, city:GetFoodConsumptionPerPopTimes100() / 100) .. strModifiersString
 		end
 
 		-- Modifiers
@@ -3477,6 +3505,8 @@ if Game then
 				if activePlayer:IsDenouncedPlayer( playerID ) then
 					turnsRemaining = relationshipDuration - activePlayer:GetDenouncedPlayerCounter( playerID );
 				end
+			elseif bnw_be and itemID == TradeableItems.TRADE_ITEM_DIPLOMATIC_MARRIAGE then -- Marriage
+				turnsRemaining = relationshipDuration - activePlayer:GetMarriageCounter( playerID )
 			elseif itemID then
 				local finalTurn = dealsFinalTurn[ itemID ]
 				if finalTurn then
@@ -3711,6 +3741,15 @@ if Game then
 					)
 				end
 
+				isTradeable = ScratchDeal:IsPossibleToTradeItem( playerID, activePlayerID, TradeableItems.TRADE_ITEM_DIPLOMATIC_MARRIAGE, g_dealDuration )
+				isActiveDeal = activePlayer:IsMarriageAccepted(playerID)
+				if isTradeable or isActiveDeal then
+					insert( treaties, negativeOrPositiveTextColor[isActiveDeal] .. "[ICON_FLOWER]"
+							.. L"TXT_KEY_DIPLO_MARRIAGE"
+							.. "[ENDCOLOR]" .. GetDealTurnsRemaining( TradeableItems.TRADE_ITEM_DIPLOMATIC_MARRIAGE )
+					)
+				end
+
 				-- Research Agreement
 	--			isTradeable = (activeTeam:IsResearchAgreementTradingAllowed() or team:IsResearchAgreementTradingAllowed())
 	--				and not activeTeam:GetTeamTechs():HasResearchedAllTechs() and not team:GetTeamTechs():HasResearchedAllTechs()
@@ -3728,7 +3767,7 @@ if Game then
 				isTradeable = ScratchDeal:IsPossibleToTradeItem( playerID, activePlayerID, TradeableItems.TRADE_ITEM_TRADE_AGREEMENT, g_dealDuration )
 				isActiveDeal = activeTeam:IsHasTradeAgreement(teamID)
 				if isTradeable or isActiveDeal then
-					insert( treaties, negativeOrPositiveTextColor[isActiveDeal] .. "[ICON_RESEARCH]"
+					insert( treaties, negativeOrPositiveTextColor[isActiveDeal] .. "[ICON_GOLD]"
 							.. L"TXT_KEY_DIPLO_TRADE_AGREEMENT":lower()
 							.. "[ENDCOLOR]" .. GetDealTurnsRemaining( TradeableItems.TRADE_ITEM_TRADE_AGREEMENT )
 					)
@@ -3742,18 +3781,6 @@ if Game then
 							.. L"TXT_KEY_DO_PACT"
 							.. "[ENDCOLOR]" .. GetDealTurnsRemaining( TradeableItems.TRADE_ITEM_DEFENSIVE_PACT )
 					)
-				end
-
-				-- We've fought before
-				if IsCiv5Vanilla and activePlayer:GetNumWarsFought(playerID) > 0 then
-					-- They don't appear to be mad
-					if visibleApproachID == MajorCivApproachTypes.MAJOR_CIV_APPROACH_FRIENDLY or
-						visibleApproachID == MajorCivApproachTypes.MAJOR_CIV_APPROACH_NEUTRAL then
-						insert( opinions, L"TXT_KEY_DIPLO_PAST_WAR_NEUTRAL" )
-					-- They aren't happy with us
-					else
-						insert( opinions, L"TXT_KEY_DIPLO_PAST_WAR_BAD" )
-					end
 				end
 			end
 
@@ -3780,6 +3807,18 @@ if Game then
 				-- Neutral things
 				if visibleApproachID == MajorCivApproachTypes.MAJOR_CIV_APPROACH_AFRAID then
 					insert( opinions, L"TXT_KEY_DIPLO_AFRAID" )
+				end
+
+				-- We've fought before
+				if IsCiv5Vanilla and activePlayer:GetNumWarsFought(playerID) > 0 then
+					-- They don't appear to be mad
+					if visibleApproachID == MajorCivApproachTypes.MAJOR_CIV_APPROACH_FRIENDLY or
+						visibleApproachID == MajorCivApproachTypes.MAJOR_CIV_APPROACH_NEUTRAL then
+						insert( opinions, L"TXT_KEY_DIPLO_PAST_WAR_NEUTRAL" )
+					-- They aren't happy with us
+					else
+						insert( opinions, L"TXT_KEY_DIPLO_PAST_WAR_BAD" )
+					end
 				end
 
 				-- Bad things

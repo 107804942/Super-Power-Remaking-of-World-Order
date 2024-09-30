@@ -66,6 +66,7 @@
 			<IconAtlas>UNIT_ATLAS_1</IconAtlas>
 			<PortraitIndex>23</PortraitIndex>
 			<MoveRate>WOODEN_BOAT</MoveRate>
+			<ObsoleteTech>TECH_STEAM_POWER</ObsoleteTech>
 		</Row>
 
 
@@ -339,7 +340,7 @@
 			<Description>TXT_KEY_UNIT_DANISH_DRAGONSHIP</Description>
 			<Civilopedia>TXT_KEY_UNIT_DANISH_DRAGONSHIP_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SP_UNITS_NAVALMELEE_SHIPS_STRATEGY</Strategy>
-			<Help>TXT_KEY_PROMOTION_NAVALMELEE_COMBAT_HELP</Help>
+			<Help>TXT_KEY_UNIT_HELP_UNIT_DANISH_DRAGONSHIP</Help>
 			<GoodyHutUpgradeUnitClass>UNITCLASS_FRIGATE</GoodyHutUpgradeUnitClass>
 			<MilitarySupport>true</MilitarySupport>
 			<MilitaryProduction>true</MilitaryProduction>
@@ -443,7 +444,7 @@
 			<Description>TXT_KEY_UNIT_SPANISH_ARMADA</Description>
 			<Civilopedia>TXT_KEY_UNIT_SPANISH_ARMADA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SP_UNITS_NAVALMELEE_SHIPS_STRATEGY</Strategy>
-			<Help>TXT_KEY_PROMOTION_NAVALMELEE_COMBAT_HELP</Help>
+			<Help>TXT_KEY_UNIT_HELP_SPANISH_ARMADA</Help>
 			<MilitarySupport>true</MilitarySupport>
 			<MilitaryProduction>true</MilitaryProduction>
 			<Pillage>true</Pillage>
@@ -781,7 +782,7 @@
 			<Description>TXT_KEY_UNIT_SEA_BEGGAR</Description>
 			<Civilopedia>TXT_KEY_CIV5_SEA_BEGGAR_TEXT</Civilopedia>
 			<Strategy>TXT_KEY_SP_UNITS_NAVAL_HIT_AND_RUN_SHIPS_STRATEGY</Strategy>
-			<Help>TXT_KEY_PROMOTION_NAVAL_HIT_AND_RUN_HELP</Help>
+			<Help>TXT_KEY_UNIT_HELP_SEA_BEGGAR</Help>
 			<MilitarySupport>true</MilitarySupport>
 			<MilitaryProduction>true</MilitaryProduction>
 			<Pillage>true</Pillage>
@@ -1432,7 +1433,7 @@
 			<RangedCombatLimit>100</RangedCombatLimit>
 			<CombatLimit>0</CombatLimit>
 			<XPValueDefense>2</XPValueDefense>
-			<UnitArtInfo>ART_DEF_UNIT_GERMAN_EUROCOPTER_TIGER</UnitArtInfo>
+			<UnitArtInfo>ART_DEF_UNIT_FRANCE_EUROCOPTER_TIGER</UnitArtInfo>
 			<UnitFlagIconOffset>91</UnitFlagIconOffset>
 			<UnitFlagAtlas>SPUnitFlags_FLAG</UnitFlagAtlas>
 			<IconAtlas>SPUNITS02_ATLAS</IconAtlas>
@@ -2424,6 +2425,10 @@
 		<Row>
 			<UnitType>UNIT_BYZANTINE_DROMON</UnitType>
 			<PromotionType>PROMOTION_OCEAN_IMPASSABLE</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_BYZANTINE_DROMON</UnitType>
+			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType>
 		</Row>
 
 		<Row>

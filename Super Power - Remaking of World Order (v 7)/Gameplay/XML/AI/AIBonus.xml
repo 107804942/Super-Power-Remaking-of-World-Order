@@ -61,6 +61,7 @@
 			<UnhappinessMod>-20</UnhappinessMod>
 			<FreeExperience>45</FreeExperience>
 			<PolicyCostModifier>3</PolicyCostModifier>
+			<CatchSpiesModifier>30</CatchSpiesModifier>
 		</Row>
 		<Row>
 			<Type>POLICY_AI_ATOMIC</Type>
@@ -71,6 +72,7 @@
 			<ThemingBonusMultiplier>600</ThemingBonusMultiplier>
 			<FreeExperience>45</FreeExperience>
 			<PolicyCostModifier>3</PolicyCostModifier>
+			<CatchSpiesModifier>60</CatchSpiesModifier>
 		</Row>
 
 
@@ -92,7 +94,7 @@
 			<StealTechFasterModifier>100</StealTechFasterModifier>
 			<ThemingBonusMultiplier>800</ThemingBonusMultiplier>
 			<InternalTradeRouteYieldModifier>200</InternalTradeRouteYieldModifier>
-			<StrategicResourceMod>150</StrategicResourceMod>
+			<StrategicResourceMod>40</StrategicResourceMod>
 			<FreeExperience>50</FreeExperience>
 			<PolicyCostModifier>3</PolicyCostModifier>
 		</Row>
@@ -110,7 +112,7 @@
 			<StealTechFasterModifier>50</StealTechFasterModifier>
 			<ThemingBonusMultiplier>400</ThemingBonusMultiplier>
 			<InternalTradeRouteYieldModifier>100</InternalTradeRouteYieldModifier>
-			<StrategicResourceMod>135</StrategicResourceMod>
+			<StrategicResourceMod>30</StrategicResourceMod>
 			<FreeExperience>30</FreeExperience>
 			<PolicyCostModifier>3</PolicyCostModifier>
 		</Row>
@@ -129,7 +131,7 @@
 			<UnitGoldMaintenanceMod>-15</UnitGoldMaintenanceMod>
 			<InternalTradeRouteYieldModifier>100</InternalTradeRouteYieldModifier>
 			<RiggingElectionModifier>50</RiggingElectionModifier>
-			<StrategicResourceMod>120</StrategicResourceMod>
+			<StrategicResourceMod>20</StrategicResourceMod>
 			<FreeExperience>20</FreeExperience>
 			<PolicyCostModifier>3</PolicyCostModifier>
 		</Row>
@@ -140,7 +142,6 @@
 			<AfraidMinorPerTurnInfluence>100</AfraidMinorPerTurnInfluence>
 			<CityGrowthMod>15</CityGrowthMod>
 			<UnhappinessMod>-10</UnhappinessMod>
-			<ThemingBonusMultiplier>100</ThemingBonusMultiplier>
 			<BuildingGoldMaintenanceMod>-15</BuildingGoldMaintenanceMod>
 			<UnitGoldMaintenanceMod>-25</UnitGoldMaintenanceMod>
 			<InternalTradeRouteYieldModifier>50</InternalTradeRouteYieldModifier>
@@ -307,11 +308,6 @@
 			<Yield>1</Yield>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_AI_RENAISSANCE</PolicyType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
 			<PolicyType>POLICY_AI_INDUSTRY</PolicyType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>1</Yield>
@@ -338,6 +334,20 @@
 		</Row>
 	</Policy_SpecialistExtraYields>
 
+	<Policy_SpecialistYieldChanges>
+		<Row>
+			<PolicyType>POLICY_AI_RENAISSANCE</PolicyType>
+			<SpecialistType>SPECIALIST_WRITER</SpecialistType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_AI_RENAISSANCE</PolicyType>
+			<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Policy_SpecialistYieldChanges>
 
 	
 	<Policy_BuildingClassYieldModifiers>
@@ -459,11 +469,6 @@
 	<Policy_BuildingClassTourismModifiers>
 		<Row>
 			<PolicyType>POLICY_AI_BONUS_ECONOMY_LV1</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_TOWN</BuildingClassType>
-			<TourismModifier>15</TourismModifier>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_AI_BONUS_ECONOMY_LV1</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_SMALL</BuildingClassType>
 			<TourismModifier>20</TourismModifier>
 		</Row>
@@ -480,13 +485,8 @@
 
 		<Row>
 			<PolicyType>POLICY_AI_BONUS_ECONOMY_LV2</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_TOWN</BuildingClassType>
-			<TourismModifier>15</TourismModifier>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_AI_BONUS_ECONOMY_LV2</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_SMALL</BuildingClassType>
-			<TourismModifier>20</TourismModifier>
+			<TourismModifier>25</TourismModifier>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_AI_BONUS_ECONOMY_LV2</PolicyType>
@@ -502,12 +502,12 @@
 		<Row>
 			<PolicyType>POLICY_AI_BONUS_ECONOMY_LV3</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_TOWN</BuildingClassType>
-			<TourismModifier>15</TourismModifier>
+			<TourismModifier>20</TourismModifier>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_AI_BONUS_ECONOMY_LV3</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_SMALL</BuildingClassType>
-			<TourismModifier>20</TourismModifier>
+			<TourismModifier>25</TourismModifier>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_AI_BONUS_ECONOMY_LV3</PolicyType>

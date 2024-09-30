@@ -10,6 +10,7 @@
 
 		<Delete UnitType="UNIT_BARBARIAN_HORSEMAN"/>
 		<Delete UnitType="UNIT_BARBARIAN_SWORDSMAN"/>
+		<Delete UnitType="UNIT_BARBARIAN_SPEARMAN"/>
 		<Delete UnitType="UNIT_WORKBOAT"/>
 		<Delete UnitType="UNIT_PRIVATEER"/>
 		<Delete UnitType="UNIT_GALLEY"/>
@@ -96,12 +97,6 @@
 			<SelectionSound>AS2D_SELECT_MUSKETMAN</SelectionSound>
 			<FirstSelectionSound>AS2D_BIRTH_MUSKETMAN</FirstSelectionSound>
 		</Row>
-		<Row>
-			<UnitType>UNIT_IROQUOIAN_CANADIAN_FIGHTER</UnitType>
-			<SelectionSound>AS2D_SELECT_FIGHTER</SelectionSound>
-			<FirstSelectionSound>AS2D_BIRTH_FIGHTER</FirstSelectionSound>
-		</Row>
-
 
 		<Row>
 			<UnitType>UNIT_ZULU_BOER_COMMANDO</UnitType>
@@ -324,12 +319,6 @@
 			<SelectionSound>AS2D_SELECT_MECH_INFANTRY</SelectionSound>
 			<FirstSelectionSound>AS2D_BIRTH_MECH_INFANTRY</FirstSelectionSound>
 		</Row>
-		
-		<!--<Row>
-			<UnitType>UNIT_PERSIAN_CATAPHRACT</UnitType>
-			<SelectionSound>AS2D_SELECT_CAVALRY</SelectionSound>
-			<FirstSelectionSound>AS2D_BIRTH_CAVALRY</FirstSelectionSound>
-		</Row>-->
 
 		<Row>
 			<UnitType>UNIT_EGYPTAIN_MAMLUK</UnitType>
@@ -377,16 +366,6 @@
 
 		<Row>
 			<UnitType>UNIT_RUSSIAN_T34</UnitType>
-			<SelectionSound>AS2D_SELECT_TANK</SelectionSound>
-			<FirstSelectionSound>AS2D_BIRTH_TANK</FirstSelectionSound>
-		</Row>
-		<!--<Row>
-			<UnitType>UNIT_CHINESE_TYPE99</UnitType>
-			<SelectionSound>AS2D_SELECT_TANK</SelectionSound>
-			<FirstSelectionSound>AS2D_BIRTH_TANK</FirstSelectionSound>
-		</Row>-->
-		<Row>
-			<UnitType>UNIT_ZULU_OLIFANT</UnitType>
 			<SelectionSound>AS2D_SELECT_TANK</SelectionSound>
 			<FirstSelectionSound>AS2D_BIRTH_TANK</FirstSelectionSound>
 		</Row>
@@ -524,11 +503,6 @@
 			<FirstSelectionSound>AS2D_BIRTH_TANK</FirstSelectionSound>
 		</Row>
 		<!--<Row>
-			<UnitType>UNIT_ASSAULT_GUN</UnitType>
-			<SelectionSound>AS2D_SELECT_TANK</SelectionSound>
-			<FirstSelectionSound>AS2D_BIRTH_TANK</FirstSelectionSound>
-		</Row>-->
-		<!--<Row>
 			<UnitType>UNIT_DIRIGEABLE</UnitType>
 			<SelectionSound>AS2D_SELECT_BOMBER</SelectionSound>
 			<FirstSelectionSound>AS2D_BIRTH_BOMBER</FirstSelectionSound>
@@ -558,11 +532,6 @@
 			<UnitType>UNIT_EXPLORERX</UnitType>
 			<SelectionSound>AS2D_SELECT_SCOUT</SelectionSound>
 			<FirstSelectionSound>AS2D_BIRTH_SCOUT</FirstSelectionSound>
-		</Row>
-		<Row>
-			<UnitType>UNIT_BARBARIAN_HORSEMAN</UnitType>
-			<SelectionSound>AS2D_SELECT_CHARIOT_ARCHER</SelectionSound>
-			<FirstSelectionSound>AS2D_BIRTH_CHARIOT_ARCHER</FirstSelectionSound>
 		</Row>
 		<Row>
 			<UnitType>UNIT_BARBARIAN_GALLEY</UnitType>

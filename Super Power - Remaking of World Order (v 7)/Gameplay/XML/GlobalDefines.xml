@@ -186,7 +186,7 @@
 			<Where Name="GOLDEN_AGE_THRESHOLD_CITY_MULTIPLIER" />
 		</Update>
 		<Update>
-			<Set Value="150"/>
+			<Set Value="200"/>
 			<Where Name="GOLDEN_AGE_EACH_GA_ADDITIONAL_HAPPINESS" />
 		</Update>
 		<Update>
@@ -744,11 +744,6 @@
 		</Update>
 
 		<Row>
-			<Name>GREEK_UB_DUMMY_MAX</Name>
-			<Value>20</Value>
-		</Row>
-
-		<Row>
 			<Name>AZTEC_UB_CULTURE_RATE</Name>
 			<Value>300</Value>
 		</Row>
@@ -795,6 +790,30 @@
 		<Update>
 			<Set Value="33"/>
 			<Where Name="MINOR_CIV_SCIENCE_BONUS_MULTIPLIER" />
+		</Update>
+
+		<Update>
+			<Set Value="60"/>
+			<Where Name="BARBARIAN_TECH_PERCENT" />
+		</Update>
+
+		<Update>
+			<Set Value="200"/>
+			<Where Name="BUILDER_TASKING_BASELINE_BUILD_ROUTES" />
+		</Update>
+
+		<Update>
+			<Set Value="100"/>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_UPGRADE" />
+		</Update>
+
+		<Update>
+			<Set Value="-2500"/>
+			<Where Name="MINOR_FRIENDSHIP_DROP_BULLY_WORKER_SUCCESS" />
+		</Update>
+		<Update>
+			<Set Value="100"/>
+			<Where Name="MINOR_BULLY_GOLD" />
 		</Update>
 	</Defines>
 	

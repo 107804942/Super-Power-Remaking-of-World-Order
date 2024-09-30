@@ -128,15 +128,10 @@ function UpdateData()
 					if (pPlayer:GetGoldenAgeTourismModifier() > 0) then
 						strGoldenAgeStr = string.format(Locale.ToUpper(Locale.ConvertTextKey("TXT_KEY_UNIQUE_GOLDEN_AGE_ANNOUNCE")) .. " (%i)", pPlayer:GetGoldenAgeTurns());
 						
-						--------------------------------------------- SP Chinese Pax Sinica ----------------------------------------
-					elseif GameInfo.Leader_Traits{ LeaderType = GameInfo.Leaders[pPlayer:GetLeaderType()].Type, TraitType = "TRAIT_ART_OF_WAR" }()
-					and(GameInfo.Traits["TRAIT_ART_OF_WAR"].PrereqPolicy == nil or (GameInfo.Traits["TRAIT_ART_OF_WAR"].PrereqPolicy 
-					and pPlayer:HasPolicy(GameInfoTypes[GameInfo.Traits["TRAIT_ART_OF_WAR"].PrereqPolicy])))
+					--SP Chinese Pax Sinica
+					elseif pPlayer:HasTrait(GameInfoTypes["TRAIT_ART_OF_WAR"])
 					then
-						strGoldenAgeStr = string.format(Locale.ToUpper(Locale.ConvertTextKey("TXT_KEY_SP_UA_CHINA_GOLDENAGE_ANNOUNCE")) .. " (%i)", pPlayer:GetGoldenAgeTurns());
-						
-						--------------------------------------------- SP Chinese Pax Sinica END----------------------------------------
-							
+						strGoldenAgeStr = string.format(Locale.ToUpper(Locale.ConvertTextKey("TXT_KEY_SP_UA_CHINA_GOLDENAGE_ANNOUNCE")) .. " (%i)", pPlayer:GetGoldenAgeTurns());	
 					else
 						strGoldenAgeStr = string.format(Locale.ToUpper(Locale.ConvertTextKey("TXT_KEY_GOLDEN_AGE_ANNOUNCE")) .. " (%i)", pPlayer:GetGoldenAgeTurns());
 					end
@@ -1046,28 +1041,17 @@ function GoldenAgeTipHandler( control )
 		strText = strText .. "[NEWLINE][NEWLINE]";
 		if (pPlayer:IsGoldenAgeCultureBonusDisabled()) then
 			strText = strText ..  Locale.ConvertTextKey("TXT_KEY_TP_GOLDEN_AGE_EFFECT_NO_CULTURE");
-			
-					
-			---------------------------SP China Pax Sinica------------------------		
+		
+		---SP China Pax Sinica
 		elseif pPlayer:GetGoldenAgeTurns() > 0
-		and GameInfo.Leader_Traits{ LeaderType = GameInfo.Leaders[pPlayer:GetLeaderType()].Type, TraitType = "TRAIT_ART_OF_WAR" }()
-		and(GameInfo.Traits["TRAIT_ART_OF_WAR"].PrereqPolicy == nil or (GameInfo.Traits["TRAIT_ART_OF_WAR"].PrereqPolicy 
-		and pPlayer:HasPolicy(GameInfoTypes[GameInfo.Traits["TRAIT_ART_OF_WAR"].PrereqPolicy])))
+		and pPlayer:HasTrait(GameInfoTypes["TRAIT_ART_OF_WAR"])
 		then
 			strText = strText ..  Locale.ConvertTextKey("TXT_KEY_SP_UA_CHINA_GOLDENAGE_EFFECTS");
-			---------------------------SP China Pax Sinica END------------------------
-					
-					
+	
 		else
 			strText = strText ..  Locale.ConvertTextKey("TXT_KEY_TP_GOLDEN_AGE_EFFECT");		
 		end
-		
-		
-	
-	
-		
-		
-		
+
 		if (pPlayer:GetGoldenAgeTurns() > 0 and pPlayer:GetGoldenAgeTourismModifier() > 0) then
 			strText = strText .. "[NEWLINE][NEWLINE]";
 			strText = strText ..  Locale.ConvertTextKey("TXT_KEY_TP_CARNIVAL_EFFECT");			
@@ -1303,6 +1287,12 @@ function TourismTipHandler( control )
 		if iBonusFromNumGreakWork ~= 0 then
 			strText = strText .. "[NEWLINE]" .. Locale.ConvertTextKey("TXT_KEY_SP_UI_TOURISMBOOST_BY_NUM_GREAT_WORK", iBonusFromNumGreakWork) 
 		end
+
+		local iBonusFromNumArtifact = pPlayer:GetYieldModifierFromNumArtifact(GameInfoTypes["YIELD_TOURISM"])
+		if iBonusFromNumArtifact ~= 0 then
+			strText = strText .. "[NEWLINE]" .. Locale.ConvertTextKey("TXT_KEY_SP_UI_TOURISMBOOST_BY_NUM_ARTIFACT", iBonusFromNumArtifact) 
+		end
+
 		strText = strText .. pPlayer:GetInternationalTourismTooltip();
 		
 	--------------------------------------SP Additional Tourism boost by Extra Happiness END-----------------------------

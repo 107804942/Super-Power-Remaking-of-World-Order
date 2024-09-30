@@ -235,11 +235,11 @@
 			<Set Value="1"/>
 		</Update>
 		<Update>
-			<Where Name="GLOBAL_PROMOTIONS_REMOVAL"/>
+			<Where Name="GLOBAL_INCREASE_SS_PART_PURCHASE_COST"/>
 			<Set Value="1"/>
 		</Update>
 		<Update>
-			<Where Name="GLOBAL_UNIT_MOVES_AFTER_DISEMBARK"/>
+			<Where Name="GLOBAL_PROMOTIONS_REMOVAL"/>
 			<Set Value="1"/>
 		</Update>
 		<Update>
@@ -279,7 +279,26 @@
 		</Update>
 
 		<Update>
+			<Where Name="UNITS_LOCAL_WORKERS"/>
+			<Set Value="1"/>
+		</Update>
+
+		<Update>
 			<Where Name="GLOBAL_CORRUPTION"/>
+			<Set Value="1"/>
+		</Update>
+
+		<Update>
+			<Where Name="GLOBAL_CORRUPTION_POLICY_COST_MIN_ZERO"/>
+			<Set Value="1"/>
+		</Update>
+
+		<Update>
+			<Where Name="GLOBAL_UNIT_BARBARIAN_CAN_TRAIN"/>
+			<Set Value="1"/>
+		</Update>
+		<Update>
+			<Where Name="GLOBAL_SP_BARBARIAN_ENHANCE"/>
 			<Set Value="1"/>
 		</Update>
 
@@ -323,6 +342,23 @@
 			<Where Name="SHOW_ATTACK_INTERFACE_WITHOUT_ENEMY"/>
 			<Set Value="1"/>
 		</Update>
+		<Update>
+			<Where Name="TRAIT_WOOD_AS_ROAD_SP"/>
+			<Set Value="1"/>
+		</Update>
+		<Update>
+			<Where Name="IMPROVEMENT_FUNCTION"/>
+			<Set Value="1"/>
+		</Update>
+		<Update>
+			<Where Name="PROMOTIONS_IMPROVEMENT_BONUS"/>
+			<Set Value="1"/>
+		</Update>
+		<Update>
+			<Where Name="BUILDINGS_NW_EXCLUDE_RAZING"/>
+			<Set Value="1"/>
+		</Update>
+		
 	</CustomModOptions>
 
 
@@ -450,14 +486,6 @@
 			<Help>TXT_KEY_GAME_OPTION_PROJECT_CAPTURE_HELP</Help>
 		</Row>
 
-		<Update>
-			<Where Type="GAMEOPTION_SP_IMMIGRATION_OFF"/>
-			<Set Default="1"/>
-		</Update>
-		<Update>
-			<Where Type="GAMEOPTION_SP_NUCLEARWINTER_OFF"/>
-			<Set Default="1"/>
-		</Update>
 		<Update>
 			<Where Type="GAMEOPTION_POLICY_SAVING"/>
 			<Set Default="1"/>

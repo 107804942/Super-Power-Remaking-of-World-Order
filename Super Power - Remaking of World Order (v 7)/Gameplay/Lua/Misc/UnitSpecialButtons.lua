@@ -746,64 +746,7 @@ ReconTargetGuideButton = {
 
 LuaEvents.UnitPanelActionAddin(ReconTargetGuideButton);
 
---------Stealth Operation Switch
--- UnitStealthOnButton = {
---  Name = "Stealth Operation on",
---  Title = "TXT_KEY_SP_BTNNOTE_UNIT_STEALTH_ON_SHORT", -- or a TXT_KEY
---  OrderPriority = 200, -- default is 200
---  IconAtlas = "SP_UNIT_ACTION_ATLAS", -- 45 and 64 variations required
---  PortraitIndex = 20,
---  ToolTip = "TXT_KEY_SP_BTNNOTE_UNIT_STEALTH_ON", -- or a TXT_KEY_ or a function
---  
--- 
---  
---  Condition = function(action, unit)
---    return unit:CanMove() and not unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_STEALTH_OPERATION"].ID) and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SP_FORCE_X_2"].ID) 
---  end, -- or nil or a boolean, default is true
---  
--- Disabled = function(action, unit)  
---   
---    return unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_STEALTH_OPERATION"].ID)
---  end, -- or nil or a boolean, default is false
---  
---  Action = function(action, unit, eClick) 	
---    unit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_STEALTH_OPERATION"].ID, true)  
---   	print ("Stealth On!")	
---  end
--- };
---
--- LuaEvents.UnitPanelActionAddin(UnitStealthOnButton);
---
---
---
--- UnitStealthOffButton = {
---  Name = "Stealth Operation off",
---  Title = "TXT_KEY_SP_BTNNOTE_UNIT_STEALTH_OFF_SHORT", -- or a TXT_KEY
---  OrderPriority = 200, -- default is 200
---  IconAtlas = "SP_UNIT_ACTION_ATLAS", -- 45 and 64 variations required
---  PortraitIndex = 21,
---  ToolTip = "TXT_KEY_SP_BTNNOTE_UNIT_STEALTH_OFF", -- or a TXT_KEY_ or a function
---  
---  
--- Condition = function(action, unit)
---    return unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_STEALTH_OPERATION"].ID);
---  end, -- or nil or a boolean, default is true
---  
---  Disabled = function(action, unit)     
---    return not unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_STEALTH_OPERATION"].ID) ;
---  end, -- or nil or a boolean, default is false
---  
---  Action = function(action, unit, eClick) 	
---    unit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_STEALTH_OPERATION"].ID, false)  
---    unit:SetMoves(0)
---   	print ("Stealth Off!")	
---  end
--- };
---
--- LuaEvents.UnitPanelActionAddin(UnitStealthOffButton);
-
 ----------Emergency Heal
-
 EmergencyHealButton = {
     Name = "Emergency Heal",
     Title = "TXT_KEY_SP_BTNNOTE_UNIT_EMERGENCY_HEAL_SHORT", -- or a TXT_KEY
@@ -869,12 +812,17 @@ MilitiaResupplyButton = {
         local unitCount = plot:GetNumUnits()
         for i = 0, unitCount - 1, 1 do
             local pFoundUnit = plot:GetUnit(i)
-            if pFoundUnit == nil or pFoundUnit:GetID() == unit:GetID() or not pFoundUnit:IsCombatUnit() or pFoundUnit:GetCurrHitPoints() == pFoundUnit:GetMaxHitPoints() or not pFoundUnit:CanMove() then
-                return true
-            else
+            if pFoundUnit 
+            and pFoundUnit:GetID() ~= unit:GetID() 
+            and pFoundUnit:IsCombatUnit() 
+            and pFoundUnit:GetCurrHitPoints() < pFoundUnit:GetMaxHitPoints() 
+            and pFoundUnit:CanMove() 
+            then
                 return false
             end
         end
+        --don't find a valid Unit
+        return true
     end, -- or nil or a boolean, default is false
 
     Action = function(action, unit, eClick)
@@ -956,10 +904,9 @@ HackingMissionButton = {
 
     Disabled = function(action, unit)
         local plotOwner = Players[unit:GetPlot():GetOwner()]
-        if plotOwner == nil or not plotOwner:IsAtWar(unit:GetOwner())  then
+        if plotOwner == nil or not plotOwner:IsAtWarWith(unit:GetOwner())  then
             return true
         end
-
     end, -- or nil or a boolean, default is false
 
     Action = function(action, unit, eClick)
@@ -979,19 +926,6 @@ local CorpsID = GameInfo.UnitPromotions["PROMOTION_CORPS_1"].ID
 local ArmeeID = GameInfo.UnitPromotions["PROMOTION_CORPS_2"].ID
 local iArsenal = GameInfoTypes["BUILDINGCLASS_ARSENAL"]
 local iMilitaryBase = GameInfoTypes["BUILDINGCLASS_MILITARY_BASE"]
-function bUnitCanEstablishCorps(unit)
-    if unit:IsHasPromotion(ArmeeID)
-    --only land unit can establish corps SP8.0
-    or unit:GetDomainType() ~= DomainTypes.DOMAIN_LAND
-    --CitadelUnits can't establish
-    or unit:IsEmbarked() or unit:IsImmobile() or not unit:CanMove()
-    or (unit:GetDomainType() == DomainTypes.DOMAIN_LAND and unit:GetPlot():IsWater())
-    or (unit:GetDomainType() == DomainTypes.DOMAIN_SEA and not unit:GetPlot():IsWater())
-    then
-        return false
-    end
-    return true
-end
 local tUnit = nil;
 local nUnit = nil;
 -- Establish Corps & Armee
@@ -1009,9 +943,9 @@ EstablishCorpsButton = {
 		local city = plot:GetPlotCity() or plot:GetWorkingCity();
 
 		if player:GetDomainTroopsActive() <= 0
-        or plot:GetNumUnits() ~= 2
+        or plot:GetNumUnits() ~= 2 or plot:IsWater()
 		or city == nil or city:GetOwner() ~= playerID
-		or not bUnitCanEstablishCorps(unit)
+		or not (unit:IsCanEstablishCorps() or unit:IsCanBeEstablishedCorps())
 		then
 			return false
 		end
@@ -1019,19 +953,16 @@ EstablishCorpsButton = {
 		tUnit = nil;
 		nUnit = nil;
 
-		if unit:GetUnitClassType() == GameInfo.UnitClasses.UNITCLASS_GREAT_GENERAL.ID 
-		or unit:GetUnitClassType() == GameInfo.UnitClasses.UNITCLASS_GREAT_ADMIRAL.ID 
-		then
+        --Great People
+		if unit:IsCanEstablishCorps() then
 			nUnit = unit;
-		elseif unit:IsCombatUnit() then
+        --Combat Unit
+        else
+            tUnit = unit;
             if player:GetBuildingClassCount(iArsenal) <= 0 then
                 return false
             end
-			tUnit = unit;
-		else
-            --Other civilians don't need it
-			return false
-		end
+        end
 		
 		for i = 0, plot:GetNumUnits() - 1, 1 do
 			local iUnit = plot:GetUnit(i)
@@ -1042,7 +973,7 @@ EstablishCorpsButton = {
                 end
                 --unit is Great Person
                 if tUnit == nil then
-                    if not bUnitCanEstablishCorps(iUnit) then
+                    if not iUnit:IsCanBeEstablishedCorps() then
                         return false
                     end
                     tUnit = iUnit
@@ -1096,13 +1027,13 @@ EstablishCorpsButton = {
 		local playerID = unit:GetOwner()
         local player = Players[playerID]
 
-		if unit:GetUnitClassType() == GameInfo.UnitClasses.UNITCLASS_GREAT_GENERAL.ID 
-		or unit:GetUnitClassType() == GameInfo.UnitClasses.UNITCLASS_GREAT_ADMIRAL.ID 
+		if unit:IsCanEstablishCorps()
 		then
 			for i = 0, plot:GetNumUnits() - 1, 1 do
 				local iUnit = plot:GetUnit(i)
 				if iUnit:IsCombatUnit()
-				and not iUnit:IsHasPromotion(ArmeeID) 
+				and not iUnit:IsHasPromotion(ArmeeID)
+                and iUnit ~= unit
 				then
 					if iUnit:IsHasPromotion(CorpsID) and not city:IsHasBuildingClass(iArsenal) then
                         --Use a Great Prople to Upgrade a Unit need Arsenal in this City
@@ -1184,12 +1115,15 @@ EstablishCorpsButton = {
             end
             --kill Great People
             if tUnit ~= unit and nUnit ~= unit then
-                unit:Kill();
+                unit:ChangeNumEstablishCorps(-1);
+                unit:SetMoves(0);
             end
         end
     end
 };
-LuaEvents.UnitPanelActionAddin(EstablishCorpsButton);
+if PreGame.GetGameOption("GAMEOPTION_SP_CORPS_MODE_DISABLE") == 0 then
+    LuaEvents.UnitPanelActionAddin(EstablishCorpsButton);
+end
 
 ----------remove Debuff
 MoralBoostButton = {
@@ -1284,8 +1218,7 @@ BuildMilitaryAcademyButton = {
         end
 
         city:SetNumRealBuilding(GameInfoTypes["BUILDING_MILITARY_ACADEMY"], 1)
-        if GameInfo.Leader_Traits {LeaderType = GameInfo.Leaders[player:GetLeaderType()].Type, TraitType = "TRAIT_TERROR"}() 
-		and (GameInfo.Traits["TRAIT_TERROR"].PrereqPolicy == nil or (GameInfo.Traits["TRAIT_TERROR"].PrereqPolicy and player:HasPolicy(GameInfoTypes[GameInfo.Traits["TRAIT_TERROR"].PrereqPolicy]))) 
+        if player:HasTrait(GameInfoTypes["TRAIT_TERROR"])
 		or (player:HasPolicy(GameInfo.Policies["POLICY_EXPLORATION_FINISHER"].ID) 
 		and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_GREAT_ADMIRAL"].ID)) 
 		then
@@ -1297,58 +1230,6 @@ BuildMilitaryAcademyButton = {
     end
 };
 LuaEvents.UnitPanelActionAddin(BuildMilitaryAcademyButton);
-
--- Religious Unit Establish Inquisition
-EstablishInquisition = {
-    Name = "EstablishInquisition",
-    Title = "TXT_KEY_BUILD_INQUISITION", -- or a TXT_KEY
-    OrderPriority = 300, -- default is 200
-    IconAtlas = "SP_BUILDING_ATLAS_DLC_07", -- 45 and 64 variations required
-    PortraitIndex = 5,
-    ToolTip = "TXT_KEY_BUILDING_INQUISITION_HELP", -- or a TXT_KEY_ or a function
-    Condition = function(action, unit)
-        local bIsCondition = false;
-        if (
-			(unit:GetSpreadsLeft() > 0 and unit:GetSpreadsLeft() >= GameInfo.Units[unit:GetUnitType()].ReligionSpreads) 
-			or GameInfo.Units[unit:GetUnitType()].ProhibitsSpread) and unit:GetPlot() and unit:GetOwner() == unit:GetPlot():GetOwner() 
-			and (unit:GetPlot():IsCity() or unit:GetPlot():GetWorkingCity() ~= nil) 
-		then
-            local player = Players[unit:GetOwner()];
-            local city = unit:GetPlot():GetPlotCity() or unit:GetPlot():GetWorkingCity();
-            if city and city:GetReligiousMajority() == unit:GetReligion() 
-			and city:IsCanPurchase(false, false, -1, GameInfoTypes["BUILDING_INQUISITION"], -1, YieldTypes.YIELD_FAITH) then
-                bIsCondition = true;
-            end
-        end
-        return bIsCondition and unit:CanMove();
-    end, -- or nil or a boolean, default is true
-    Disabled = function(action, unit)
-        local bIsDisabled = true;
-        local numReligion = 0;
-        local city = unit:GetPlot():GetPlotCity() or unit:GetPlot():GetWorkingCity();
-        for religion in GameInfo.Religions("Type <> 'RELIGION_PANTHEON'") do
-            if city == nil then
-                break
-            elseif city:GetNumFollowers(religion.ID) > 0 then
-                numReligion = numReligion + 1;
-            end
-            if numReligion > 1 then
-                bIsDisabled = false;
-                break
-            end
-        end
-        return bIsDisabled;
-    end, -- or nil or a boolean, default is false
-
-    Action = function(action, unit, eClick)
-        local city = unit:GetPlot():GetPlotCity() or unit:GetPlot():GetWorkingCity();
-        if city then
-            city:SetNumRealBuilding(GameInfoTypes["BUILDING_INQUISITION"], 1);
-            unit:Kill();
-        end
-    end
-};
-LuaEvents.UnitPanelActionAddin(EstablishInquisition);
 
 ----Satellite Launching
 SatelliteLaunchingButton = {
@@ -1519,6 +1400,7 @@ TokyoRaidCancelButton = {
     end
 };
 LuaEvents.UnitPanelActionAddin(TokyoRaidCancelButton);
+---------MOD End By HMS
 
 CarrierRestoreButton = {
     Name = "Carrier Restore Button",
@@ -1529,35 +1411,53 @@ CarrierRestoreButton = {
     ToolTip = "TXT_KEY_BUILD_CARRIER_FIGHTER_HELP", -- or a TXT_KEY_ or a function
 
     Condition = function(action, unit)
-        local PlayerID = unit:GetOwner();
-        if GameInfo.Units[unit:GetUnitType()].SpecialCargo == "SPECIALUNIT_FIGHTER" and g_CargoSetList[PlayerID] == nil then
+        --g_CargoSetList[iPlayerID] = { iCargoBaseAcraft, iMissileU, iCost, iAirSuperiorityAcraft }
+        if not unit or GameInfo.Units[unit:GetUnitType()].SpecialCargo ~= "SPECIALUNIT_FIGHTER" then
+            return false
+        end
+        local PlayerID = unit:GetOwner()
+        if PlayerID < 0 then return false end
+
+        if g_CargoSetList[PlayerID] == nil then
             SPCargoListSetup(PlayerID);
         end
         return 
-            unit:CanMove() 
-            and GameInfo.Units[unit:GetUnitType()].SpecialCargo == "SPECIALUNIT_FIGHTER" 
-            and not unit:IsFull() and g_CargoSetList[PlayerID] and g_CargoSetList[PlayerID][1] ~= -1
+            unit:GetPlot() ~= nil and unit:CanMove() and not unit:IsFull()
+            and g_CargoSetList[PlayerID] and g_CargoSetList[PlayerID][1] ~= -1
     end, -- or nil or a boolean, default is true
 
     Disabled = function(action, unit)
-        return 
-            unit:GetOwner() < 0 
-            or unit:GetPlot() == nil or unit:GetPlot():IsCity() 
-            or (not unit:GetPlot():IsFriendlyTerritory(unit:GetOwner()) 
-            and not unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_CARRIER_SUPPLY_3"].ID)) 
-            or g_CargoSetList[unit:GetOwner()] == nil 
-            or g_CargoSetList[unit:GetOwner()][3] < 0 
-            or g_CargoSetList[unit:GetOwner()][3] > Players[unit:GetOwner()]:GetGold() 
-            or not Players[unit:GetOwner()]:IsCanPurchaseAnyCity(false, true, g_CargoSetList[unit:GetOwner()][4], -1, YieldTypes.YIELD_GOLD)
+        local PlayerID = unit:GetOwner();
+        local iCost = g_CargoSetList[PlayerID][3]
+        CarrierRestoreButton.ToolTip = Locale.ConvertTextKey("TXT_KEY_BUILD_CARRIER_FIGHTER_HELP")
+        CarrierRestoreButton.ToolTip = CarrierRestoreButton.ToolTip .. "([ICON_GOLD]" .. iCost .. ")"
+        if iCost < 0 then
+            CarrierRestoreButton.ToolTip = CarrierRestoreButton.ToolTip .. Locale.ConvertTextKey("TXT_KEY_BUILD_CARRIER_FIGHTER_HELP3")
+            return true
+        end
+        if iCost > Players[PlayerID]:GetGold() then
+            CarrierRestoreButton.ToolTip = CarrierRestoreButton.ToolTip .. Locale.ConvertTextKey("TXT_KEY_BUILD_CARRIER_FIGHTER_HELP4")
+            return true
+        end
+        if unit:GetPlot():IsCity() then
+            CarrierRestoreButton.ToolTip = CarrierRestoreButton.ToolTip .. Locale.ConvertTextKey("TXT_KEY_BUILD_CARRIER_FIGHTER_HELP1")
+            return true
+        end
+        if not unit:GetPlot():IsFriendlyTerritory(PlayerID) 
+        and not unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_CARRIER_SUPPLY_3"].ID)
+        then
+            CarrierRestoreButton.ToolTip = CarrierRestoreButton.ToolTip .. Locale.ConvertTextKey("TXT_KEY_BUILD_CARRIER_FIGHTER_HELP2")
+            return true
+        end
+        if not Players[PlayerID]:IsCanPurchaseAnyCity(false, true, g_CargoSetList[PlayerID][4], -1, YieldTypes.YIELD_GOLD)
+        then
+            CarrierRestoreButton.ToolTip = CarrierRestoreButton.ToolTip .. Locale.ConvertTextKey("TXT_KEY_BUILD_CARRIER_FIGHTER_HELP5")
+            return true
+        end
     end, -- or nil or a boolean, default is false
 
     Action = function(action, unit, eClick)
         local PlayerID = unit:GetOwner();
-        if unit == nil or PlayerID == nil then
-            print("No unit or player to restore aircrafts")
-            return
-        end
-
         local iCost = CarrierRestore(PlayerID, unit:GetID(), g_CargoSetList[PlayerID][1]);
         if iCost and iCost > 0 then
             Players[PlayerID]:ChangeGold(-iCost);
@@ -1565,7 +1465,6 @@ CarrierRestoreButton = {
     end
 };
 LuaEvents.UnitPanelActionAddin(CarrierRestoreButton);
----------MOD End By HMS
 
 -- Explorer Upgrade to Archaeologist
 UpgradetoArchaeologist = {
@@ -1605,8 +1504,7 @@ RemoveSheepOntheHills = {
         local bIsCondition = false;
         if unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_WORKER 
 		and plot:IsHills() and not plot:IsCity() and plot:GetResourceType(-1) == GameInfoTypes.RESOURCE_SHEEP 
-		and GameInfo.Leader_Traits {LeaderType = GameInfo.Leaders[player:GetLeaderType()].Type, TraitType = "TRAIT_GREAT_ANDEAN_ROAD"}() 
-		and (GameInfo.Traits["TRAIT_GREAT_ANDEAN_ROAD"].PrereqPolicy == nil or (GameInfo.Traits["TRAIT_GREAT_ANDEAN_ROAD"].PrereqPolicy and player:HasPolicy(GameInfoTypes[GameInfo.Traits["TRAIT_GREAT_ANDEAN_ROAD"].PrereqPolicy]))) then
+		and player:HasTrait(GameInfoTypes["TRAIT_GREAT_ANDEAN_ROAD"]) then
             bIsCondition = true;
         end
         return bIsCondition and unit:CanMove();

@@ -138,10 +138,11 @@ INSERT INTO SPTriggerControler(TriggerType,Enabled)
 SELECT 'SPNRligionDeleteEffect',0 UNION ALL
 SELECT 'SPNDeleteALLUnitStrategicFlag',0 UNION ALL
 SELECT 'Policy_Bill_Of_Right_Trigger',0 UNION ALL
+SELECT 'Minor_Units_Overrides_Trigger',0 UNION ALL
 SELECT 'Minor_Building_Overrides_Trigger',0;
 
 --DROP TRIGGER SPNRligionDeleteEffect;
-CREATE TRIGGER SPNRligionDeleteEffect 
+CREATE TRIGGER IF NOT EXISTS SPNRligionDeleteEffect 
 BEFORE DELETE ON Beliefs
 WHEN (SELECT Enabled FROM SPTriggerControler WHERE TriggerType = 'SPNRligionDeleteEffect') = 1
 BEGIN
@@ -183,14 +184,14 @@ BEGIN
     DELETE FROM Belief_YieldPerXFollowers WHERE BeliefType = OLD.Type;
 END;
 
-CREATE TRIGGER SPNDeleteALLUnitStrategicFlag1
+CREATE TRIGGER IF NOT EXISTS SPNDeleteALLUnitStrategicFlag1
 AFTER UPDATE ON SPTriggerControler
 WHEN NEW.TriggerType = 'SPNDeleteALLUnitStrategicFlag' AND NEW.Enabled = 1
 BEGIN
 	DELETE FROM ArtDefine_StrategicView WHERE TileType = 'Unit';
 END;
 
-CREATE TRIGGER SPNDeleteALLUnitStrategicFlag2
+CREATE TRIGGER IF NOT EXISTS SPNDeleteALLUnitStrategicFlag2
 AFTER INSERT ON ArtDefine_StrategicView
 WHEN (SELECT Enabled FROM SPTriggerControler WHERE TriggerType = 'SPNDeleteALLUnitStrategicFlag') = 1
 AND NEW.TileType = 'Unit'
@@ -198,7 +199,7 @@ BEGIN
 	DELETE FROM ArtDefine_StrategicView WHERE StrategicViewType = NEW.StrategicViewType;
 END;
 
-CREATE TRIGGER SPNDeleteALLUnitStrategicFlag3
+CREATE TRIGGER IF NOT EXISTS SPNDeleteALLUnitStrategicFlag3
 AFTER INSERT ON Units
 WHEN (SELECT Enabled FROM SPTriggerControler WHERE TriggerType = 'SPNDeleteALLUnitStrategicFlag') = 1
 BEGIN
@@ -209,6 +210,7 @@ CREATE TABLE SPNewEffectControler (Type text PRIMARY KEY, Enabled boolean);
 INSERT INTO SPNewEffectControler (Type,Enabled)
 SELECT 'SP_NEWATTACK_OFF',0 UNION ALL
 SELECT 'SP_DELETE_ALL_STRATEGIC_UNIT_FLAG',0 UNION ALL
+SELECT 'SP_ALL_UB_ACTIVE',0 UNION ALL
 SELECT 'UNIT_DEATH_COUNTER_OFF',0;
 
 --UPDATE SPTriggerControler SET Enabled = 1 WHERE TriggerType = 'SPNDeleteALLUnitStrategicFlag';

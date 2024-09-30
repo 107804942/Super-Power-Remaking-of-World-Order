@@ -137,21 +137,6 @@
 
 
 	<Building_DomainProductionModifiers>
-		<!--<Row>
-			<BuildingType>BUILDING_TERRACOTTA_ARMY_FREE</BuildingType>
-			<DomainType>DOMAIN_LAND</DomainType>
-			<Modifier>20</Modifier>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_TERRACOTTA_ARMY_FREE</BuildingType>
-			<DomainType>DOMAIN_AIR</DomainType>
-			<Modifier>20</Modifier>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_TERRACOTTA_ARMY_FREE</BuildingType>
-			<DomainType>DOMAIN_SEA</DomainType>
-			<Modifier>20</Modifier>
-		</Row>-->
 		<!-- modified in other files
 		<Row>
 			<BuildingType>BUILDING_JAPANESE_TENSHU</BuildingType>
@@ -412,6 +397,10 @@
 
 		<Row>
 			<BuildingType>BUILDING_IRON_PROVIDER</BuildingType>
+			<ResourceType>RESOURCE_IRON</ResourceType>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_IRONWORKS</BuildingType>
 			<ResourceType>RESOURCE_IRON</ResourceType>
 		</Row>
 	</Building_LocalResourceOrs>
@@ -692,12 +681,16 @@
 			<ResourceType>RESOURCE_MANPOWER</ResourceType>
 			<Quantity>25</Quantity>
 		</Row>
-		<!--
 		<Row>
 			<BuildingType>BUILDING_IRONWORKS</BuildingType>
 			<ResourceType>RESOURCE_MANPOWER</ResourceType>
-			<Quantity>15</Quantity>
-		</Row>-->
+			<Quantity>5</Quantity>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_IRONWORKS</BuildingType>
+			<ResourceType>RESOURCE_IRON</ResourceType>
+			<Quantity>5</Quantity>
+		</Row>
 		<Row>
 			<BuildingType>BUILDING_NATIONAL_ORDER</BuildingType>
 			<ResourceType>RESOURCE_MANPOWER</ResourceType>
@@ -925,6 +918,11 @@
 		</Row>-->
 		
 		<Row>
+			<BuildingType>BUILDING_FISH_FARM</BuildingType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
 			<BuildingType>BUILDING_GRANARY</BuildingType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<Yield>2</Yield>
@@ -972,7 +970,7 @@
 		<Row>
 			<BuildingType>BUILDING_GREAT_LIBRARY</BuildingType>
 			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 		<Row><!-- new yield for national shrine and grand temple -->
 			<BuildingType>BUILDING_GRAND_TEMPLE</BuildingType>
@@ -1154,26 +1152,6 @@
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>5</Yield>
 		</Row>
-		<!--<Row>
-			<BuildingType>BUILDING_HANGING_GARDEN</BuildingType>
-			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>2</Yield>
-		</Row>-->
-		<!--<Row>
-			<BuildingType>BUILDING_MUGHAL_FORT</BuildingType>
-			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_MUGHAL_FORT</BuildingType>
-			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>2</Yield>
-		</Row>-->
-		<!--<Row>
-			<BuildingType>BUILDING_WAT</BuildingType>
-			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>1</Yield>
-		</Row>-->
 	
 		<Row>
 			<BuildingType>BUILDING_MONUMENT</BuildingType>
@@ -1357,16 +1335,6 @@
 			<BuildingType>BUILDING_MONASTERY</BuildingType>
 			<YieldType>YIELD_FAITH</YieldType>
 			<Yield>2</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_INQUISITION</BuildingType>
-			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>-3</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_INQUISITION</BuildingType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>-2</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_MUD_PYRAMID_MOSQUE</BuildingType>
@@ -1672,7 +1640,7 @@
 		<Row>
 			<BuildingType>BUILDING_BASILICA_CISTERN</BuildingType>
 			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>4</Yield>
+			<Yield>2</Yield>
 		</Row>
 
 		<Row>
@@ -1758,6 +1726,13 @@
 
 
 	<Building_BuildingClassYieldChanges>
+		<Row>
+			<BuildingType>BUILDING_GREAT_LIBRARY</BuildingType>
+			<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>3</YieldChange>
+		</Row>
+
 		<Row>
 			<BuildingType>BUILDING_INDUSTRIAL_ZONE</BuildingType>
 			<BuildingClassType>BUILDINGCLASS_METAL_FACTORY</BuildingClassType>
@@ -1857,19 +1832,32 @@
 			<YieldChange>24</YieldChange>
 		</Row>
 
-		<!--<Row>
+		<Row>
 			<BuildingType>BUILDING_NATIONAL_LIBRARY</BuildingType>
 			<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<YieldChange>2</YieldChange>
-		</Row>-->
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>3</YieldChange>
+		</Row>
+
 		<!--<Row>
 			<BuildingType>BUILDING_NATIONAL_CARAVANSARY</BuildingType>
 			<BuildingClassType>BUILDINGCLASS_CARAVANSARY</BuildingClassType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<YieldChange>2</YieldChange>
 		</Row>-->
-		
+
+		<Row>
+			<BuildingType>BUILDING_PUPPET_GOVERNEMENT</BuildingType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_TREASURY_II</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>5</YieldChange>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_PUPPET_GOVERNEMENT_FULL</BuildingType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_TREASURY_II</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>5</YieldChange>
+		</Row>
 	</Building_BuildingClassYieldChanges>
 	
 	
@@ -2110,7 +2098,7 @@
 		<Row>
 			<BuildingType>BUILDING_SWEDISH_LABORATORY_SERVICES</BuildingType>
 			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>33</Yield>
+			<Yield>25</Yield>
 		</Row>
 
 		<Row>
@@ -2118,17 +2106,6 @@
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<Yield>33</Yield>
 		</Row>
-		<Row>
-			<BuildingType>BUILDING_NATIONAL_TREASURY_II</BuildingType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>33</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_IRONWORKS</BuildingType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>25</Yield>
-		</Row>
-		
 
 		<Row>
 			<BuildingType>BUILDING_CITYSTATE_RESOURCE</BuildingType>
@@ -2151,11 +2128,6 @@
 
 
 	<Building_GlobalYieldModifiers>
-		<Row>
-			<BuildingType>BUILDING_HANGING_GARDEN</BuildingType>
-			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>10</Yield>
-		</Row>
 
 		<Row>
 			<BuildingType>BUILDING_SATELLITE_WEATHER</BuildingType>
@@ -2185,12 +2157,6 @@
 			<Yield>20</Yield>
 		</Row>
 
-		<Row>
-			<BuildingType>BUILDING_GREAT_LIBRARY</BuildingType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>15</Yield>
-		</Row>
-		
 		<!--<Row>
 			<BuildingType>BUILDING_CHINESE_SHUILIQU</BuildingType>
 			<YieldType>YIELD_FOOD</YieldType>
@@ -2289,11 +2255,6 @@
 	
 	<Building_SeaPlotYieldChanges>
 		<Row>
-			<BuildingType>BUILDING_FISH_FARM</BuildingType>
-			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
 			<BuildingType>BUILDING_GRAIN_DEPOT</BuildingType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<Yield>1</Yield>
@@ -2301,7 +2262,7 @@
 		<Row>
 			<BuildingType>BUILDING_MOROCCO_IRRIGATION</BuildingType>
 			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 
 		<Row>
@@ -2326,12 +2287,7 @@
 		<Row>
 			<BuildingType>BUILDING_FLOATING_GARDENS</BuildingType>
 			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>3</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_WATERMILL</BuildingType>
-			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>1</Yield>
+			<Yield>2</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_MECHANIZED_FARM</BuildingType>
@@ -2343,14 +2299,19 @@
 			<YieldType>YIELD_FOOD</YieldType>
 			<Yield>1</Yield>
 		</Row>
+		<Row>
+			<BuildingType>BUILDING_AQUEDUCT</BuildingType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_TAP_WATER_SUPPLY</BuildingType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
 	</Building_LakePlotYieldChanges>
 	
 	<Building_SeaResourceYieldChanges>
-		<Row>
-			<BuildingType>BUILDING_JAPANESE_TENSHU</BuildingType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>1</Yield>
-		</Row>
 		<!--<Row>
 			<BuildingType>BUILDING_SEAPORT</BuildingType>
 			<YieldType>YIELD_GOLD</YieldType>
@@ -2360,12 +2321,12 @@
 
 
 	<Building_ResourceYieldChanges>
-		<!--<Row>
+		<Row>
 			<BuildingType>BUILDING_LIGHTHOUSE</BuildingType>
 			<ResourceType>RESOURCE_FISH</ResourceType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<Yield>1</Yield>
-		</Row>-->
+		</Row>
 		<Row>
 			<BuildingType>BUILDING_LIGHTHOUSE</BuildingType>
 			<ResourceType>RESOURCE_CORAL</ResourceType>
@@ -2391,69 +2352,6 @@
 			<Yield>1</Yield>
 		</Row>
 
-		<Row>
-			<BuildingType>BUILDING_SEAPORT</BuildingType>
-			<ResourceType>RESOURCE_FISH</ResourceType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_SEAPORT</BuildingType>
-			<ResourceType>RESOURCE_CORAL</ResourceType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_SEAPORT</BuildingType>
-			<ResourceType>RESOURCE_CRAB</ResourceType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_SEAPORT</BuildingType>
-			<ResourceType>RESOURCE_WHALE</ResourceType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_SEAPORT</BuildingType>
-			<ResourceType>RESOURCE_PEARLS</ResourceType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		
-		<Row>
-			<BuildingType>BUILDING_OTTOMAN_EMPIRE_PORT</BuildingType>
-			<ResourceType>RESOURCE_FISH</ResourceType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_OTTOMAN_EMPIRE_PORT</BuildingType>
-			<ResourceType>RESOURCE_CORAL</ResourceType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_OTTOMAN_EMPIRE_PORT</BuildingType>
-			<ResourceType>RESOURCE_CRAB</ResourceType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_OTTOMAN_EMPIRE_PORT</BuildingType>
-			<ResourceType>RESOURCE_WHALE</ResourceType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_OTTOMAN_EMPIRE_PORT</BuildingType>
-			<ResourceType>RESOURCE_PEARLS</ResourceType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		
-		
 		<Row>
 			<BuildingType>BUILDING_GRANARY</BuildingType>
 			<ResourceType>RESOURCE_WHEAT</ResourceType>
@@ -2685,21 +2583,6 @@
 			<Yield>1</Yield>
 		</Row>
 
-		<!--<Row>
-			<BuildingType>BUILDING_FISH_FARM</BuildingType>
-			<ResourceType>RESOURCE_FISH</ResourceType>
-			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_FISH_FARM</BuildingType>
-			<ResourceType>RESOURCE_CRAB</ResourceType>
-			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>1</Yield>
-		</Row>-->
-
-		
-
 		<Row>
 			<BuildingType>BUILDING_MINGING_FACTORY</BuildingType>
 			<ResourceType>RESOURCE_MARBLE</ResourceType>
@@ -2789,7 +2672,7 @@
 			<BuildingType>BUILDING_OIL_REFINERY</BuildingType>
 			<ResourceType>RESOURCE_OIL</ResourceType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>3</Yield>
+			<Yield>2</Yield>
 		</Row>
 		
 		<Row>
@@ -2858,12 +2741,6 @@
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_GRAIN_DEPOT</BuildingType>
-			<ResourceType>RESOURCE_FISH</ResourceType>
-			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_GRAIN_DEPOT</BuildingType>
 			<ResourceType>RESOURCE_CRAB</ResourceType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<Yield>1</Yield>
@@ -2895,12 +2772,6 @@
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_MOROCCO_IRRIGATION</BuildingType>
-			<ResourceType>RESOURCE_FISH</ResourceType>
-			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>2</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_MOROCCO_IRRIGATION</BuildingType>
 			<ResourceType>RESOURCE_CRAB</ResourceType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<Yield>2</Yield>
@@ -2911,6 +2782,92 @@
 		<Row>
 			<BuildingType>BUILDING_METAL_FACTORY</BuildingType>
 			<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_IRONWORKS</BuildingType>
+			<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_FISH_FARM</BuildingType>
+			<ImprovementType>IMPROVEMENT_FISHFARM_MOD</ImprovementType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_FISH_FARM</BuildingType>
+			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_GRAIN_DEPOT</BuildingType>
+			<ImprovementType>IMPROVEMENT_FISHFARM_MOD</ImprovementType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_MOROCCO_IRRIGATION</BuildingType>
+			<ImprovementType>IMPROVEMENT_FISHFARM_MOD</ImprovementType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_MOROCCO_IRRIGATION</BuildingType>
+			<ImprovementType>IMPROVEMENT_KASBAH</ImprovementType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_MOROCCO_IRRIGATION</BuildingType>
+			<ImprovementType>IMPROVEMENT_KASBAH</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		
+		<Row>
+			<BuildingType>BUILDING_SEAPORT</BuildingType>
+			<ImprovementType>IMPROVEMENT_FISHFARM_MOD</ImprovementType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_SEAPORT</BuildingType>
+			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_OTTOMAN_EMPIRE_PORT</BuildingType>
+			<ImprovementType>IMPROVEMENT_FISHFARM_MOD</ImprovementType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_OTTOMAN_EMPIRE_PORT</BuildingType>
+			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+
+		<Row>
+			<BuildingType>BUILDING_JAPANESE_TENSHU</BuildingType>
+			<ImprovementType>IMPROVEMENT_FISHFARM_MOD</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_JAPANESE_TENSHU</BuildingType>
+			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_JAPANESE_TENSHU</BuildingType>
+			<ImprovementType>IMPROVEMENT_OFFSHORE_PLATFORM</ImprovementType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<Yield>1</Yield>
 		</Row>
@@ -2960,7 +2917,7 @@
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_LONGHOUSE</BuildingType>
-			<FeatureType>FEATURE_FOREST</FeatureType>
+			<FeatureType>FEATURE_JUNGLE</FeatureType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<Yield>1</Yield>
 		</Row>
@@ -3030,6 +2987,25 @@
 			<Yield>2</Yield>
 		</Row>-->
 	</Building_FeatureYieldChanges>
+
+	<Building_ImprovementYieldModifiers>
+	</Building_ImprovementYieldModifiers>
+	<Building_FeatureYieldModifiers>
+		<Row>
+			<BuildingType>BUILDING_LONGHOUSE</BuildingType>
+			<FeatureType>FEATURE_FOREST</FeatureType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_LONGHOUSE</BuildingType>
+			<FeatureType>FEATURE_JUNGLE</FeatureType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Building_FeatureYieldModifiers>
+	<Building_ResourceYieldModifiers>
+	</Building_ResourceYieldModifiers>
 	
 
 	<Building_TerrainYieldChanges>
@@ -3122,20 +3098,6 @@
 			<Yield>1</Yield>
 		</Row>-->
 		<!---->
-
-		<!--<Row>
-			<BuildingType>BUILDING_NATIONAL_TREASURY_II</BuildingType>
-			<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>2</Yield>
-		</Row>-->
-		<!--<Row>
-			<BuildingType>BUILDING_IRONWORKS</BuildingType>
-			<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>1</Yield>
-		</Row>-->
-		
 
 		<Row>
 			<BuildingType>BUILDING_NATIONAL_FINANCE</BuildingType>
@@ -3292,7 +3254,11 @@
 			<Yield>20</Yield>
 		</Row>-->
 
-
+		<Row>
+			<BuildingType>BUILDING_PARTHENON</BuildingType>
+			<YieldType>YIELD_TOURISM</YieldType>
+			<Yield>25</Yield>
+		</Row>
 
 		<Row>
 			<BuildingType>BUILDING_CARTHAGINIAN_COTHON</BuildingType>
@@ -3394,6 +3360,19 @@
 		</Row>
 	</Building_HurryModifiers>
 
+	<Building_SpecificGreatPersonRateModifier>
+		<Row>
+			<BuildingType>BUILDING_GREAT_LIBRARY</BuildingType>
+			<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+			<Modifier>15</Modifier>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_GREAT_LIBRARY</BuildingType>
+			<SpecialistType>SPECIALIST_WRITER</SpecialistType>
+			<Modifier>15</Modifier>
+		</Row>
+	</Building_SpecificGreatPersonRateModifier>
+
 
 	<Building_YieldChangesPerReligion>
 		<Row>
@@ -3419,7 +3398,7 @@
 		<Row>
 			<BuildingType>BUILDING_INQUISITION</BuildingType>
 			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>300</Yield>
+			<Yield>200</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_INQUISITION</BuildingType>
@@ -3654,7 +3633,7 @@
 		</Row>
 		<Row>
 			<Type>PROMOTION_GPS_MOVEMENT_SMALL</Type>
-			<Description>TXT_KEY_UNIT_SATELLITE_GPS</Description>
+			<Description>TXT_KEY_PROMOTION_GPS_MOVEMENT_SMALL</Description>
 			<Help>TXT_KEY_PROMOTION_GPS_MOVEMENT_SMALL</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<RivalTerritory>true</RivalTerritory>
@@ -3714,12 +3693,12 @@
 			<Description>TXT_KEY_PROMOTION_STATUE_ZEUS</Description>
 			<Help>TXT_KEY_PROMOTION_STATUE_ZEUS_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<OutsideFriendlyLandsModifier>15</OutsideFriendlyLandsModifier>
 			<CannotBeChosen>true</CannotBeChosen>
 			<PortraitIndex>23</PortraitIndex>
 			<IconAtlas>SP10_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_SHARED</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_STATUE_ZEUS</PediaEntry>
+			<OutsideFriendlyLandsInflictDamageChange>5</OutsideFriendlyLandsInflictDamageChange>
 		</Row>
 		<Row>
 			<Type>PROMOTION_HIMEJI_CASTLE</Type>
@@ -3745,6 +3724,20 @@
 			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_SHARED</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_GREAT_LIGHTHOUSE</PediaEntry>
+			<IgnoreZOC>true</IgnoreZOC>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_MOSQUE_OF_DJENNE</Type>
+			<Description>TXT_KEY_PROMOTION_MOSQUE_OF_DJENNE</Description>
+			<Help>TXT_KEY_PROMOTION_MOSQUE_OF_DJENNE_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<MovesChange>1</MovesChange>
+			<PortraitIndex>33</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_SHARED</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_MOSQUE_OF_DJENNE</PediaEntry>
 		</Row>
 		
 		<Row>
@@ -4172,7 +4165,15 @@
 			<PromotionType>PROMOTION_PYRAMID_WORKER</PromotionType>
 			<UnitType>UNIT_GREAT_GENERAL</UnitType>
 		</Row>
-		
+
+		<Row>
+			<PromotionType>PROMOTION_MOSQUE_OF_DJENNE</PromotionType>
+			<UnitType>UNIT_PROPHET</UnitType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MOSQUE_OF_DJENNE</PromotionType>
+			<UnitType>UNIT_MISSIONARY</UnitType>
+		</Row>
 		
 		<Row>
 			<PromotionType>PROMOTION_GPS_MOVEMENT</PromotionType>
@@ -4898,7 +4899,7 @@
 		<Row>
 			<BuildingType>BUILDING_LONGHOUSE</BuildingType>
 			<FlavorType>FLAVOR_GROWTH</FlavorType>
-			<Flavor>15</Flavor>
+			<Flavor>50</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_LONGHOUSE</BuildingType>
@@ -5376,7 +5377,7 @@
 		<Row>
 			<BuildingType>BUILDING_TEMPLE</BuildingType>
 			<FlavorType>FLAVOR_RELIGION</FlavorType>
-			<Flavor>80</Flavor>
+			<Flavor>60</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_ASSUR_TEMPLE</BuildingType>
@@ -5992,17 +5993,22 @@
 		<Row>
 			<BuildingType>BUILDING_MONASTERY</BuildingType>
 			<FlavorType>FLAVOR_RELIGION</FlavorType>
-			<Flavor>5</Flavor>
+			<Flavor>4</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_MONASTERY</BuildingType>
 			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>5</Flavor>
+			<Flavor>4</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_MONASTERY</BuildingType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>2</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_MONASTERY</BuildingType>
 			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
-			<Flavor>5</Flavor>
+			<Flavor>6</Flavor>
 		</Row>
 
 
@@ -6054,7 +6060,7 @@
 		<Row>
 			<BuildingType>BUILDING_SHRINE</BuildingType>
 			<FlavorType>FLAVOR_RELIGION</FlavorType>
-			<Flavor>45</Flavor>
+			<Flavor>35</Flavor>
 		</Row>
 	
 		<Row>
@@ -6207,32 +6213,32 @@
 		<Row>
 			<BuildingType>BUILDING_MOSQUE</BuildingType>
 			<FlavorType>FLAVOR_RELIGION</FlavorType>
-			<Flavor>4</Flavor>
+			<Flavor>6</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_MOSQUE</BuildingType>
 			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
+			<Flavor>4</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_MOSQUE</BuildingType>
 			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>4</Flavor>
+			<Flavor>2</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_PAGODA</BuildingType>
 			<FlavorType>FLAVOR_RELIGION</FlavorType>
-			<Flavor>2</Flavor>
+			<Flavor>4</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_PAGODA</BuildingType>
 			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
+			<Flavor>4</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_PAGODA</BuildingType>
 			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>6</Flavor>
+			<Flavor>4</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_LEANING_TOWER</BuildingType>
@@ -6656,7 +6662,11 @@
 	
 
 
-	
+		<Row>
+			<BuildingType>BUILDING_CISTERN</BuildingType>
+			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<Flavor>80</Flavor>
+		</Row>
 		<Row>
 			<BuildingType>BUILDING_BASILICA_CISTERN</BuildingType>
 			<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -6664,13 +6674,13 @@
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_BASILICA_CISTERN</BuildingType>
-			<FlavorType>FLAVOR_RELIGION</FlavorType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
 			<Flavor>60</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_FISH_FARM</BuildingType>
 			<FlavorType>FLAVOR_GROWTH</FlavorType>
-			<Flavor>15</Flavor>
+			<Flavor>100</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_GRAIN_MILL</BuildingType>
@@ -6901,11 +6911,31 @@
 		<Row>
 			<BuildingType>BUILDING_CATHEDRAL</BuildingType>
 			<FlavorType>FLAVOR_RELIGION</FlavorType>
-			<Flavor>3</Flavor>
+			<Flavor>2</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_CATHEDRAL</BuildingType>
 			<FlavorType>FLAVOR_CULTURE</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CATHEDRAL</BuildingType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CATHEDRAL</BuildingType>
+			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_INQUISITION</BuildingType>
+			<FlavorType>FLAVOR_RELIGION</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_INQUISITION</BuildingType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
 			<Flavor>4</Flavor>
 		</Row>
 
@@ -7223,6 +7253,28 @@
 			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 			<Flavor>200</Flavor>
 		</Row>
+
+		<Row>
+			<BuildingType>BUILDING_VENICE_ARMORY</BuildingType>
+			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
+			<Flavor>200</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_VENICE_ARMORY</BuildingType>
+			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
+			<Flavor>50</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_VENICE_ARMORY</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>75</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_VENICE_ARMORY</BuildingType>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>75</Flavor>
+		</Row>
+
 		<Row>
 			<BuildingType>BUILDING_INTELLIGENCE_AGENCY</BuildingType>
 			<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
@@ -7405,23 +7457,6 @@
 			<FlavorType>FLAVOR_NAVAL</FlavorType>
 			<Flavor>80</Flavor>
 		</Row>
-
-
-		<Row>
-			<BuildingType>BUILDING_COAL_TO_OIL</BuildingType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-			<Flavor>170</Flavor>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_COAL_TO_OIL</BuildingType>
-			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
-			<Flavor>170</Flavor>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_COAL_TO_URANIUM</BuildingType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-			<Flavor>180</Flavor>
-		</Row>
 		<Row>
 			<BuildingType>BUILDING_COAL_TO_URANIUM</BuildingType>
 			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
@@ -7472,5 +7507,103 @@
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>3</Yield>
 		</Row>
+		<Row>
+			<BuildingType>BUILDING_NATIONAL_COLLEGE</BuildingType>
+			<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>1</Yield>
+		</Row>
 	</Building_SpecialistYieldChangesLocal>
+	<Building_ImprovementYieldChangesGlobal>
+		<Row>
+			<ImprovementType>IMPROVEMENT_HOLY_SITE</ImprovementType>
+			<BuildingType>BUILDING_HAGIA_SOPHIA</BuildingType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>4</Yield>
+		</Row>
+	</Building_ImprovementYieldChangesGlobal>
+
+	<UnitPromotions_InstantYieldPerReligionFollowerConverted>
+		<Row>
+			<PromotionType>PROMOTION_MOSQUE_OF_DJENNE</PromotionType>
+			<YieldType>YIELD_GOLDEN_AGE_POINTS</YieldType>
+			<Yield>5</Yield>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MOSQUE_OF_DJENNE</PromotionType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>5</Yield>
+		</Row>
+	</UnitPromotions_InstantYieldPerReligionFollowerConverted>
+
+	<Building_DomainProductionModifiers>
+		<Row>
+			<BuildingType>BUILDING_VENICE_ARMORY</BuildingType>
+			<DomainType>DOMAIN_SEA</DomainType>
+			<Modifier>20</Modifier>
+		</Row>
+	</Building_DomainProductionModifiers>
+
+	<Building_ResourceYieldChangesGlobal>
+		<Row>
+			<BuildingType>BUILDING_NATIONAL_TREASURY_II</BuildingType>
+			<ResourceType>RESOURCE_GOLD</ResourceType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NATIONAL_TREASURY_II</BuildingType>
+			<ResourceType>RESOURCE_SILVER</ResourceType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NATIONAL_TREASURY_II</BuildingType>
+			<ResourceType>RESOURCE_COPPER</ResourceType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NATIONAL_TREASURY_II</BuildingType>
+			<ResourceType>RESOURCE_TOBACCO</ResourceType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NATIONAL_TREASURY_II</BuildingType>
+			<ResourceType>RESOURCE_SUGAR</ResourceType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NATIONAL_TREASURY_II</BuildingType>
+			<ResourceType>RESOURCE_GOLD</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NATIONAL_TREASURY_II</BuildingType>
+			<ResourceType>RESOURCE_SILVER</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NATIONAL_TREASURY_II</BuildingType>
+			<ResourceType>RESOURCE_COPPER</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NATIONAL_TREASURY_II</BuildingType>
+			<ResourceType>RESOURCE_TOBACCO</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NATIONAL_TREASURY_II</BuildingType>
+			<ResourceType>RESOURCE_SUGAR</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Building_ResourceYieldChangesGlobal>
 </GameData>

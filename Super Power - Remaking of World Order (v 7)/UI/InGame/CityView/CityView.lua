@@ -1209,6 +1209,7 @@ function OnCityViewUpdate()
 							pWorldCongress = Game.GetActiveLeague();
 						end
 						local iCityMod = pCity:GetGreatPeopleRateModifier();
+						iCityMod = iCityMod + pCity:GetSpecialistCityModifier(iSpecialistIndex);
 						local iGoldenAgeMod = 0;
 						local bGoldenAge = (pPlayer:GetGoldenAgeTurns() > 0);
 						
@@ -1608,16 +1609,10 @@ function OnCityViewUpdate()
 				local buildingID = building.ID;
 				if     (not pCity:IsHasBuilding(buildingID)) then
 				-- MOD Begin: City Scale & City Level Buildings shall not display here! by TOKATA
-				elseif (building.PortraitIndex >= 56 and building.PortraitIndex <= 62 and building.IconAtlas == "SPBuildings_ATLAS") then
-					tCityScale = building;
-				elseif (building.BuildingClass == "BUILDINGCLASS_CITY_HALL_LV0"
-				or      building.BuildingClass == "BUILDINGCLASS_CITY_HALL_LV1"
-				or      building.BuildingClass == "BUILDINGCLASS_CITY_HALL_LV2"
-				or      building.BuildingClass == "BUILDINGCLASS_CITY_HALL_LV3"
-				or      building.BuildingClass == "BUILDINGCLASS_CITY_HALL_LV4"
-				or      building.BuildingClass == "BUILDINGCLASS_CITY_HALL_LV5"
-				or      building.BuildingClass == "BUILDINGCLASS_PUPPET_GOVERNEMENT"
-				or      building.BuildingClass == "BUILDINGCLASS_PUPPET_GOVERNEMENT_FULL")
+				elseif building.BuildingClass:match("^BUILDINGCLASS_CITY_SIZE_+.") then
+					-- do nothing
+				elseif building.BuildingClass:match("^BUILDINGCLASS_CITY_HALL_+.")
+					or building.BuildingClass:match("^BUILDINGCLASS_PUPPET_+.")
 				then
 					tCityLevel = building;
 				-- MOD End
@@ -1666,6 +1661,8 @@ function OnCityViewUpdate()
 		--  MOD - SPCity Icons Switch by CaptainCWB
 		-------------------------------------------
 		Controls.SPCityFrame:SetHide(true);
+		local iNowScale = pCity:GetScale()
+		tCityScale = GameInfo.Buildings[GameInfo.CitySizeBuildings[iNowScale].BuildingType];
 		if tCityScale ~= nil or tCityLevel ~= nil then
 			Controls.SPCityFrame:SetHide(false);
 			-------------------------------------------
@@ -1676,6 +1673,19 @@ function OnCityViewUpdate()
 				IconHookup( tCityScale.PortraitIndex, 128, tCityScale.IconAtlas, Controls.CityScaleImage );
 				local strToolTip = GetHelpTextForBuilding(tCityScale.ID, false, false, false, pCity);
 				Controls.CityScaleImage:SetToolTipString(strToolTip);
+
+				-- show all City Scale the city has by Qingyin
+				for iScale = 1, 6, 1 do
+					if iScale < iNowScale then
+						local CityScale = GameInfo.Buildings[GameInfo.CitySizeBuildings[iScale].BuildingType];
+						Controls["CityScaleFrame" .. iScale]:SetHide(false);
+						IconHookup( CityScale.PortraitIndex, 45, CityScale.IconAtlas, Controls["CityScaleImage" .. iScale]);
+						local strToolTip = GetHelpTextForBuilding(CityScale.ID, false, false, false, pCity);
+						Controls["CityScaleImage" .. iScale]:SetToolTipString(strToolTip);
+					else
+						Controls["CityScaleFrame" .. iScale]:SetHide(true);
+					end
+				end
 			else
 				Controls.CityScaleFrame:SetHide(true);
 			end
@@ -2909,7 +2919,20 @@ function OnBuildingClicked(iBuildingID)
 	local iRefund = pCity:GetSellBuildingRefund(iBuildingID);
 	local iMaintenance = pBuilding.GoldMaintenance;
 	
-	local localizedLabel = Locale.ConvertTextKey( "TXT_KEY_SELL_BUILDING_INFO", iRefund, iMaintenance );
+	local localizedLabel = "";
+	if pBuilding.BuildingClass:match("^BUILDINGCLASS_CITY_HALL_+.") ~= nil and iRefund < 0 then
+		localizedLabel = Locale.ConvertTextKey( "TXT_KEY_SELL_BUILDING_CITY_HALL", -iRefund, iMaintenance );
+		Controls.YesButton:SetDisabled(false)
+		Controls.YesButton:LocalizeAndSetToolTip("");
+		if iRefund < 0 and Players[Game.GetActivePlayer()]:GetGold() < -iRefund then
+			Controls.YesButton:SetDisabled(true)
+			Controls.YesButton:LocalizeAndSetToolTip("TXT_KEY_SELL_CITY_HALL_DIABLE");
+		end
+	else
+		Controls.YesButton:SetDisabled(false)
+		Controls.YesButton:LocalizeAndSetToolTip("");
+		localizedLabel = Locale.ConvertTextKey( "TXT_KEY_SELL_BUILDING_INFO", iRefund, iMaintenance );
+	end
 	Controls.SellBuildingPopupText:SetText(localizedLabel);
 	
 	g_iBuildingToSell = iBuildingID;
@@ -2927,9 +2950,7 @@ function OnYes( )
 		Network.SendSellBuilding(pCity:GetID(), g_iBuildingToSell);
 		
 		--SP Selling City Hall Create Puppet Start
-		if GameInfo.Buildings[g_iBuildingToSell].BuildingClass == "BUILDINGCLASS_CITY_HALL_LV0" or GameInfo.Buildings[g_iBuildingToSell].BuildingClass == "BUILDINGCLASS_CITY_HALL_LV1"
-		or GameInfo.Buildings[g_iBuildingToSell].BuildingClass == "BUILDINGCLASS_CITY_HALL_LV2" or GameInfo.Buildings[g_iBuildingToSell].BuildingClass == "BUILDINGCLASS_CITY_HALL_LV3"
-		or GameInfo.Buildings[g_iBuildingToSell].BuildingClass == "BUILDINGCLASS_CITY_HALL_LV4" or GameInfo.Buildings[g_iBuildingToSell].BuildingClass == "BUILDINGCLASS_CITY_HALL_LV5"
+		if GameInfo.Buildings[g_iBuildingToSell].BuildingClass:match("_CITY_HALL_LV[0-9]+$")
 		then
 			print("City Hall sold! Set Puppet!")
 			
@@ -2966,11 +2987,9 @@ function OnYes( )
 			pCity:SetPuppet(true)
 			pCity:SetProductionAutomated(true)
 			
---			if not Players[Game.GetActivePlayer()]:HasPolicy(GameInfo.Policies["POLICY_TREATY_ORGANIZATION"].ID)then
-				local CityPop = pCity:GetPopulation()
-				local CityResTime = CityPop * 0.5
-				pCity:ChangeResistanceTurns(CityResTime)
---			end
+			local CityPop = pCity:GetPopulation()
+			local CityResTime = CityPop * 0.5
+			pCity:ChangeResistanceTurns(CityResTime)
 		end
 		--SP Selling City Hall Create Puppet End
 	end
@@ -3072,7 +3091,7 @@ function OnCopyCapitalOrder()
 			print ("Current Unit"..CapitalUnitProduction )
 			
 			for city in player:Cities() do
-				if not city:IsPuppet() and not city:IsResistance() then
+				if not city:IsPuppet() and not city:IsResistance() and city ~= CurrentCity then
 			
 					if CapitalUnitProduction ~= -1 then 
 						if city:CanTrain(CapitalUnitProduction) then

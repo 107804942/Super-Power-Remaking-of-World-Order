@@ -18,7 +18,7 @@
 			<NukeImmune>true</NukeImmune>
 			<MinAreaSize>-1</MinAreaSize>
 			<Defense>500</Defense>
-			<GlobalDefenseMod>15</GlobalDefenseMod>
+			<CityDefenseModifierGlobal>15</CityDefenseModifierGlobal>
 			<GlobalGreatPeopleRateModifier>-99</GlobalGreatPeopleRateModifier>
 			<WonderProductionModifier>-99</WonderProductionModifier>
 			<FoodKept>-40</FoodKept>
@@ -28,7 +28,7 @@
 			<IconAtlas>BW_ATLAS_1</IconAtlas>
 			<PortraitIndex>19</PortraitIndex>
 			<PolicyCostModifier>50</PolicyCostModifier>
-			<Happiness>20</Happiness>
+			<Happiness>30</Happiness>
 		</Row>
 
 		<Row>
@@ -132,7 +132,6 @@
 			<Help>TXT_KEY_BUILDING_NATIONAL_CARAVANSARY_HELP</Help>
 			<Description>TXT_KEY_BUILDING_NATIONAL_CARAVANSARY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_CARAVANSARY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_NATIONAL_CARAVANSARY_STRATEGY</Strategy>
 			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_CARAVANSARY</ArtDefineTag>
 			<NukeImmune>true</NukeImmune>
 			<NumCityCostMod>30</NumCityCostMod>
@@ -146,7 +145,6 @@
 			<NumTradeRouteBonus>1</NumTradeRouteBonus>
 		</Row>
 
-
 		<Row>
 			<Type>BUILDING_NATIONAL_TREASURY</Type>
 			<BuildingClass>BUILDINGCLASS_NATIONAL_TREASURY</BuildingClass>
@@ -155,7 +153,6 @@
 			<Help>TXT_KEY_BUILDING_NATIONAL_TREASURY_HELP</Help>
 			<Description>TXT_KEY_BUILDING_EAST_INDIA</Description>
 			<Civilopedia>TXT_KEY_CIV5_BUILDINGS_EAST_INDIA_TEXT</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_EAST_INDIA_STRATEGY</Strategy>
 			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_TREASURY</ArtDefineTag>
 			<NukeImmune>true</NukeImmune>
 			<NumCityCostMod>30</NumCityCostMod>
@@ -167,8 +164,6 @@
 			<NumTradeRouteBonus>1</NumTradeRouteBonus>
 		</Row>
 
-
-
 		<Row>
 			<Type>BUILDING_NATIONAL_CIRCUS</Type>
 			<BuildingClass>BUILDINGCLASS_NATIONAL_CIRCUS</BuildingClass>
@@ -177,7 +172,6 @@
 			<Help>TXT_KEY_BUILDING_CIRCUS_MAXIMUS_HELP</Help>
 			<Description>TXT_KEY_BUILDING_CIRCUS_MAXIMUS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CIRCUS_MAXIMUS_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_CIRCUS_MAXIMUS_STRATEGY</Strategy>
 			<ArtDefineTag>ART_DEF_BUILDING_CIRCUS_MAXIMUS</ArtDefineTag>
 			<NukeImmune>true</NukeImmune>
 			<NumCityCostMod>30</NumCityCostMod>
@@ -196,7 +190,6 @@
 			<Help>TXT_KEY_BUILDING_CARTHAGINIAN_AGORA_HELP</Help>
 			<Description>TXT_KEY_BUILDING_CARTHAGINIAN_AGORA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CARTHAGINIAN_AGORA_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_CIRCUS_MAXIMUS_STRATEGY</Strategy>
 			<ArtDefineTag>ART_DEF_BUILDING_CIRCUS_MAXIMUS</ArtDefineTag>
 			<NukeImmune>true</NukeImmune>
 			<NumCityCostMod>30</NumCityCostMod>
@@ -217,7 +210,6 @@
 			<Help>TXT_KEY_BUILDING_NATIONAL_EPIC_HELP</Help>
 			<Description>TXT_KEY_BUILDING_NATIONAL_EPIC</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_EPIC_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_NATIONAL_EPIC_STRATEGY</Strategy>
 			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_EPIC</ArtDefineTag>
 			<GreatPeopleRateModifier>33</GreatPeopleRateModifier>
 			<NukeImmune>true</NukeImmune>
@@ -258,23 +250,40 @@
 			<BuildingClass>BUILDINGCLASS_IRONWORKS</BuildingClass>
 			<GoldMaintenance>6</GoldMaintenance>
 			<Cost>30</Cost>
-			<!--<PrereqTech>TECH_MACHINERY</PrereqTech>-->
-			<PolicyBranchType>POLICY_BRANCH_EXPLORATION</PolicyBranchType>
+			<PrereqTech>TECH_MACHINERY</PrereqTech>
 			<Help>TXT_KEY_BUILDING_IRONWORKS_HELP</Help>
 			<Description>TXT_KEY_BUILDING_IRONWORKS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_IRONWORKS_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_IRONWORKS_STRATEGY</Strategy>
 			<ArtDefineTag>ART_DEF_BUILDING_IRONWORKS</ArtDefineTag>
 			<NukeImmune>true</NukeImmune>
-			<NumCityCostMod>20</NumCityCostMod>
+			<NumCityCostMod>15</NumCityCostMod>
 			<HurryCostModifier>-1</HurryCostModifier>
 			<NeverCapture>true</NeverCapture>
 			<IconAtlas>BW_ATLAS_1</IconAtlas>
 			<PortraitIndex>47</PortraitIndex>
-			<Water>true</Water>
-			<MinAreaSize>19</MinAreaSize>
+			<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
+			<SpecialistCount>2</SpecialistCount>
 		</Row>
 
+		<Row>
+			<Type>BUILDING_VENICE_ARMORY</Type>
+			<BuildingClass>BUILDINGCLASS_VENICE_ARMORY</BuildingClass>
+			<Description>TXT_KEY_BUILDING_VENICE_ARMORY</Description>
+			<Help>TXT_KEY_WONDER_VENICE_ARMORY_HELP</Help>
+			<Civilopedia>TXT_KEY_WONDER_VENICE_ARMORY_PEDIA</Civilopedia>
+			<Quote>TXT_KEY_WONDER_VENICE_ARMORY_QUOTE</Quote>
+			<PolicyBranchType>POLICY_BRANCH_EXPLORATION</PolicyBranchType>
+			<Cost>50</Cost>
+			<NukeImmune>true</NukeImmune>
+			<MinAreaSize>19</MinAreaSize>
+			<Water>true</Water>
+			<IconAtlas>SP10_EXTRA_ATLAS</IconAtlas>
+			<PortraitIndex>14</PortraitIndex>
+			<NumCityCostMod>20</NumCityCostMod>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<NeverCapture>true</NeverCapture>
+			<GoldMaintenance>8</GoldMaintenance>
+		</Row>
 
 		<Row>
 			<Type>BUILDING_NATIONAL_TREASURY_II</Type>
@@ -303,7 +312,6 @@
 			<Help>TXT_KEY_BUILDING_INTELLIGENCE_AGENCY_HELP</Help>
 			<Description>TXT_KEY_BUILDING_INTELLIGENCE_AGENCY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_INTELLIGENCE_AGENCY_TEXT</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_INTELLIGENCE_AGENCY_STRATEGY</Strategy>
 			<ArtDefineTag>ART_DEF_BUILDING_INTELLIGENCE_AGENCY</ArtDefineTag>
 			<NukeImmune>true</NukeImmune>
 			<NumCityCostMod>20</NumCityCostMod>
@@ -327,7 +335,6 @@
 			<ThemingBonusHelp>TXT_KEY_NATIONAL_LIBRARY_THEMING_BONUS_HELP</ThemingBonusHelp>
 			<Description>TXT_KEY_BUILDING_NATIONAL_LIBRARY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_LIBRARY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_NATIONAL_LIBRARY_STRATEGY</Strategy>
 			<NukeImmune>true</NukeImmune>
 			<NumCityCostMod>20</NumCityCostMod>
 			<GreatWorkSlotType>GREAT_WORK_SLOT_LITERATURE</GreatWorkSlotType>
@@ -351,7 +358,6 @@
 			<Help>TXT_KEY_BUILDING_NATIONAL_LABORATORY_HELP</Help>
 			<Description>TXT_KEY_BUILDING_NATIONAL_LABORATORY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_LABORATORY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_NATIONAL_LABORATORY_STRATEGY</Strategy>
 			<NukeImmune>true</NukeImmune>
 			<NumCityCostMod>20</NumCityCostMod>
 			<HurryCostModifier>-1</HurryCostModifier>
@@ -369,7 +375,6 @@
 			<ThemingBonusHelp>TXT_KEY_NATIONAL_THEATRE_THEMING_BONUS_HELP</ThemingBonusHelp>
 			<Description>TXT_KEY_BUILDING_NATIONAL_THEATRE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_THEATRE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_NATIONAL_THEATRE_STRATEGY</Strategy>
 			<NukeImmune>true</NukeImmune>
 			<NumCityCostMod>30</NumCityCostMod>
 			<HurryCostModifier>-1</HurryCostModifier>
@@ -389,7 +394,6 @@
 			<Help>TXT_KEY_BUILDING_NATIONAL_SCULPTURE_HELP</Help>
 			<Description>TXT_KEY_BUILDING_NATIONAL_SCULPTURE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_SCULPTURE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_NATIONAL_SCULPTURE_STRATEGY</Strategy>
 			<NukeImmune>true</NukeImmune>
 			<NumCityCostMod>30</NumCityCostMod>
 			<HurryCostModifier>-1</HurryCostModifier>
@@ -408,7 +412,6 @@
 			<Help>TXT_KEY_BUILDING_ETHIOPIA_ROCKHEWN_HELP</Help>
 			<Description>TXT_KEY_BUILDING_ETHIOPIA_ROCKHEWN</Description>
 			<Civilopedia>TXT_KEY_BUILDING_ETHIOPIA_ROCKHEWN_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_NATIONAL_SCULPTURE_STRATEGY</Strategy>
 			<NukeImmune>true</NukeImmune>
 			<LandmarksTourismPercent>50</LandmarksTourismPercent>
 			<GreatWorksTourismModifier>50</GreatWorksTourismModifier>
@@ -430,7 +433,6 @@
 			<Help>TXT_KEY_BUILDING_NATIONAL_OPERA_HOUSE_HELP</Help>
 			<Description>TXT_KEY_BUILDING_NATIONAL_OPERA_HOUSE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_OPERA_HOUSE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_NATIONAL_OPERA_HOUSE_STRATEGY</Strategy>
 			<ThemingBonusHelp>TXT_KEY_NATIONAL_OPERA_HOUSE_BONUS_HELP</ThemingBonusHelp>
 			<GreatWorkSlotType>GREAT_WORK_SLOT_MUSIC</GreatWorkSlotType>
 			<GreatWorkCount>2</GreatWorkCount>
@@ -451,7 +453,6 @@
 			<ThemingBonusHelp>TXT_KEY_HERMITAGE_THEMING_BONUS_HELP</ThemingBonusHelp>
 			<Description>TXT_KEY_BUILDING_HERMITAGE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_HERMITAGE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_HERMITAGE_STRATEGY</Strategy>
 			<ArtDefineTag>ART_DEF_BUILDING_HERMITAGE</ArtDefineTag>
 			<NukeImmune>true</NukeImmune>
 			<NumCityCostMod>30</NumCityCostMod>
@@ -495,7 +496,6 @@
 			<Help>TXT_KEY_BUILDING_NATIONAL_EXHIBITION_HELP</Help>
 			<Description>TXT_KEY_BUILDING_NATIONAL_EXHIBITION</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_EXHIBITION_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_NATIONAL_EXHIBITION_STRATEGY</Strategy>
 			<NukeImmune>true</NukeImmune>
 			<NumCityCostMod>30</NumCityCostMod>
 			<HurryCostModifier>-1</HurryCostModifier>
@@ -506,31 +506,27 @@
 			<GreatWorksTourismModifierGlobal>50</GreatWorksTourismModifierGlobal>
 		</Row>
 
-
-
-		
-
 		<Row>
 			<Type>BUILDING_NATIONAL_COLLEGE</Type>
 			<BuildingClass>BUILDINGCLASS_NATIONAL_COLLEGE</BuildingClass>
-			<Cost>175</Cost>
+			<Cost>75</Cost>
 			<PrereqTech>TECH_PHILOSOPHY</PrereqTech>
 			<Help>TXT_KEY_BUILDING_NATIONAL_COLLEGE_HELP</Help>
 			<ThemingBonusHelp>TXT_KEY_NATIONAL_COLLEGE_THEMING_BONUS_HELP</ThemingBonusHelp>
 			<Description>TXT_KEY_BUILDING_NATIONAL_COLLEGE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_COLLEGE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_NATIONAL_COLLEGE_STRATEGY</Strategy>
 			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_COLLEGE</ArtDefineTag>
 			<GreatWorkSlotType>GREAT_WORK_SLOT_LITERATURE</GreatWorkSlotType>
 			<GreatWorkCount>2</GreatWorkCount>
-			<MedianTechPercentChange>25</MedianTechPercentChange>
 			<NukeImmune>true</NukeImmune>
-			<NumCityCostMod>30</NumCityCostMod>
+			<NumCityCostMod>25</NumCityCostMod>
 			<HurryCostModifier>-1</HurryCostModifier>
 			<MinAreaSize>-1</MinAreaSize>
 			<NeverCapture>true</NeverCapture>
 			<IconAtlas>BW_ATLAS_1</IconAtlas>
 			<PortraitIndex>46</PortraitIndex>
+			<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+			<SpecialistCount>2</SpecialistCount>
 		</Row>
 		<Row>
 			<Type>BUILDING_OXFORD_UNIVERSITY</Type>
@@ -585,7 +581,6 @@
 			<Help>TXT_KEY_BUILDING_HARVARD_HELP</Help>
 			<Description>TXT_KEY_BUILDING_HARVARD</Description>
 			<Civilopedia>TXT_KEY_BUILDING_HARVARD_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_HARVARD_STRATEGY</Strategy>
 			<NukeImmune>true</NukeImmune>
 			<NumCityCostMod>30</NumCityCostMod>
 			<HurryCostModifier>-1</HurryCostModifier>
@@ -595,7 +590,6 @@
 			<PortraitIndex>53</PortraitIndex>
 		</Row>
 
-
 		<Row>
 			<Type>BUILDING_NATIONAL_BANK</Type>
 			<BuildingClass>BUILDINGCLASS_NATIONAL_BANK</BuildingClass>
@@ -604,7 +598,6 @@
 			<Help>TXT_KEY_BUILDING_NATIONAL_BANK_HELP</Help>
 			<Description>TXT_KEY_BUILDING_NATIONAL_BANK</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_BANK_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_NATIONAL_BANK_STRATEGY</Strategy>
 			<NukeImmune>true</NukeImmune>
 			<NumCityCostMod>30</NumCityCostMod>
 			<HurryCostModifier>-1</HurryCostModifier>
@@ -622,7 +615,6 @@
 			<Help>TXT_KEY_BUILDING_NATIONAL_STOCK_EXCHANGE_HELP</Help>
 			<Description>TXT_KEY_BUILDING_NATIONAL_STOCK_EXCHANGE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_STOCK_EXCHANGE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_NATIONAL_STOCK_EXCHANGE_STRATEGY</Strategy>
 			<NukeImmune>true</NukeImmune>
 			<NumCityCostMod>30</NumCityCostMod>
 			<HurryCostModifier>-1</HurryCostModifier>
@@ -640,7 +632,6 @@
 			<Help>TXT_KEY_BUILDING_NATIONAL_FINANCE_HELP</Help>
 			<Description>TXT_KEY_BUILDING_NATIONAL_FINANCE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_FINANCE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_NATIONAL_FINANCE_STRATEGY</Strategy>
 			<NukeImmune>true</NukeImmune>
 			<NumCityCostMod>30</NumCityCostMod>
 			<HurryCostModifier>-1</HurryCostModifier>
@@ -650,9 +641,6 @@
 			<PortraitIndex>51</PortraitIndex>
 			<NumTradeRouteBonus>1</NumTradeRouteBonus>
 		</Row>
-
-
-
 
 		<Row>
 			<Type>BUILDING_NATIONAL_AUTOCRACY</Type>
@@ -714,8 +702,6 @@
 			<IconAtlas>SPWondersUB_ATLAS</IconAtlas>
 			<PortraitIndex>58</PortraitIndex>
 		</Row>
-
-
 	</Buildings>
 
 	<Building_ClassesNeededInCity>
@@ -735,6 +721,11 @@
 		<Row>
 			<BuildingType>BUILDING_CARTHAGINIAN_AGORA</BuildingType>
 			<BuildingClassType>BUILDINGCLASS_CIRCUS</BuildingClassType>
+		</Row>
+
+		<Row>
+			<BuildingType>BUILDING_IRONWORKS</BuildingType>
+			<BuildingClassType>BUILDINGCLASS_WORKSHOP</BuildingClassType>
 		</Row>
 
 		<!--<Row>
@@ -829,13 +820,17 @@
 			<BuildingType>BUILDING_NATIONAL_EPIC</BuildingType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_MEDIUM</BuildingClassType>
 		</Row>
+		<Row>
+			<BuildingType>BUILDING_IRONWORKS</BuildingType>
+			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_MEDIUM</BuildingClassType>
+		</Row>
 		
 		<Row>
 			<BuildingType>BUILDING_NATIONAL_LIBRARY</BuildingType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_LARGE</BuildingClassType>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_IRONWORKS</BuildingType>
+			<BuildingType>BUILDING_VENICE_ARMORY</BuildingType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_LARGE</BuildingClassType>
 		</Row>
 		<Row>
@@ -866,6 +861,11 @@
 		<Row>
 			<BuildingType>BUILDING_NATIONAL_CARAVANSARY</BuildingType>
 			<BuildingClassType>BUILDINGCLASS_CARAVANSARY</BuildingClassType>
+			<NumBuildingNeeded>-1</NumBuildingNeeded>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_IRONWORKS</BuildingType>
+			<BuildingClassType>BUILDINGCLASS_WORKSHOP</BuildingClassType>
 			<NumBuildingNeeded>-1</NumBuildingNeeded>
 		</Row>
 		<Row>
@@ -1103,7 +1103,7 @@
 			<MinAreaSize>-1</MinAreaSize>
 			<ConquestProb>100</ConquestProb>
 			<GreatPeopleRateChange>1</GreatPeopleRateChange>
-			<BuildingProductionModifier>10</BuildingProductionModifier>
+			<GlobalProductionNeededBuildingModifier>-10</GlobalProductionNeededBuildingModifier>
 			<DisplayPosition>4</DisplayPosition>
 			<IconAtlas>WONDERS_DLC_ATLAS</IconAtlas>
 			<PortraitIndex>1</PortraitIndex>
@@ -1162,6 +1162,7 @@
 			<WonderSplashAudio>AS2D_WONDER_SPEECH_TERRACOTTA_ARMY</WonderSplashAudio>
 			<EnhancedYieldTech>TECH_ARCHAEOLOGY</EnhancedYieldTech>
 			<TechEnhancedTourism>2</TechEnhancedTourism>
+			<FreeBuildingThisCity>BUILDINGCLASS_MILITARY_ACADEMY</FreeBuildingThisCity>
 		</Row>
 		
 
@@ -1214,6 +1215,7 @@
 			<PortraitIndex>3</PortraitIndex>
 			<WonderSplashImage>WonderConceptHangingGardens.dds</WonderSplashImage>
 			<WonderSplashAudio>AS2D_WONDER_SPEECH_THE_HANGING_GARDENS_01</WonderSplashAudio>
+			<GlobalGrowthFoodNeededModifier>-10</GlobalGrowthFoodNeededModifier>
 		</Row>
 		<Row>
 			<Type>BUILDING_COLOSSEUM</Type>
@@ -1233,8 +1235,8 @@
 			<ConquestProb>100</ConquestProb>
 			<DisplayPosition>2</DisplayPosition>
 			<ArtInfoCulturalVariation>true</ArtInfoCulturalVariation>
-			<IconAtlas>BW_ATLAS_1</IconAtlas>
-			<PortraitIndex>23</PortraitIndex>
+			<IconAtlas>SP10_EXTRA_ATLAS</IconAtlas>
+			<PortraitIndex>13</PortraitIndex>
 			<UnmoddedHappiness>2</UnmoddedHappiness>
 			<WonderSplashImage>ColosseumW_splash.dds</WonderSplashImage>
 			<WonderSplashAnchor>R,B</WonderSplashAnchor>
@@ -1382,7 +1384,7 @@
 			<HurryCostModifier>-1</HurryCostModifier>
 			<MinAreaSize>-1</MinAreaSize>
 			<ConquestProb>100</ConquestProb>
-			<FreeBuildingThisCity>BUILDINGCLASS_TEMPLE</FreeBuildingThisCity>
+			<FreeBuildingThisCity>BUILDINGCLASS_CATHEDRAL</FreeBuildingThisCity>
 			<DisplayPosition>2</DisplayPosition>
 			<IconAtlas>BW_ATLAS_2</IconAtlas>
 			<PortraitIndex>8</PortraitIndex>
@@ -1443,6 +1445,7 @@
 			<WonderSplashAudio>AS2D_WONDER_SPEECH_GREAT_MOSQUE_OF_DJENNE</WonderSplashAudio>
 			<EnhancedYieldTech>TECH_SCIENTIFIC_THEORY</EnhancedYieldTech>
 			<TechEnhancedTourism>4</TechEnhancedTourism>
+			<FreePromotion>PROMOTION_MOSQUE_OF_DJENNE</FreePromotion>
 		</Row>
 		<Row>
 			<Type>BUILDING_PETRA</Type>
@@ -1656,7 +1659,7 @@
 			<MinAreaSize>-1</MinAreaSize>
 			<ConquestProb>100</ConquestProb>
 			<Defense>7500</Defense>
-			<GlobalDefenseMod>25</GlobalDefenseMod>
+			<CityDefenseModifierGlobal>25</CityDefenseModifierGlobal>
 			<DisplayPosition>4</DisplayPosition>
 			<IconAtlas>EXPANSION2_WONDER_ATLAS</IconAtlas>
 			<PortraitIndex>9</PortraitIndex>
@@ -2032,7 +2035,7 @@
 			<HurryCostModifier>-1</HurryCostModifier>
 			<MinAreaSize>-1</MinAreaSize>
 			<ConquestProb>100</ConquestProb>
-			<IconAtlas>SP8_EXTRA_ATLAS</IconAtlas>
+			<IconAtlas>SP10_EXTRA_ATLAS</IconAtlas>
 			<PortraitIndex>11</PortraitIndex>
 			<WonderSplashImage>WonderRuhrIndustrialBase.dds</WonderSplashImage>
 			<WonderSplashAnchor>L,T</WonderSplashAnchor>
@@ -2545,6 +2548,7 @@
 			<WonderSplashAnchor>L,T</WonderSplashAnchor>
 			<UnmoddedHappiness>30</UnmoddedHappiness>
 			<PopulationChange>30</PopulationChange>
+			<NoNuclearWinterLocal>true</NoNuclearWinterLocal>
 		</Row>
 
 	</Buildings>
@@ -2592,22 +2596,6 @@
 			<WonderSplashAnchor>L,T</WonderSplashAnchor>
 		</Row>
 		<Row>
-			<Type>BUILDING_SATELLITE_RECONNAISSANCE_SMALL</Type>
-			<BuildingClass>BUILDINGCLASS_SATELLITE_RECONNAISSANCE_SMALL</BuildingClass>
-			<Cost>-1</Cost>
-			<Description>TXT_KEY_UNIT_SATELLITE_RECONNAISSANCE</Description>
-			<Civilopedia>TXT_KEY_UNIT_SATELLITE_RECONNAISSANCE_PEDIA</Civilopedia>
-			<Help>TXT_KEY_UNIT_SATELLITE_RECONNAISSANCE_HELP</Help>
-			<NukeImmune>true</NukeImmune>
-			<MinAreaSize>-1</MinAreaSize>
-			<HurryCostModifier>-1</HurryCostModifier>
-			<NeverCapture>true</NeverCapture>
-			<PortraitIndex>62</PortraitIndex>
-			<IconAtlas>SPBalance_ATLAS</IconAtlas>
-			<FreePromotion>PROMOTION_SATELLITE_RECON_SMALL</FreePromotion>
-		</Row>
-		
-		<Row>
 			<Type>BUILDING_SATELLITE_GPS</Type>
 			<BuildingClass>BUILDINGCLASS_BUILDING_SATELLITEEFFECTS</BuildingClass>
 			<Cost>-1</Cost>
@@ -2624,21 +2612,6 @@
 			<FreePromotion>PROMOTION_GPS_MOVEMENT</FreePromotion>
 			<WonderSplashImage>GPSSate.dds</WonderSplashImage>
 			<WonderSplashAnchor>L,T</WonderSplashAnchor>
-		</Row>
-		<Row>
-			<Type>BUILDING_SATELLITE_GPS_SMALL</Type>
-			<BuildingClass>BUILDINGCLASS_BUILDING_SATELLITE_GPS_SMALL</BuildingClass>
-			<Cost>-1</Cost>
-			<Description>TXT_KEY_UNIT_SATELLITE_GPS</Description>
-			<Civilopedia>TXT_KEY_UNIT_SATELLITE_GPS_PEDIA</Civilopedia>
-			<Help>TXT_KEY_UNIT_SATELLITE_GPS_HELP</Help>
-			<NukeImmune>true</NukeImmune>
-			<MinAreaSize>-1</MinAreaSize>
-			<HurryCostModifier>-1</HurryCostModifier>
-			<NeverCapture>true</NeverCapture>
-			<PortraitIndex>52</PortraitIndex>
-			<IconAtlas>SPBalance_ATLAS</IconAtlas>
-			<FreePromotion>PROMOTION_GPS_MOVEMENT_SMALL</FreePromotion>
 		</Row>
 		<Row>
 			<Type>BUILDING_SATELLITE_APOLLO11</Type>
@@ -2729,7 +2702,7 @@
 			<MinAreaSize>-1</MinAreaSize>
 			<HurryCostModifier>-1</HurryCostModifier>
 			<NeverCapture>true</NeverCapture>
-			<GlobalDefenseMod>75</GlobalDefenseMod>
+			<GlobalCityStrengthMod>75</GlobalCityStrengthMod>
 			<PortraitIndex>51</PortraitIndex>
 			<IconAtlas>SPBalance_ATLAS</IconAtlas>
 			<BorderObstacle>true</BorderObstacle>
@@ -2752,7 +2725,6 @@
 			<IconAtlas>SPBalance_ATLAS</IconAtlas>
 			<WonderSplashImage>Environmental.dds</WonderSplashImage>
 			<WonderSplashAnchor>L,T</WonderSplashAnchor>
-			<GlobalDefenseMod>75</GlobalDefenseMod>
 		</Row>
 		<Row>
 			<Type>BUILDING_SATELLITE_ANTIFALLOUT</Type>
@@ -3336,4 +3308,24 @@
 		</Row>
 
 	</Building_ResourceQuantityRequirements>
+
+	<Building_TradeRouteFromTheCityYields>
+		<Row>
+			<BuildingType>BUILDING_COLOSSUS</BuildingType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldValue>1</YieldValue>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_COLOSSUS</BuildingType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldValue>1</YieldValue>
+		</Row>
+	</Building_TradeRouteFromTheCityYields>
+	<Building_YieldMultiplier>
+		<Row>
+			<BuildingType>BUILDING_CITYSTATE_RESOURCE</BuildingType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>-20</Yield>
+		</Row>
+	</Building_YieldMultiplier>
 </GameData>

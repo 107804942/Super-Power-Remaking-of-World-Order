@@ -12,8 +12,6 @@ local CarrierSupply3ID = GameInfo.UnitPromotions["PROMOTION_CARRIER_SUPPLY_3"].I
 
 local SatelliteID = GameInfo.UnitPromotions["PROMOTION_SATELLITE_UNIT"].ID
 
-local OceanImpassableID = GameInfo.UnitPromotions["PROMOTION_OCEAN_IMPASSABLE"].ID
-
 local LuckyCarrierID = GameInfo.UnitPromotions["PROMOTION_LUCKY_CARRIER"].ID
 
 local ForeignLandsID = GameInfo.UnitPromotions["PROMOTION_FOREIGN_LANDS"].ID
@@ -28,10 +26,25 @@ local CitadelID = GameInfo.UnitPromotions["PROMOTION_CITADEL_DEFENSE"].ID
 function NewUnitCreationRules(playerID)
 
 	local player = Players[playerID]
-	if player == nil 
-	or not player:IsMajorCiv()
+	if player == nil or not player:IsAlive()
+	or player:IsMinorCiv()
 	then
 		return
+	end
+
+	if player:IsBarbarian() then
+		-- Auto Upgrade for Barbarian
+		for unit in player:Units() do
+			if unit and unit:GetPlot() and GameInfo.Units[unit:GetUpgradeUnitType()] and GameInfo.Units[unit:GetUpgradeUnitType()].PrereqTech
+			and Teams[player:GetTeam()]:IsHasTech(GameInfoTypes[GameInfo.Units[unit:GetUpgradeUnitType()].PrereqTech])
+			then
+				local plot = unit:GetPlot();
+				local iUnitType = unit:GetUpgradeUnitType();
+				unit:Kill();
+				player:InitUnit(iUnitType, plot:GetX(), plot:GetY(), UNITAI_ATTACK);
+			end
+		end
+		return;
 	end
 
 	-- Fix Embarked Graphic Reoverride for POLYNESIAN & DANISH when they into ERA_INDUSTRIAL
@@ -42,12 +55,13 @@ function NewUnitCreationRules(playerID)
 		player:SetEmbarkedGraphicOverride("ART_DEF_UNIT_TRANSPORT");
 	end
 
-	-- Troops count - Total
 	local CapCity = player:GetCapitalCity();
+	local bAutoPurchase = (player:IsHuman() or PlayerAtWarWithHuman(player) or (Players[Game.GetActivePlayer()]:IsObserver() and not Game.IsGameMultiPlayer()));
 
 	-------------Units Processing!
 	-- Initial Cargo List
 	g_CargoSetList[playerID] = nil;
+	local iTotalCost = 0;
 	for unit in player:Units() do
 		if unit == nil then
 			-- Remove mis-placed units in city
@@ -66,12 +80,6 @@ function NewUnitCreationRules(playerID)
 			unit:Kill();
 			print("AI has built a Satellite Unit!");
 		else
-			-- Remove "PROMOTION_OCEAN_IMPASSABLE" for Great Admiral after having "TECH_NAVIGATION"
-			if unit:GetUnitClassType() == GameInfo.UnitClasses.UNITCLASS_GREAT_ADMIRAL.ID and unit:IsHasPromotion(OceanImpassableID)
-				and Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_NAVIGATION"])
-			then
-				unit:SetHasPromotion(OceanImpassableID, false);
-			end
 			-- MOD Begin by CaptainCWB
 
 			-- Enterprise upgrade to become the most powerful carrier
@@ -82,7 +90,11 @@ function NewUnitCreationRules(playerID)
 			end
 
 			-- Fix mis-placed Citadel Units
-			if unit:IsImmobile() and unit:GetBaseCombatStrength() > 0 and unit:GetPlot() ~= nil then
+			if unit:IsImmobile() 
+			and unit:GetBaseCombatStrength() > 0 
+			and unit:GetPlot() ~= nil 
+			and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_CITADEL_DEFENSE"].ID) 
+			then
 				local plot = unit:GetPlot();
 				if plot:GetImprovementType() ~= GameInfo.Improvements["IMPROVEMENT_CITADEL"].ID
 					and plot:GetImprovementType() ~= GameInfo.Improvements["IMPROVEMENT_COASTAL_FORT"].ID
@@ -111,25 +123,22 @@ function NewUnitCreationRules(playerID)
 				end
 				local iCost = -1;
 
-				if not player:IsHuman() 
-				and not PlayerAtWarWithHuman(player)
-				--Single Observer (Test Mod): All AI should buy aircraft for Cargos
-				and not (Players[Game.GetActivePlayer()]:IsObserver() and not Game.IsGameMultiPlayer())
-				then
-					--Do Nothing
-				elseif sSpecialCargo == "SPECIALUNIT_FIGHTER"
+				--AI auto purchase Fighter
+				if sSpecialCargo == "SPECIALUNIT_FIGHTER"
 				and g_CargoSetList[playerID][1] and g_CargoSetList[playerID][1] ~= -1
 				and g_CargoSetList[playerID][4] and g_CargoSetList[playerID][4] ~= -1
 				and not player:IsHuman()
 				then
 					iCost = CarrierRestore(playerID, unit:GetID(), g_CargoSetList[playerID][1]);
+
 				elseif sSpecialCargo == "SPECIALUNIT_MISSILE"
+				and bAutoPurchase
 				and g_CargoSetList[playerID][2] and g_CargoSetList[playerID][2] ~= -1
 				then
 					iCost = CarrierRestore(playerID, unit:GetID(), g_CargoSetList[playerID][2]);
 				end
 				if iCost and iCost > 0 then
-					player:ChangeGold(-iCost);
+					iTotalCost = iTotalCost + iCost
 				end
 			-- Cargos Update
 			elseif unit:IsCargo() and unit:GetTransportUnit()
@@ -146,7 +155,7 @@ function NewUnitCreationRules(playerID)
 				end
 				local iCost = CarrierRestore(playerID, unit:GetID(), unit:GetUpgradeUnitType());
 				if iCost and iCost > 0 then
-					player:ChangeGold(-iCost);
+					iTotalCost = iTotalCost + iCost
 				end
 			end
 
@@ -166,44 +175,12 @@ function NewUnitCreationRules(playerID)
 						print("Promotions Transfer Finished on AAS!")
 					end
 				end
-				--------- Human player special END
-				-- Auto Upgrade for Barbarian
-			elseif player:IsBarbarian() then
-				if unit:GetPlot() and GameInfo.Units[unit:GetUpgradeUnitType()] and GameInfo.Units[unit:GetUpgradeUnitType()].PrereqTech
-					and Teams[Game.GetActiveTeam()]:IsHasTech(GameInfoTypes[GameInfo.Units[unit:GetUpgradeUnitType()].PrereqTech])
-				then
-					local plot = unit:GetPlot();
-					local iUnitType = unit:GetUpgradeUnitType();
-					unit:Kill();
-					player:InitUnit(iUnitType, plot:GetX(), plot:GetY(), UNITAI_ATTACK);
-				end
-				if not unit:IsDead() and not unit:IsDelayedDeath()
-					and not unit:IsHasPromotion(ForeignLandsID) and unit:IsHasPromotion(MilitiaID)
-				then
-					unit:SetHasPromotion(ForeignLandsID, true);
-				end
-				-- Establish Inquisition for AI
-			elseif ((unit:GetSpreadsLeft() > 0 and unit:GetSpreadsLeft() >= GameInfo.Units[unit:GetUnitType()].ReligionSpreads) or GameInfo.Units[unit:GetUnitType()].ProhibitsSpread) and not GameInfo.Units[unit:GetUnitType()].FoundReligion
-				and unit:GetPlot() and unit:GetOwner() == unit:GetPlot():GetOwner() and (unit:GetPlot():IsCity() or unit:GetPlot():GetWorkingCity() ~= nil)
-			then
-				local city = unit:GetPlot():GetPlotCity() or unit:GetPlot():GetWorkingCity();
-				if city and city:GetReligiousMajority() == unit:GetReligion() and city:IsCanPurchase(false, false, -1, GameInfoTypes["BUILDING_INQUISITION"], -1, YieldTypes.YIELD_FAITH) then
-					local numReligion = 0;
-					for religion in GameInfo.Religions("Type <> 'RELIGION_PANTHEON'") do
-						if city:GetNumFollowers(religion.ID) > 0 then
-							numReligion = numReligion + 1;
-						end
-						if numReligion > 1 then
-							city:SetNumRealBuilding(GameInfoTypes["BUILDING_INQUISITION"], 1);
-							unit:Kill();
-							break;
-						end
-					end
-				end
 			end
+			--------- Human player special END
 			-- MOD End   by CaptainCWB
 		end
 	end -------for units END
+	player:ChangeGold(-iTotalCost);
 end  ------function end
 
 GameEvents.PlayerTurnStart.Add(NewUnitCreationRules)
@@ -215,7 +192,6 @@ GameEvents.PlayerTurnStart.Add(NewUnitCreationRules)
 function OnCorpsArmeeSP(iPlayerID, iUnitID)
 	local pPlayer = Players[iPlayerID];
 	if pPlayer == nil or pPlayer:GetCapitalCity() == nil
-		or PreGame.GetGameOption("GAMEOPTION_SP_CORPS_MODE_DISABLE") == 1
 		or pPlayer:GetUnitByID(iUnitID) == nil
 		or pPlayer:GetUnitByID(iUnitID):GetPlot() == nil
 		or pPlayer:GetUnitByID(iUnitID):IsImmobile()
@@ -271,65 +247,40 @@ function OnCorpsArmeeSP(iPlayerID, iUnitID)
 	local DoCombine          = false;
 	local otherUnit          = nil;
 	local CorpsUnit          = nil;
-	local Heal1Unit          = nil;
-	local Heal2Unit          = nil;
-	local Heal3Unit          = nil;
 	local corpsRandNum       = Game.Rand(10, "At NewUnitsRule.lua OnCorpsArmeeSP(), AI spawning corps & armee") + 1
-	if (Game:GetHandicapType() == 7)
-		or (Game:GetHandicapType() == 6 and corpsRandNum > 1)
-		or (Game:GetHandicapType() == 5 and corpsRandNum > 2)
-		or (Game:GetHandicapType() == 4 and corpsRandNum > 3)
-		or (Game:GetHandicapType() == 3 and corpsRandNum > 5)
-		or (Game:GetHandicapType() == 2 and corpsRandNum > 7)
+	if (Game:GetHandicapType() == 7 and corpsRandNum > 3)
+		or (Game:GetHandicapType() == 6 and corpsRandNum > 4)
+		or (Game:GetHandicapType() == 5 and corpsRandNum > 5)
+		or (Game:GetHandicapType() == 4 and corpsRandNum > 6)
+		or (Game:GetHandicapType() == 3 and corpsRandNum > 7)
+		or (Game:GetHandicapType() == 2 and corpsRandNum > 8)
 		or (Game:GetHandicapType() == 1 and corpsRandNum > 9)
 	then
 		DoCombine = true;
 	end
 
-	if pPlayer:GetUnitClassCount(class) > 1 and not pPlayer:IsHuman() and DoCombine then
+	if pPlayer:GetUnitClassCount(class) > 5
+	and pPlayer:GetBuildingClassCount(iArsenalClass) > 0
+	and not pPlayer:IsHuman() 
+	and DoCombine 
+	then
 		for unit in pPlayer:Units() do
 			-- Armee | Corps
-			if unit == nil or unit:IsHasPromotion(ArmeeID) or unit:GetUnitClassType() ~= pUnit:GetUnitClassType() then
-			elseif unit:IsHasPromotion(CorpsID) and unit:GetDomainType() == DomainTypes.DOMAIN_LAND then
-				if pPlayer:GetBuildingClassCount(iMilitaryBaseClass) > 0 then
-					CorpsUnit = unit;
-				end
-			elseif pPlayer:GetBuildingClassCount(iArsenalClass) > 0 and unit:GetDomainType() == DomainTypes.DOMAIN_LAND then
+			if unit == nil 
+			or unit:IsHasPromotion(ArmeeID) 
+			or unit:GetUnitClassType() ~= pUnit:GetUnitClassType() 
+			or unit:GetDomainType() ~= DomainTypes.DOMAIN_LAND 
+			then
+				--jump
+			elseif unit:IsHasPromotion(CorpsID) and pPlayer:GetBuildingClassCount(iMilitaryBaseClass) > 0 then
+				CorpsUnit = unit;
+			else
 				otherUnit = unit;
-			end
-			-- Heal
-			if unit and unit:GetDamage() >= 30 and unit:GetUnitClassType() == pUnit:GetUnitClassType() and not unit:IsImmobile() and unit:CanMove() then
-				if Heal2Unit then
-					Heal3Unit = unit;
-					break;
-				elseif Heal1Unit then
-					Heal2Unit = unit;
-				else
-					Heal1Unit = unit;
-				end
 			end
 		end
 	end
 
-	if Heal2Unit or (Heal1Unit and pPlayer:IsLackingTroops()) then
-		if Heal1Unit then
-			Heal1Unit:ChangeDamage(-30);
-			Heal1Unit:SetMoves(math.floor(Heal1Unit:MovesLeft() / (2 * GameDefines["MOVE_DENOMINATOR"])) *
-			GameDefines["MOVE_DENOMINATOR"]);
-		end
-		if Heal2Unit then
-			Heal2Unit:ChangeDamage(-30);
-			Heal2Unit:SetMoves(math.floor(Heal2Unit:MovesLeft() / (2 * GameDefines["MOVE_DENOMINATOR"])) *
-			GameDefines["MOVE_DENOMINATOR"]);
-		end
-		if Heal3Unit then
-			Heal3Unit:ChangeDamage(-30);
-			Heal3Unit:SetMoves(math.floor(Heal3Unit:MovesLeft() / (2 * GameDefines["MOVE_DENOMINATOR"])) *
-			GameDefines["MOVE_DENOMINATOR"]);
-		end
-		pUnit:Kill(true);
-		return;
-	elseif CorpsUnit then
+	if CorpsUnit then
 		CorpsUnit:SetHasPromotion(ArmeeID, true);
 		pUnit:Kill(true);
 		return;
@@ -347,8 +298,9 @@ function OnCorpsArmeeSP(iPlayerID, iUnitID)
 		pUnit:Kill(true);
 	end
 end
-
-GameEvents.UnitCreated.Add(OnCorpsArmeeSP)
+if PreGame.GetGameOption("GAMEOPTION_SP_CORPS_MODE_DISABLE") == 0 then
+    GameEvents.UnitCreated.Add(OnCorpsArmeeSP)
+end
 
 function CarrierPromotionTransfer(player, unit)
 	local AntiAir1ID = GameInfo.UnitPromotions["PROMOTION_CARRIER_FIGHTER_ANTI_AIR_1"].ID

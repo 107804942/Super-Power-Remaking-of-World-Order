@@ -81,7 +81,6 @@
 		<Row>
 			<Class>UNITCLASS_ARCHER</Class>
 			<Type>UNIT_BARBARIAN_ARCHER</Type>
-			<PrereqTech>TECH_HUNTING</PrereqTech>
 			<BaseSightRange>1</BaseSightRange>
 			<Combat>6</Combat>
 			<RangedCombat>10</RangedCombat>
@@ -105,6 +104,7 @@
 			<IconAtlas>UNIT_ATLAS_1</IconAtlas>
 			<PortraitIndex>6</PortraitIndex>
 			<ExtraMaintenanceCost>2</ExtraMaintenanceCost>
+			<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 		</Row>
 
 
@@ -1258,6 +1258,10 @@
 			<UnitType>UNIT_BABYLONIAN_BOWMAN</UnitType>
 			<PromotionType>PROMOTION_GAIN_EXPERIENCE</PromotionType>
 		</Row>
+		<Row>
+			<UnitType>UNIT_BABYLONIAN_BOWMAN</UnitType>
+			<PromotionType>PROMOTION_WAR_SEIENCE</PromotionType>
+		</Row>
 		
 
 		<Row>
@@ -1275,10 +1279,6 @@
 		</Row>
 		<Row>
 			<UnitType>UNIT_CHINESE_CHUKONU</UnitType>
-			<PromotionType>PROMOTION_SECOND_ATTACK</PromotionType>
-		</Row>
-		<Row>
-			<UnitType>UNIT_CHINESE_CHUKONU</UnitType>
 			<PromotionType>PROMOTION_ACCURACY_1</PromotionType>
 		</Row>
 		<Row>
@@ -1287,15 +1287,7 @@
 		</Row>
 		<Row>
 			<UnitType>UNIT_CHINESE_CHUKONU</UnitType>
-			<PromotionType>PROMOTION_SPAWN_GENERALS_II</PromotionType>
-		</Row>
-		<Row>
-			<UnitType>UNIT_CHINESE_CHUKONU</UnitType>
-			<PromotionType>PROMOTION_GENERAL_STACKING</PromotionType>
-		</Row>
-		<Row>
-			<UnitType>UNIT_CHINESE_CHUKONU</UnitType>
-			<PromotionType>PROMOTION_EXTRA_MOVE_HALF</PromotionType>
+			<PromotionType>PROMOTION_ATTACK_COST_HALF</PromotionType>
 		</Row>
 
 		<Row>
@@ -1313,6 +1305,10 @@
 		<Row>
 			<UnitType>UNIT_MAYAN_ATLATLIST</UnitType>
 			<PromotionType>PROMOTION_BARRAGE_3</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MAYAN_ATLATLIST</UnitType>
+			<PromotionType>PROMOTION_RAIN_OF_SPEAR</PromotionType>
 		</Row>
 
 
@@ -2500,12 +2496,12 @@
 		<Row>
 			<UnitType>UNIT_ARTILLERY</UnitType>
 			<FlavorType>FLAVOR_RANGED</FlavorType>
-			<Flavor>115</Flavor>
+			<Flavor>85</Flavor>
 		</Row>
 		<Row>
 			<UnitType>UNIT_ARTILLERY</UnitType>
 			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>165</Flavor>
+			<Flavor>115</Flavor>
 		</Row>
 		<Row>
 			<UnitType>UNIT_ARTILLERY</UnitType>

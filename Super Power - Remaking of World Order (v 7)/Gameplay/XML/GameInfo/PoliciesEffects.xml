@@ -51,6 +51,31 @@
 		</Row>
 	</Policy_GreatWorkYieldChanges>
 
+	<Policy_YieldModifierPerArtifacts>
+		<Row>
+			<PolicyType>POLICY_FINE_ARTS</PolicyType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FINE_ARTS</PolicyType>
+			<YieldType>YIELD_TOURISM</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Policy_YieldModifierPerArtifacts>
+
+	<Policy_GreatPersonOutputModifierPerGWs>
+		<Row>
+			<PolicyType>POLICY_ARTISTIC_GENIUS</PolicyType>
+			<GreatPersonType>GREATPERSON_WRITER</GreatPersonType>
+			<Modifier>4</Modifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_ARTISTIC_GENIUS</PolicyType>
+			<GreatPersonType>GREATPERSON_MUSICIAN</GreatPersonType>
+			<Modifier>4</Modifier>
+		</Row>
+	</Policy_GreatPersonOutputModifierPerGWs>
 
 	<Policy_SpecialistExtraYields>
 		<Row>
@@ -162,22 +187,22 @@
 		<Row>
 			<PolicyType>POLICY_PREFECTURE</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_LARGE</BuildingClassType>
-			<CultureChange>4</CultureChange>
+			<CultureChange>6</CultureChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_PREFECTURE</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_XL</BuildingClassType>
-			<CultureChange>4</CultureChange>
+			<CultureChange>6</CultureChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_PREFECTURE</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_XXL</BuildingClassType>
-			<CultureChange>4</CultureChange>
+			<CultureChange>8</CultureChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_PREFECTURE</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_GLOBAL</BuildingClassType>
-			<CultureChange>4</CultureChange>
+			<CultureChange>8</CultureChange>
 		</Row>
 
 		<Row>
@@ -209,6 +234,11 @@
 		<Row>
 			<PolicyType>POLICY_NAVAL_TRADITION</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_WOOD_DOCK</BuildingClassType>
+			<CultureChange>2</CultureChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_NAVAL_TRADITION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_SHIPYARD</BuildingClassType>
 			<CultureChange>2</CultureChange>
 		</Row>
 		<Row>
@@ -282,37 +312,6 @@
 	<Policy_BuildingClassYieldChanges>
 <!--***********************BILL OF RIGHTS reduce the maintainance of City Halls-->
 		<Row>
-			<PolicyType>POLICY_BILL_OF_RIGHTS</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_CITY_HALL_LV1</BuildingClassType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<YieldChange>1</YieldChange>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_BILL_OF_RIGHTS</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_CITY_HALL_LV2</BuildingClassType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<YieldChange>2</YieldChange>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_BILL_OF_RIGHTS</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_CITY_HALL_LV3</BuildingClassType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<YieldChange>4</YieldChange>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_BILL_OF_RIGHTS</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_CITY_HALL_LV4</BuildingClassType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<YieldChange>8</YieldChange>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_BILL_OF_RIGHTS</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_CITY_HALL_LV5</BuildingClassType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<YieldChange>12</YieldChange>
-		</Row>
-
-		<Row>
 			<PolicyType>POLICY_OLIGARCHY</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_SMALL</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
@@ -328,25 +327,25 @@
 			<PolicyType>POLICY_OLIGARCHY</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_LARGE</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
-			<YieldChange>4</YieldChange>
+			<YieldChange>6</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_OLIGARCHY</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_XL</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
-			<YieldChange>4</YieldChange>
+			<YieldChange>6</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_OLIGARCHY</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_XXL</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
-			<YieldChange>4</YieldChange>
+			<YieldChange>8</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_OLIGARCHY</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_GLOBAL</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
-			<YieldChange>4</YieldChange>
+			<YieldChange>8</YieldChange>
 		</Row>
 
 
@@ -476,12 +475,12 @@
 		<Row>
 			<PolicyType>POLICY_REPUBLIC</PolicyType>
 			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>4</Yield>
+			<Yield>2</Yield>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_REPUBLIC</PolicyType>
 			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>4</Yield>
+			<Yield>2</Yield>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LIBERTY</PolicyType>
@@ -496,7 +495,7 @@
 		<Row>
 			<PolicyType>POLICY_DECENTRALIZATION</PolicyType>
 			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>4</Yield>
+			<Yield>2</Yield>
 		</Row>
 	</Policy_CityYieldChanges>
 
@@ -791,22 +790,6 @@
 			<Happiness>5</Happiness>
 		</Row>
 		
-		
-		
-		
-
-
-		<Row>
-			<PolicyType>POLICY_FREE_RELIGION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_SHRINE</BuildingClassType>
-			<Happiness>1</Happiness>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_FREE_RELIGION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TEMPLE</BuildingClassType>
-			<Happiness>1</Happiness>
-		</Row>
-
 		<!--<Row>
 			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
@@ -1141,20 +1124,6 @@
 		</Row>
 
 		<Row>
-			<PolicyType>POLICY_MARITIME_INFRASTRUCTURE</PolicyType>
-			<ImprovementType>IMPROVEMENT_FISHERY_MOD</ImprovementType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MARITIME_INFRASTRUCTURE</PolicyType>
-			<ImprovementType>IMPROVEMENT_GAS_RIG_MOD</ImprovementType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		
-		
-		<Row>
 			<PolicyType>POLICY_FREE_THOUGHT</PolicyType>
 			<ImprovementType>IMPROVEMENT_TRADING_POST</ImprovementType>
 			<YieldType>YIELD_SCIENCE</YieldType>
@@ -1189,6 +1158,18 @@
 			<PolicyType>POLICY_NEW_DEAL</PolicyType>
 			<ImprovementType>IMPROVEMENT_HOLY_SITE</ImprovementType>
 			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>4</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_NEW_DEAL</PolicyType>
+			<ImprovementType>IMPROVEMENT_LANDMARK</ImprovementType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>4</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_NEW_DEAL</PolicyType>
+			<ImprovementType>IMPROVEMENT_LANDMARK</ImprovementType>
+			<YieldType>YIELD_TOURISM</YieldType>
 			<Yield>4</Yield>
 		</Row>
 		
@@ -1228,12 +1209,6 @@
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<Yield>1</Yield>
 		</Row>
-		<Row>
-			<PolicyType>POLICY_FIVE_YEAR_PLAN</PolicyType>
-			<ImprovementType>IMPROVEMENT_GAS_RIG_MOD</ImprovementType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>1</Yield>
-		</Row>
 	</Policy_ImprovementYieldChanges>
 
 	<Policy_ImprovementCultureChanges>
@@ -1242,11 +1217,6 @@
 			<ImprovementType>IMPROVEMENT_HOLY_SITE</ImprovementType>
 			<CultureChange>4</CultureChange>
 		</Row>-->
-		<Row>
-			<PolicyType>POLICY_NEW_DEAL</PolicyType>
-			<ImprovementType>IMPROVEMENT_LANDMARK</ImprovementType>
-			<CultureChange>4</CultureChange>
-		</Row>
 		<Row>
 			<PolicyType>POLICY_PARTY_LEADERSHIP</PolicyType>
 			<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
@@ -1411,7 +1381,7 @@
 			<Count>1</Count>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_MILITARY_CASTE</PolicyType>
+			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType>
 			<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 			<Count>1</Count>
 		</Row>
@@ -1440,53 +1410,6 @@
 
 	<!-- **********************Tourism Created*************************** -->
 	<Policy_TourismOnUnitCreation>
-		<Row>
-			<PolicyType>POLICY_OPEN_SOCIETY</PolicyType>
-			<UnitClassType>UNITCLASS_WRITER</UnitClassType>
-			<Tourism>300</Tourism>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_OPEN_SOCIETY</PolicyType>
-			<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-			<Tourism>300</Tourism>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_OPEN_SOCIETY</PolicyType>
-			<UnitClassType>UNITCLASS_MUSICIAN</UnitClassType>
-			<Tourism>300</Tourism>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_OPEN_SOCIETY</PolicyType>
-			<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-			<Tourism>300</Tourism>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_OPEN_SOCIETY</PolicyType>
-			<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-			<Tourism>300</Tourism>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_OPEN_SOCIETY</PolicyType>
-			<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-			<Tourism>300</Tourism>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_OPEN_SOCIETY</PolicyType>
-			<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-			<Tourism>300</Tourism>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_OPEN_SOCIETY</PolicyType>
-			<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
-			<Tourism>300</Tourism>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_OPEN_SOCIETY</PolicyType>
-			<UnitClassType>UNITCLASS_GREAT_ADMIRAL</UnitClassType>
-			<Tourism>300</Tourism>
-		</Row>
-	
-
 		<Row>
 			<PolicyType>POLICY_GUNBOAT_DIPLOMACY</PolicyType>
 			<UnitClassType>UNITCLASS_DREADNOUGHT</UnitClassType>
@@ -1759,7 +1682,7 @@
 			<IconAtlas>SP10_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_SHARED</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_NEW_ORDER</PediaEntry>
-			<OriginalCapitalDamageFix>4</OriginalCapitalDamageFix>
+			<OriginalCapitalSpecialDamageFix>4</OriginalCapitalSpecialDamageFix>
 		</Row>
 
 		<Row>
@@ -1983,10 +1906,6 @@
 
 		<Row>
 			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-			<PromotionType>PROMOTION_NEW_ORDER</PromotionType>
-		</Row>
-		<Row>
-			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
 			<PromotionType>PROMOTION_NEW_ORDER</PromotionType>
 		</Row>
 		<Row>
@@ -2368,34 +2287,12 @@
 		</Row>
 
 		<Row>
-			<Type>BUILDINGCLASS_EXPLORATION_REMOVE_DEBUFF</Type>
-			<DefaultBuilding>BUILDING_EXPLORATION_REMOVE_DEBUFF</DefaultBuilding>
-			<Description>TXT_KEY_POLICY_BRANCH_EXPLORATION</Description>
-		</Row>
-
-		<Row>
 			<Type>BUILDINGCLASS_POLICY_MERCHANT_NAVY_FREE</Type>
 			<DefaultBuilding>BUILDING_POLICY_MERCHANT_NAVY_FREE</DefaultBuilding>
 			<Description>TXT_KEY_POLICY_MERCHANT_NAVY</Description>
 		</Row>
 	</BuildingClasses>
 	<Buildings>
-		<Row>
-			<Type>BUILDING_EXPLORATION_REMOVE_DEBUFF</Type>
-			<BuildingClass>BUILDINGCLASS_EXPLORATION_REMOVE_DEBUFF</BuildingClass>
-			<Cost>-1</Cost>
-			<NeverCapture>true</NeverCapture>
-			<NukeImmune>true</NukeImmune>
-			<HurryCostModifier>-1</HurryCostModifier>
-			<PortraitIndex>21</PortraitIndex>
-			<IconAtlas>TECH_ATLAS_1</IconAtlas>
-			<Description>TXT_KEY_POLICY_BRANCH_EXPLORATION</Description>
-			<Help>TXT_KEY_POLICY_BRANCH_EXPLORATION_HELP</Help>
-			<FreePromotionRemoved>PROMOTION_LOSE_HP_OUTSIDE</FreePromotionRemoved>
-			<GreatWorkCount>-1</GreatWorkCount>
-			<DummyBuilding>true</DummyBuilding>
-		</Row>
-
 		<Row>
 			<Type>BUILDING_THEOCRACY_WRITER</Type>
 			<BuildingClass>BUILDINGCLASS_THEOCRACY_WRITER</BuildingClass>
@@ -2454,7 +2351,7 @@
 			<BuildingType>BUILDING_POLICY_MERCHANT_NAVY_FREE</BuildingType>
 			<UnitClassType>UNITCLASS_CARGO_SHIP</UnitClassType>
 			<YieldType>YIELD_FAITH</YieldType>
-			<CostModifier>500</CostModifier>
+			<CostModifier>300</CostModifier>
 		</Row>
 	</Building_EnableUnitPurchase>
 
@@ -2488,11 +2385,6 @@
 		<Row>
 			<PolicyType>POLICY_REPRESENTATION</PolicyType>
 			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_BILL_OF_RIGHTS</PolicyType>
-			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>1</Yield>
 		</Row>
 		<Row>

@@ -2,6 +2,12 @@
 <!-- Created by ModBuddy on 11/23/2013 12:24:22 PM -->
 <GameData>
 	<Resource_YieldChanges>
+		<Delete ResourceType="RESOURCE_FISH"/>
+		<Row>
+			<ResourceType>RESOURCE_FISH</ResourceType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
 		<Update>
 			<Where ResourceType="RESOURCE_CITRUS" YieldType="YIELD_FOOD"/>
 			<Set>

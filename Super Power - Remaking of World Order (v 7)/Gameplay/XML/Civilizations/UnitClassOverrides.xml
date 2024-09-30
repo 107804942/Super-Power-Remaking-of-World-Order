@@ -324,12 +324,6 @@
 			<UnitType>UNIT_PORTUGUESE_NAU</UnitType>
 		</Row>
 
-
-		<!--<Row>
-			<CivilizationType>CIVILIZATION_SWEDEN</CivilizationType>
-			<UnitClassType>UNITCLASS_LANCER</UnitClassType>
-			<UnitType>UNIT_SWEDISH_HAKKAPELIITTA</UnitType>
-		</Row>-->
 		<Row>
 			<CivilizationType>CIVILIZATION_SWEDEN</CivilizationType>
 			<UnitClassType>UNITCLASS_RIFLEMAN</UnitClassType>
@@ -527,11 +521,6 @@
 		</Row>
 		<Row>
 			<CivilizationType>CIVILIZATION_IROQUOIS</CivilizationType>
-			<UnitClassType>UNITCLASS_FIGHTER</UnitClassType>
-			<UnitType>UNIT_IROQUOIAN_CANADIAN_FIGHTER</UnitType>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_IROQUOIS</CivilizationType>
 			<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
 			<UnitType>UNIT_IROQUOIAN_MUSKETEER</UnitType>
 		</Row>
@@ -569,20 +558,9 @@
 			<UnitClassType>UNITCLASS_ARCHAEOLOGIST</UnitClassType>
 			<UnitType/>
 		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_ARCHAEOLOGIST</UnitClassType>
-			<UnitType/>
-		</Row>
-
 
 		<Row>
 			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
-			<UnitClassType>UNITCLASS_ICBM_MISSILE</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
 			<UnitClassType>UNITCLASS_ICBM_MISSILE</UnitClassType>
 			<UnitType/>
 		</Row>
@@ -592,27 +570,12 @@
 			<UnitType/>
 		</Row>
 		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_RAILROAD_GUN</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
 			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
 			<UnitClassType>UNITCLASS_SUPER_CARRIER</UnitClassType>
 			<UnitType/>
 		</Row>
 		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_SUPER_CARRIER</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
 			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
-			<UnitClassType>UNITCLASS_SSBN</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
 			<UnitClassType>UNITCLASS_SSBN</UnitClassType>
 			<UnitType/>
 		</Row>
@@ -623,17 +586,7 @@
 			<UnitType/>
 		</Row>
 		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_KATYUSHA</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
 			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
-			<UnitClassType>UNITCLASS_WWI_PARATROOPER</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
 			<UnitClassType>UNITCLASS_WWI_PARATROOPER</UnitClassType>
 			<UnitType/>
 		</Row>
@@ -643,23 +596,9 @@
 			<UnitClassType>UNITCLASS_TEUTONIC_KNIGHT</UnitClassType>
 			<UnitType/>
 		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_TEUTONIC_KNIGHT</UnitClassType>
-			<UnitType/>
-		</Row>
-
-
-
-
 
 		<Row>
 			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
-			<UnitClassType>UNITCLASS_SPARTAN300</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
 			<UnitClassType>UNITCLASS_SPARTAN300</UnitClassType>
 			<UnitType/>
 		</Row>
@@ -669,27 +608,12 @@
 			<UnitType/>
 		</Row>
 		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_NUMIDIAN</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
 			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
 			<UnitClassType>UNITCLASS_ELITE_RIDER</UnitClassType>
 			<UnitType/>
 		</Row>
 		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_ELITE_RIDER</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
 			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
-			<UnitClassType>UNITCLASS_ZHENGHE_FLEET</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
 			<UnitClassType>UNITCLASS_ZHENGHE_FLEET</UnitClassType>
 			<UnitType/>
 		</Row>
@@ -700,17 +624,7 @@
 			<UnitType/>
 		</Row>
 		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
 			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
-			<UnitClassType>UNITCLASS_PROTOTYPE_SUBMARINE</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
 			<UnitClassType>UNITCLASS_PROTOTYPE_SUBMARINE</UnitClassType>
 			<UnitType/>
 		</Row>
@@ -720,17 +634,7 @@
 			<UnitType/>
 		</Row>
 		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_SUPER_HOWITZER</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
 			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
-			<UnitClassType>UNITCLASS_PROTOTYPE_AIRSHIP</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
 			<UnitClassType>UNITCLASS_PROTOTYPE_AIRSHIP</UnitClassType>
 			<UnitType/>
 		</Row>
@@ -740,17 +644,7 @@
 			<UnitType/>
 		</Row>
 		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_SUPER_TANK</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
 			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
-			<UnitClassType>UNITCLASS_SUPER_BATTLESHIP</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
 			<UnitClassType>UNITCLASS_SUPER_BATTLESHIP</UnitClassType>
 			<UnitType/>
 		</Row>
@@ -760,17 +654,7 @@
 			<UnitType/>
 		</Row>
 		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_PROTOTYPE_BOMBER</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
 			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
-			<UnitClassType>UNITCLASS_CRUSADER_ARTILLERY</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
 			<UnitClassType>UNITCLASS_CRUSADER_ARTILLERY</UnitClassType>
 			<UnitType/>
 		</Row>
@@ -780,17 +664,7 @@
 			<UnitType/>
 		</Row>
 		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_UNDERWATER_CARRIER</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
 			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
-			<UnitClassType>UNITCLASS_TASKFORCE_141</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
 			<UnitClassType>UNITCLASS_TASKFORCE_141</UnitClassType>
 			<UnitType/>
 		</Row>
@@ -800,17 +674,7 @@
 			<UnitType/>
 		</Row>
 		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_STEALTH_HELICOPTER</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
 			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
-			<UnitClassType>UNITCLASS_PAKFA_T50</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
 			<UnitClassType>UNITCLASS_PAKFA_T50</UnitClassType>
 			<UnitType/>
 		</Row>
@@ -819,111 +683,5 @@
 			<UnitClassType>UNITCLASS_MECH</UnitClassType>
 			<UnitType/>
 		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_MECH</UnitClassType>
-			<UnitType/>
-		</Row>
 	</Civilization_UnitClassOverrides>
-
-
-
-	
-	<!--*******************************Barbarian Special*******************************-->
-
-	<Civilization_UnitClassOverrides>
-		<!--<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_MILITIA_ANCIENT</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_MINUTEMAN</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_CONSCRIPTMAN</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_MILITIA_MODERN</UnitClassType>
-			<UnitType/>
-		</Row>
-
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_NAVAL_MILITIA</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_MONITOR_SHIP</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_CORVETTE</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_LITTORAL_COMBAT_SHIP</UnitClassType>
-			<UnitType/>
-		</Row>-->
-		
-		
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_WARRIOR</UnitClassType>
-			<UnitType>UNIT_BARBARIAN_WARRIOR</UnitType>
-		</Row>
-		<!--
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_MILITIA_ANCIENT</UnitClassType>
-			<UnitType>UNIT_BARBARIAN_SWORDSMAN</UnitType>
-		</Row>
-		-->
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_ARCHER</UnitClassType>
-			<UnitType>UNIT_BARBARIAN_ARCHER</UnitType>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_SPEARMAN</UnitClassType>
-			<UnitType>UNIT_BARBARIAN_SPEARMAN</UnitType>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-			<UnitType/>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_HORSEMAN</UnitClassType>
-			<UnitType>UNIT_BARBARIAN_HORSEMAN</UnitType>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_CHARIOT_ARCHER</UnitClassType>
-			<UnitType>UNIT_BARBARIAN_AXMAN</UnitType>
-		</Row>
-		<Row>
-			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<UnitClassType>UNITCLASS_NAVAL_MILITIA</UnitClassType>
-			<UnitType>UNIT_BARBARIAN_GALLEY</UnitType>
-		</Row>
-
-
-
-
-
-
-
-	</Civilization_UnitClassOverrides>
-  
 </GameData>

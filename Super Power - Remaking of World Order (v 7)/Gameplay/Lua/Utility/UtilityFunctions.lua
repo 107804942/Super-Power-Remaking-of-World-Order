@@ -134,14 +134,14 @@ function SatelliteLaunchEffects(unit, city, player)
 		city:SetNumRealBuilding(GameInfoTypes["BUILDING_SATELLITE_SPUTNIK"], 1)
 	elseif unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_RECONNAISSANCE then
 		city:SetNumRealBuilding(GameInfoTypes["BUILDING_SATELLITE_RECONNAISSANCE"], 1)
-		city:SetNumRealBuilding(GameInfoTypes["BUILDING_SATELLITE_RECONNAISSANCE_SMALL"], 1)
 	elseif unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_GPS then
 		city:SetNumRealBuilding(GameInfoTypes["BUILDING_SATELLITE_GPS"], 1)
 	elseif unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_APOLLO11 then
 		city:SetNumRealBuilding(GameInfoTypes["BUILDING_SATELLITE_APOLLO11"], 1)
 	elseif unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_HUBBLE then
 		city:SetNumRealBuilding(GameInfoTypes["BUILDING_HUBBLE"], 1)
-		player:InitUnit(GameInfoTypes.UNIT_SCIENTIST, city:GetX(), city:GetY(), UNITAI_SCIENTIST):JumpToNearestValidPlot()
+		local NewUnit = player:InitUnit(GameInfoTypes.UNIT_SCIENTIST, city:GetX(), city:GetY(), UNITAI_SCIENTIST)
+		NewUnit:JumpToNearestValidPlot()
 	elseif unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_WEATHER then
 		city:SetNumRealBuilding(GameInfoTypes["BUILDING_SATELLITE_WEATHER"], 1)
 	elseif unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_TIANGONG then
@@ -152,6 +152,8 @@ function SatelliteLaunchEffects(unit, city, player)
 		city:SetNumRealBuilding(GameInfoTypes["BUILDING_SATELLITE_ENVIRONMENT"], 1)
 	elseif unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_ANTIFALLOUT then
 		city:SetNumRealBuilding(GameInfoTypes["BUILDING_SATELLITE_ANTIFALLOUT"], 1)
+		Game.ChangeNuclearWinterProcess(-math.min(Game.GetNuclearWinterProcess(), 150), true, true)
+		Game.ChangeNuclearWinterNaturalReduction(2);
 	elseif unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_RESOURCEPLUS then
 		city:SetNumRealBuilding(GameInfoTypes["BUILDING_SATELLITE_RESOURCEPLUS"], 1)
 	elseif unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_SPACE_ELEVATOR then
@@ -167,11 +169,6 @@ function SatelliteLaunchEffects(unit, city, player)
 end -----------function END
 
 function SatelliteEffectsGlobal(unit)
-	if not unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SATELLITE_UNIT"].ID) then
-		return
-	end
-
-
 	if unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_WEATHER then
 		print("Satellite Effects Global:Weather Control!")
 		for plotLoop = 0, Map.GetNumPlots() - 1, 1 do
@@ -189,7 +186,6 @@ function SatelliteEffectsGlobal(unit)
 		print("Satellite Effects Global:Environment Transform!")
 		for plotLoop = 0, Map.GetNumPlots() - 1, 1 do
 			local plot = Map.GetPlotByIndex(plotLoop)
-
 
 			if plot:GetTerrainType() == TerrainTypes.TERRAIN_TUNDRA then
 				if plot:GetFeatureType() == FeatureTypes.NO_FEATURE and not plot:IsHills() and not plot:IsMountain() then
@@ -232,30 +228,42 @@ function SatelliteEffectsGlobal(unit)
 				plot:SetImprovementType(iImprovement)
 			end
 		end
-	elseif unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_GPS or unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_RECONNAISSANCE or unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_APOLLO11 or unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_HUBBLE or unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_TIANGONG then
+	elseif unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_GPS then
 		for playerID, player in pairs(Players) do
-			if player and player:GetNumCities() > 0 and not player:IsMinorCiv() and not player:IsBarbarian() then
-				print("Satellite Effects Global:Effects!")
-				local CapitalCity = player:GetCapitalCity()
-				print("Find Capital")
-				if unit:GetUnitClassType() == GameInfo.UnitClasses.UNITCLASS_SATELLITE_GPS.ID then
-					CapitalCity:SetNumRealBuilding(GameInfoTypes["BUILDING_SATELLITE_GPS_SMALL"], 1)
-				elseif unit:GetUnitClassType() == GameInfo.UnitClasses.UNITCLASS_SATELLITE_RECONNAISSANCE.ID then
-					CapitalCity:SetNumRealBuilding(GameInfoTypes["BUILDING_SATELLITE_RECONNAISSANCE_SMALL"], 1)
-				elseif unit:GetUnitClassType() == GameInfo.UnitClasses.UNITCLASS_SATELLITE_APOLLO11.ID then
-					print("Free Tech for everyone!")
-					player:SetNumFreeTechs(1)
-				elseif unit:GetUnitClassType() == GameInfo.UnitClasses.UNITCLASS_SATELLITE_HUBBLE.ID then
-					local pPlot = CapitalCity
-					local NewUnit = player:InitUnit(GameInfoTypes.UNIT_SCIENTIST, pPlot:GetX(), pPlot:GetY(),
-						UNITAI_SCIENTIST)
-					NewUnit:JumpToNearestValidPlot()
-				elseif unit:GetUnitClassType() == GameInfo.UnitClasses.UNITCLASS_SATELLITE_TIANGONG.ID then
-					local pPlot = CapitalCity
-					local NewUnit = player:InitUnit(GameInfoTypes.UNIT_ENGINEER, pPlot:GetX(), pPlot:GetY(),
-						UNITAI_ENGINEER)
-					NewUnit:JumpToNearestValidPlot()
+			if player and player:GetNumCities() > 0 and player:IsMajorCiv() then
+				if playerID ~= unit:GetOwner() then
+					player:ChangeFreePromotionCount(GameInfo.UnitPromotions.PROMOTION_GPS_MOVEMENT_SMALL.ID, 1)
 				end
+			end
+		end
+	elseif unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_RECONNAISSANCE then
+		for playerID, player in pairs(Players) do
+			if player and player:GetNumCities() > 0 and player:IsMajorCiv() then
+				if playerID ~= unit:GetOwner() then
+					player:ChangeFreePromotionCount(GameInfo.UnitPromotions.PROMOTION_SATELLITE_RECON_SMALL.ID, 1)
+				end
+			end
+		end
+	elseif unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_APOLLO11 then
+		for playerID, player in pairs(Players) do
+			if player and player:GetNumCities() > 0 and player:IsMajorCiv() then
+				player:ChooseFreeTechs(1)
+			end
+		end
+	elseif unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_HUBBLE then
+		for playerID, player in pairs(Players) do
+			if player and player:GetCapitalCity() and player:IsMajorCiv() then
+				local CapitalCity = player:GetCapitalCity()
+				local NewUnit = player:InitUnit(GameInfoTypes.UNIT_SCIENTIST, CapitalCity:GetX(), CapitalCity:GetY(), UNITAI_SCIENTIST)
+				NewUnit:JumpToNearestValidPlot()
+			end
+		end
+	elseif unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_SATELLITE_TIANGONG then
+		for playerID, player in pairs(Players) do
+			if player and player:GetCapitalCity() and player:IsMajorCiv() then
+				local CapitalCity = player:GetCapitalCity()
+				local NewUnit = player:InitUnit(GameInfoTypes.UNIT_ENGINEER, CapitalCity:GetX(), CapitalCity:GetY(), UNITAI_ENGINEER)
+				NewUnit:JumpToNearestValidPlot()
 			end
 		end
 	end
@@ -265,180 +273,6 @@ end -----------function END
 
 ---------------------Policy Per Turn Effects
 function SetPolicyPerTurnEffects(playerID)
-end
-
-if (PreGame.GetGameOption("GAMEOPTION_SP_IMMIGRATION_OFF") == 1) then
-	print("International Immigration - OFF!");
-else
-	-----------International Immigration Counter Check
-	function CheckMoveOutCounter(HumanPlayerID, AIPlayerID)
-		local HumanPlayer = Players[HumanPlayerID];
-		local AIPlayer = Players[AIPlayerID];
-
-		if HumanPlayer == nil or AIPlayer == nil then
-			print("No players");
-			return;
-		end
-
-		print("Human Player: " .. tostring(HumanPlayer:GetName()));
-		print("AI Player: " .. tostring(AIPlayer:GetName()));
-
-		local iRegressand = 30;
-		if Game.GetGameSpeedType() == 0 then -- GAMESPEED_MARATHON
-			iRegressand = 60;
-		elseif Game.GetGameSpeedType() == 1 then -- GAMESPEED_EPIC
-			iRegressand = 40;
-		elseif Game.GetGameSpeedType() == 2 then -- GAMESPEED_STANDARD
-			iRegressand = 30;
-		elseif Game.GetGameSpeedType() == 3 then -- GAMESPEED_QUICK
-			iRegressand = 20;
-		end
-
-		iCount = AIPlayer:GetImmigrationCounter(HumanPlayerID);
-
-		local MoveOutTeam, MoveInTeam;
-
-		local MoveOutCounterBase = HumanPlayer:GetInfluenceLevel(AIPlayerID) - AIPlayer:GetInfluenceLevel(HumanPlayerID);
-		local MoveOutCounterMod  = 1;
-
-		print("Move Out Counter by the Influence Base: " .. MoveOutCounterBase);
-
-		local MoveInPlayer  = nil;
-		local MoveOutPlayer = nil;
-		if MoveOutCounterBase > 0 then
-			MoveOutPlayer = AIPlayer;
-			MoveInPlayer  = HumanPlayer;
-		elseif MoveOutCounterBase < 0 then
-			MoveOutPlayer = HumanPlayer;
-			MoveInPlayer  = AIPlayer
-		end
-
-		if MoveInPlayer == nil then
-			return { MoveOutCounterBase, iRegressand, iCount };
-		else
-			MoveOutTeam = Teams[MoveOutPlayer:GetTeam()];
-			MoveInTeam  = Teams[MoveInPlayer:GetTeam()];
-		end
-
-		------------------------------------------Player is not able to accept----------------------
-
-
-		if MoveInPlayer:GetExcessHappiness() <= 0 or MoveInPlayer:GetNumResourceAvailable(GameInfoTypes["RESOURCE_CONSUMER"], true) <= 0 then
-			MoveOutCounterBase = 0
-			print("The Player is unhappy or No Resources! " .. MoveOutCounterBase)
-		end
-
-		if MoveInPlayer:GetCurrentEra() >= GameInfo.Eras["ERA_MODERN"].ID and MoveInPlayer:GetNumResourceAvailable(GameInfoTypes["RESOURCE_ELECTRICITY"], true) <= 0 then
-			MoveOutCounterBase = 0
-			print("The Player is lacking of ELECTRICITY! " .. MoveOutCounterBase)
-		end
-
-		if HumanPlayer:GetTeam() == AIPlayer:GetTeam() then
-			MoveOutCounterBase = 0
-			print ("Players are in the same team"..MoveOutCounterBase);
-		end
-
-		------------------------------------------Diplomacy Modifier--------------------------------
-		if PlayersAtWar(MoveOutPlayer, MoveInPlayer) then
-			MoveOutCounterBase = 0
-			print("At War! No Immigration: " .. MoveOutCounterBase)
-		end
-
-		if MoveInTeam:IsAllowsOpenBordersToTeam(MoveOutPlayer:GetTeam()) then
-			MoveOutCounterMod = MoveOutCounterMod + 1
-			print("Open Borders +100% " .. MoveOutCounterMod)
-		end
-
-		if MoveOutPlayer:IsDenouncedPlayer(MoveInPlayerID) or MoveInPlayer:IsDenouncedPlayer(MoveOutPlayerID) then
-			MoveOutCounterMod = MoveOutCounterMod - 0.5
-			print("Denouncing! -50% " .. MoveOutCounterMod)
-		end
-
-		if MoveOutPlayer:IsDoF(MoveInPlayerID) then
-			MoveOutCounterMod = MoveOutCounterMod + 0.5
-			print("Has Friendship! +50% " .. MoveOutCounterMod)
-		end
-
-
-		------------------------------------------Religion Modifier---------------------------------
-		if MoveInPlayer:GetReligionCreatedByPlayer() ~= nil and MoveInPlayer:GetReligionCreatedByPlayer() > 0 then
-			local MoveInPlayerReligion = MoveInPlayer:GetReligionCreatedByPlayer()
-			if MoveOutPlayer:HasReligionInMostCities(MoveInPlayerReligion) then
-				MoveOutCounterMod = MoveOutCounterMod + 1
-				print("Same Religion +100%  " .. MoveOutCounterMod)
-			end
-		end
-
-
-		------------------------------------------Happiness Modifier--------------------------------
-		if MoveInPlayer:IsHuman() then
-			if MoveInPlayer:GetExcessHappiness() >= 150 then
-				MoveOutCounterMod = MoveOutCounterMod + 0.5
-			elseif MoveInPlayer:GetExcessHappiness() < 150 and MoveInPlayer:GetExcessHappiness() >= 100 then
-				MoveOutCounterMod = MoveOutCounterMod + 0.25
-			elseif MoveInPlayer:GetExcessHappiness() < 50 and MoveInPlayer:GetExcessHappiness() >= 20 then
-				MoveOutCounterMod = MoveOutCounterMod - 0.25
-			elseif MoveInPlayer:GetExcessHappiness() < 20 and MoveInPlayer:GetExcessHappiness() >= 0 then
-				MoveOutCounterMod = MoveOutCounterMod - 0.5
-			elseif MoveInPlayer:GetExcessHappiness() < 0 then
-				MoveOutCounterMod = 0
-			end
-
-			print("Human Move in Special Mod  " .. MoveOutCounterMod)
-		end
-
-
-		if MoveOutPlayer:IsHuman() then
-			if MoveOutPlayer:GetExcessHappiness() >= 150 then
-				MoveOutCounterMod = MoveOutCounterMod - 0.5
-			elseif MoveOutPlayer:GetExcessHappiness() < 150 and MoveOutPlayer:GetExcessHappiness() >= 100 then
-				MoveOutCounterMod = MoveOutCounterMod - 0.25
-			elseif MoveOutPlayer:GetExcessHappiness() < 20 and MoveOutPlayer:GetExcessHappiness() >= 0 then
-				MoveOutCounterMod = MoveOutCounterMod + 0.25
-			elseif MoveOutPlayer:GetExcessHappiness() < 0 then
-				MoveOutCounterMod = MoveOutCounterMod + 0.5
-			end
-
-			print("Human Move out Special Mod  " .. MoveOutCounterMod)
-		end
-
-		if MoveOutPlayer:HasPolicy(GameInfoTypes["POLICY_IRON_CURTAIN"]) then
-			MoveOutCounterMod = MoveOutCounterMod - 0.5
-			print("Internationalism -50%  " .. MoveOutCounterMod)
-		end
-
-		if MoveInPlayer:HasPolicy(GameInfoTypes["POLICY_TREATY_ORGANIZATION"]) then
-			MoveOutCounterMod = MoveOutCounterMod + 1.0
-			print("Beacon of Democracy +100%  " .. MoveOutCounterMod)
-		end
-
-
-		------------------------------------------Trait Modifier------------------------------------
-		if MoveInPlayer:GetExcessHappiness() > MoveOutPlayer:GetExcessHappiness()
-			and GameInfo.Leader_Traits { LeaderType = GameInfo.Leaders[MoveInPlayer:GetLeaderType()].Type, TraitType =
-			"TRAIT_RIVER_EXPANSION" } ()
-			and (GameInfo.Traits["TRAIT_RIVER_EXPANSION"].PrereqPolicy == nil or (GameInfo.Traits["TRAIT_RIVER_EXPANSION"].PrereqPolicy
-				and MoveInPlayer:HasPolicy(GameInfoTypes[GameInfo.Traits["TRAIT_RIVER_EXPANSION"].PrereqPolicy])))
-		then
-			MoveOutCounterMod = MoveOutCounterMod + 0.5
-			print("American UA to Civilizations with less Happiness +50%  " .. MoveOutCounterMod)
-		end
-
-
-		--------------------------------------------------------------------------------------------
-
-
-		if MoveOutCounterMod < 0 then
-			MoveOutCounterMod = 0
-		end
-
-		local MoveoutCounterFinal = math.floor(MoveOutCounterMod * MoveOutCounterBase)
-
-
-		print("MoveoutCounterFinal:" .. MoveoutCounterFinal)
-
-		return { MoveoutCounterFinal, iRegressand, iCount };
-	end ---------function end
 end
 
 function SetCityLevelbyDistance(city)
@@ -872,12 +706,7 @@ function ImproveTiles(bIsHuman)
 						and GameInfo.Resources[plot:GetResourceType(player:GetTeam())].ResourceClassType ~= "RESOURCECLASS_BONUS"))
 			then
 				if plot:CanHaveImprovement(GameInfo.Improvements.IMPROVEMENT_FARM.ID, player:GetTeam()) then
-					if GameInfo.Leader_Traits { LeaderType = GameInfo.Leaders[player:GetLeaderType()].Type, TraitType =
-						"TRAIT_IGNORE_TERRAIN_IN_FOREST" } ()
-						and (GameInfo.Traits["TRAIT_IGNORE_TERRAIN_IN_FOREST"].PrereqPolicy == nil or (GameInfo.Traits["TRAIT_IGNORE_TERRAIN_IN_FOREST"].PrereqPolicy
-							and player:HasPolicy(GameInfoTypes[GameInfo.Traits["TRAIT_IGNORE_TERRAIN_IN_FOREST"].PrereqPolicy])))
-					then
-					else
+					if not player:HasTrait(GameInfoTypes["TRAIT_IGNORE_TERRAIN_IN_FOREST"]) then
 						RemoveConflictFeatures(plot)
 					end
 					plot:SetImprovementType(GameInfo.Improvements.IMPROVEMENT_FARM.ID)
@@ -916,10 +745,8 @@ function ImproveTiles(bIsHuman)
 					plot:SetImprovementType(GameInfo.Improvements.IMPROVEMENT_TRADING_POST.ID);
 				end
 			elseif plot:CanHaveImprovement(GameInfo.Improvements.IMPROVEMENT_FISHERY_MOD.ID, player:GetTeam()) and Teams[player:GetTeam()]:IsHasTech(GameInfoTypes[GameInfo.Builds["BUILD_FISHERY_MOD"].PrereqTech]) then
-				plot:SetResourceType(GameInfoTypes.RESOURCE_FISH, 1)
 				plot:SetImprovementType(GameInfo.Improvements.IMPROVEMENT_FISHFARM_MOD.ID)
 			elseif plot:CanHaveImprovement(GameInfo.Improvements.IMPROVEMENT_GAS_RIG_MOD.ID, player:GetTeam()) and Teams[player:GetTeam()]:IsHasTech(GameInfoTypes[GameInfo.Builds["BUILD_GAS_RIG_MOD"].PrereqTech]) then
-				plot:SetResourceType(GameInfoTypes.RESOURCE_NATRUALGAS, 1)
 				plot:SetImprovementType(GameInfo.Improvements.IMPROVEMENT_OFFSHORE_PLATFORM.ID)
 			end
 			if plot:IsImprovementPillaged() then
@@ -971,34 +798,28 @@ function SPCargoListSetup(iPlayerID)
 		end
 	end
 	if pCBAcraftUnit then
-		overrideCBA = GameInfo.Civilization_UnitClassOverrides { UnitClassType = pCBAcraftUnit.Class, CivilizationType =
-			GameInfo.Civilizations[pPlayer:GetCivilizationType()].Type } ();
+		overrideCBA = pPlayer:GetCivUnit(GameInfoTypes[pCBAcraftUnit.Class]);
 	end
 	if pASAcraftUnit then
-		overrideASA = GameInfo.Civilization_UnitClassOverrides { UnitClassType = pASAcraftUnit.Class, CivilizationType =
-			GameInfo.Civilizations[pPlayer:GetCivilizationType()].Type } ();
+		overrideASA = pPlayer:GetCivUnit(GameInfoTypes[pASAcraftUnit.Class]);
 	end
 	if pMissile_Unit then
-		overrideMis = GameInfo.Civilization_UnitClassOverrides { UnitClassType = pMissile_Unit.Class, CivilizationType =
-			GameInfo.Civilizations[pPlayer:GetCivilizationType()].Type } ();
+		overrideMis = pPlayer:GetCivUnit(GameInfoTypes[pMissile_Unit.Class]);
 	end
 
-	if overrideCBA and GameInfo.Units[overrideCBA.UnitType].Special == "SPECIALUNIT_FIGHTER" then
-		iCBAcraft = GameInfoTypes[overrideCBA.UnitType];
-	elseif iCBAcraft == GameInfoTypes["UNIT_CARRIER_FIGHTER_ADV"]
-		and GameInfo.Leader_Traits { LeaderType = GameInfo.Leaders[pPlayer:GetLeaderType()].Type, TraitType =
-		"TRAIT_OCEAN_MOVEMENT" } ()
-		and (GameInfo.Traits["TRAIT_OCEAN_MOVEMENT"].PrereqPolicy == nil or (GameInfo.Traits["TRAIT_OCEAN_MOVEMENT"].PrereqPolicy
-			and pPlayer:HasPolicy(GameInfoTypes[GameInfo.Traits["TRAIT_OCEAN_MOVEMENT"].PrereqPolicy])))
+	if iCBAcraft == GameInfoTypes["UNIT_CARRIER_FIGHTER_ADV"] 
+	and (pPlayer:HasTrait(GameInfoTypes["TRAIT_OCEAN_MOVEMENT"]) or pPlayer:GetUUFromExtra(GameInfoTypes["UNIT_CARRIER_FIGHTER_ENGLISH_HARRIER_ADV"]) > 0)
 	then
 		iCBAcraft = GameInfoTypes["UNIT_CARRIER_FIGHTER_ENGLISH_HARRIER_ADV"];
 		print("English Unique Adv CF!")
+	elseif overrideCBA and GameInfo.Units[overrideCBA].Special == "SPECIALUNIT_FIGHTER" then
+		iCBAcraft = overrideCBA;
 	end
-	if overrideASA and GameInfo.Units[overrideASA.UnitType].Special == "SPECIALUNIT_STEALTH" then
-		iASAcraft = GameInfoTypes[overrideASA.UnitType];
+	if overrideASA and GameInfo.Units[overrideASA].Special == "SPECIALUNIT_STEALTH" then
+		iASAcraft = overrideASA;
 	end
-	if overrideMis and GameInfo.Units[overrideMis.UnitType].Special == "SPECIALUNIT_MISSILE" then
-		iMissileU = GameInfoTypes[overrideMis.UnitType];
+	if overrideMis and GameInfo.Units[overrideMis].Special == "SPECIALUNIT_MISSILE" then
+		iMissileU = overrideMis;
 	end
 	if iASAcraft and iASAcraft ~= -1 then
 		for pCity in pPlayer:Cities() do
@@ -1112,12 +933,8 @@ function CarrierRestore(iPlayerID, iUnitID, iCargoUnit)
 		if iCost == nil or iCost < 0 or iCost > pPlayer:GetGold() then
 			return;
 		end
-		if (GameInfo.Leader_Traits { LeaderType = GameInfo.Leaders[pPlayer:GetLeaderType()].Type, TraitType =
-				"TRAIT_OCEAN_MOVEMENT" } ()
-				and (GameInfo.Traits["TRAIT_OCEAN_MOVEMENT"].PrereqPolicy == nil or (GameInfo.Traits["TRAIT_OCEAN_MOVEMENT"].PrereqPolicy
-					and pPlayer:HasPolicy(GameInfoTypes[GameInfo.Traits["TRAIT_OCEAN_MOVEMENT"].PrereqPolicy])))
-				and iCargoUnit == GameInfoTypes["UNIT_CARRIER_FIGHTER_ADV"])
-			or pUnit:GetUnitType() == GameInfoTypes["UNIT_CARRIER_FIGHTER_ENGLISH_HARRIER"]
+		if (iCargoUnit == GameInfoTypes["UNIT_CARRIER_FIGHTER_ADV"] and (pPlayer:HasTrait(GameInfoTypes["TRAIT_OCEAN_MOVEMENT"]) or pPlayer:GetUUFromExtra(GameInfoTypes["UNIT_CARRIER_FIGHTER_ENGLISH_HARRIER_ADV"]) > 0))
+		or pUnit:GetUnitType() == GameInfoTypes["UNIT_CARRIER_FIGHTER_ENGLISH_HARRIER"]
 		then
 			iCargoUnit = GameInfoTypes["UNIT_CARRIER_FIGHTER_ENGLISH_HARRIER_ADV"];
 			print("English Unique 'Upgrade' CFJ!");

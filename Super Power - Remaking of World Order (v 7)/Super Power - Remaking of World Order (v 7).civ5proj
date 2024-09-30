@@ -5,14 +5,14 @@
     <ProjectGuid>{ef76ff1b-0497-463c-a616-d02546312750}</ProjectGuid>
     <Name>(2) Super Power - Rise of Hegemony</Name>
     <Guid>f9b9c8aa-b6d1-4188-9239-c1de2207ab7c</Guid>
-    <ModVersion>9</ModVersion>
+    <ModVersion>10</ModVersion>
     <Stability>Alpha</Stability>
-    <Teaser>(9.5) [COLOR_YELLOW]A Total Conversion Mod for a better late game experience and realistic modern warfare[/COLOR]</Teaser>
+    <Teaser>(10.7) [COLOR_YELLOW]A Total Conversion Mod for a better late game experience and realistic modern warfare[/COLOR]</Teaser>
     <Description>A Total Conversion Mod of Sid Meier's Civilization V for a better late game experience and realistic modern warfare.  
 [NEWLINE][NEWLINE]Require CIV5 BNW 1.0.3.279[NEWLINE][NEWLINE]This MOD includes a modified version of whoward69's DLLVMC v97 for some Lua events support and multiplayer support. Source is released on https://github.com/Apeiria01/CIV5MPDLL
 [NEWLINE][NEWLINE]Special Thanks:
 [NEWLINE]
-[ICON_BULLET]DLL Support: whoward69, Apeiria01, catgrep, Qingyin, rogcore. 
+[ICON_BULLET]DLL Support: whoward69, Apeiria01, catgrep, Qingyin, rogcore, 杜炎宇. 
 [ICON_BULLET]Incorporated Mods: Enhanced User Interface (EUI) by bc1; More Luxuries by Barathor
 [NEWLINE]
 [ICON_BULLET]Coding Reference: whoward69, Gedemon, Barathor, Maximus, Machiavelli24, Ninakoru, FramedArchitect, Redox, Coban, far_away_land, Hulfgar, bc1, lemmy101, JFD, Tokata, CaptainCWB, Apeiria01, catgrep, Qingyin, rogcore.
@@ -408,11 +408,6 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Gameplay/SQL/Units/UpdateLandHitAndRunCost.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
         <FileName>Gameplay/SQL/Units/Unit_CityBuildingDestroyer.sql</FileName>
       </Action>
       <Action>
@@ -473,7 +468,12 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Gameplay/SQL/CityStatesBuildingOverrides.sql</FileName>
+        <FileName>Gameplay/SQL/SPNuclearWinter.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Gameplay/SQL/CityStatesAndBarbarianOverrides.sql</FileName>
       </Action>
     </ModActions>
     <ModProperties />
@@ -532,7 +532,7 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
         <Type>Mod</Type>
         <Name>(1)CIV5MPDLL</Name>
         <Id>a2969a0a-e4da-41cc-9e0b-19b29aa971d8</Id>
-        <MinVersion>14</MinVersion>
+        <MinVersion>28</MinVersion>
         <MaxVersion>999</MaxVersion>
       </Association>
     </ModDependencies>
@@ -598,6 +598,7 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
     <Folder Include="UI\Art\Flags\Strategic" />
     <Folder Include="UI\Art\IconAtlases" />
     <Folder Include="UI\Art\IconAtlases\Buildings" />
+    <Folder Include="UI\Art\IconAtlases\Buildings\SP10Buildings" />
     <Folder Include="UI\Art\IconAtlases\Buildings\Zulu" />
     <Folder Include="UI\Art\IconAtlases\Buildings\Sweden" />
     <Folder Include="UI\Art\IconAtlases\Buildings\Persia" />
@@ -606,6 +607,7 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
     <Folder Include="UI\Art\IconAtlases\Units" />
     <Folder Include="UI\Art\IconAtlases\Technologies" />
     <Folder Include="UI\Art\IconAtlases\Resources" />
+    <Folder Include="UI\Art\IconAtlases\Units\IroquoianMusketeer" />
     <Folder Include="UI\Art\IconAtlases\Units\Promotion" />
     <Folder Include="UI\Art\Images" />
     <Folder Include="UI\Art\Images\Satellites" />
@@ -654,6 +656,7 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
     <Folder Include="UI\FrontEnd\Multiplayer" />
     <Folder Include="UI\InGame" />
     <Folder Include="UI\InGame\CityView" />
+    <Folder Include="UI\InGame\LeaderHead\" />
     <Folder Include="UI\InGame\TechTree\" />
     <Folder Include="UI\InGame\WorldView" />
     <Folder Include="UI\InGame\PopupsGeneric" />
@@ -688,19 +691,11 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Gameplay/Lua/Economy/SP8PolicyEffects.lua">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
     <Content Include="Gameplay/Lua/Economy/NewReligionRule.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Gameplay/Lua/Economy/NewTraitEffects.lua">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Gameplay/Lua/Economy/NuclearWinter.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -1040,7 +1035,11 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Gameplay\SQL\CityStatesBuildingOverrides.sql">
+    <Content Include="Gameplay\SQL\SPNuclearWinter.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Gameplay\SQL\CityStatesAndBarbarianOverrides.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
@@ -1081,10 +1080,6 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="Gameplay\SQL\Units\Unit_StopAttacker.sql">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
-    <Content Include="Gameplay\SQL\Units\UpdateLandHitAndRunCost.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
@@ -4876,11 +4871,11 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="UI/Civlopedia/CivilopediaScreen.lua">
+    <Content Include="UI/Civilopedia/CivilopediaScreen.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="UI/Civlopedia/CivilopediaScreen.xml">
+    <Content Include="UI/Civilopedia/CivilopediaScreen.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -4968,6 +4963,10 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="UI/InGame/UnitList.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="UI/InGame/PlotHelpManager.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -4985,6 +4984,10 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="UI/InGame/TechTree/TechHelpInclude.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI/InGame/TechTree/TechButtonInclude.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -5036,11 +5039,35 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="UI/InGame/Popups/DiploOverview.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI/InGame/Popups/DiploOverview.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI/InGame/Popups/MilitaryOverview.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="UI/InGame/Popups/NewEraPopup.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="UI/InGame/Popups/ProductionPopup.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI/InGame/Popups/GenericPopup.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI/InGame/Popups/SetUnitName.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI/InGame/Popups/SetCityName.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -5069,6 +5096,38 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="UI/InGame/Popups/VictoryProgress.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI/InGame/Popups/OverviewAddendum/DiploCityStatesStatus.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI/InGame/Popups/OverviewAddendum/DiploCityStatesStatus.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI/InGame/Popups/OverviewAddendum/DiploCivRelations.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI/InGame/Popups/OverviewAddendum/DiploCivRelations.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI/InGame/Popups/OverviewAddendum/DiploTradesStatus.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI/InGame/Popups/OverviewAddendum/DiploTradesStatus.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI/InGame/Popups/OverviewAddendum/EconomicGeneralInfo.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI/InGame/Popups/OverviewAddendum/EconomicGeneralInfo.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -5105,6 +5164,10 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="UI/InGame/WorldView/MPTurnPanel.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI/InGame/WorldView/ActionInfoPanel.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -5216,6 +5279,26 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="UI\Art\IconAtlases\Buildings\SP10Buildings\SP10BuildingsAtlas128.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Art\IconAtlases\Buildings\SP10Buildings\SP10BuildingsAtlas256.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Art\IconAtlases\Buildings\SP10Buildings\SP10BuildingsAtlas45.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Art\IconAtlases\Buildings\SP10Buildings\SP10BuildingsAtlas64.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Art\IconAtlases\Buildings\SP10Buildings\SP10BuildingsAtlas80.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="UI\Art\IconAtlases\Buildings\Zulu\IzikoPicture_045.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -5281,6 +5364,34 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="UI\Art\IconAtlases\Extra\TroopsTop.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Art\IconAtlases\Units\IroquoianMusketeer\ProwlerFlag_032.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Art\IconAtlases\Units\IroquoianMusketeer\ProwlerFlag_128.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Art\IconAtlases\Units\IroquoianMusketeer\ProwlerPicture_045.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Art\IconAtlases\Units\IroquoianMusketeer\ProwlerPicture_064.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Art\IconAtlases\Units\IroquoianMusketeer\ProwlerPicture_080.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Art\IconAtlases\Units\IroquoianMusketeer\ProwlerPicture_128.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Art\IconAtlases\Units\IroquoianMusketeer\ProwlerPicture_256.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>

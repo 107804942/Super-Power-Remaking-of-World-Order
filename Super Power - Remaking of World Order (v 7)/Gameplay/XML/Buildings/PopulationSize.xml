@@ -404,7 +404,7 @@
 		<Row>
 			<Type>BUILDING_AQUEDUCT</Type>
 			<BuildingClass>BUILDINGCLASS_AQUEDUCT</BuildingClass>
-			<Cost>80</Cost>
+			<Cost>60</Cost>
 			<GoldMaintenance>3</GoldMaintenance>
 			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			<Help>TXT_KEY_BUILDING_AQUEDUCT_HELP</Help>
@@ -412,7 +412,7 @@
 			<Civilopedia>TXT_KEY_CIV5_BUILDINGS_AQUEDUCT_TEXT</Civilopedia>
 			<Strategy>TXT_KEY_SP_PUBLIC_HEALTH_BUILDINGS_STRATEGY</Strategy>
 			<ArtDefineTag>ART_DEF_BUILDING_HOSPITAL</ArtDefineTag>
-			<FoodKept>40</FoodKept>
+			<FoodKept>30</FoodKept>
 			<MinAreaSize>-1</MinAreaSize>
 			<NeverCapture>true</NeverCapture>
 			<HurryCostModifier>50</HurryCostModifier>
@@ -421,26 +421,6 @@
 			<ObsoleteTech>TECH_URBANLIZATION</ObsoleteTech>
 			<EnhancedYieldTech>TECH_INTERNET</EnhancedYieldTech>
 			<TechEnhancedTourism>2</TechEnhancedTourism>
-			<EnableCityScaleGrowth>CITYSCALE_MEDIUM</EnableCityScaleGrowth>
-		</Row>
-		<Row>
-			<Type>BUILDING_BASILICA_CISTERN</Type>
-			<BuildingClass>BUILDINGCLASS_AQUEDUCT</BuildingClass>
-			<Cost>80</Cost>
-			<GoldMaintenance>3</GoldMaintenance>
-			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
-			<Help>TXT_KEY_BUILDING_BASILICA_CISTERN_HELP</Help>
-			<Description>TXT_KEY_BUILDING_BASILICA_CISTERN</Description>
-			<Civilopedia>TXT_KEY_CIV5_BUILDINGS_BASILICA_CISTERN_TEXT</Civilopedia>
-			<Strategy>TXT_KEY_SP_PUBLIC_HEALTH_BUILDINGS_STRATEGY</Strategy>
-			<MinAreaSize>-1</MinAreaSize>
-			<Happiness>2</Happiness>
-			<NeverCapture>true</NeverCapture>
-			<FoodKept>40</FoodKept>
-			<!--<ReligiousPressureModifier>50</ReligiousPressureModifier>-->
-			<HurryCostModifier>50</HurryCostModifier>
-			<IconAtlas>EXPANSION2_BUILDING_ATLAS</IconAtlas>
-			<PortraitIndex>11</PortraitIndex>
 			<EnableCityScaleGrowth>CITYSCALE_MEDIUM</EnableCityScaleGrowth>
 		</Row>
 		
@@ -500,6 +480,7 @@
 			<PortraitIndex>11</PortraitIndex>
 			<IconAtlas>NEWLUXURIES_RESOURCE_ATLAS</IconAtlas>
 			<MilitaryProductionModifier>15</MilitaryProductionModifier>
+			<MinorFriendshipAnchorChange>1</MinorFriendshipAnchorChange>
 		</Row>
 				
 		<Row>
@@ -1559,10 +1540,6 @@
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_SMALL</BuildingClassType>
 		</Row>-->
 		<Row>
-			<BuildingType>BUILDING_BASILICA_CISTERN</BuildingType>
-			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_SMALL</BuildingClassType>
-		</Row>
-		<Row>
 			<BuildingType>BUILDING_TAP_WATER_SUPPLY</BuildingType>
 			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_SMALL</BuildingClassType>
 		</Row>
@@ -2226,11 +2203,6 @@
 			<Yield>-20</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_BASILICA_CISTERN</BuildingType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>-20</Yield>
-		</Row>
-		<Row>
 			<BuildingType>BUILDING_TAP_WATER_SUPPLY</BuildingType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>-20</Yield>
@@ -2495,12 +2467,12 @@
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>1</Yield>
 		</Row>
-		<!--<Row>
+		<Row>
 			<BuildingType>BUILDING_FOOD_MARKET</BuildingType>
 			<ResourceType>RESOURCE_FISH</ResourceType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>1</Yield>
-		</Row>-->
+		</Row>
 		<Row>
 			<BuildingType>BUILDING_FOOD_MARKET</BuildingType>
 			<ResourceType>RESOURCE_INCENSE</ResourceType>
@@ -2558,12 +2530,12 @@
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>1</Yield>
 		</Row>
-		<!--<Row>
+		<Row>
 			<BuildingType>BUILDING_PORTUGAL_AVENIDA</BuildingType>
 			<ResourceType>RESOURCE_FISH</ResourceType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>1</Yield>
-		</Row>-->
+		</Row>
 		<Row>
 			<BuildingType>BUILDING_PORTUGAL_AVENIDA</BuildingType>
 			<ResourceType>RESOURCE_INCENSE</ResourceType>
@@ -3733,43 +3705,23 @@
 		
 	</Building_FeatureYieldChanges>
 
-
-
-
-
-	<Policy_BuildingClassTourismModifiers>
+	<Building_YieldModifiers>
 		<Row>
-			<PolicyType>POLICY_TRADITION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_XL</BuildingClassType>
-			<TourismModifier>25</TourismModifier>
+			<BuildingType>BUILDING_CITY_SIZE_XL</BuildingType>
+			<YieldType>YIELD_TOURISM</YieldType>
+			<Yield>25</Yield>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_TRADITION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_XXL</BuildingClassType>
-			<TourismModifier>25</TourismModifier>
+			<BuildingType>BUILDING_CITY_SIZE_XXL</BuildingType>
+			<YieldType>YIELD_TOURISM</YieldType>
+			<Yield>25</Yield>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_TRADITION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_GLOBAL</BuildingClassType>
-			<TourismModifier>50</TourismModifier>
+			<BuildingType>BUILDING_CITY_SIZE_GLOBAL</BuildingType>
+			<YieldType>YIELD_TOURISM</YieldType>
+			<Yield>50</Yield>
 		</Row>
-		<Row>
-			<PolicyType>POLICY_LIBERTY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_XL</BuildingClassType>
-			<TourismModifier>25</TourismModifier>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_LIBERTY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_XXL</BuildingClassType>
-			<TourismModifier>25</TourismModifier>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_LIBERTY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_CITY_SIZE_GLOBAL</BuildingClassType>
-			<TourismModifier>50</TourismModifier>
-		</Row>
-	</Policy_BuildingClassTourismModifiers>
-	
+	</Building_YieldModifiers>
 
 	<Building_Flavors>
 		<Row>
@@ -4098,12 +4050,4 @@
 			<Flavor>155</Flavor>
 		</Row>
 	</Building_Flavors>
-
-
-
-
-	
-	
-	
-
 </GameData>

@@ -53,6 +53,7 @@
 			<Type>TRAIT_RIVER_EXPANSION</Type>
 			<Description>TXT_KEY_TRAIT_RIVER_EXPANSION</Description>
 			<ShortDescription>TXT_KEY_TRAIT_RIVER_EXPANSION_SHORT</ShortDescription>
+			<ExceedingHappinessImmigrationModifier>50</ExceedingHappinessImmigrationModifier>
 		</Row>
 		<Row>
 			<Type>TRAIT_STRATEGIC_RICHES</Type>
@@ -226,7 +227,7 @@
 			<Type>TRAIT_FAITH_FROM_NATURE</Type>
 			<Description>TXT_KEY_TRAIT_FAITH_FROM_NATURE</Description>
 			<ShortDescription>TXT_KEY_TRAIT_FAITH_FROM_NATURE_SHORT</ShortDescription>
-			<FaithFromUnimprovedForest>true</FaithFromUnimprovedForest>
+			<FaithFromUnimprovedForest>false</FaithFromUnimprovedForest>
 		</Row>
 		<Row>
 			<Type>TRAIT_LAND_TRADE_GOLD</Type>
@@ -254,10 +255,8 @@
 			<Description>TXT_KEY_TRAIT_ANNEX_CITY_STATE</Description>
 			<ShortDescription>TXT_KEY_TRAIT_ANNEX_CITY_STATE_SHORT</ShortDescription>
 			<AbleToAnnexCityStates>true</AbleToAnnexCityStates>
-			<!--
-			<FreeUnit>UNITCLASS_MUSICIAN</FreeUnit>
-			<FreeUnitPrereqTech>TECH_ACOUSTICS</FreeUnitPrereqTech>
-			-->
+			<CanDiplomaticMarriage>true</CanDiplomaticMarriage>
+			<AbleToDualEmpire>true</AbleToDualEmpire>
 		</Row>
 		<Row>
 			<Type>TRAIT_CARNIVAL</Type>
@@ -308,7 +307,8 @@
 			<ShortDescription>TXT_KEY_TRAIT_PHOENICIAN_HERITAGE_SHORT</ShortDescription>
 			<!--<CrossesMountainsAfterGreatGeneral>true</CrossesMountainsAfterGreatGeneral>-->
 			<SeaTradeRouteRangeBonus>5</SeaTradeRouteRangeBonus>
-			<TradeRouteSeaGoldBonus>400</TradeRouteSeaGoldBonus>
+			<FreeUnit>UNITCLASS_SETTLER</FreeUnit>
+			<FreeUnitPrereqTech>TECH_SAILING</FreeUnitPrereqTech>
 		</Row>
 		<Row>
 			<Type>TRAIT_SUPER_CITY_STATE</Type>
@@ -347,7 +347,7 @@
 			<Description>TXT_KEY_TRAIT_DIPLOMACY_GREAT_PEOPLE</Description>
 			<ShortDescription>TXT_KEY_TRAIT_DIPLOMACY_GREAT_PEOPLE_SHORT</ShortDescription>
 			<DOFGreatPersonModifier>10</DOFGreatPersonModifier>
-      <ShareAllyResearchPercent>10</ShareAllyResearchPercent>
+			<ShareAllyResearchPercent>10</ShareAllyResearchPercent>
 		</Row>
 		<Row>
 			<Type>TRAIT_INGENIOUS</Type>
@@ -399,12 +399,7 @@
 			<Description>TXT_KEY_TRAIT_WAYFINDING</Description>
 			<ShortDescription>TXT_KEY_TRAIT_WAYFINDING_SHORT</ShortDescription>
 			<EmbarkedAllWater>true</EmbarkedAllWater>
-			<NearbyImprovementCombatBonus>10</NearbyImprovementCombatBonus>
-			<NearbyImprovementBonusRange>2</NearbyImprovementBonusRange>
-			<CombatBonusImprovement>IMPROVEMENT_MOAI</CombatBonusImprovement>
-			<FreeBuilding>BUILDING_TB_WAYFINDING</FreeBuilding>
 			<CanFoundCoastCity>true</CanFoundCoastCity>
-      		<MaxCorruptionLevel>3</MaxCorruptionLevel>
 		</Row>
 		<Row>
 			<Type>TRAIT_GREAT_EXPANSE</Type>
@@ -507,6 +502,21 @@
 		</Row>
 	</Trait_FeatureYieldChanges>
 
+	<Trait_CityYieldModifierFromAdjacentFeature>
+		<Row>
+			<TraitType>TRAIT_IGNORE_TERRAIN_IN_FOREST</TraitType>
+			<FeatureType>FEATURE_FOREST</FeatureType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>5</Yield>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_IGNORE_TERRAIN_IN_FOREST</TraitType>
+			<FeatureType>FEATURE_JUNGLE</FeatureType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>5</Yield>
+		</Row>
+	</Trait_CityYieldModifierFromAdjacentFeature>
+
 	<Trait_YieldChangesStrategicResources>
 		<Row>
 			<TraitType>TRAIT_CONVERTS_SEA_BARBARIANS</TraitType>
@@ -541,32 +551,32 @@
 		<Row>
 			<TraitType>TRAIT_VIKING_FURY</TraitType>
 			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-			<PromotionType>PROMOTION_CITY_PILLAGE_FREE</PromotionType>
+			<PromotionType>PROMOTION_VIKING_FURY</PromotionType>
 		</Row>
 		<Row>
 			<TraitType>TRAIT_VIKING_FURY</TraitType>
 			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
-			<PromotionType>PROMOTION_CITY_PILLAGE_FREE</PromotionType>
+			<PromotionType>PROMOTION_VIKING_FURY</PromotionType>
 		</Row>
 		<Row>
 			<TraitType>TRAIT_VIKING_FURY</TraitType>
 			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
-			<PromotionType>PROMOTION_CITY_PILLAGE_FREE</PromotionType>
+			<PromotionType>PROMOTION_VIKING_FURY</PromotionType>
 		</Row>
 		<Row>
 			<TraitType>TRAIT_VIKING_FURY</TraitType>
 			<UnitCombatType>UNITCOMBAT_NAVALMELEE</UnitCombatType>
-			<PromotionType>PROMOTION_CITY_PILLAGE_FREE</PromotionType>
+			<PromotionType>PROMOTION_VIKING_FURY</PromotionType>
 		</Row>
 		<Row>
 			<TraitType>TRAIT_VIKING_FURY</TraitType>
 			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
-			<PromotionType>PROMOTION_CITY_PILLAGE_FREE</PromotionType>
+			<PromotionType>PROMOTION_VIKING_FURY</PromotionType>
 		</Row>
 		<Row>
 			<TraitType>TRAIT_VIKING_FURY</TraitType>
 			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
-			<PromotionType>PROMOTION_CITY_PILLAGE_FREE</PromotionType>
+			<PromotionType>PROMOTION_VIKING_FURY</PromotionType>
 		</Row>
 
 
@@ -879,47 +889,6 @@
 			<Yield>1</Yield>
 		</Row>
 
-
-
-		<Row>
-			<TraitType>TRAIT_PHOENICIAN_HERITAGE</TraitType>
-			<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>2</Yield>
-		</Row>
-		<Row>
-			<TraitType>TRAIT_PHOENICIAN_HERITAGE</TraitType>
-			<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>2</Yield>
-		</Row>
-		<Row>
-			<TraitType>TRAIT_PHOENICIAN_HERITAGE</TraitType>
-			<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>2</Yield>
-		</Row>
-		<Row>
-			<TraitType>TRAIT_PHOENICIAN_HERITAGE</TraitType>
-			<SpecialistType>SPECIALIST_WRITER</SpecialistType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>2</Yield>
-		</Row>
-		<Row>
-			<TraitType>TRAIT_PHOENICIAN_HERITAGE</TraitType>
-			<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>2</Yield>
-		</Row>
-		<Row>
-			<TraitType>TRAIT_PHOENICIAN_HERITAGE</TraitType>
-			<SpecialistType>SPECIALIST_MUSICIAN</SpecialistType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>2</Yield>
-		</Row>
-
-
-
 		<Row>
 			<TraitType>TRAIT_BONUS_AGAINST_TECH</TraitType>
 			<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
@@ -1133,20 +1102,6 @@
 			<GreatWorkCount>-2</GreatWorkCount>
 		</Row>
 		<Row>
-			<Type>BUILDING_TB_WAYFINDING</Type>
-			<BuildingClass>BUILDINGCLASS_TAITS_EFFECTS_BUILDINGS</BuildingClass>
-			<Cost>-1</Cost>
-			<Description>TXT_KEY_TRAIT_WAYFINDING_SHORT</Description>
-			<Help>TXT_KEY_TRAIT_WAYFINDING</Help>
-			<NeverCapture>true</NeverCapture>
-			<NukeImmune>true</NukeImmune>
-			<HurryCostModifier>-1</HurryCostModifier>
-			<PortraitIndex>0</PortraitIndex>
-			<IconAtlas>KAMEHAMEHA_CIV_COLOR_ATLAS</IconAtlas>
-			<FreePromotionRemoved>PROMOTION_OCEAN_IMPASSABLE</FreePromotionRemoved>
-			<GreatWorkCount>-2</GreatWorkCount>
-		</Row>
-		<Row>
 			<Type>BUILDING_TB_DIPLOMACY_GREAT_PEOPLE</Type>
 			<BuildingClass>BUILDINGCLASS_TB_DIPLOMACY_GREAT_PEOPLE</BuildingClass>
 			<Cost>-1</Cost>
@@ -1217,7 +1172,7 @@
 		<Row>
 			<BuildingType>BUILDING_TB_DIPLOMACY_GREAT_PEOPLE</BuildingType>
 			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>50</Yield>
+			<Yield>25</Yield>
 		</Row>
 	</Building_YieldChangesPerPop>
 
@@ -1245,5 +1200,27 @@
 			<Yield>1</Yield>
 		</Row>
 	</Trait_PerMajorReligionFollowerYieldModifier>
-
+		
+	<Trait_CityYieldPerAdjacentFeature>
+		<Row>
+			<TraitType>TRAIT_FAITH_FROM_NATURE</TraitType>
+			<FeatureType>FEATURE_FOREST</FeatureType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<MaxValue>3</MaxValue>
+		</Row>
+	</Trait_CityYieldPerAdjacentFeature>
+	<Trait_SeaTradeRouteYieldPerEraTimes100>
+		<Row>
+			<TraitType>TRAIT_PHOENICIAN_HERITAGE</TraitType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>100</Yield>
+		</Row>
+	</Trait_SeaTradeRouteYieldPerEraTimes100>
+	<Trait_SeaTradeRouteYieldTimes100>
+		<Row>
+			<TraitType>TRAIT_PHOENICIAN_HERITAGE</TraitType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>100</Yield>
+		</Row>
+	</Trait_SeaTradeRouteYieldTimes100>
 </GameData>

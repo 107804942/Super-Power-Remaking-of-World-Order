@@ -67,7 +67,7 @@
 			<Combat>26</Combat>
 			<RangedCombat>24</RangedCombat>
 			<Range>1</Range>
-			<Cost>150</Cost>
+			<Cost>100</Cost>
 			<Moves>6</Moves>
 			<HurryCostModifier>-1</HurryCostModifier>
 			<CombatClass>UNITCOMBAT_HELICOPTER</CombatClass>
@@ -725,6 +725,7 @@
 			<PortraitIndex>26</PortraitIndex>
 			<MoveRate>AIR_REBASE</MoveRate>
 			<ExtraMaintenanceCost>80</ExtraMaintenanceCost>
+			<NuclearWinterProcess>20</NuclearWinterProcess>
 		</Row>
 
 
@@ -1103,7 +1104,7 @@
 			<BaseSightRange>5</BaseSightRange>
 			<Combat>150</Combat>
 			<RangedCombat>130</RangedCombat>
-			<Cost>1050</Cost>
+			<Cost>720</Cost>
 			<Moves>12</Moves>
 			<Range>2</Range>
 			<CombatClass>UNITCOMBAT_HELICOPTER</CombatClass>
@@ -1218,7 +1219,10 @@
 			<UnitType>UNIT_SPARTAN300</UnitType>
 			<PromotionType>PROMOTION_ELITE_DEFENSE</PromotionType>
 		</Row>
-
+		<Row>
+			<UnitType>UNIT_SPARTAN300</UnitType>
+			<PromotionType>PROMOTION_CANNOT_BE_CORPS</PromotionType>
+		</Row>
 
 		<Row>
 			<UnitType>UNIT_NUMIDIAN</UnitType>
@@ -1255,10 +1259,6 @@
 			<UnitType>UNIT_ELITE_RIDER</UnitType>
 			<PromotionType>PROMOTION_GAIN_MOVES_AFFER_KILLING</PromotionType>
 		</Row>
-		<!--<Row>
-			<UnitType>UNIT_ELITE_RIDER</UnitType>
-			<PromotionType>PROMOTION_ARMOR_PLATING_I</PromotionType>
-		</Row>-->
 
 		<Row>
 			<UnitType>UNIT_ENGLISH_LONGBOWMAN</UnitType>
@@ -1712,7 +1712,7 @@
 		</Row>
 		<Row>
 			<UnitType>UNIT_STEALTH_HELICOPTER</UnitType>
-			<PromotionType>PROMOTION_RECON_UNIT</PromotionType>
+			<PromotionType>PROMOTION_STEALTH_OPERATION</PromotionType>
 		</Row>
 		<Row>
 			<UnitType>UNIT_STEALTH_HELICOPTER</UnitType>
@@ -1729,6 +1729,10 @@
 		<Row>
 			<UnitType>UNIT_STEALTH_HELICOPTER</UnitType>
 			<PromotionType>PROMOTION_MARCH</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_STEALTH_HELICOPTER</UnitType>
+			<PromotionType>PROMOTION_HALF_CASUALTIES</PromotionType>
 		</Row>
 		
 
@@ -2887,7 +2891,7 @@
 			<DefaultUnitAI>UNITAI_CARRIER_SEA</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_ENTERPRISE</Description>
 			<Civilopedia>TXT_KEY_CIV5_UNIT_ENTERPRISE_TEXT</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_ENTERPRISE_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_SP_UNITS_AIRCRAFT_CARRIERS_STRATEGY</Strategy>
 			<Help>TXT_KEY_UNIT_ENTERPRISE_HELP</Help>
 			<MilitarySupport>true</MilitarySupport>
 			<MilitaryProduction>true</MilitaryProduction>
@@ -2924,7 +2928,7 @@
 			<DefaultUnitAI>UNITAI_CARRIER_SEA</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_HORNET</Description>
 			<Civilopedia>TXT_KEY_UNIT_HORNET_TXT</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_ENTERPRISE_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_SP_UNITS_AIRCRAFT_CARRIERS_STRATEGY</Strategy>
 			<Help>TXT_KEY_UNIT_ENTERPRISE_HELP</Help>
 			<MilitarySupport>true</MilitarySupport>
 			<MilitaryProduction>true</MilitaryProduction>

@@ -11,11 +11,11 @@
 		
 		<Update>
 			<Set PlotCultureExponentModifier="-25" GreatGeneralRateModifier="25" GreatAdmiralRateModifier="25" RiggingElectionModifier="50"
-			StealTechFasterModifier="50"/>
+			StealTechFasterModifier="50" CapitalTradeRouteGoldChange="500" CapitalTradeRouteRangeChange="5"/>
 			<Where Type="POLICY_TRADITION"/>
 		</Update>
 		<Update>
-			<Set HappinessPerXPopulation="0" WonderProductionModifier="0" NewCityExtraPopulation="1" PortraitIndex="28" InstantFoodThresholdPercent="100"/>
+			<Set HappinessPerXPopulation="0" WonderProductionModifier="0" NewCityExtraPopulation="1" PortraitIndex="28"/>
 			<Where Type="POLICY_ARISTOCRACY"/>
 		</Update>
 		<Update>
@@ -166,8 +166,7 @@
 			<Where Type="POLICY_HONOR"/>
 		</Update>
 		<Update>
-			<Set HappinessPerGarrisonedUnit="0" CulturePerGarrisonedUnit="0" PortraitIndex="19" GridX="3" GridY="2" 
-			IncludesOneShotFreeUnits="true" GreatGeneralRateModifier="50" />
+			<Set HappinessPerGarrisonedUnit="0" CulturePerGarrisonedUnit="0" PortraitIndex="19" GridX="3" GridY="2"/>
 			<Where Type="POLICY_MILITARY_CASTE"/>
 		</Update>
 		<Update>
@@ -175,11 +174,11 @@
 			<Where Type="POLICY_WARRIOR_CODE"/>
 		</Update>
 		<Update>
-			<Set UnitUpgradeCostMod="-60" GridX="3" GridY="3"/>
+			<Set UnitUpgradeCostMod="-60" ExpModifier="0" GridX="3" GridY="3"/>
 			<Where Type="POLICY_MILITARY_TRADITION"/>
 		</Update>
 		<Update>
-			<Set GridX="1" GridY="2" PortraitIndex="22" UnitUpgradeCostMod="0" FreeExperience="15"/>
+			<Set GridX="1" GridY="2" PortraitIndex="22" UnitUpgradeCostMod="0" FreeExperience="15" IncludesOneShotFreeUnits="true" GreatGeneralRateModifier="50"/>
 			<Where Type="POLICY_PROFESSIONAL_ARMY"/>
 		</Update>
 		<Update>
@@ -227,7 +226,7 @@
 			<Where Type="POLICY_PIETY_FINISHER"/>
 		</Update>
 		<Update>
-			<Set SecondReligionPantheon="false" PortraitIndex="25" GridX="2" GridY="3" GoldenAgeTurns="10" />
+			<Set SecondReligionPantheon="false" PortraitIndex="25" GridX="2" GridY="3" GoldenAgeTurns="10" HappinessPerReligionInCity="1" />
 			<Where Type="POLICY_FREE_RELIGION"/>
 		</Update>
 		<Update>
@@ -246,7 +245,7 @@
 			<PortraitIndex>37</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
-			<GlobalHappinessFromFaithPercent>20</GlobalHappinessFromFaithPercent>
+			<GlobalHappinessFromFaithPercent>15</GlobalHappinessFromFaithPercent>
 		</Row>
 	</Policies>
 
@@ -270,7 +269,7 @@
 			<Where Type="POLICY_SCHOLASTICISM"/>
 		</Update>
 		<Update>
-			<Set  MinorBullyInfluenceLossModifier="-75" MinorBullyScoreModifier="100" MinorResourceBonus="false" AfraidMinorPerTurnInfluence="500" GridX="1" GridY="1" PortraitIndex="1"/>
+			<Set  MinorBullyInfluenceLossModifier="-75" MinorBullyScoreModifier="34" MinorLocalBullyScoreModifier="66" MinorResourceBonus="false" AfraidMinorPerTurnInfluence="500" GridX="1" GridY="1" PortraitIndex="1"/>
 			<Where Type="POLICY_CULTURAL_DIPLOMACY"/>
 		</Update>
 		<Update>
@@ -292,6 +291,7 @@
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
 			<MilitaryUnitGiftExtraInfluence>10</MilitaryUnitGiftExtraInfluence>
 			<CityStateUnitFrequencyModifier>200</CityStateUnitFrequencyModifier>
+			<MinorAllyBullyScoreModifier>100</MinorAllyBullyScoreModifier>
 			<!--<MinorResourceBonus>true</MinorResourceBonus>-->
 		</Row>
 		
@@ -315,7 +315,7 @@
 			<Where Type="POLICY_FLOURISHING_OF_ARTS"/>
 		</Update>
 		<Update>
-			<Set GreatWriterRateModifier="25" GreatArtistRateModifier="25" GreatMusicianRateModifier="25" GridX="5" WonderProductionModifier="25"/>
+			<Set GreatWriterRateModifier="25" GreatArtistRateModifier="25" GreatMusicianRateModifier="25" GridX="5"/>
 			<Where Type="POLICY_ARTISTIC_GENIUS"/>
 		</Update>
 		<Update>
@@ -341,6 +341,7 @@
 			<PortraitIndex>16</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+			<ImmigrationInModifier>33</ImmigrationInModifier>
 		</Row>
 		
 	</Policies>
@@ -399,7 +400,7 @@
 	
 	<Policies>
 		<Update>
-			<Set EmbarkedExtraMoves="1" FreeBuildingClass="BUILDINGCLASS_EXPLORATION_REMOVE_DEBUFF"/>
+			<Set EmbarkedExtraMoves="1" FreePromotionRemoved="PROMOTION_LOSE_HP_OUTSIDE" RemoveOceanImpassableCombatUnit = "True"/>
 			<Where Type="POLICY_EXPLORATION"/>
 		</Update>
 		<Update>
@@ -450,7 +451,7 @@
 	<!--******************Rationalism**************** -->
 	<Policies>
 		<Update>
-			<Set HappinessToScience="0" MedianTechPercentChange="25"/>
+			<Set HappinessToScience="0"/>
 			<Where Type="POLICY_RATIONALISM"/>
 		</Update>
 		<Update>
@@ -525,24 +526,24 @@
 		
 		<!--Freedom-->
 		<Update>
-			<Set CatchSpiesModifier="100" RiggingElectionModifier="150"/>
+			<Set RiggingElectionModifier="150" RiggingElectionInfluenceModifier="100" SpyLevelUpWhenRigging="true"/>
 			<Where Type="POLICY_COVERT_ACTION"/>
 		</Update>
 		
 		<Update>
-			<Set GreatPeopleRateModifier="25"/>
+			<Set GreatPeopleRateModifier="25" TourismModifierPerGPCreation="3"/>
 			<Where Type="POLICY_OPEN_SOCIETY"/>
 		</Update>
-		<!--<Update>
-			<Set HalfSpecialistFood="true"/>
+		<Update>
+			<Set LandTradeRouteGoldChange="1000" SeaTradeRouteGoldChange="1000"/>
 			<Where Type="POLICY_CAPITALISM"/>
 		</Update>
-		<Update>
+		<!--<Update>
 			<Set HalfSpecialistFood="false"/>
 			<Where Type="POLICY_CIVIL_SOCIETY"/>
 		</Update>-->
 		<Update>
-			<Set BuildingGoldMaintenanceMod="-30"/>
+			<Set ScienceModifierFromRANum="5" MedianTechPercentChange="50"/>
 			<Where Type="POLICY_ECONOMIC_UNION"/>
 		</Update>
 		<Update>
@@ -550,25 +551,25 @@
 			<Where Type="POLICY_VOLUNTEER_ARMY"/>
 		</Update>
 		
-		<!--<Update>
-			<Set WonderProductionModifier="15"/>
+		<Update>
+			<Set BuildingGoldMaintenanceMod="-30"/>
 			<Where Type="POLICY_NEW_DEAL"/>
-		</Update>-->
+		</Update>
 	
 		<Update>
 			<Set HappinessToCulture="50"/>
 			<Where Type="POLICY_CREATIVE_EXPRESSION"/>
 		</Update>
 		<Update>
-			<Set CommonFoeTourismModifier="50" MilitaryProductionModifier="0" MilitaryUnitGiftExtraInfluence="0"/>
+			<Set CommonFoeTourismModifier="50" MilitaryProductionModifier="0" MilitaryUnitGiftExtraInfluence="0" DiplomatPropagandaModifier="25"/>
 			<Where Type="POLICY_ARSENAL_DEMOCRACY"/>
 		</Update>
 		<Update>
-			<Set ProtectedMinorPerTurnInfluence="0"/>
+			<Set ProtectedMinorPerTurnInfluence="0" ImmigrationInModifier="100"/>
 			<Where Type="POLICY_TREATY_ORGANIZATION"/>
 		</Update>
 		<Update>
-			<Set EnablesSSPartPurchase="false" LandTradeRouteGoldChange="1000" SeaTradeRouteGoldChange="1000"/>
+			<Set EnablesSSPartPurchase="true"/>
 			<Where Type="POLICY_SPACE_PROCUREMENTS"/>
 		</Update>
 		<Update>
@@ -607,7 +608,7 @@
 			<Where Type="POLICY_PARTY_LEADERSHIP"/>
 		</Update>
 		<Update>
-			<Set FreeBuildingOnConquest="NULL" IdeologyUnhappinessModifier="-100" IdeologyPressureModifier="100"/>
+			<Set FreeBuildingOnConquest="NULL" IdeologyUnhappinessModifier="-100" IdeologyPressureModifier="100" ImmigrationOutModifier="-50"/>
 			<Where Type="POLICY_IRON_CURTAIN"/>
 		</Update>
 		
@@ -616,7 +617,7 @@
 
 		<!--Autocracy-->
 		<Update>
-			<Set WoundedUnitDamageMod="0" FreeExperience="15"/>
+			<Set WoundedUnitDamageMod="0" FreeExperience="15" ExpModifier="50"/>
 			<Where Type="POLICY_ELITE_FORCES"/>
 		</Update>
 		<Update>
@@ -652,7 +653,7 @@
 			<Where Type="POLICY_NEW_ORDER"/>
 		</Update>
 		<Update>
-			<Set StealTechFasterModifier="175"/>
+			<Set StealTechFasterModifier="100" ExtraSpies="1"/>
 			<Where Type="POLICY_INDUSTRIAL_ESPIONAGE"/>
 		</Update>
 	</Policies>
@@ -1294,7 +1295,7 @@
 		</Row>
 		<Row>
 			<PolicyType>POLICY_FREE_RELIGION</PolicyType>
-			<FlavorType>FLAVOR_RELIGION</FlavorType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
 			<Flavor>20</Flavor>
 		</Row>
 		<Row>
@@ -1694,7 +1695,7 @@
 		<Row>
 			<PolicyType>POLICY_COVERT_ACTION</PolicyType>
 			<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
-			<Flavor>20</Flavor>
+			<Flavor>40</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_COVERT_ACTION</PolicyType>
@@ -1713,7 +1714,7 @@
 		</Row>
 		<Row>
 			<PolicyType>POLICY_CAPITALISM</PolicyType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
 			<Flavor>25</Flavor>
 		</Row>
 		<Row>
@@ -1723,7 +1724,7 @@
 		</Row>
 		<Row>
 			<PolicyType>POLICY_ECONOMIC_UNION</PolicyType>
-			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
 			<Flavor>44</Flavor>
 		</Row>
 		<!--<Row>
@@ -1764,7 +1765,7 @@
 		<Row>
 			<PolicyType>POLICY_NEW_DEAL</PolicyType>
 			<FlavorType>FLAVOR_GOLD</FlavorType>
-			<Flavor>9</Flavor>
+			<Flavor>19</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_NEW_DEAL</PolicyType>
@@ -1803,7 +1804,7 @@
 		</Row>
 		<Row>
 			<PolicyType>POLICY_SPACE_PROCUREMENTS</PolicyType>
-			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
 			<Flavor>66</Flavor>
 		</Row>
 		

@@ -58,6 +58,21 @@
 			<PediaEntry>TXT_KEY_PROMOTION_CORPS_2</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
 			<IsArmee>true</IsArmee>
+			<CannotBeEstablishedCorps>true</CannotBeEstablishedCorps>
+		</Row>
+		<Row>
+			<Type>PROMOTION_CANNOT_BE_CORPS</Type>
+			<Description>TXT_KEY_PROMOTION_CANNOT_BE_CORPS</Description>
+			<Help>TXT_KEY_PROMOTION_CANNOT_BE_CORPS_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<OrderPriority>11</OrderPriority>
+			<PortraitIndex>57</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_CANNOT_BE_CORPS</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>true</LostWithUpgrade>
+			<CannotBeEstablishedCorps>true</CannotBeEstablishedCorps>
 		</Row>
 
 		<Row>
@@ -76,17 +91,19 @@
 		</Row>
 
 		<Row>
-			<Type>PROMOTION_EXTRA_MOVE_HALF</Type>
-			<Description>TXT_KEY_PROMOTION_EXTRA_MOVE_HALF</Description>
-			<Help>TXT_KEY_PROMOTION_EXTRA_MOVE_HALF</Help>
+			<Type>PROMOTION_ATTACK_COST_HALF</Type>
+			<Description>TXT_KEY_PROMOTION_ATTACK_COST_HALF</Description>
+			<Help>TXT_KEY_PROMOTION_ATTACK_COST_HALF_HELP_TEXT</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<OrderPriority>1</OrderPriority>
-			<PortraitIndex>59</PortraitIndex>
-			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PortraitIndex>42</PortraitIndex>
+			<IconAtlas>SP10_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_EXTRA_MOVE_HALF</PediaEntry>
+			<PediaEntry>TXT_KEY_PROMOTION_ATTACK_COST_HALF</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
-			<ExtraMoveTimesXX>15</ExtraMoveTimesXX>
+			<RangeAttackCostModifier>-33</RangeAttackCostModifier>
+			<CanMoveAfterAttacking>true</CanMoveAfterAttacking>
+			<ExtraAttacks>1</ExtraAttacks>
 		</Row>
 		
 		<!--*****************************Heroic Carrier*******************************************-->
@@ -178,37 +195,57 @@
 			<PediaEntry>TXT_KEY_PROMOTION_SPACECRAFT_PART</PediaEntry>
 		</Row>
 	</UnitPromotions>
-	
-	
-	
-	
 
-	<!--*****************************Legion Numbers*******************************************-->
-	<UnitPromotions>
-		<Row>
-			<Type>PROMOTION_LEGION_GROUP</Type>
-			<Description>TXT_KEY_PROMOTION_LEGION_GROUP</Description>
-			<Help>TXT_KEY_PROMOTION_LEGION_GROUP</Help>
-			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PortraitIndex>34</PortraitIndex>
-			<IconAtlas>SP_PROMOTION_ATLAS</IconAtlas>
-			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_LEGION_GROUP</PediaEntry>
-			<RemoveAfterXTurns>1</RemoveAfterXTurns>
-		</Row>
-	</UnitPromotions>
+	<!--*****************************Unique Promotions*******************************************-->
 	<UnitPromotions>
 		<Row>
 			<Type>PROMOTION_SP_FULL_MOON_STRIKE</Type>
 			<Description>TXT_KEY_PROMOTION_SP_FULL_MOON_STRIKE</Description>
 			<Help>TXT_KEY_PROMOTION_SP_FULL_MOON_STRIKE_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PortraitIndex>59</PortraitIndex>
 			<CannotBeChosen>true</CannotBeChosen>
-			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PortraitIndex>49</PortraitIndex>
+			<IconAtlas>SP10_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SP_FULL_MOON_STRIKE</PediaEntry>
 			<MovesChange>1</MovesChange>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_HUSSAR</Type>
+			<Description>TXT_KEY_PROMOTION_HUSSAR</Description>
+			<Help>TXT_KEY_PROMOTION_HUSSAR_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<PortraitIndex>48</PortraitIndex>
+			<IconAtlas>SP10_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_HUSSAR</PediaEntry>
+			<FightWellDamaged>true</FightWellDamaged>
+			<CurrentHitPointAttackMod>1</CurrentHitPointAttackMod>
+		</Row>
+		<Row>
+			<Type>PROMOTION_ROARING_ELEPHANT</Type>
+			<Description>TXT_KEY_PROMOTION_ROARING_ELEPHANT</Description>
+			<Help>TXT_KEY_PROMOTION_ROARING_ELEPHANT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<PortraitIndex>47</PortraitIndex>
+			<IconAtlas>SP10_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_ROARING_ELEPHANT</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_WAR_FAITH</Type>
+			<Description>TXT_KEY_PROMOTION_WAR_FAITH</Description>
+			<Help>TXT_KEY_PROMOTION_WAR_FAITH_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_WAR_FAITH</PediaEntry>
 		</Row>
 	</UnitPromotions>
 
@@ -735,6 +772,7 @@
 			<PediaEntry>TXT_KEY_PROMOTION_CITADEL_DEFENSE</PediaEntry>
 			<FriendlyLandsModifier>25</FriendlyLandsModifier>
 			<OutsideFriendlyLandsModifier>-25</OutsideFriendlyLandsModifier>
+			<CannotBeEstablishedCorps>true</CannotBeEstablishedCorps>
 		</Row>
 
 		<Row>
@@ -777,18 +815,6 @@
 			<RemoveAfterXTurns>1</RemoveAfterXTurns>
 		</Row>
 
-		<!--<Row>
-			<Type>PROMOTION_MISSILE_UNIT</Type>
-			<Description>TXT_KEY_PROMOTION_MISSILE_UNIT</Description>
-			<Help>TXT_KEY_PROMOTION_MISSILE_UNIT_HELP</Help>
-			<Sound>AS2D_IF_LEVELUP</Sound>
-			<IconAtlas>SP_PROMOTION_ATLAS</IconAtlas>
-			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PortraitIndex>4</PortraitIndex>
-			<OrderPriority>11</OrderPriority>
-			<PediaEntry>TXT_KEY_PROMOTION_MISSILE_UNIT</PediaEntry>
-			<CannotBeChosen>true</CannotBeChosen>
-		</Row>-->
 		<Row>
 			<Type>PROMOTION_DRONE_UNIT</Type>
 			<Description>TXT_KEY_PROMOTION_DRONE_UNIT</Description>
@@ -1271,6 +1297,7 @@
 			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_SCOUTING</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SP_FORCE_1</PediaEntry>
+			<OutsideFriendlyLandsModifier>33</OutsideFriendlyLandsModifier>
 		</Row>
 		<Row>
 			<Type>PROMOTION_SP_FORCE_2</Type>
@@ -1284,6 +1311,8 @@
 			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_SCOUTING</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SP_FORCE_2</PediaEntry>
+			<MovePercentCaptureCity>50</MovePercentCaptureCity>
+			<HealPercentCaptureCity>100</HealPercentCaptureCity>
 		</Row>
 		<Row>
 			<Type>PROMOTION_SP_FORCE_3</Type>
@@ -1293,11 +1322,12 @@
 			<OrderPriority>8</OrderPriority>
 			<PromotionPrereqOr1>PROMOTION_SP_FORCE_2</PromotionPrereqOr1>
 			<CaptureDefeatedEnemy>true</CaptureDefeatedEnemy>
-			<OutsideFriendlyLandsModifier>33</OutsideFriendlyLandsModifier>
 			<PortraitIndex>18</PortraitIndex>
 			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_SCOUTING</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SP_FORCE_3</PediaEntry>
+			<CaptureEmenyPercent>50</CaptureEmenyPercent>
+			<CaptureEmenyExtraMax>20</CaptureEmenyExtraMax>
 		</Row>
 
 		<Row>
@@ -1348,8 +1378,9 @@
 			<EnemyHealChange>99</EnemyHealChange>
 			<NeutralHealChange>99</NeutralHealChange>
 			<FriendlyHealChange>99</FriendlyHealChange>
-			<PortraitIndex>58</PortraitIndex>
-			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<HealOutsideFriendly>true</HealOutsideFriendly>
+			<PortraitIndex>37</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_HEAL</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_STEALTH_OPERATION</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -2182,21 +2213,44 @@
 			<Description>TXT_KEY_PROMOTION_ROLLING_STONE</Description>
 			<Help>TXT_KEY_PROMOTION_ROLLING_STONE_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PromotionPrereqOr1>PROMOTION_ARCHERY_COMBAT</PromotionPrereqOr1>
 			<OrderPriority>1</OrderPriority>
-			<RangedAttackModifier>10</RangedAttackModifier>
-			<PortraitIndex>59</PortraitIndex>
-			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PortraitIndex>44</PortraitIndex>
+			<IconAtlas>SP10_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_RANGED</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_ROLLING_STONE</PediaEntry>
-			<SplashDamagePercent>15</SplashDamagePercent>
+			<SplashDamagePercent>20</SplashDamagePercent>
 			<SplashDamageRadius>1</SplashDamageRadius>
 			<SplashDamagePlotUnitLimit>1</SplashDamagePlotUnitLimit>
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
-		
-	
-		
+
+		<Row>
+			<Type>PROMOTION_RAIN_OF_SPEAR</Type>
+			<Description>TXT_KEY_PROMOTION_RAIN_OF_SPEAR</Description>
+			<Help>TXT_KEY_PROMOTION_RAIN_OF_SPEAR_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<OrderPriority>1</OrderPriority>
+			<PortraitIndex>45</PortraitIndex>
+			<IconAtlas>SP10_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_RANGED</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_RAIN_OF_SPEAR</PediaEntry>
+			<CollateralDamagePercent>50</CollateralDamagePercent>
+			<CollateralDamagePlotUnitLimit>4</CollateralDamagePlotUnitLimit>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_WAR_SEIENCE</Type>
+			<Description>TXT_KEY_PROMOTION_WAR_SEIENCE</Description>
+			<Help>TXT_KEY_PROMOTION_WAR_SEIENCE_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<OrderPriority>1</OrderPriority>
+			<PortraitIndex>46</PortraitIndex>
+			<IconAtlas>SP10_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_RANGED</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_WAR_SEIENCE</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
 	</UnitPromotions>
 
 
@@ -2342,6 +2396,16 @@
 			<PromotionType>PROMOTION_SP_FULL_MOON_STRIKE</PromotionType>
 			<OtherPromotionType>PROMOTION_NUCLEAR_ARTILLERY</OtherPromotionType>
 			<Attack>50</Attack>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ROARING_ELEPHANT</PromotionType>
+			<OtherPromotionType>PROMOTION_HITANDRUN</OtherPromotionType>
+			<Attack>100</Attack>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ROARING_ELEPHANT</PromotionType>
+			<OtherPromotionType>PROMOTION_KNIGHT_COMBAT</OtherPromotionType>
+			<Attack>100</Attack>
 		</Row>
 	</UnitPromotions_PromotionModifiers>
 
@@ -2533,7 +2597,8 @@
 			<SplashXP>1</SplashXP>
 			<CollateralDamagePercent>50</CollateralDamagePercent>
 			<CollateralDamagePlotUnitLimit>8</CollateralDamagePlotUnitLimit>
-			<CollateralXP>1</CollateralXP>		
+			<CollateralXP>1</CollateralXP>
+			<MilitaryMightMod>300</MilitaryMightMod>
 		</Row>
 		<Row>
 			<Type>PROMOTION_GUN_BARRER_1</Type>
@@ -2816,26 +2881,6 @@
 			<UnitCombatType>UNITCOMBAT_SUBMARINE</UnitCombatType>
 			<Modifier>75</Modifier>
 		</Row>
-		<Row>
-			<PromotionType>PROMOTION_NAVALMELEE_COMBAT</PromotionType>
-			<UnitCombatType>UNITCOMBAT_FIGHTER</UnitCombatType>
-			<Modifier>-25</Modifier>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_NAVALMELEE_COMBAT</PromotionType>
-			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
-			<Modifier>-25</Modifier>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_DESTROYER_COMBAT</PromotionType>
-			<UnitCombatType>UNITCOMBAT_FIGHTER</UnitCombatType>
-			<Modifier>-25</Modifier>
-		</Row>
-		<!--<Row>
-			<PromotionType>PROMOTION_DESTROYER_COMBAT</PromotionType>
-			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
-			<Modifier>50</Modifier>
-		</Row>-->
 	</UnitPromotions_UnitCombatMods>
 
 
@@ -2916,7 +2961,6 @@
 			<HealOutsideFriendly>true</HealOutsideFriendly>
 			<CanMoveAfterAttacking>true</CanMoveAfterAttacking>
 			<LostWithUpgrade>true</LostWithUpgrade>
-			<OnlyDefensive>true</OnlyDefensive>
 			<IgnoreZOC>true</IgnoreZOC>
 			<CityAttack>-50</CityAttack>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -4041,6 +4085,36 @@
 			<PediaType>PEDIA_AIR</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_DOGFIGHTING_3</PediaEntry>
 		</Row>
+
+		<Row>
+			<Type>PROMOTION_AIRRECON_1</Type>
+			<Description>TXT_KEY_PROMOTION_AIRRECON_1</Description>
+			<Help>TXT_KEY_PROMOTION_AIRRECON_1_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<OrderPriority>2</OrderPriority>
+			<PromotionPrereqOr1>PROMOTION_ANTI_AIR_II</PromotionPrereqOr1>
+			<PortraitIndex>39</PortraitIndex>
+			<IconAtlas>SP10_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_AIR</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_AIRRECON_1</PediaEntry>
+			<MovesChange>1</MovesChange>
+			<GetGroundAttackRange>1</GetGroundAttackRange>
+		</Row>
+		<Row>
+			<Type>PROMOTION_AIRRECON_2</Type>
+			<Description>TXT_KEY_PROMOTION_AIRRECON_2</Description>
+			<Help>TXT_KEY_PROMOTION_AIRRECON_2_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PromotionPrereqOr1>PROMOTION_AIRRECON_1</PromotionPrereqOr1>
+			<OrderPriority>2</OrderPriority>
+			<PortraitIndex>40</PortraitIndex>
+			<IconAtlas>SP10_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_AIR</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_AIRRECON_2</PediaEntry>
+			<MovesChange>1</MovesChange>
+			<GetGroundAttackRange>1</GetGroundAttackRange>
+		</Row>
+		
 	</UnitPromotions>
 
 
@@ -4069,7 +4143,19 @@
 		<Row>
 			<PromotionType>PROMOTION_DOGFIGHTING_3</PromotionType>
 			<UnitCombatType>UNITCOMBAT_FIGHTER</UnitCombatType>
-		</Row>	
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AIRRECON_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_FIGHTER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AIRRECON_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_FIGHTER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AIR_RANGE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_FIGHTER</UnitCombatType>
+		</Row>
 	</UnitPromotions_UnitCombats>
 
 	
@@ -4650,6 +4736,7 @@
 			<NeutralHealChange>25</NeutralHealChange>
 			<CollateralDamageImmune>true</CollateralDamageImmune>
 			<SplashDamageImmune>true</SplashDamageImmune>
+			<NumEstablishCorps>1</NumEstablishCorps>
 		</Row>
 
 	</UnitPromotions>
@@ -4902,21 +4989,17 @@
 
 
 	<UnitPromotions_Features>
-		<!--<Row>
+		<Row>
 			<PromotionType>PROMOTION_MOHAWK</PromotionType>
 			<FeatureType>FEATURE_FOREST</FeatureType>
 			<Defense>20</Defense>
 			<Attack>20</Attack>
-		</Row>-->
-		<Row>
-			<PromotionType>PROMOTION_MOHAWK</PromotionType>
-			<FeatureType>FEATURE_JUNGLE</FeatureType>
-			<DoubleMove>true</DoubleMove>
 		</Row>
 		<Row>
 			<PromotionType>PROMOTION_MOHAWK</PromotionType>
-			<FeatureType>FEATURE_FOREST</FeatureType>
-			<DoubleMove>true</DoubleMove>
+			<FeatureType>FEATURE_JUNGLE</FeatureType>
+			<Defense>20</Defense>
+			<Attack>20</Attack>
 		</Row>
 		<Row>
 			<PromotionType>PROMOTION_JAGUAR</PromotionType>
@@ -5151,7 +5234,7 @@
 			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_SHARED</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_AIR_RANGE</PediaEntry>
-			<CannotBeChosen>true</CannotBeChosen>
+			<PromotionPrereqOr1>PROMOTION_AIRRECON_2</PromotionPrereqOr1>
 		</Row>
 
 
@@ -5385,13 +5468,26 @@
 			<CannotBeChosen>true</CannotBeChosen>
 			<PortraitIndex>6</PortraitIndex>
 			<FreePillageMoves>true</FreePillageMoves>
-			<CityAttackPlunderModifier>200</CityAttackPlunderModifier>
+			<CityAttackPlunderModifier>300</CityAttackPlunderModifier>
 			<IconAtlas>SP10_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_CITY_PILLAGE_FREE</PediaEntry>
 			<LostAllMovesAttackCity>-1</LostAllMovesAttackCity>
 		</Row>
 
+		<Row>
+			<Type>PROMOTION_VIKING_FURY</Type>
+			<Description>TXT_KEY_PROMOTION_VIKING_FURY</Description>
+			<Help>TXT_KEY_PROMOTION_VIKING_FURY_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<FreePillageMoves>true</FreePillageMoves>
+			<CityAttackPlunderModifier>200</CityAttackPlunderModifier>
+			<PortraitIndex>43</PortraitIndex>
+			<IconAtlas>SP10_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_VIKING_FURY</PediaEntry>
+		</Row>
 
 		<Row>
 			<Type>PROMOTION_SPN_MAMLUK_COMBAT_FAITH</Type>
@@ -5419,6 +5515,9 @@
 			<IconAtlas>SP10_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAKA_WAR_DANCE</PediaEntry>
+			<NearbyImprovementCombatBonus>20</NearbyImprovementCombatBonus>
+			<NearbyImprovementBonusRange>2</NearbyImprovementBonusRange>
+			<CombatBonusImprovement>IMPROVEMENT_MOAI</CombatBonusImprovement>
 		</Row>
 
 		<Row>
@@ -5559,13 +5658,11 @@
 			<Description>TXT_KEY_PROMOTION_LES_GUEUX</Description>
 			<Help>TXT_KEY_PROMOTION_LES_GUEUX_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<AttackMod>150</AttackMod>
-			<RangedAttackModifier>-150</RangedAttackModifier>
 			<CityAttack>50</CityAttack>
+			<MeleeAttackModifier>150</MeleeAttackModifier>
 			<CityAttackPlunderModifier>200</CityAttackPlunderModifier>
 			<FreePillageMoves>true</FreePillageMoves>
-			<EnemyHealChange>15</EnemyHealChange>
-			<NeutralHealChange>15</NeutralHealChange>
+			<PillageReplenishHealth>15</PillageReplenishHealth>
 			<PortraitIndex>4</PortraitIndex>
 			<IconAtlas>EXPANSION_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -6270,6 +6367,7 @@
 			<EnemyHealChange>10</EnemyHealChange>
 			<NeutralHealChange>10</NeutralHealChange>
 			<FriendlyHealChange>10</FriendlyHealChange>
+			<MilitaryMightMod>400</MilitaryMightMod>
 		</Row>
 
 		<Row>
@@ -6475,7 +6573,7 @@
 			<CannotBeChosen>true</CannotBeChosen>
 			<AttackChanceFromAttackDamage>FORMULA_ATTACK_CHANCE_FROM_ATTACK_DAMAGE</AttackChanceFromAttackDamage>
 			<MovementFromAttackDamage>FORMULA_MOVEMENT_FROM_ATTACK_DAMAGE</MovementFromAttackDamage>
-			<HealPercentFromAttackDamage>FORMULA_HEAL_PERCENT_FROM_ATTACK_DAMAGE</HealPercentFromAttackDamage>
+			<MilitaryMightMod>500</MilitaryMightMod>
 		</Row>
 		<Row>
 			<Type>PROMOTION_FULL_FIRE</Type>
@@ -6942,17 +7040,6 @@
 			<PediaEntry>TXT_KEY_PROMOTION_HALF_CASUALTIES</PediaEntry>
 			<WarCasualtiesModifier>-50</WarCasualtiesModifier>
 		</Row>
-		<!--<Row>
-			<Type>PROMOTION_DOUBLE_CASUALTIES</Type>
-			<Description>TXT_KEY_PROMOTION_DOUBLE_CASUALTIES</Description>
-			<Help>TXT_KEY_PROMOTION_DOUBLE_CASUALTIES_HELP</Help>
-			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PortraitIndex>58</PortraitIndex>
-			<IconAtlas>ABILITY_ATLAS</IconAtlas>
-			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_DOUBLE_CASUALTIES</PediaEntry>
-			<LostWithUpgrade>true</LostWithUpgrade>
-		</Row>-->
 	</UnitPromotions>
 	
 		<!--For Aircrafts*****************************-->
@@ -7041,7 +7128,7 @@
 		<Row>
 			<PromotionType>PROMOTION_AIR_ATTACK</PromotionType>
 			<DomainType>DOMAIN_SEA</DomainType>
-			<Modifier>100</Modifier>
+			<Modifier>125</Modifier>
 		</Row>
 		<Row>
 			<PromotionType>PROMOTION_CARRIER_FIGHTER</PromotionType>
@@ -7051,7 +7138,7 @@
 		<Row>
 			<PromotionType>PROMOTION_CARRIER_FIGHTER</PromotionType>
 			<DomainType>DOMAIN_SEA</DomainType>
-			<Modifier>100</Modifier>
+			<Modifier>125</Modifier>
 		</Row>
 		
 		<Row>
@@ -7103,7 +7190,16 @@
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>50</Yield>
 		</Row>
-		
+		<Row>
+			<PromotionType>PROMOTION_WAR_SEIENCE</PromotionType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>50</Yield>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_WAR_FAITH</PromotionType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>100</Yield>
+		</Row>
 	</UnitPromotions_YieldFromKills>
 	
 </GameData>
