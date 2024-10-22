@@ -16,7 +16,7 @@
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_VERSION">
-			<Text>[COLOR_YELLOW]Version 10.7[ENDCOLOR]</Text>
+			<Text>[COLOR_YELLOW]Version 10.8[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MOD_SETUP">
@@ -3337,7 +3337,7 @@
 			<Text>
 				[ICON_BULLET]+1 [ICON_GOLD] Gold and +1 [ICON_PRODUCTION] for every [COLOR_POSITIVE_TEXT]Luxury Resource[ENDCOLOR] on water tiles worked by this City.
 				[NEWLINE][ICON_BULLET]+1 [ICON_PRODUCTION] for every [COLOR_POSITIVE_TEXT]Atoll[ENDCOLOR] worked by this City.
-				[NEWLINE][ICON_BULLET]+3 [ICON_CONSUMER] Consumer.
+				[NEWLINE][ICON_BULLET]+3 [ICON_RES_CONSUMER] Consumer.
 				[NEWLINE][ICON_BULLET]Gain [ICON_GOLD] when a International Cargo ship passes through city plots and the city has Feitoria.
 			</Text>
 		</Row>
@@ -3378,7 +3378,7 @@
 		<Row Tag="TXT_KEY_BUILDING_INDONESIA_SPICE_HARBOR_HELP">
 			<Text>
 				Forms a [ICON_CONNECTED] City Connection with the [ICON_CAPITAL] Capital over water.
-				[NEWLINE][NEWLINE]1 extra luxury resource from each improved luxury near the city. +5 [ICON_CONSUMER] Consumer.
+				[NEWLINE][NEWLINE]1 extra luxury resource from each improved luxury near the city. +5 [ICON_RES_CONSUMER] Consumer.
 				[NEWLINE][NEWLINE]Sea International Trade Route from this city produces +10 [ICON_GOLD] Base Gold.
 				[NEWLINE][NEWLINE]City must have a Lighthouse.
 			</Text>
@@ -3420,7 +3420,7 @@
 			<Text>
 				Sea trade routes originating from this city have a 50% increase in range.
 				[NEWLINE][NEWLINE]+1 [ICON_GOLD] Gold for every [COLOR_POSITIVE_TEXT]Work Boat[ENDCOLOR], [COLOR_POSITIVE_TEXT]Fishing Net[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Atoll[ENDCOLOR] worked by this City.
-				[NEWLINE]+15%[ICON_PRODUCTION]Production for this city. +7 [ICON_CONSUMER] Consumer.
+				[NEWLINE]+15%[ICON_PRODUCTION]Production for this city. +7 [ICON_RES_CONSUMER] Consumer.
 				[NEWLINE][NEWLINE]City must have a Harbor.
 			</Text>
 		</Row>
@@ -4012,7 +4012,7 @@
 		<Update>
 			<Where Tag="TXT_KEY_BUILDING_TOURIST_CENTER_HELP" />
 			<Set
-				Text="National Wonder. Requires a Hotel in all cities. [NEWLINE][NEWLINE]100% of the [ICON_TOURISM] Culture of Wonders and Improvements is added to the [ICON_TOURISM] Tourism output of the city.+100% [ICON_TOURISM] Tourism output for Great Works in this city. " />
+				Text="National Wonder. Requires a Hotel in all cities. [NEWLINE][NEWLINE]100% of the [ICON_CULTURE] Culture of Wonders and Improvements is added to the [ICON_TOURISM] Tourism output of the city.+100% [ICON_TOURISM] Tourism output for Great Works in this city. " />
 		</Update>
 		<Update>
 			<Where Tag="TXT_KEY_WONDER_CN_TOWER_HELP" />
@@ -4661,12 +4661,12 @@
 		<!-- Help tags -->
 		<Row Tag="TXT_KEY_BUILDING_NATIONAL_CARAVANSARY_HELP">
 			<Text>
-				Gains an additional trade route slot and a Caravan appears in the city. +5 [ICON_CONSUMER] Consumer.
+				Gains an additional trade route slot and a Caravan appears in the city. +5 [ICON_RES_CONSUMER] Consumer.
 				[NEWLINE][NEWLINE]Must have a Caravansary in all Cities. The cost goes up the more cities there are in the empire.</Text>
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_NATIONAL_CARAVANSARY_STRATEGY</Tag>
-			<Text>The National Fair provides an additional trade route and a free Caravan. +5 [ICON_CONSUMER] Consumer. </Text>
+			<Text>The National Fair provides an additional trade route and a free Caravan. +5 [ICON_RES_CONSUMER] Consumer. </Text>
 		</Row>
 		<!-- Pedia tags -->
 		<Row Tag="TXT_KEY_BUILDING_NATIONAL_CARAVANSARY_PEDIA">
@@ -4678,7 +4678,7 @@
 			<Text>
 				[ICON_BULLET]+5 [ICON_RES_MANPOWER] Manpower, +5 additional [ICON_RES_IRON] Iron.
 				[NEWLINE][ICON_BULLET]+1 [ICON_PRODUCTION] Production from each Mine local.
-				[NEWLINE][NEWLINE][ICON_BULLET]Must have built a WorkShop in all Cities, City must have at least an improvement of [ICON_RES_IRON] Iron.
+				[NEWLINE][NEWLINE][ICON_BULLET]City must have at least an improvement of [ICON_RES_IRON] Iron, Must have built a WorkShop in all Cities before discovering Industrialization.
 				[NEWLINE][ICON_BULLET]Must be built in the Medium City Cities. The cost goes up the more cities there are in the empire.
 			</Text>
 		</Replace>
@@ -6418,7 +6418,7 @@
 
 
 		<Replace Tag="TXT_KEY_BUILDING_BOMB_SHELTER_HELP">
-			<Text>Reduces population loss from Strategic Bomber attacks by 75% , from Nuke attacks by 50%.[NEWLINE][NEWLINE]Pay extra 1 [ICON_GOLD] Gold for every 3 [ICON_CITIZEN] Population.[NEWLINE][NEWLINE]Must be built in Medium Cities.</Text>
+			<Text>Reduces population loss from Strategic Bomber attacks and Nuke attacks by 75%. [NEWLINE][NEWLINE]Pay extra 1 [ICON_GOLD] Gold for every 3 [ICON_CITIZEN] Population.[NEWLINE][NEWLINE]Must be built in Medium Cities.</Text>
 		</Replace>
 		
 		
@@ -7005,7 +7005,7 @@
 		<Row>
 			<Tag>TXT_KEY_BUILDING_INTERNATIONAL_SEAPORT_HELP</Tag>
 			<Text>
-				+1 [ICON_GOLD] Gold and +1 [ICON_PRODUCTION] Production for all Coastal Tiles worked by this city.
+				+1 [ICON_GOLD] Gold and +1 [ICON_PRODUCTION] Production for all Coastal and Ocean Tiles worked by this city.
 				[NEWLINE][NEWLINE]Land and Sea International Trade Route from this city produces +50 [ICON_GOLD] Base Gold.
 				[NEWLINE][NEWLINE]Sea trade routes originating from this city have a 50% increase in range.
 				[NEWLINE][NEWLINE]Must be built in Global Cities.</Text>
@@ -9895,7 +9895,7 @@
 				[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] Gold output for the tile.
 				[NEWLINE][ICON_BULLET]+1 additional [ICON_GOLD] Gold output if constructed near the coast or by the river (can mutiply to +2 additional [ICON_GOLD] Gold).
 				[NEWLINE][ICON_BULLET]+1 additional [ICON_GOLD] Gold output if constructed on the Road and +2 additional [ICON_GOLD] Gold output if constructed on the Railroad.
-				[NEWLINE][ICON_BULLET]+1 [ICON_CONSUMER] Consumer.
+				[NEWLINE][ICON_BULLET]+1 [ICON_RES_CONSUMER] Consumer.
 			</Text>
 		</Replace>
 
@@ -18052,6 +18052,12 @@
 		<Row Tag="TXT_KEY_IMMIGRANT_ALL_SCALE">
 			<Text>Immigrants enter this City with all City Scales</Text>
 		</Row>
+		<Row Tag="TXT_KEY_ENABLE_CROPS">
+			<Text>Enable establish [ICON_PROMOTION_ELITE] Corps in this City</Text>
+		</Row>
+		<Row Tag="TXT_KEY_ENABLE_ARMEE">
+			<Text>Enable establish [ICON_PROMOTION_GROUP] Armee in this City</Text>
+		</Row>
 		<Replace Tag="TXT_KEY_CIV5_IMPROVEMENTS_POLDER_HELP">
 			<Text>A Polder can only be built on Flood Plains, Marsh or a Flat land near at least three Water plots. It provide extra [ICON_FOOD] Food and [ICON_PRODUCTION] Production.</Text>
 		</Replace>
@@ -18084,6 +18090,10 @@
 				[ICON_BULLET]This order will remove the presence of other religions from the nearby, friendly-controlled city. An inquisitor is consumed by this action.
 				[NEWLINE][ICON_BULLET]City will enter a state of Inquisition fervor and [COLOR_NEGATIVE_TEXT] it is impossible to Spread Religion here [ENDCOLOR] (The base time equals 5% of City's [ICON_CITIZEN] Population).
 			</Text>
+		</Replace>
+
+		<Replace Tag="TXT_KEY_PLOTROLL_OCEAN">
+			<Text>Coast and Ocean</Text>
 		</Replace>
 	</Language_en_US>
 </GameData>

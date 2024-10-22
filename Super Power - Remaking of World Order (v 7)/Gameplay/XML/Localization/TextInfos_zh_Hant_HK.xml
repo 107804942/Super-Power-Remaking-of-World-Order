@@ -16,7 +16,7 @@
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_VERSION">
-			<Text>[COLOR_YELLOW]版本號 10.7[ENDCOLOR]</Text>
+			<Text>[COLOR_YELLOW]版本號 10.8[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MOD_SETUP">
@@ -936,7 +936,10 @@
 		</Row>
 		<Row Tag="TXT_KEY_BUILDING_OTTOMAN_EMPIRE_PORT_HELP">
 			<Text>
-				本城市海上商路的範圍+50%。[NEWLINE][NEWLINE]本城擁有的[COLOR_POSITIVE_TEXT]漁船[ENDCOLOR],[COLOR_POSITIVE_TEXT]捕撈船[ENDCOLOR]和[COLOR_POSITIVE_TEXT]環礁[ENDCOLOR]+1[ICON_GOLD]金幣產出。[NEWLINE][NEWLINE]城市必須擁有港口。
+				本城市海上商路的範圍+50%。
+				[NEWLINE][NEWLINE]本城擁有的[COLOR_POSITIVE_TEXT]漁船[ENDCOLOR]，[COLOR_POSITIVE_TEXT]捕撈船[ENDCOLOR]和[COLOR_POSITIVE_TEXT]環礁[ENDCOLOR]+1[ICON_GOLD]金幣產出。
+				[NEWLINE]本城市+7[ICON_RES_CONSUMER]商品，+15%產能[ICON_PRODUCTION]。
+				[NEWLINE][NEWLINE]城市必須擁有港口。
 			</Text>
 		</Row>
 		<Row>
@@ -1362,7 +1365,7 @@
 
 		<Update>
 			<Where Tag="TXT_KEY_WONDER_ORACLE_HELP" />
-			<Set Text="免費獲得一項社會政策。研究考古學科技後+4[ICON_TOURISM]旅遊業績產出。" />
+			<Set Text="免費獲得一項社會政策。研究考古學科技後+6[ICON_TOURISM]旅遊業績產出。" />
 		</Update>
 
 		<Update>
@@ -1445,12 +1448,12 @@
 
 		<Update>
 			<Where Tag="TXT_KEY_BUILDING_TOURIST_CENTER_HELP" />
-			<Set Text="國家奇跡，所有城市都需要有旅館。文明的城市數量越多建造成本越高。[NEWLINE][NEWLINE]100%來自於世界奇跡、自然奇跡和地面設施（風景地標、摩艾石像群、葡萄酒莊園等）的[ICON_TOURISM]文化產出增加到該城市的[ICON_TOURISM]旅遊業績產出中。來自傑作的[ICON_TOURISM]旅遊業績產出+100%。" />
+			<Set Text="國家奇跡，所有城市都需要有旅館。文明的城市數量越多建造成本越高。[NEWLINE][NEWLINE]100%來自於世界奇跡、自然奇跡和地面設施（風景地標、摩艾石像群、葡萄酒莊園等）的[ICON_CULTURE]文化產出增加到該城市的[ICON_TOURISM]旅遊業績產出中。來自傑作的[ICON_TOURISM]旅遊業績產出+100%。" />
 		</Update>
 
 		<Update>
 			<Where Tag="TXT_KEY_WONDER_CN_TOWER_HELP" />
-			<Set Text="所有城市贈送一座廣播塔，每座廣播塔+3[ICON_GOLD]金幣，+2[ICON_CULTURE]文化值，+1[ICON_HAPPINESS_1]笑臉。[NEWLINE]100%來自於世界奇跡、自然奇跡和地面設施（風景地標、摩艾石像群、葡萄酒莊園等）的[ICON_TOURISM]文化產出增加到該城市的[ICON_TOURISM]旅遊業績產出中。傑作產出的[ICON_TOURISM]旅遊業績+100%。" />
+			<Set Text="所有城市贈送一座廣播塔，每座廣播塔+3[ICON_GOLD]金幣，+2[ICON_CULTURE]文化值，+1[ICON_HAPPINESS_1]笑臉。[NEWLINE]100%來自於世界奇跡、自然奇跡和地面設施（風景地標、摩艾石像群、葡萄酒莊園等）的[ICON_CULTURE]文化產出增加到該城市的[ICON_TOURISM]旅遊業績產出中。傑作產出的[ICON_TOURISM]旅遊業績+100%。" />
 		</Update>
 
 		<Update>
@@ -1768,9 +1771,11 @@
 		</Row>
 
 		<Replace Tag="TXT_KEY_WONDER_SYDNEY_OPERA_HOUSE_HELP">
-			<Text>所有文學家、藝術家、音樂家+1[ICON_CULTURE]文化值產出，本城市+50%[ICON_TOURISM]旅遊業績產出。[NEWLINE][NEWLINE]擁有2個音樂傑作展位。必須在沿海城市建造。</Text>
+			<Text>
+				所有文學家、藝術家、音樂家+1[ICON_CULTURE]文化產出，本城市傑作+50%[ICON_TOURISM]魅力產出，50%來自於世界奇觀、自然奇觀和地面設施（風景地標、摩艾石像群、葡萄酒莊園等）的[ICON_CULTURE]文化產出增加到該城市的[ICON_TOURISM]魅力產出中。
+				[NEWLINE][NEWLINE]擁有2個音樂傑作展位。必須在沿海城市建造。
+			</Text>
 		</Replace>
-
 
 		<!-- Description tags -->
 		<Row Tag="TXT_KEY_BUILDING_PEARL_TOWER">
@@ -2036,7 +2041,7 @@
 			<Text>
 				[ICON_BULLET]+5[ICON_RES_MANPOWER]人力、+5[ICON_RES_IRON]鐵資源。
 				[NEWLINE][ICON_BULLET]本城市有市民工作的礦井+1[ICON_PRODUCTION]產能。
-				[NEWLINE][NEWLINE][ICON_BULLET]需要所有城市擁有工坊，且本城必須擁有已開發的[ICON_RES_IRON]鐵。
+				[NEWLINE][NEWLINE][ICON_BULLET]本城必須擁有已開發的[ICON_RES_IRON]鐵，獲得工業化前需要所有城市擁有工坊。
 				[NEWLINE][ICON_BULLET]只能在中型城市（15人口）建造。建造成本隨城市數量增加。
 			</Text>
 		</Replace>
@@ -2124,7 +2129,7 @@
 		<!-- Help tags -->
 		<Row Tag="TXT_KEY_BUILDING_ETHIOPIA_ROCKHEWN_HELP">
 			<Text>免費獲得一項政策。[NEWLINE][NEWLINE]所有城市+20%[ICON_CULTURE]文化值產出。
-				[NEWLINE]城市50%的地塊和奇跡文化產出轉化為[ICON_TOURISM]旅遊業績產出，且傑作[ICON_TOURISM]旅遊業績產出+50%。
+				[NEWLINE]城市50%的地塊和奇跡[ICON_CULTURE]文化產出轉化為[ICON_TOURISM]旅遊業績產出，且傑作[ICON_TOURISM]旅遊業績產出+50%。
 				[NEWLINE][NEWLINE]必須在文明的所有城市中建造畫廊。建造價格隨城市數量增加。</Text>
 		</Row>
 		<!-- Pedia tags -->
@@ -3472,7 +3477,7 @@
 		</Row>
 
 		<Replace Tag="TXT_KEY_BUILDING_BOMB_SHELTER_HELP">
-			<Text>減少75%由戰略轟炸造成的人口損失，50%由核攻擊造成的人口損失。[NEWLINE][NEWLINE]每3[ICON_CITIZEN]市民+1[ICON_GOLD]維護費。[NEWLINE][NEWLINE]只能在中型城市（15人口）建造。</Text>
+			<Text>減少75%由戰略轟炸以及核攻擊造成的人口損失。[NEWLINE][NEWLINE]每3[ICON_CITIZEN]市民+1[ICON_GOLD]維護費。[NEWLINE][NEWLINE]只能在中型城市（15人口）建造。</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_BUILDING_HOSPITAL_HELP">
@@ -3532,7 +3537,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_VENICE_GRAND_CANAL_HELP</Tag>
-			<Text>本城市+25%[ICON_PRODUCTION]生產力。[NEWLINE][NEWLINE]每5[ICON_CITIZEN]市民+1[ICON_GOLD]金幣產出。[NEWLINE][NEWLINE]本城市所有沿河地塊+1[ICON_PRODUCTION]生產力+1[ICON_CULTURE]文化值。[NEWLINE][NEWLINE]只能在中型城市（15人口）建造。
+			<Text>本城市+25%[ICON_PRODUCTION]生產力。[NEWLINE][NEWLINE]每5[ICON_CITIZEN]市民+1[ICON_GOLD]金幣產出。[NEWLINE][NEWLINE]本城市所有沿河地塊+1[ICON_PRODUCTION]生產力+1[ICON_CULTURE]文化值。[NEWLINE][NEWLINE]只能在大型城市（26人口）建造。
 			</Text>
 		</Row>
 
@@ -3603,7 +3608,7 @@
 			<Text>[ICON_TOURISM]旅館</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_HOTEL_HELP">
-			<Text>本城市所有自然奇跡、環礁和綠洲+4[ICON_GOLD]金幣+4[ICON_CULTURE]文化值。[NEWLINE][NEWLINE]城市50%的地塊和奇跡文化產出轉化為[ICON_TOURISM]旅遊業績產出，且傑作[ICON_TOURISM]旅遊業績產出+50%。[NEWLINE][NEWLINE]只能在大型城市（26人口）建造。</Text>
+			<Text>本城市所有自然奇跡、環礁和綠洲+4[ICON_GOLD]金幣+4[ICON_CULTURE]文化值。[NEWLINE][NEWLINE]城市50%的地塊和奇跡[ICON_CULTURE]文化產出轉化為[ICON_TOURISM]旅遊業績產出，且傑作[ICON_TOURISM]旅遊業績產出+50%。[NEWLINE][NEWLINE]只能在大型城市（26人口）建造。</Text>
 		</Replace>
 
 		<Row>
@@ -3616,7 +3621,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_POLYNESIA_HAWAIIAN_HOTEL_HELP</Tag>
-			<Text>本城市所有自然奇跡、環礁和綠洲+4[ICON_GOLD]金幣+4[ICON_CULTURE]文化值。[NEWLINE][NEWLINE]城市100%的地塊和奇跡文化產出轉化為[ICON_TOURISM]旅遊業績產出，且傑作[ICON_TOURISM]旅遊業績產出+100%。
+			<Text>本城市所有自然奇跡、環礁和綠洲+4[ICON_GOLD]金幣+4[ICON_CULTURE]文化值。[NEWLINE][NEWLINE]城市100%的地塊和奇跡[ICON_CULTURE]文化產出轉化為[ICON_TOURISM]旅遊業績產出，且傑作[ICON_TOURISM]旅遊業績產出+100%。
 			</Text>
 		</Row>
 
@@ -3624,7 +3629,7 @@
 			<Text>[ICON_TOURISM]機場</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_AIRPORT_HELP">
-			<Text>允許從這個城市空運單位。[NEWLINE][NEWLINE]從本城市出發的陸上和海上商路+5基礎[ICON_GOLD]金。[NEWLINE][NEWLINE]城市可容納的空軍單位數量增加4。[NEWLINE][NEWLINE]城市50%的地塊和奇跡文化產出轉化為[ICON_TOURISM]旅遊業績產出，且傑作[ICON_TOURISM]旅遊業績產出+50%。[NEWLINE][NEWLINE]只能在特大城市（40人口）建造。</Text>
+			<Text>允許從這個城市空運單位。[NEWLINE][NEWLINE]從本城市出發的陸上和海上商路+5基礎[ICON_GOLD]金。[NEWLINE][NEWLINE]城市可容納的空軍單位數量增加4。[NEWLINE][NEWLINE]城市50%的地塊和奇跡[ICON_CULTURE]文化產出轉化為[ICON_TOURISM]旅遊業績產出，且傑作[ICON_TOURISM]旅遊業績產出+50%。[NEWLINE][NEWLINE]只能在特大城市（40人口）建造。</Text>
 		</Replace>
 
 		<Row>
@@ -3638,7 +3643,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_INDONESIA_AIRPORT_HELP</Tag>
-			<Text>允許從這個城市空運單位。[NEWLINE][NEWLINE]從本城市出發的陸上和海上商路+20基礎[ICON_GOLD]金。[NEWLINE][NEWLINE]城市可容納的空軍單位數量增加4。[NEWLINE][NEWLINE]城市50%的地塊和奇跡文化產出轉化為[ICON_TOURISM]旅遊業績產出，且傑作[ICON_TOURISM]旅遊業績產出+50%。[NEWLINE][NEWLINE]每一座群島機場都能使全地圖與印尼見過面的城邦一次性提高10%[ICON_INFLUENCE]關係。[NEWLINE][NEWLINE]群島機場不需要維護費,建造無城市人口限制。</Text>
+			<Text>允許從這個城市空運單位。[NEWLINE][NEWLINE]從本城市出發的陸上和海上商路+20基礎[ICON_GOLD]金。[NEWLINE][NEWLINE]城市可容納的空軍單位數量增加4。[NEWLINE][NEWLINE]城市50%的地塊和奇跡[ICON_CULTURE]文化產出轉化為[ICON_TOURISM]旅遊業績產出，且傑作[ICON_TOURISM]旅遊業績產出+50%。[NEWLINE][NEWLINE]每一座群島機場都能使全地圖與印尼見過面的城邦一次性提高10%[ICON_INFLUENCE]關係。[NEWLINE][NEWLINE]群島機場不需要維護費,建造無城市人口限制。</Text>
 		</Row>
 
 		<Row>
@@ -3773,7 +3778,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_KOREAN_ENTERTAINMENT_HELP</Tag>
-			<Text>本城+33%[ICON_CULTURE]文化值產出。[NEWLINE]提供全域[ICON_HAPPINESS_1]幸福度![NEWLINE]每一座韓國媒體產業公司的建成，都會城市附近出現一個大音樂家。[NEWLINE][NEWLINE]只能在巨型城市（60人口）建造。
+			<Text>本城+33%[ICON_CULTURE]文化值產出。[NEWLINE]提供全域[ICON_HAPPINESS_1]幸福度![NEWLINE]每一座韓國媒體產業公司的建成，城市附近都會出現一個大音樂家。[NEWLINE][NEWLINE]只能在巨型城市（60人口）建造。
 			</Text>
 		</Row>
 		<Row>
@@ -3872,7 +3877,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_INTERNATIONAL_AIRPORT_HELP</Tag>
-			<Text>允許從這個城市空運單位。[NEWLINE][NEWLINE]從本城市出發的陸上和海上商路+25基礎[ICON_GOLD]金。[NEWLINE][NEWLINE]城市可容納的空軍單位數量增加4。[NEWLINE][NEWLINE]城市50%的地塊和奇跡文化產出轉化為[ICON_TOURISM]旅遊業績產出，且傑作[ICON_TOURISM]旅遊業績產出+50%。[NEWLINE][NEWLINE]只能在大都會（80人口）建造。</Text>
+			<Text>允許從這個城市空運單位。[NEWLINE][NEWLINE]從本城市出發的陸上和海上商路+25基礎[ICON_GOLD]金。[NEWLINE][NEWLINE]城市可容納的空軍單位數量增加4。[NEWLINE][NEWLINE]城市50%的地塊和奇跡[ICON_CULTURE]文化產出轉化為[ICON_TOURISM]旅遊業績產出，且傑作[ICON_TOURISM]旅遊業績產出+50%。[NEWLINE][NEWLINE]只能在大都會（80人口）建造。</Text>
 		</Row>
 
 		<Row>
@@ -3885,7 +3890,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_INTERNATIONAL_SEAPORT_HELP</Tag>
-			<Text>[NEWLINE][NEWLINE]本城市所有海濱區塊+1[ICON_GOLD]金幣+1[ICON_PRODUCTION]生產力。[NEWLINE][NEWLINE]從本城市出發的陸上和海上商路+50基礎[ICON_GOLD]金。[NEWLINE][NEWLINE]從本城市出發的海上商路增加50%距離。[NEWLINE][NEWLINE]只能在大都會（80人口）建造。</Text>
+			<Text>[NEWLINE][NEWLINE]本城市所有海洋區塊+1[ICON_GOLD]金幣+1[ICON_PRODUCTION]生產力。[NEWLINE][NEWLINE]從本城市出發的陸上和海上商路+50基礎[ICON_GOLD]金。[NEWLINE][NEWLINE]從本城市出發的海上商路增加50%距離。[NEWLINE][NEWLINE]只能在大都會（80人口）建造。</Text>
 		</Row>
 
 		<Row>
@@ -16193,6 +16198,12 @@
 		</Row>
 		<Row Tag="TXT_KEY_IMMIGRANT_ALL_SCALE">
 			<Text>本城接收國際移民不受城市規模影響</Text>
+		</Row>
+		<Row Tag="TXT_KEY_ENABLE_CROPS">
+			<Text>允许城市建立[ICON_PROMOTION_ELITE]军团</Text>
+		</Row>
+		<Row Tag="TXT_KEY_ENABLE_ARMEE">
+			<Text>允许城市建立[ICON_PROMOTION_GROUP]集团军</Text>
 		</Row>
 		<Replace Tag="TXT_KEY_CIV5_IMPROVEMENTS_POLDER_HELP">
 			<Text>圩田只能建立在沖積平原、沼澤，或者臨近3塊以上水域的平地上。圩田額外增加[ICON_FOOD]食物和[ICON_PRODUCTION]產能產出。</Text>
