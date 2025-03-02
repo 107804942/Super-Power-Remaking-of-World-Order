@@ -739,8 +739,8 @@ function AIPromotion(iPlayer, iCity, iUnit, bGold, bFaith)
     end
 
     ------------------------AI with many coastal cities will build more naval units other than land units
-
-    if unit:IsCombatUnit() and unitBuiltCity:IsCoastal(GameDefines["MIN_WATER_SIZE_FOR_OCEAN"]) and player:GetUnitClassCount(ThisUnitClass) > AICityCount / 2 then
+    local iUnitClassCount = player:GetUnitClassCount(ThisUnitClass)
+    if handicap >= 3 and unit:IsCombatUnit() and unitBuiltCity:IsCoastal(GameDefines["MIN_WATER_SIZE_FOR_OCEAN"]) and iUnitClassCount > AICityCount / 2 then
 
         ---------------------------------Count the ratio of coastal cities
         local AICoastalCitiesCount = 0
@@ -752,23 +752,19 @@ function AIPromotion(iPlayer, iCity, iUnit, bGold, bFaith)
         print("AI coastal cities count:" .. AICoastalCitiesCount)
 
         if AICoastalCitiesCount > AICityCount / 1.5 then
-
-            if unit:IsRanged() then
-                if player:GetCurrentEra() >= 2 then
+            if player:GetCurrentEra() >= 2 then
+                if unit:IsRanged() then
                     AIForceBuildNavalHRUnits(unitX, unitY, player)
-                end
-            else
-                if player:GetCurrentEra() >= 2 then
+                else
                     AIForceBuildNavalEscortUnits(unitX, unitY, player)
                 end
+                print("Coastal AI build more naval units other than land units!")
             end
 
-            if player:GetUnitClassCount(ThisUnitClass) > AICityCount * 2 and not PlayerAtWarWithHuman(player) then
+            if iUnitClassCount > 15 and iUnitClassCount > AICityCount * 2 and not PlayerAtWarWithHuman(player) then
                 unit:Kill()
                 print("AI has too many this type of land units! So remove it!")
             end
-            print("Coastal AI build more naval units other than land units!")
-
         end
     end
 
@@ -810,40 +806,40 @@ function AIResearchCatchUp(HumanResearchPerTurn, HumanCurrentTech, AIplayer)
     print("Human science Output:" .. HumanResearchPerTurn)
     print("AI science Output:" .. AIResearchPerTurn)
 
-    if AIplayer:HasPolicy(GameInfo.Policies["POLICY_AI_BONUS_RESEARCH_LV1"].ID) then
+    if AIplayer:HasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV1"]) then
         AIResearchPerTurn = AIResearchPerTurn * 0.75;
     end
 
     if AICurrentTech >= 30 and AIResearchPerTurn > 1 then
         if HumanCurrentTech - AICurrentTech >= 15 then -- HumanResearchPerTurn > AIResearchPerTurn * 2 or 
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_RESEARCH_LV1"].ID, true, true)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_RESEARCH_LV2"].ID, true, true)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_RESEARCH_LV3"].ID, true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV1"], true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV2"], true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV3"], true, true)
             print("Human's research is too fast -2X, AI needs to catch up sooner!")
 
         elseif HumanCurrentTech - AICurrentTech >= 7 then -- HumanResearchPerTurn > AIResearchPerTurn * 1.5 or 
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_RESEARCH_LV1"].ID, true, true)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_RESEARCH_LV2"].ID, true, true)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_RESEARCH_LV3"].ID, false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV1"], true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV2"], true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV3"], false)
             print("Human's research is fast -1.5X, AI needs to catch up!")
 
         elseif HumanResearchPerTurn > AIResearchPerTurn then
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_RESEARCH_LV1"].ID, true, true)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_RESEARCH_LV2"].ID, false)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_RESEARCH_LV3"].ID, false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV1"], true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV2"], false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV3"], false)
             print("Human's research is not so fast!")
 
         elseif HumanCurrentTech < AICurrentTech - 3 then
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_RESEARCH_LV1"].ID, false)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_RESEARCH_LV2"].ID, false)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_RESEARCH_LV3"].ID, false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV1"], false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV2"], false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV3"], false)
             print("Human's research is slow! So give him or her a chance!")
         end
     end
 
     -- Special AI Research Bonus for 8 Handicap
     if Game:GetHandicapType() == 7 and HumanCurrentTech >= 50 then
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_RESEARCH_DEITY"].ID, true);
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_DEITY"], true);
         print("Special AI Research Bonus for Super Power Players!")
     end
 end
@@ -859,24 +855,24 @@ function AIEconomyCatchUp(HumanCityCount, HumanPopCount, AIplayer)
 
     if AIPopCount > 6 and AICityCount >= 1 then
         if HumanCityCount > AICityCount * 2 or HumanPopCount > AIPopCount * 1.5 then
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_ECONOMY_LV1"].ID, true, true)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_ECONOMY_LV2"].ID, true, true)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_ECONOMY_LV3"].ID, true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_ECONOMY_LV1"], true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_ECONOMY_LV2"], true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_ECONOMY_LV3"], true, true)
             print("Human's nation is developing fast - 2X. AI must catch up!")
         elseif HumanCityCount > AICityCount * 1.5 or HumanPopCount > AIPopCount * 1.25 then
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_ECONOMY_LV1"].ID, true, true)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_ECONOMY_LV2"].ID, true, true)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_ECONOMY_LV3"].ID, false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_ECONOMY_LV1"], true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_ECONOMY_LV2"], true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_ECONOMY_LV3"], false)
             print("Human's nation is developing well - 1.5X. AI must catch up!")
         elseif HumanCityCount > AICityCount * 1.25 or HumanPopCount > AIPopCount then
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_ECONOMY_LV1"].ID, true, true)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_ECONOMY_LV2"].ID, false)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_ECONOMY_LV3"].ID, false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_ECONOMY_LV1"], true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_ECONOMY_LV2"], false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_ECONOMY_LV3"], false)
             print("Human's nation is developing. AI should catch up!")
         elseif HumanCityCount <= AICityCount or HumanPopCount <= AIPopCount * 0.75 then
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_ECONOMY_LV1"].ID, false)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_ECONOMY_LV2"].ID, false)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_ECONOMY_LV3"].ID, false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_ECONOMY_LV1"], false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_ECONOMY_LV2"], false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_ECONOMY_LV3"], false)
             print("Human's nation is not developing well. So give him or her a chance!")
         end
     end
@@ -890,24 +886,24 @@ function AIMilitaryCatchUp(iNumCapitals, AIplayer)
     end
     if PlayerAtWarWithHuman(AIplayer) then
         if iNumCapitals >= 6 then
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_WAR_LV1"].ID, true, true)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_WAR_LV2"].ID, true, true)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_WAR_LV3"].ID, true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_WAR_LV1"], true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_WAR_LV2"], true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_WAR_LV3"], true, true)
             print("Human's military is too strong, Fight to the last man!")
         elseif iNumCapitals < 6 and iNumCapitals >= 4 then
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_WAR_LV1"].ID, true, true)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_WAR_LV2"].ID, true, true)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_WAR_LV3"].ID, false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_WAR_LV1"], true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_WAR_LV2"], true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_WAR_LV3"], false)
             print("Human's military is strong, Hit them hard!")
         elseif iNumCapitals < 4 and iNumCapitals >= 2 then
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_WAR_LV1"].ID, true, true)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_WAR_LV2"].ID, false)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_WAR_LV3"].ID, false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_WAR_LV1"], true, true)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_WAR_LV2"], false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_WAR_LV3"], false)
             print("Human's military is not weak!")
         elseif iNumCapitals < 2 then
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_WAR_LV1"].ID, false)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_WAR_LV2"].ID, false)
-            AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_BONUS_WAR_LV3"].ID, false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_WAR_LV1"], false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_WAR_LV2"], false)
+            AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_WAR_LV3"], false)
             print("Human's military is weak! No need for going hard!")
         end
     end
@@ -925,38 +921,38 @@ function AIBossBonus(HumanScore, TotalScore, TotalMajCiv, AIplayer)
 
     ---------AI enhancement for human's score
     if HumanScore >= AvgScore * 2 then
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_50"].ID, true, true)
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_30"].ID, true, true)
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_20"].ID, true, true)
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_10"].ID, true, true)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_50"], true, true)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_30"], true, true)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_20"], true, true)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_10"], true, true)
         print("Human is unstopable!!!")
 
     elseif HumanScore >= AvgScore * 1.6 then
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_50"].ID, false)
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_30"].ID, true, true)
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_20"].ID, true, true)
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_10"].ID, true, true)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_50"], false)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_30"], true, true)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_20"], true, true)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_10"], true, true)
         print("Human is too strong!!!Hurry up AIs!")
 
     elseif HumanScore >= AvgScore * 1.3 then
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_50"].ID, false)
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_30"].ID, false)
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_20"].ID, true, true)
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_10"].ID, true, true)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_50"], false)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_30"], false)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_20"], true, true)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_10"], true, true)
         print("Human is very strong!!!")
 
     elseif HumanScore >= AvgScore then
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_50"].ID, false)
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_30"].ID, false)
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_20"].ID, false)
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_10"].ID, true, true)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_50"], false)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_30"], false)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_20"], false)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_10"], true, true)
         print("Human is strong!!!")
 
     elseif HumanScore < AvgScore then
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_50"].ID, false)
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_30"].ID, false)
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_20"].ID, false)
-        AIplayer:SetHasPolicy(GameInfo.Policies["POLICY_AI_PLAYER_CITIES_10"].ID, false)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_50"], false)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_30"], false)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_20"], false)
+        AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_PLAYER_CITIES_10"], false)
         print("Human is weak! No Boss bonus!")
     end
 end

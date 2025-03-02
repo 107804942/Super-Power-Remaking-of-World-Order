@@ -16,7 +16,7 @@
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_VERSION">
-			<Text>[COLOR_YELLOW]Version 10.8[ENDCOLOR]</Text>
+			<Text>[COLOR_YELLOW]Version 10.9[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MOD_SETUP">
@@ -2401,7 +2401,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_TOKYO_RAID_CANCEL">
 			<Text>This order will remove all the Land-Based-Aircrafts in the Hornet and make her available for Carrier-Based-Aircrafts(the Enterprise), it costs no movement but you can not bless a good luck until your next turn. 
-			[NEWLINE]She would automatically restore her cargo like before and transfer her promotions as well.</Text>
+			[NEWLINE]She would restore her cargo like before and transfer her promotions as well.</Text>
 		</Row>
 
 
@@ -2758,7 +2758,7 @@
 		<Row>
 			<Tag>TXT_KEY_BUILDING_BABYLON_WATER_PUMP_HELP</Tag>
 			<Text>
-				+5% [ICON_FOOD] Food output for the city and +1 [ICON_FOOD] Food in every tile next to a River. 
+				+10% [ICON_FOOD] Food output for the city and +1 [ICON_FOOD] Food in every tile next to a River. 
 			</Text>
 		</Row>
 
@@ -3172,8 +3172,9 @@
 
 		<Replace Tag="TXT_KEY_BUILDING_PAPER_MAKER_HELP">
 			<Text>Allows for movement of [ICON_PRODUCTION] Production via trade routes from this city. This build Won't becomes obsolete. 
-			[NEWLINE][NEWLINE] Each paper maker reduces building, and project production costs nationwide by -2%, capped at -30%.
-			[NEWLINE][NEWLINE]+2 [ICON_TOURISM] Tourism after discovering Internet.</Text>
+			[NEWLINE][NEWLINE]Each paper maker reduces building, and project production costs nationwide by -2%, capped at -20%.
+			[NEWLINE][NEWLINE]+2 [ICON_TOURISM] Tourism after discovering Internet.
+			</Text>
 		</Replace>
 
 		<Row>
@@ -3213,7 +3214,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_ARABIA_ISIAMIC_UNIVERSITY_HELP</Tag>
-			<Text>Each 7 [ICON_RESEARCH][ICON_CULTURE] Islamic Universities in your cities +1 [ICON_RESEARCH] Science and +1 [ICON_CULTURE] Culture from every Shrine, Temple and Religious Building in this City (non-puppet).[NEWLINE]Further, +1 [ICON_RESEARCH] Science and +1 [ICON_CULTURE] Culture from every Building with Basic [ICON_PEACE] Faith output if the City (non-puppet) has a [ICON_RESEARCH] Laboratory. [NEWLINE][NEWLINE]City must have a Academy.</Text>
+			<Text>Each 7 [ICON_RESEARCH][ICON_CULTURE] Islamic Universities in your cities +1 [ICON_RESEARCH] Science and +1 [ICON_CULTURE] Culture from every Shrine, Temple and Religious Building in this City (non-puppet).[NEWLINE]Further, +1 [ICON_RESEARCH] Science and +1 [ICON_CULTURE] Culture from other Buildings with Basic [ICON_PEACE] Faith output if the City (non-puppet) has a [ICON_RESEARCH] Laboratory. [NEWLINE][NEWLINE]City must have a Academy.</Text>
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_ARABIA_ISIAMIC_UNIVERSITY_ALLAH_AKBAR</Tag>
@@ -3333,8 +3334,9 @@
 
 		<Replace Tag="TXT_KEY_BUILDING_LIGHTHOUSE_HELP">
 			<Text>
-				+1 [ICON_PRODUCTION] Production from every [ICON_RES_FISH] [COLOR_POSITIVE_TEXT]Fish[ENDCOLOR], [COLOR_POSITIVE_TEXT]marine Luxury Resource[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Atoll[ENDCOLOR] worked by this City.
-				[NEWLINE][NEWLINE]City must be built on the coast.</Text>
+				+1 [ICON_PRODUCTION] Production from every [ICON_RES_FISH] [COLOR_POSITIVE_TEXT]Fish[ENDCOLOR], marine [COLOR_POSITIVE_TEXT]Luxury Resource[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Atoll[ENDCOLOR] worked by this City.
+				[NEWLINE][NEWLINE]City must be built on the coast.
+			</Text>
 		</Replace>
 
 
@@ -3344,7 +3346,8 @@
 		</Row>
 		<Row Tag="TXT_KEY_BUILDING_PORTUGAL_PORT_HELP">
 			<Text>
-				[ICON_BULLET]+1 [ICON_GOLD] Gold and +1 [ICON_PRODUCTION] for every [COLOR_POSITIVE_TEXT]Luxury Resource[ENDCOLOR] on water tiles worked by this City.
+				[ICON_BULLET]+1 [ICON_GOLD] Gold for every [COLOR_POSITIVE_TEXT]Luxury Resource[ENDCOLOR] on water tiles worked by this City.
+				[NEWLINE][ICON_BULLET]+1 [ICON_PRODUCTION] Production from every [ICON_RES_FISH] [COLOR_POSITIVE_TEXT]Fish[ENDCOLOR], marine [COLOR_POSITIVE_TEXT]Luxury Resource[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Atoll[ENDCOLOR] worked by this City.
 				[NEWLINE][ICON_BULLET]+1 [ICON_PRODUCTION] for every [COLOR_POSITIVE_TEXT]Atoll[ENDCOLOR] worked by this City.
 				[NEWLINE][ICON_BULLET]+3 [ICON_RES_CONSUMER] Consumer.
 				[NEWLINE][ICON_BULLET]Gain [ICON_GOLD] when a International Cargo ship passes through city plots and the city has Feitoria.
@@ -3905,11 +3908,6 @@
 				[NEWLINE][ICON_BULLET]Earn Great Scientists and Great Writer 15% faster for local City.
 			</Text>
 		</Replace>
-		<Update>
-			<Where Tag="TXT_KEY_WONDER_GREAT_LIBRARY_HELP" />
-			<Set
-				Text="+15% [ICON_RESEARCH] Science output in all cities. " />
-		</Update>
 
 		<Update>
 			<Where Tag="TXT_KEY_WONDER_PYRAMIDS_HELP" />
@@ -6940,7 +6938,7 @@
 		<Row>
 			<Tag>TXT_KEY_BUILDING_3DPRINTING_HELP</Tag>
 			<Text>+1 [ICON_GOLD] Gold for every [ICON_CITIZEN] Citizen in the city. 
-			[NEWLINE][NEWLINE]Requires 3 [ICON_RES_ELECTRICITY] Electricity. [NEWLINE][NEWLINE]Must be built in XXL Cities.</Text>
+			[NEWLINE][NEWLINE]Requires 2 [ICON_RES_ELECTRICITY] Electricity. [NEWLINE][NEWLINE]Must be built in XXL Cities.</Text>
 		</Row>
 
 		
@@ -9250,7 +9248,7 @@
 			<Text>Juku</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BELIEF_SCIENCE_RELIGION">
-			<Text>+1% [ICON_RESEARCH] Science for each follower (max +30%)</Text>
+			<Text>+2% [ICON_RESEARCH] Science for each follower (max +30%)</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_EXTRA_RELIGION_SPREADS_2">
@@ -10475,8 +10473,9 @@
 
 		<Replace Tag="TXT_KEY_TRAIT_VIKING_FURY">
 			<Text>
-				[ICON_BULLET]Land Melee units and Naval Melee units pay no Movement [ICON_MOVES] to pillage and pillage [ICON_GOLD] Gold equal to 200% of the damage inflicted on a city. 
+				[ICON_BULLET]Melee units pay no Movement [ICON_MOVES] to pillage and pillage [ICON_GOLD] Gold equal to 200% of the damage inflicted on a city. 
 				[NEWLINE][ICON_BULLET]Receive triple [ICON_GOLD] Gold from barbarian encampments or pillaging cities.
+				[NEWLINE][ICON_BULLET]Embarked units pay just 1 Movement [ICON_MOVES] to move from sea to land.
 				[NEWLINE][ICON_BULLET]+1 [ICON_CULTURE] Culture output for every Fishing Net, Workboats and Offshore Platform.
 			</Text>
 		</Replace>
@@ -10500,7 +10499,7 @@
 			<Text>
 				[ICON_BULLET]Defeated Barbarian unit in encampments will join you. Borrow City names from other in-game Civs.
 				[NEWLINE][ICON_BULLET]Receive [ICON_CULTURE] Culture, [ICON_RESEARCH] Science, [ICON_GOLD] Gold and [ICON_PEACE] Faith after destroying a city (amount = 10*turn, 1,000 maximum). 
-       			[NEWLINE][ICON_BULLET]When razing a city, for every one population reduction, all combat units located on the city's work plot will have +2 maximum [ICON_SILVER_FIST] HP, and the upper limit of this effect is 150.
+       			[NEWLINE][ICON_BULLET]When razing a city, for every one population reduction, all combat units located on the city's work plot will have +2 maximum [ICON_HP_SP] HP, and the upper limit of this effect is 150.
 			</Text>
 		</Replace>
 
@@ -10667,7 +10666,10 @@
 
 		<Replace Tag="TXT_KEY_TRAIT_LONG_COUNT">
 			<Text>
-				After researching Theology, receive a [ICON_RESEARCH] tech boost each time a scientific building / Wonder is built in the [ICON_CAPITAL] Capital. Also receive a bonus Great Person at the end of every Maya Long Count calendar cycle (every 394 years in game, not true!). Each bonus person can only be chosen once for the first round.</Text>
+				[ICON_BULLET]After researching Theology, receive a [ICON_RESEARCH] tech boost each time a scientific building / Wonder is built in the [ICON_CAPITAL] Capital.
+				[NEWLINE][ICON_BULLET]Receive a bonus Great Person at the end of every Maya Long Count calendar cycle (every 394 years). Each bonus person can only be chosen once for the first round.
+				[NEWLINE][ICON_BULLET]You cannot move your Capital.
+			</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_TRAIT_IGNORE_TERRAIN_IN_FOREST">
@@ -15792,8 +15794,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_WOLFPACK_HELP">
 			<Text>
-				[ICON_BULLET]+1 [ICON_RANGE_STRENGTH] Range(May be extended to 4 [ICON_RANGE_STRENGTH]range).+1 Sights.
+				[ICON_BULLET]+1 [ICON_RANGE_STRENGTH] Range, +1 [ICON_PROMOTION_SIGHT_SP]Sights.
 				[NEWLINE][ICON_BULLET]+50% [ICON_STRENGTH] Combat Strength for both defence and ranged attack.
+				[NEWLINE][ICON_BULLET]+25% [ICON_STRENGTH] Combat Strength for ranged attack each time an enemy is attacked this Turn.
 			</Text>
 		</Row>
 		
@@ -17545,6 +17548,9 @@
 		<Row Tag="TXT_KEY_EUPANEL_EXCESS_HAPINESS_MODIFIER">
 			<Text>Extra Happiness Bonus</Text>
 		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_BONUS_MULTI_ATTACK_BONUS_SP">
+			<Text>Multiple Attack Bonus</Text>
+		</Row>
 		<Row Tag="TXT_KEY_TECH_HELP_PROGRESS_WITH_OVERFLOW">
 			<Text>[ICON_BULLET]Progress: {1_Num} of {2_Num} [ICON_RESEARCH] Science (Overflow: {3_Num})</Text>
 		</Row>
@@ -17630,6 +17636,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_19">
 			<Text>For every Great Works you own, you get 2% global [ICON_CULTURE] Culture and [ICON_TOURISM] Tourism output bonus</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_20">
+			<Text>Buying in bulk from one Player may lead to price hikes, trade with multiple Majors to secure your resources.</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_DIPLOMACY_MARRIAGE_TITLE">
@@ -18119,5 +18128,39 @@
 		<Replace Tag="TXT_KEY_CIV5_FEATURES_KILIMANJARO_HELP">
 			<Text>All units that are next to it receive a combat bonus on Hills for the rest of the game.</Text>
 		</Replace>
+
+		<Row Tag="TXT_KEY_IMPROVEMENT_CAIRN_SP">
+			<Text>Cairn Altar</Text>
+		</Row>
+		<Row Tag="TXT_KEY_IMPROVEMENT_CAIRN_SP_TEXT">
+			<Text>A Cairn Altar refers to a man-made pile of stones. Cairn Altars are found all over the world, distributed across highlands, moors, mountain tops, near waterways, and on sea cliffs, as well as in barren deserts and tundra regions. They vary in size from small stone markers to entire artificial mountains, and in complexity from loose conical piles to delicately balanced sculptures and elaborate megalithic engineering. Cairn Altars may be painted or decorated, for example to increase visibility or for religious reasons.[NEWLINE][NEWLINE]In modern times, Cairn Altars are often used as landmarks, a purpose they have served since ancient times. Since prehistoric times, they have also been built as burial monuments, or for defense, hunting, rituals, astronomy, and other purposes.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_IMPROVEMENT_CAIRN_SP_HELP">
+			<Text>This Improvement provides +1 [ICON_PEACE] Faith, +1 [ICON_GOLDEN_AGE] Golden Age points to the plot. It becomes obsolete after Education and can no longer be built.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_CAIRN_SP">
+			<Text>Cairn Altar</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_CAIRN_SP_HELP">
+			<Text>Build a Cairn Altar to increase the [ICON_PEACE] Faith and [ICON_GOLDEN_AGE] Golden Age points output of the plot.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_CAIRN_SP_REC">
+			<Text>This Improvement can increase the [ICON_PEACE] Faith and [ICON_GOLDEN_AGE] Golden Age points output of the plot.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CAPITAL_ONLY">
+			<Text>Must in [ICON_CAPITAL] Capital</Text>
+		</Row>
+		<Row Tag="TXT_KEY_ORIGINAL_CAPITAL_ONLY">
+			<Text>Must in Original Capital</Text>
+		</Row>
+		<Replace Tag="TXT_KEY_RO_WR_FOUNDER">
+			<Text>Religion Leader</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_RO_STATUS_FOUNDER">
+			<Text>Religion Leader of {1_ReligionName}</Text>
+		</Replace>
+		<Row Tag="TXT_KEY_EUPANEL_CAPTURE_CHANCE_SP">
+			<Text>[COLOR_CYAN]Capture Chance if Sunk[ENDCOLOR]</Text>
+		</Row>
 	</Language_en_US>
 </GameData>

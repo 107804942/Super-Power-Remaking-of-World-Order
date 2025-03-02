@@ -521,11 +521,11 @@ function GetHelpTextForUnit( unitID ) -- isIncludeRequirementsInfo )
 	--new for maxhp:
 	if unit.MaxHitPoints~=nil then
         if HitModifier==0 then
-            maxhp = unit.MaxHitPoints + HitChange
-            insert( tips, L"TXT_KEY_PEDIA_MAXHP_LABEL_SP".. " " .. maxhp .. "[ICON_SILVER_FIST]")
+            local maxhp = unit.MaxHitPoints + HitChange
+            insert( tips, L"TXT_KEY_PEDIA_MAXHP_LABEL_SP".. " " .. maxhp .. "[ICON_HP_SP]")
         else
-            maxhp = ((unit.MaxHitPoints)*HitModifier/100)+ HitChange
-            insert( tips, L"TXT_KEY_PEDIA_MAXHP_LABEL_SP".. " " .. maxhp .. "[ICON_SILVER_FIST]")
+            local maxhp = ((unit.MaxHitPoints)*HitModifier/100)+ HitChange
+            insert( tips, L"TXT_KEY_PEDIA_MAXHP_LABEL_SP".. " " .. maxhp .. "[ICON_HP_SP]")
         end
 	end
 
@@ -537,7 +537,7 @@ function GetHelpTextForUnit( unitID ) -- isIncludeRequirementsInfo )
 
 	--new for Sight:
 	if unitSight > 0 then
-		insert( tips, L"TXT_KEY_PEDIA_SIGHT_LABEL_SP" .. " " .. unitSight .. "[ICON_PROMOTION_SIGHT_1]" )
+		insert( tips, L"TXT_KEY_PEDIA_SIGHT_LABEL_SP" .. " " .. unitSight .. "[ICON_PROMOTION_SIGHT_SP]" )
 	end
 
 	-- new for Abilities:	--TXT_KEY_PEDIA_FREEPROMOTIONS_LABEL
@@ -784,6 +784,12 @@ function GetHelpTextForUnit( unitID ) -- isIncludeRequirementsInfo )
 	-- Required Policies:
 	item = unit.PolicyType and GameInfo.Policies[ unit.PolicyType ]
 	if unit.PolicyType then
+		insert( tips, L"TXT_KEY_PEDIA_PREREQ_POLICY_LABEL" .. " " .. PolicyColor( L(item.Description) ) )
+	end
+
+	-- Required Social Policy:
+	item = unit.PolicyBranchType and GameInfo.PolicyBranchTypes[ unit.PolicyBranchType ]
+	if item then
 		insert( tips, L"TXT_KEY_PEDIA_PREREQ_POLICY_LABEL" .. " " .. PolicyColor( L(item.Description) ) )
 	end
 
@@ -1075,7 +1081,9 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 		EnableAlwaysImmigrantIn = L"TXT_KEY_IMMIGRANT_ALL_SCALE",
 		NoNuclearWinterLocal = L"TXT_KEY_NO_NUCLEAR_WINTER_LOCAL",
 		EnableCrops = L"TXT_KEY_ENABLE_CROPS",
-		EnableArmee = L"TXT_KEY_ENABLE_ARMEE"
+		EnableArmee = L"TXT_KEY_ENABLE_ARMEE",
+		CapitalOnly = L"TXT_KEY_CAPITAL_ONLY",
+		OriginalCapitalOnly = L"TXT_KEY_ORIGINAL_CAPITAL_ONLY"
 	--n	CityWall = "",
 	--n	ArtInfoCulturalVariation = "",
 	--n	ArtInfoEraVariation = "",

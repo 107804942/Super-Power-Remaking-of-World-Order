@@ -16,7 +16,7 @@
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_VERSION">
-			<Text>[COLOR_YELLOW]版本號 10.8[ENDCOLOR]</Text>
+			<Text>[COLOR_YELLOW]版本號 10.9[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MOD_SETUP">
@@ -402,7 +402,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_BABYLON_WATER_PUMP_HELP</Tag>
-			<Text>本城+5%[ICON_FOOD]糧食產出，所有沿河地塊+1[ICON_FOOD]糧食產出。
+			<Text>本城+10%[ICON_FOOD]食物產出，所有沿河地塊+1[ICON_FOOD]食物產出。
 			</Text>
 		</Row>
 
@@ -723,7 +723,7 @@
 		<Replace Tag="TXT_KEY_BUILDING_PAPER_MAKER_HELP">
 			<Text>
 				允許在本國的商路之間輸送[ICON_PRODUCTION]生產力。該建築不會過期。
-				[NEWLINE][NEWLINE]每一座造紙坊使全國範圍內的建築和項目產能花費-2%，這個效果的上限是-30%。
+				[NEWLINE][NEWLINE]每一座造紙坊使全國範圍內的建築和項目產能花費-2%，上限-20%。
 				[NEWLINE][NEWLINE]研發因特網後+2[ICON_TOURISM]旅遊業績。
 			</Text>
 		</Replace>
@@ -761,7 +761,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_ARABIA_ISIAMIC_UNIVERSITY_HELP</Tag>
-			<Text>境內的每7座[ICON_RESEARCH][ICON_CULTURE]伊斯蘭學校為本城（非傀儡）的每座神祠、神廟和[ICON_PEACE]宗教建築+1[ICON_RESEARCH]科技值、+1[ICON_CULTURE]文化值。[NEWLINE]當本城有[ICON_RESEARCH]研發實驗室時，為本城（非傀儡）所有有基礎[ICON_PEACE]信仰值產出的建築+1[ICON_RESEARCH]科技值、+1[ICON_CULTURE]文化值。[NEWLINE][NEWLINE]城市必須擁有學院。</Text>
+			<Text>境內的每7座[ICON_RESEARCH][ICON_CULTURE]伊斯蘭學校為本城（非傀儡）的每座神祠、神廟和[ICON_PEACE]宗教建築+1[ICON_RESEARCH]科技值、+1[ICON_CULTURE]文化值。[NEWLINE]當本城有[ICON_RESEARCH]研發實驗室時，為本城（非傀儡）其他有基礎[ICON_PEACE]信仰值產出的建築+1[ICON_RESEARCH]科技值、+1[ICON_CULTURE]文化值。[NEWLINE][NEWLINE]城市必須擁有學院。</Text>
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_ARABIA_ISIAMIC_UNIVERSITY_ALLAH_AKBAR</Tag>
@@ -860,7 +860,10 @@
 		</Replace>
 
 		<Replace Tag="TXT_KEY_BUILDING_LIGHTHOUSE_HELP">
-			<Text>本城市的每處[ICON_RES_FISH][COLOR_POSITIVE_TEXT]魚群[ENDCOLOR]，[COLOR_POSITIVE_TEXT]海上奢侈資源[ENDCOLOR]和[COLOR_POSITIVE_TEXT]環礁[ENDCOLOR]+1[ICON_PRODUCTION]生產力。[NEWLINE][NEWLINE]城市必須沿海。</Text>
+			<Text>
+				本城市的每處[ICON_RES_FISH][COLOR_POSITIVE_TEXT]魚群[ENDCOLOR]，海上[COLOR_POSITIVE_TEXT]奢侈資源[ENDCOLOR]和[COLOR_POSITIVE_TEXT]環礁[ENDCOLOR]+1[ICON_PRODUCTION]生產力。
+				[NEWLINE][NEWLINE]城市必須沿海。
+			</Text>
 		</Replace>
 
 		<Row>
@@ -870,7 +873,7 @@
 		<Row Tag="TXT_KEY_BUILDING_PORTUGAL_PORT_HELP">
 			<Text>
 				[ICON_BULLET]本城擁有的海上[COLOR_POSITIVE_TEXT]奢侈資源[ENDCOLOR]+1[ICON_GOLD]金錢。
-				[NEWLINE][ICON_BULLET]本城擁有的海上[COLOR_POSITIVE_TEXT]奢侈資源[ENDCOLOR]和[COLOR_POSITIVE_TEXT]環礁[ENDCOLOR]+1[ICON_PRODUCTION]產能。
+				[NEWLINE][ICON_BULLET]本城市的每處[ICON_RES_FISH][COLOR_POSITIVE_TEXT]魚群[ENDCOLOR]，海上[COLOR_POSITIVE_TEXT]奢侈資源[ENDCOLOR]和[COLOR_POSITIVE_TEXT]環礁[ENDCOLOR]+1[ICON_PRODUCTION]產能。
 				[NEWLINE][ICON_BULLET]國際商船經過擁有商站的城市地塊時，獲得[ICON_GOLD]金錢。
 				[NEWLINE][NEWLINE]城市必須沿海。
 			</Text>
@@ -3838,7 +3841,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_3DPRINTING_HELP</Tag>
-			<Text>本城市每個[ICON_CITIZEN]市民+1[ICON_GOLD]金幣產出。[NEWLINE][NEWLINE]消耗3單位[ICON_RES_ELECTRICITY]電力。[NEWLINE][NEWLINE]只能在巨型城市（60人口）建造。</Text>
+			<Text>本城市每個[ICON_CITIZEN]市民+1[ICON_GOLD]金幣產出。[NEWLINE][NEWLINE]消耗2單位[ICON_RES_ELECTRICITY]電力。[NEWLINE][NEWLINE]只能在巨型城市（60人口）建造。</Text>
 		</Row>
 
 		<Row>
@@ -5615,7 +5618,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_TOKYO_RAID">
 			<Text>移除所有企业号的舰载机使她成为陆基飞机母舰（大黄蜂号），这样做以后直到下回合都不能使用传奇航母加成。
-				[NEWLINE]大黄蜂号不能自动补充舰载机，即使有空位。
+				[NEWLINE]大黄蜂号不能补充舰载机，即使有空位。
 				[NEWLINE]大黄蜂号保留所有企业号的晋升，但这些晋升不能传递给陆基飞机。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_TOKYO_RAID_CANCEL_SHORT">
@@ -5625,7 +5628,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_TOKYO_RAID_CANCEL">
 			<Text>移除所有大黄蜂号的舰载机使她恢复为企业号，这样做以后直到下回合都不能使用传奇航母加成。
-				[NEWLINE]企业号像往常一样能自动补充舰载机并传递晋升给他们。</Text>
+				[NEWLINE]企业号像往常一样能补充舰载机并传递晋升给他们。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_BTNNOTE_GLOBAL_STRIKE_SHORT">
@@ -5820,8 +5823,9 @@
 
 		<Replace Tag="TXT_KEY_TRAIT_VIKING_FURY">
 			<Text>
-				[ICON_BULLET]所有陸軍近戰單位和海軍近戰單位劫掠均不消耗[ICON_MOVES]移動力，並具有攻城時將對城市造成傷害的200%數值轉化為[ICON_GOLD]金錢的能力。
+				[ICON_BULLET]近戰單位劫掠不消耗[ICON_MOVES]移動力，攻城時其對城市傷害的200%轉化為[ICON_GOLD]金錢。
 				[NEWLINE][ICON_BULLET]攻占城市或攻占營寨獲得2倍的[ICON_GOLD]金錢。
+				[NEWLINE][ICON_BULLET]單位登陸僅消耗1[ICON_MOVES]移動力。
 				[NEWLINE][ICON_BULLET]每處海上設施+1[ICON_CULTURE]文化產出。
 			</Text>
 		</Replace>
@@ -5845,7 +5849,7 @@
 			<Text>
 				[ICON_BULLET]擊敗蠻族營寨中的單位會加入匈人軍隊，城市名從其他文明借用。
 				[NEWLINE][ICON_BULLET]夷平城市後獲得當前回合數*10的[ICON_GOLD][ICON_RESEARCH][ICON_CULTURE][ICON_PEACE]一次性產出，上限1000點。
-				[NEWLINE][ICON_BULLET]夷平城市時，每減少一人口，所有位於該城市工作地塊上的戰鬥單位+2最大[ICON_SILVER_FIST]生命值，上限150。
+				[NEWLINE][ICON_BULLET]夷平城市時，每減少一人口，所有位於該城市工作地塊上的戰鬥單位+2最大[ICON_HP_SP]生命值，上限150。
 			</Text>
 		</Replace>
 
@@ -6005,8 +6009,9 @@
 
 		<Replace Tag="TXT_KEY_TRAIT_LONG_COUNT">
 			<Text>
-				[ICON_BULLET]若你已研發神學科技，啟用每個長紀歷，首都每次完成科研建築時獲得一次性科研獎勵
-				[NEWLINE][ICON_BULLET]啟用長紀歷後，每個長紀歷(394年，遊戲需要!這不是真實的周期時長!)周期獲得一位自選偉人，首輪每種偉人僅能選擇一次。
+				[ICON_BULLET]研發神學科技後啟用長紀歷，首都每次完成科研建築時獲得一次性[ICON_RESEARCH]科研獎勵
+				[NEWLINE][ICON_BULLET]每個長紀歷(394年)周期獲得一位自選偉人，首輪每種偉人僅能選擇一次。
+				[NEWLINE][ICON_BULLET]你不能進行遷都。
 			</Text>
 		</Replace>
 
@@ -7149,8 +7154,8 @@
 		<Replace Tag="TXT_KEY_POLICY_NAVIGATION_SCHOOL_HELP">
 			<Text>
 				[COLOR_POSITIVE_TEXT]航海學校[ENDCOLOR]
-				[NEWLINE][ICON_BULLET]每處燈塔、港口、海運碼頭和船塢+1本地[ICON_HAPPINESS_1]快樂。建造海上單位時+15%[ICON_PRODUCTION]產能積累。
-				[NEWLINE][ICON_BULLET]新訓練的海軍單位+15點經驗。
+				[NEWLINE][ICON_BULLET]每處燈塔、港口、海運碼頭和船塢+1本地[ICON_HAPPINESS_1]快樂。
+				[NEWLINE][ICON_BULLET]建造海上單位時+15%[ICON_PRODUCTION]產能積累，新訓練的海軍單位+15點經驗。
 				[NEWLINE][ICON_BULLET]當你訓練或購買了一個遠洋海軍單位時，獲得一次性的[ICON_CULTURE]文化加成(其數值相當於單位的100%[ICON_STRENGTH]戰鬥力)。
 			</Text>
 		</Replace>
@@ -8274,7 +8279,7 @@
 			<Text>文廟私塾</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BELIEF_SCIENCE_RELIGION">
-			<Text>每個信徒增加本城+1%[ICON_RESEARCH]科研產出(最大+30%)</Text>
+			<Text>每個信徒增加本城+2%[ICON_RESEARCH]科研產出(最大+30%)</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_EXTRA_RELIGION_SPREADS_2">
@@ -13614,7 +13619,11 @@
 			<Text>狼群戰術</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_WOLFPACK_HELP">
-			<Text>+1[ICON_RANGE_STRENGTH]射程；[NEWLINE]+50%[ICON_STRENGTH]防禦力和遠程戰鬥力。</Text>
+			<Text>
+				[ICON_BULLET]+1[ICON_RANGE_STRENGTH]射程，+1[ICON_PROMOTION_SIGHT_SP]視野。
+				[NEWLINE][ICON_BULLET]+50%[ICON_STRENGTH]防禦力和遠程戰鬥力。
+				[NEWLINE][ICON_BULLET]回合內敵軍每遭受一次攻擊，對其+25%攻擊力。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SP_ATTACK_25">
@@ -13849,10 +13858,10 @@
 		<Row Tag="TXT_KEY_PROMOTION_TOKYO_RAID_HELP">
 			<Text>可以转为陆基飞机载体（大黄蜂号）或者反过来
 				[NEWLINE]移除所有企业号的舰载机使她成为陆基飞机母舰（大黄蜂号），这样做以后直到下回合都不能使用传奇航母加成。
-				[NEWLINE]大黄蜂号不能自动补充舰载机，即使有空位。
+				[NEWLINE]大黄蜂号不能补充舰载机，即使有空位。
 				[NEWLINE]大黄蜂号保留所有企业号的晋升，但这些晋升不能传递给陆基飞机。
 				[NEWLINE]移除所有大黄蜂号的舰载机使她恢复为企业号，这样做以后直到下回合都不能使用传奇航母加成。
-				[NEWLINE]企业号像往常一样能自动补充舰载机并传递晋升给他们。
+				[NEWLINE]企业号像往常一样能补充舰载机并传递晋升给他们。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_NO_LUCK">
@@ -14824,7 +14833,7 @@
 			<Text>
 				[ICON_BULLET]獲得兩個傳教士，所有城市獲得免費神廟。
 				[NEWLINE][ICON_BULLET]本城新建陸軍單位+15經驗。
-				[NEWLINE][ICON_BULLET]允許使用信仰購買美洲獅戰士和雄鷹戰士。
+				[NEWLINE][ICON_BULLET]允許使用信仰購買美洲虎戰士和雄鷹戰士。
 				[NEWLINE][ICON_BULLET]可將陸軍正規軍單位移至本城進行活人獻祭，獲得相當於軍事單位戰鬥力300%的[ICON_CULTURE]文化和[ICON_PEACE]信仰。
 				該單位有20%的概率存活，並且獲得晉升【戰神齊洛波奇特利之力】，+50生命值上限，戰鬥力+10%。
 			</Text>
@@ -15383,7 +15392,7 @@
 				[NEWLINE][NEWLINE]這裏是Super Power超級大國模組，關於本模組更多[COLOR_POSITIVE_TEXT]拓展內容[ENDCOLOR]以及[COLOR_POSITIVE_TEXT]最新消息[ENDCOLOR]，請：
 				[NEWLINE][ICON_BULLET]關註百度貼吧：文明5超級大國模組吧
 				[NEWLINE][ICON_BULLET]關註GitHub頁面：github.com/Apeiria01/Super-Power-Remaking-of-World-Order
-				[NEWLINE][ICON_BULLET]加入SP模組的QQ群563095872、水群529905723
+				[NEWLINE][ICON_BULLET]加入SP模組的QQ群563095872、877781041、375879076(空位较多)
 				[NEWLINE][ICON_BULLET]收藏超級大國QQ群發布頁面qingyin3545.github.io/Super-Power-Page
 				[NEWLINE][ICON_BULLET]Steam頁面steamcommunity.com/sharedfiles/filedetails/?id=2904685641
 			</Text>
@@ -15685,6 +15694,9 @@
 		<Row Tag="TXT_KEY_EUPANEL_EXCESS_HAPINESS_MODIFIER">
 			<Text>額外快樂度加成</Text>
 		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_BONUS_MULTI_ATTACK_BONUS_SP">
+			<Text>多重攻擊加成</Text>
+		</Row>
 		<Row Tag="TXT_KEY_TECH_HELP_PROGRESS_WITH_OVERFLOW">
 			<Text>[ICON_BULLET]進度: {1_Num}/{2_Num}[ICON_RESEARCH]科研（溢出：{3_Num}）</Text>
 		</Row>
@@ -15770,6 +15782,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_19">
 			<Text>每擁有一個傑作，你可以獲得2%的全局[ICON_CULTURE]文化和[ICON_TOURISM]魅力加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_20">
+			<Text>向同一個AI購買大量資源後對方會坐地起價，請和多個AI交易保證自己的資源安全。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_DIPLOMACY_MARRIAGE_TITLE">
@@ -16262,5 +16277,39 @@
 		<Replace Tag="TXT_KEY_CIV5_FEATURES_KILIMANJARO_HELP">
 			<Text>與其鄰接的所有單位在之後的遊戲中可獲得在丘陵的上戰鬥加成。</Text>
 		</Replace>
+
+		<Row Tag="TXT_KEY_IMPROVEMENT_CAIRN_SP">
+			<Text>石祭壇</Text>
+		</Row>
+		<Row Tag="TXT_KEY_IMPROVEMENT_CAIRN_SP_TEXT">
+			<Text>石祭壇指的是人造的石堆。石祭壇遍布世界各地，分布在高地、高沼地、山頂、水路附近和海上懸崖，也在貧瘠的沙漠和苔原地區。它們大小不壹，從小的石頭標記到整個人造山，復雜程度從松散的圓錐形石堆到微妙平衡的雕塑和精心制作的巨石工程。石祭壇可能被粉刷或裝飾，例如為了增加能見度或出於宗教原因。[NEWLINE][NEWLINE]在現代，石祭壇經常作為地標，自古以來就有這種用途。從史前開始，它們也被建造為墳墓紀念碑，或用於防禦、狩獵、儀式、天文和其他目的。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_IMPROVEMENT_CAIRN_SP_HELP">
+			<Text>該改良設施為所建成地塊提供1[ICON_PEACE]信仰、1[ICON_GOLDEN_AGE]黃金時代點數。教育學後過時，無法再建造。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_CAIRN_SP">
+			<Text>石祭壇</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_CAIRN_SP_HELP">
+			<Text>建造一個石祭壇，提高地塊的[ICON_PEACE]信仰、[ICON_GOLDEN_AGE]黃金時代點數產出。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_CAIRN_SP_REC">
+			<Text>該改良設施可以增加地塊的[ICON_PEACE]信仰、[ICON_GOLDEN_AGE]黃金時代點數產出。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CAPITAL_ONLY">
+			<Text>只能在[ICON_CAPITAL]首都建造</Text>
+		</Row>
+		<Row Tag="TXT_KEY_ORIGINAL_CAPITAL_ONLY">
+			<Text>只能在原始首都城市建造</Text>
+		</Row>
+		<Replace Tag="TXT_KEY_RO_WR_FOUNDER">
+			<Text>宗教領袖</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_RO_STATUS_FOUNDER">
+			<Text>{1_ReligionName}宗教領袖</Text>
+		</Replace>
+		<Row Tag="TXT_KEY_EUPANEL_CAPTURE_CHANCE_SP">
+			<Text>[COLOR_CYAN]擊沉後的俘虜幾率[ENDCOLOR]</Text>
+		</Row>
 	</Language_zh_Hant_HK>
 </GameData>

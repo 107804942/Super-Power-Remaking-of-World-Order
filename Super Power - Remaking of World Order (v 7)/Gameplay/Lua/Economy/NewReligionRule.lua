@@ -10,13 +10,9 @@ function SPReformeBeliefs(iPlayer, iReligion, iBelief)
 
 	local pPlayer  = Players[iPlayer];
 	local holyCity = Game.GetHolyCityForReligion(iReligion, iPlayer);
-	if GameInfo.Beliefs[iBelief].Type == "BELIEF_UNITY_OF_PROPHETS" then
-		local iProphetID = GameInfoTypes.UNIT_PROPHET;
-		local overrideUnit = GameInfo.Civilization_UnitClassOverrides { UnitClassType = "UNITCLASS_PROPHET", CivilizationType =
-		GameInfo.Civilizations[pPlayer:GetCivilizationType()].Type } ();
-		if overrideUnit and overrideUnit.UnitType then
-			iProphetID = GameInfoTypes[overrideUnit.UnitType];
-		end
+	if iBelief == GameInfoTypes["BELIEF_UNITY_OF_PROPHETS"] then
+		local iProphetID = pPlayer:GetCivUnit(GameInfoTypes.UNITCLASS_PROPHET);
+        if iProphetID < 0 then return end
 		pPlayer:InitUnit(iProphetID, holyCity:GetX(), holyCity:GetY(), UNITAI_PROPHET)
 	end
 end
@@ -26,7 +22,7 @@ GameEvents.ReligionReformed.Add(SPReformeBeliefs)
 function SPEReligionAdopt(pPlayer,iBelief,pHolyCity)
     if iBelief == -1 then return end
     --Founded
-    if iBelief == GameInfo.Beliefs["BELIEF_RELIGIOUS_COLONIZATION"].ID then
+    if iBelief == GameInfoTypes["BELIEF_RELIGIOUS_COLONIZATION"] then
 		if pPlayer:HasPolicy(policyCollectionRuleID) 
         and not pPlayer:IsPolicyBlocked(policyCollectionRuleID)
         then
@@ -38,13 +34,13 @@ function SPEReligionAdopt(pPlayer,iBelief,pHolyCity)
         end
 
     --Enhanced
-    elseif iBelief == GameInfo.Beliefs["BELIEF_MISSIONARY_ZEAL"].ID
+    elseif iBelief == GameInfoTypes["BELIEF_MISSIONARY_ZEAL"]
     and pPlayer:GetID() == pHolyCity:GetOwner()
 	then
 		print("Choose BELIEF_MISSIONARY_ZEAL")
 		pHolyCity:SetNumRealBuilding(GameInfoTypes.BUILDING_EXTRA_RELIGION_SPREADS_2,1)
     
-    elseif iBelief == GameInfo.Beliefs["BELIEF_RELIGIOUS_TEXTS"].ID
+    elseif iBelief == GameInfoTypes["BELIEF_RELIGIOUS_TEXTS"]
     and pPlayer:GetID() == pHolyCity:GetOwner()
 	then
 		print("Choose BELIEF_RELIGIOUS_TEXTS")
@@ -98,6 +94,33 @@ function SPNReligionReformed(iPlayer, iReligion, iBelief1)
 
 end
 GameEvents.ReligionReformed.Add(SPNReligionReformed) 
+
+function OnHolyCityRegain(pCity, pPlayer)
+    local iOwnerReligion = pPlayer:GetReligionCreatedByPlayer()
+	if pCity:IsHolyCityForReligion(iOwnerReligion)
+    then
+		for i, iBelief in ipairs(Game.GetBeliefsInReligion(iOwnerReligion)) do
+			if iBelief == GameInfoTypes["BELIEF_MISSIONARY_ZEAL"] then
+				print("Player has BELIEF_MISSIONARY_ZEAL and take back the Holy City")
+				pCity:SetNumRealBuilding(GameInfoTypes.BUILDING_EXTRA_RELIGION_SPREADS_2,1)
+
+            elseif iBelief == GameInfoTypes["BELIEF_RELIGIOUS_TEXTS"] then
+				print("Player has BELIEF_RELIGIOUS_TEXTS and take back the Holy City")
+				pCity:SetNumRealBuilding(GameInfoTypes.BUILDING_BELIEF_RELIGIOUS_TEXTS,1)
+
+            elseif iBelief == GameInfoTypes["BELIEF_RELIGIOUS_COLONIZATION"] then
+				print("Player has BELIEF_RELIGIOUS_COLONIZATION and take back the Holy City")
+                if pPlayer:HasPolicy(policyCollectionRuleID) 
+                and not pPlayer:IsPolicyBlocked(policyCollectionRuleID)
+                then
+                    pCity:SetNumRealBuilding(GameInfoTypes.BUILDING_BELIEF_RELIGIOUS_COLONIZATION_2,1)
+                else
+                    pCity:SetNumRealBuilding(GameInfoTypes.BUILDING_BELIEF_RELIGIOUS_COLONIZATION,1)
+                end
+			end
+		end
+	end
+end
 
 local spn_Religions_Table = {}
 local spn_Religions_Count = 1
@@ -166,35 +189,17 @@ function SPNReligionConquestedHolyCity(oldOwnerID, isCapital, cityX, cityY, newO
     end
 
 	--Player take back the Holy City
-	if newOwnerID == pCity:GetOriginalOwner() 
-    and pCity:IsHolyCityAnyReligion()
-    then
-		local pReligion = newOwnerPlayer:GetReligionCreatedByPlayer()
-		for i,v in ipairs(Game.GetBeliefsInReligion(pReligion)) do
-			if GameInfo.Beliefs[v].Type == "BELIEF_MISSIONARY_ZEAL" then
-				print("Player has BELIEF_MISSIONARY_ZEAL and take back the Holy City")
-				pCity:SetNumRealBuilding(GameInfoTypes.BUILDING_EXTRA_RELIGION_SPREADS_2,1)
-
-            elseif GameInfo.Beliefs[v].Type == "BELIEF_RELIGIOUS_TEXTS" then
-				print("Player has BELIEF_RELIGIOUS_TEXTS and take back the Holy City")
-				pCity:SetNumRealBuilding(GameInfoTypes.BUILDING_BELIEF_RELIGIOUS_TEXTS,1)
-
-            elseif GameInfo.Beliefs[v].Type == "BELIEF_RELIGIOUS_COLONIZATION" then
-				print("Player has BELIEF_RELIGIOUS_COLONIZATION and take back the Holy City")
-                if newOwnerPlayer:HasPolicy(policyCollectionRuleID) 
-                and not newOwnerPlayer:IsPolicyBlocked(policyCollectionRuleID)
-                then
-                    pCity:SetNumRealBuilding(GameInfoTypes.BUILDING_BELIEF_RELIGIOUS_COLONIZATION_2,1)
-                else
-                    pCity:SetNumRealBuilding(GameInfoTypes.BUILDING_BELIEF_RELIGIOUS_COLONIZATION,1)
-                end
-			end
-		end
-	end
-
+    OnHolyCityRegain(pCity, newOwnerPlayer)
 end
-GameEvents.CityCaptureComplete.Add(SPNReligionConquestedHolyCity) 
-
+GameEvents.CityCaptureComplete.Add(SPNReligionConquestedHolyCity)
+function SPTOnReligionFounderChanged(iOldFounder, iCity, iNewFounder, iReligion, bIsRegain)
+    local pPlayer = Players[iNewFounder]
+    if not pPlayer or not pPlayer:IsMajorCiv() then return end
+    local pCity = pPlayer:GetCityByID(iCity)
+    if not pCity then return end
+    OnHolyCityRegain(pCity, pPlayer)
+end
+GameEvents.ReligionFounderChanged.Add(SPTOnReligionFounderChanged)
 function SPNReligionUnitCreatedOutputBonus(iPlayer, iUnit, iUnitType, iPlotX, iPlotY)
 	if iPlayer == -1 or not Players[iPlayer]:HasCreatedReligion() then
 		return
@@ -259,8 +264,8 @@ function SPNReligionBlockPolicyBranch(iPlayer,iPolicyBranch,isBlock)
 	if not pPlayer:IsMajorCiv() then
         return
     end
-	if (iPolicyBranch == GameInfo.PolicyBranchTypes["POLICY_BRANCH_LIBERTY"].ID
-	or iPolicyBranch == GameInfo.PolicyBranchTypes["POLICY_BRANCH_TRADITION"].ID)
+	if (iPolicyBranch == GameInfoTypes["POLICY_BRANCH_LIBERTY"]
+	or iPolicyBranch == GameInfoTypes["POLICY_BRANCH_TRADITION"])
     and isBlock
 	then
         local eReligion = pPlayer:GetReligionCreatedByPlayer()

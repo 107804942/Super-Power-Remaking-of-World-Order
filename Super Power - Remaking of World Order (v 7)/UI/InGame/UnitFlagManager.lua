@@ -451,6 +451,21 @@ local g_UnitFlagClass         =
     end,
     ------------------------------------------------------------------
     ------------------------------------------------------------------
+    UpdateUnitType = function(self)
+        local pUnit = Players[self.m_PlayerID]:GetUnitByID(self.m_UnitID);
+        if pUnit == nil then
+            return;
+        end
+        if pUnit:GetUnitCombatType() == GameInfoTypes.UNITCOMBAT_RECON then
+            self.m_SPUnitType = 0;
+        elseif pUnit:GetBaseCombatStrength() > 0 and not pUnit:IsCargo() and pUnit:IsImmobile() then
+            self.m_SPUnitType = 1;
+        else
+            self.m_SPUnitType = -1;
+        end
+    end,
+    ------------------------------------------------------------------
+    ------------------------------------------------------------------
     UpdateFlagType = function(self)
         local textureName;
         local maskName;
@@ -1079,7 +1094,7 @@ function OnUnitMoveQueueChanged(playerID, unitID, bRemainingMoves)
             if flag.m_Escort ~= pPlot then
                 -- Moved Citadel Unit will be destroyed!
                 if flag.m_SPUnitType == 1 then
-                    thisUnit:Kill();
+                    --thisUnit:Kill();
                     return;
                 end
                 flag.m_Escort = pPlot;
@@ -1585,6 +1600,12 @@ function OnDimEvent(playerID, unitID, bDim)
             if pUnit:IsMustSetUpToRangedAttack() then
                 flag:UpdateFlagType();
             end
+            if (flag.m_SPUnitType == 1 and not pUnit:IsImmobile())
+            or (pUnit:IsImmobile() and flag.m_SPUnitType ~= 1)
+            then
+                flag:UpdateUnitType();
+                flag:UpdateFlagType();
+            end
         end
     end
 end
@@ -2007,6 +2028,7 @@ function TipHandler(Button)
 
 
         local hp = unit:GetMaxHitPoints();
+        local sight = unit:VisibilityRange();
 
 
         if unit:GetDomainType() == DomainTypes.DOMAIN_AIR then
@@ -2016,55 +2038,55 @@ function TipHandler(Button)
         else
             unitMoves = unit:MovesLeft() / GameDefines.MOVE_DENOMINATOR
         end
+        
+        -- Moves
+        if unitMoves > 0 then
+            toolTipString = string.format("%s %.3g[ICON_MOVES]", toolTipString, unitMoves)
+        end
 
-        -- In Orbit?
-        if unit.IsInOrbit and unit:IsInOrbit() then
-            toolTipString = toolTipString ..
-                " " .. "[COLOR_CYAN]" .. Locale.ConvertTextKey("TXT_KEY_PLOTROLL_ORBITING") .. "[ENDCOLOR]"
-        else
-            -- Moves
-            if unitMoves > 0 then
-                toolTipString = string.format("%s %.3g[ICON_MOVES]", toolTipString, unitMoves)
+        ---------------- Strength----------------
+        if unitStrength > 0 then
+            local adjustedUnitStrength = (math.max(100 + unit:GetStrategicResourceCombatPenalty(), 10) * unitStrength) /
+                100
+            --todo other modifiers eg unhappy...
+            if adjustedUnitStrength < unitStrength then
+                adjustedUnitStrength = " [COLOR_NEGATIVE_TEXT]" .. adjustedUnitStrength .. "[ENDCOLOR]"
             end
+            toolTipString = toolTipString .. " " .. adjustedUnitStrength .. "[ICON_STRENGTH]"
+        end
 
-            ---------------- Strength----------------
-            if unitStrength > 0 then
-                local adjustedUnitStrength = (math.max(100 + unit:GetStrategicResourceCombatPenalty(), 10) * unitStrength) /
-                    100
-                --todo other modifiers eg unhappy...
-                if adjustedUnitStrength < unitStrength then
-                    adjustedUnitStrength = " [COLOR_NEGATIVE_TEXT]" .. adjustedUnitStrength .. "[ENDCOLOR]"
+
+        -- Ranged Strength
+        if rangedStrength > 0 then
+            toolTipString = toolTipString .. " " .. rangedStrength .. "[ICON_RANGE_STRENGTH]" .. unit:Range() .. " "
+        end
+        
+
+        -- Religious Fervor
+        if unit.GetReligion then
+            local religionID = unit:GetReligion()
+            if religionID > 0 then
+                local spreadsLeft = unit:GetSpreadsLeft()
+                toolTipString = toolTipString .. " "
+                if spreadsLeft > 0 then
+                    toolTipString = toolTipString .. spreadsLeft
                 end
-                toolTipString = toolTipString .. " " .. adjustedUnitStrength .. "[ICON_STRENGTH]"
+                toolTipString = toolTipString ..
+                    ((GameInfo.Religions[religionID] or {}).IconString or "?") ..
+                    Locale.ConvertTextKey(Game.GetReligionName(religionID))
             end
+        end
 
+        -- Hit Points
+        ---if unit:GetDamage() > 0 then
+        if not unit:IsTrade() then
+            hp = unit:GetCurrHitPoints() .. "/" .. hp
+        end
+        toolTipString = toolTipString .. "[NEWLINE]" .. hp .. "[ICON_HP_SP]"
 
-            -- Ranged Strength
-            if rangedStrength > 0 then
-                toolTipString = toolTipString .. " " .. rangedStrength .. "[ICON_RANGE_STRENGTH]" .. unit:Range() .. " "
-            end
-
-            -- Religious Fervor
-            if unit.GetReligion then
-                local religionID = unit:GetReligion()
-                if religionID > 0 then
-                    local spreadsLeft = unit:GetSpreadsLeft()
-                    toolTipString = toolTipString .. " "
-                    if spreadsLeft > 0 then
-                        toolTipString = toolTipString .. spreadsLeft
-                    end
-                    toolTipString = toolTipString ..
-                        ((GameInfo.Religions[religionID] or {}).IconString or "?") ..
-                        Locale.ConvertTextKey(Game.GetReligionName(religionID))
-                end
-            end
-
-            -- Hit Points
-            ---if unit:GetDamage() > 0 then
-            if not unit:IsTrade() then
-                hp = unit:GetCurrHitPoints() .. "/" .. hp
-            end
-            toolTipString = toolTipString .. " " .. hp .. "[ICON_HP]"
+        -- sight
+        if sight > 0 then
+            toolTipString = toolTipString .. " " .. sight .. "[ICON_PROMOTION_SIGHT_SP]"
         end
 
         -- Embarked?
