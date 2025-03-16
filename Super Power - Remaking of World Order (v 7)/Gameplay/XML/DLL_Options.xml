@@ -274,11 +274,6 @@
 		</Update>
 
 		<Update>
-			<Where Name="SP_SMART_AI"/>
-			<Set Value="1"/>
-		</Update>
-
-		<Update>
 			<Where Name="UNITS_LOCAL_WORKERS"/>
 			<Set Value="1"/>
 		</Update>
@@ -383,6 +378,10 @@
 			<Where Name="GLOBAL_HOLY_CITY_FOUNDER_CHANGE"/>
 			<Set Value="1"/>
 		</Update>
+		<Update>
+			<Where Name="CITY_NO_DECAY"/>
+			<Set Value="1"/>
+		</Update>
 	</CustomModOptions>
 
 
@@ -398,6 +397,14 @@
 	<!--********************************* Smart AI ***********************************-->
 		<Update>
 			<Where Name="AI_SMART_V3"/>
+			<Set Value="1"/>
+		</Update>
+		<Update>
+			<Where Name="SP_SMART_AI"/>
+			<Set Value="1"/>
+		</Update>
+		<Update>
+			<Where Name="SP_FASTER_AI"/>
 			<Set Value="1"/>
 		</Update>
 		

@@ -16,7 +16,7 @@
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_VERSION">
-			<Text>[COLOR_YELLOW]Version 10.9[ENDCOLOR]</Text>
+			<Text>[COLOR_YELLOW]Version 10.92[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MOD_SETUP">
@@ -5915,14 +5915,14 @@
 			<Text>[ICON_RES_ELECTRICITY] Coal Plant Additional Unit</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BUILDING_COAL_PLANT_EXTEND_HELP">
-			<Text> [COLOR_NEGATIVE_TEXT]Pollution[ENDCOLOR] will cause -3% [ICON_FOOD] Food Growth.[NEWLINE][NEWLINE]City must have a Coal Plant.</Text>
+			<Text>[COLOR_NEGATIVE_TEXT]Pollution[ENDCOLOR] will cause -2% [ICON_FOOD] Food Growth.[NEWLINE][NEWLINE]City must have a Coal Plant.</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_BUILDING_COAL_PLANT_EXTEND_IZ">
 			<Text>[ICON_RES_ELECTRICITY] Coal Plant Additional Unit II</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BUILDING_COAL_PLANT_EXTEND_IZ_HELP">
-			<Text>Unlock when you own the Ruhr Industrial Base, City must have a Coal Plant Additional Unit.</Text>
+			<Text>[COLOR_NEGATIVE_TEXT]Pollution[ENDCOLOR] will cause -2% [ICON_FOOD] Food Growth.[NEWLINE][NEWLINE]Unlock when you own the Ruhr Industrial Base, City must have a Coal Plant Additional Unit.</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_BUILDING_DANISH_WIND_TURBINE">
@@ -6135,7 +6135,7 @@
 		<Row Tag="TXT_KEY_BUILDING_TAP_WATER_SUPPLY_HELP">
 			<Text>
 				[ICON_BULLET]+1 [ICON_FOOD] Food for worked lake tiles. 
-				[NEWLINE][ICON_BULLET]40% of [ICON_FOOD] Food is carried over after a new [ICON_CITIZEN] Citizen is born.
+				[NEWLINE][ICON_BULLET]30% of [ICON_FOOD] Food is carried over after a new [ICON_CITIZEN] Citizen is born.
 				[NEWLINE][ICON_BULLET]Must be built in Small Cities.
 				[NEWLINE][ICON_BULLET][COLOR_YELLOW]Public Health and Sanitary Service Buildings[ENDCOLOR] for Large Cities to continue its [ICON_CITIZEN] Population Growth.
 				[NEWLINE][ICON_BULLET]Pay extra 1 [ICON_GOLD] Gold for every 5 [ICON_CITIZEN] Citizen.
@@ -6440,7 +6440,7 @@
 
 		<Replace Tag="TXT_KEY_BUILDING_HOSPITAL_HELP">
 			<Text>
-				Reduces the [ICON_FOOD] Food Growth loss due to the Pollution by 25%.
+				Reduces the [ICON_FOOD] Food Growth loss due to the Pollution by 25% (cannot exceed 0%).
 				[NEWLINE][NEWLINE]Must be built in Medium Cities.
 				[NEWLINE][NEWLINE][COLOR_YELLOW]Public Health and Sanitary Service Buildings[ENDCOLOR] for Large Cities to continue its [ICON_CITIZEN] Population Growth.
 				[NEWLINE][NEWLINE]Pay extra 1 [ICON_GOLD] Gold for every 4 [ICON_CITIZEN] Citizen.
@@ -6792,7 +6792,7 @@
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_MEDICAL_LAB_HELP">
 			<Text>
-				Reduces the [ICON_FOOD] Food Growth loss due to the Pollution by 25%.
+				Reduces the [ICON_FOOD] Food Growth loss due to the Pollution by 25% (cannot exceed 0%).
 				[NEWLINE][NEWLINE]Must be built in XL Cities.
 				[NEWLINE][NEWLINE][COLOR_YELLOW]Public Health and Sanitary Service Buildings[ENDCOLOR] for XXL Cities to continue its [ICON_CITIZEN] Population Growth.
 				[NEWLINE][NEWLINE]Pay extra 1 [ICON_GOLD] Gold for every 4 [ICON_CITIZEN] Citizen.
@@ -7416,6 +7416,7 @@
 			<Text>
 				[COLOR_POSITIVE_TEXT]Legalism[ENDCOLOR]
 				[NEWLINE][ICON_BULLET]+1 [ICON_HAPPINESS_1] Hapiness for every 5 [ICON_CITIZEN] Citizens in cities directly under the central government.
+				[NEWLINE][ICON_BULLET]The increase in construction cost for National Wonders due to the number of cities is reduced by 33%.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_OLIGARCHY_HELP" >
@@ -8320,8 +8321,9 @@
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_ACADEMY_SCIENCES_HELP" >
 			<Text>
-			[COLOR_POSITIVE_TEXT]Scientific Socialism[ENDCOLOR]
-			[NEWLINE]+50% Tourism [ICON_TOURISM] to other Ideology Civilizations, +25% Tourism [ICON_TOURISM] to other Order civilizations.
+				[COLOR_POSITIVE_TEXT]Scientific Socialism[ENDCOLOR]
+				[NEWLINE]+33% [ICON_GOLD] Gold and [ICON_PRODUCTION] Production output in [COLOR_POSITIVE_TEXT]Puppet[ENDCOLOR] cities.
+				[NEWLINE][COLOR_POSITIVE_TEXT]Max number[ENDCOLOR] of items a city can complete per Turn +1 (items need to be added to the production queue).
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_ACADEMY_SCIENCES_TEXT">
@@ -8350,7 +8352,11 @@
 			<Text>Internationalism</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP" >
-			<Text>[COLOR_POSITIVE_TEXT]Internationalism[ENDCOLOR][NEWLINE]-50% [ICON_TEAM_2] International Immigration Rate from Your Nation to other civlizations. +33% [ICON_GOLD] Gold and [ICON_PRODUCTION] Production output in [COLOR_POSITIVE_TEXT]Puppet[ENDCOLOR] cities. Counteract the [ICON_HAPPINESS_4] Unhappiness from Public Opinion in your Civilization, and double [ICON_HAPPINESS_4] public opinion pressure for other ideological civilizations.</Text>
+			<Text>
+				[COLOR_POSITIVE_TEXT]Internationalism[ENDCOLOR]
+				[NEWLINE]-50% [ICON_TEAM_2] International Immigration Rate from Your Nation to other civlizations. Counteract the [ICON_HAPPINESS_4] Unhappiness from Public Opinion in your Civilization, and double [ICON_HAPPINESS_4] public opinion pressure for other ideological civilizations.
+				[NEWLINE]+50% Tourism [ICON_TOURISM] to other Ideology Civilizations, +25% Tourism [ICON_TOURISM] to other Order civilizations.
+			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_IRON_CURTAIN_TEXT" >
 			<Text>Internationalism is a political principle that advocates greater political or economic cooperation among states and nations. It is associated with other political movements and ideologies, but can also reflect a doctrine, belief system, or movement in itself. [NEWLINE]Supporters of internationalism are known as internationalists and generally believe that humans should unite across national, political, cultural, racial, or class boundaries to advance their common interests, or that governments should cooperate because their mutual long-term interests are of greater importance than their short-term disputes.[NEWLINE][NEWLINE]—— "C’est la lutte finale Groupons nous et demain L’Internationale Sera le genre humain!"</Text>
@@ -8972,6 +8978,12 @@
 		</Row>
 		<Row Tag="TXT_KEY_BELIEF_SONE_OF_SIREN">
 			<Text>Basic tile yields from Atolls are doubled, +2 [ICON_PEACE] Faith in coastal cities</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_SLASH_AND_BURN_SHORT">
+			<Text>Slash and Burn</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_SLASH_AND_BURN">
+			<Text>When Chopping down Woodland, the city gains a one-time [ICON_PEACE] Faith and [ICON_FOOD] Food yield equal to 33% of the [ICON_PRODUCTION] Production from the Chopping.</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BELIEF_GODDESS_OF_WISDOM_SHORT">
 			<Text>Goddess of Wisdom</Text>
@@ -12849,12 +12861,18 @@
 	</Replace>
 
 
-		<Replace Tag="TXT_KEY_UNIT_NUCLEAR_SUBMARINE">
-			<Text>Nuclear-powered Attack Submarine</Text>
-		</Replace>
+	<Replace Tag="TXT_KEY_UNIT_NUCLEAR_SUBMARINE">
+		<Text>Nuclear-powered Attack Submarine</Text>
+	</Replace>
 
+	<Replace Tag="TXT_KEY_UNIT_HELP_HUN_BATTERING_RAM">
+		<Text>The Battering Ram is a Hunnic unique unit that replaces the Catapult, designed to break through the defenses of enemy cities. It has a high bonus against cities and only requires a Barracks to be built, but it is defenseless against melee attacks.</Text>
+	</Replace>
+	<Replace Tag="TXT_KEY_UNIT_HELP_ASSYRIAN_SIEGE_TOWER">
+		<Text>Powerful and cheap melee siege unit that replaces the Catapult. It grants a city attack bonus to all nearby units. May only be built by the Assyrians.</Text>
+	</Replace>
 
-		<Replace Tag="TXT_KEY_UNIT_HUN_BATTERING_RAM_STRATEGY">
+	<Replace Tag="TXT_KEY_UNIT_HUN_BATTERING_RAM_STRATEGY">
 		<Text>Battering Rams are a Hunnic unique unit replacing the Catapult. Use Battering Rams to knock down the defenses of a city. They have the Cover I promotion to keep them safe from ranged units; attack them with melee units to defeat them.</Text>
 	</Replace>
 
@@ -13637,7 +13655,7 @@
 			<Text>[COLOR_YELLOW]Ski Infantry[ENDCOLOR]</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_CIV5_DENMARK_SKI_INFANTRY_HELP">
-			<Text>Elite Infantry Unit which has great bonus fighting in snow, tundra, or hills. [NEWLINE][NEWLINE]Requires Ski Infantry Training Project. You can only build up to 10 of this unit at one time. Cannot be purchased.</Text>
+			<Text>Elite Infantry Unit which has great bonus fighting in snow, tundra, or hills. [NEWLINE][NEWLINE]Requires Ski Infantry Training Project. You can only build up to 10 of this unit at one time.</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_CIV5_DENMARK_SKI_INFANTRY_STRATEGY">
 			<Text>The Ski Infantry, as their name suggests, are true masters when fighting in snow, tundra, or hills. They not only receive a combat bonus there, but also move at double speed. Even tanks cannot match these elite units on such terrains. </Text>
@@ -18161,6 +18179,13 @@
 		</Replace>
 		<Row Tag="TXT_KEY_EUPANEL_CAPTURE_CHANCE_SP">
 			<Text>[COLOR_CYAN]Capture Chance if Sunk[ENDCOLOR]</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_POPULATION_GROWTH_POLLUTION_SHORT">
+			<Text>Population Growth (From pollution)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_FOOD_MAX_KEPT">
+			<Text>After population growth, up to {1_Percent}% of [ICON_FOOD] Food can be retained.</Text>
 		</Row>
 	</Language_en_US>
 </GameData>

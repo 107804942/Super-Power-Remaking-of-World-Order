@@ -16,7 +16,7 @@
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_VERSION">
-			<Text>[COLOR_YELLOW]版本號 10.9[ENDCOLOR]</Text>
+			<Text>[COLOR_YELLOW]版本號 10.92[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MOD_SETUP">
@@ -3069,14 +3069,14 @@
 			<Text>[ICON_RES_ELECTRICITY]燃煤發電擴容機組</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BUILDING_COAL_PLANT_EXTEND_HELP">
-			<Text> [COLOR_NEGATIVE_TEXT]污染[ENDCOLOR]會導致[ICON_FOOD]食物累積-3%。[NEWLINE][NEWLINE]城市必須擁有燃煤發電站。</Text>
+			<Text>[COLOR_NEGATIVE_TEXT]污染[ENDCOLOR]會導致[ICON_FOOD]食物累積-2%。[NEWLINE][NEWLINE]城市必須擁有燃煤發電站。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_BUILDING_COAL_PLANT_EXTEND_IZ">
 			<Text>[ICON_RES_ELECTRICITY]燃煤發電擴容2級機組</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BUILDING_COAL_PLANT_EXTEND_IZ_HELP">
-			<Text>擁有魯爾工業區後解鎖，城市必須擁有燃煤發電擴容機組。</Text>
+			<Text>[COLOR_NEGATIVE_TEXT]污染[ENDCOLOR]會導致[ICON_FOOD]食物累積-2%。[NEWLINE][NEWLINE]擁有魯爾工業區後解鎖，城市必須擁有燃煤發電擴容機組。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_BUILDING_DANISH_WIND_TURBINE">
@@ -3258,7 +3258,7 @@
 		<Row Tag="TXT_KEY_BUILDING_TAP_WATER_SUPPLY_HELP">
 			<Text>
 				[ICON_BULLET]城市每處已開發的湖泊區塊+1[ICON_FOOD]食物。
-				[NEWLINE][ICON_BULLET]城市增加新的[ICON_CITIZEN]市民後保留40%[ICON_FOOD]食物儲備以加速成長。
+				[NEWLINE][ICON_BULLET]城市增加新的[ICON_CITIZEN]市民後保留30%[ICON_FOOD]食物儲備以加速成長。
 				[NEWLINE][ICON_BULLET]只能在小型城市（6人口）建造，中型城市需要有引水渠或自來水系統才能繼續增長人口。
 				[NEWLINE][ICON_BULLET]每5[ICON_CITIZEN]人口+1[ICON_GOLD]維護費。
 			</Text>
@@ -3484,7 +3484,7 @@
 		</Replace>
 
 		<Replace Tag="TXT_KEY_BUILDING_HOSPITAL_HELP">
-			<Text>[NEWLINE][NEWLINE]減少25%因污染導致的[ICON_FOOD]食物累積損失。[NEWLINE][NEWLINE]大型城市需要有醫院才能繼續增長人口。[NEWLINE][NEWLINE]每4[ICON_CITIZEN]市民+1[ICON_GOLD]維護費。</Text>
+			<Text>減少25%因污染導致的[ICON_FOOD]食物累積損失（不會超過0%）。[NEWLINE][NEWLINE]大型城市需要有醫院才能繼續增長人口。[NEWLINE][NEWLINE]每4[ICON_CITIZEN]市民+1[ICON_GOLD]維護費。</Text>
 		</Replace>
 
 		<Row>
@@ -3735,7 +3735,7 @@
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_MEDICAL_LAB_HELP">
 			<Text>
-				減少25%因污染導致的[ICON_FOOD]食物累積損失。
+				減少25%因污染導致的[ICON_FOOD]食物累積損失（不會超過0%）。
 				[NEWLINE][NEWLINE]巨型城市需要有醫學實驗室才能繼續增長人口。
 				[NEWLINE][NEWLINE]每4[ICON_CITIZEN]市民+1[ICON_GOLD]維護費。
 			</Text>
@@ -6516,6 +6516,7 @@
 			<Text>
 				[COLOR_POSITIVE_TEXT]律法統治[ENDCOLOR]
 				[NEWLINE][ICON_BULLET]所有城市中每5[ICON_CITIZEN]人口+1[ICON_HAPPINESS_1]快樂。
+				[NEWLINE][ICON_BULLET]城市數量為國家奇觀帶來的建造成本增加量-33%。
 			</Text>
 		</Replace>
 
@@ -7395,7 +7396,8 @@
 		<Replace Tag="TXT_KEY_POLICY_ACADEMY_SCIENCES_HELP">
 			<Text>
 				[COLOR_POSITIVE_TEXT]科學社會主義[ENDCOLOR]
-				[NEWLINE]向其他意识形态国家输出的[ICON_TOURISM]旅遊業績+50%，向其他秩序意识形态国家输出的[ICON_TOURISM]旅遊業績+25%。
+				[NEWLINE][COLOR_POSITIVE_TEXT]傀儡[ENDCOLOR]城市[ICON_PRODUCTION]產能和[ICON_GOLD]金錢產出+33%。
+				[NEWLINE]城市每回合可以完成的建造項目[COLOR_POSITIVE_TEXT]上限[ENDCOLOR]+1（需將項目添加至建造隊列）。
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_ACADEMY_SCIENCES_TEXT">
@@ -7424,7 +7426,11 @@
 			<Text>國際主義</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP">
-			<Text>[COLOR_POSITIVE_TEXT]國際主義[ENDCOLOR][NEWLINE]你向其他國家移民的速度降低50%。[COLOR_POSITIVE_TEXT]傀儡[ENDCOLOR]城市[ICON_PRODUCTION]生產力和[ICON_GOLD]金幣產出+33%。抵消自身受到的[ICON_HAPPINESS_4]公共輿論不滿，對其他意識形態文明的[ICON_HAPPINESS_4]公共輿論壓力翻倍。</Text>
+			<Text>
+				[COLOR_POSITIVE_TEXT]國際主義[ENDCOLOR]
+				[NEWLINE]你向其他國家移民的速度降低50%。抵消自身受到的[ICON_HAPPINESS_4]公共輿論不滿，對其他意識形態文明的[ICON_HAPPINESS_4]公共輿論壓力翻倍。
+				[NEWLINE]向其他意識形態國家輸出的[ICON_TOURISM]魅力+50%，向其他秩序意識形態國家輸出的[ICON_TOURISM]魅力+25%。
+			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_IRON_CURTAIN_TEXT">
 			<Text>國際主義是指各國無產階級在反對剝削製度，爭取自身解放鬥爭中，在政治、經濟、道義等方面互相支持，互相援助，堅持國際團結的思想和政治原則。國際主義體現了無產階級的民族觀，是無產階級處理民族問題的基本原則，也是無產階級認識和處理各國無產階級之間、各國無產階級政黨之間以及社會主義國家之間相互關系的行為準則。資本壓迫和統治的國際性，決定了無產階級反對資產階級的鬥爭，從形式上看，首先是在一國範圍內進行，但從內容上看，從來就是國際性的：無產階級只有解放全人類，才能最後解放自己。[NEWLINE][NEWLINE]—— “這是最後的鬥爭，團結起來到明天，英特納雄耐爾就一定要實現！這是最後的鬥爭，團結起來到明天，英特納雄耐爾就一定要實現！”</Text>
@@ -8041,6 +8047,12 @@
 		</Row>
 		<Row Tag="TXT_KEY_BELIEF_SONE_OF_SIREN">
 			<Text>來自環礁的基礎產出翻倍，沿海城市+2[ICON_PEACE]信仰</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_SLASH_AND_BURN_SHORT">
+			<Text>刀耕火種</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_SLASH_AND_BURN">
+			<Text>砍伐林地時，城市獲得砍伐[ICON_PRODUCTION]產能33%的一次性[ICON_PEACE]信仰和[ICON_FOOD]食物產出</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BELIEF_GODDESS_OF_WISDOM_SHORT">
 			<Text>智慧女神</Text>
@@ -11028,8 +11040,11 @@
 			<Text>攻擊核潛艇</Text>
 		</Replace>
 
-		<Replace Tag="TXT_KEY_UNIT_HUN_BATTERING_RAM_STRATEGY">
-			<Text>攻城錘是匈人的特色單位，替代投石機，用於突破敵軍城市的防禦。它們擁有“隱蔽一級”晉升，在遠程單位的打擊下仍安然無恙。只有近戰單位的攻擊能夠摧毀它們。</Text>
+		<Replace Tag="TXT_KEY_UNIT_HELP_HUN_BATTERING_RAM">
+			<Text>攻城錘是匈人的特色單位，替代投石機，用於突破敵軍城市的防禦。它們擁有高額的攻城加成，且僅需兵營即可建造，但對近戰攻擊毫無反抗能力。</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_UNIT_HELP_ASSYRIAN_SIEGE_TOWER">
+			<Text>攻城錘是亞述的特色單位，替代投石機，強大且便宜的近程壓制單位，可以給周邊的所有單位提供攻城加成。</Text>
 		</Replace>
 
 		<Row Tag="TXT_KEY_UNIT_SLOOP_OF_WAR">
@@ -11805,7 +11820,7 @@
 			<Text>[COLOR_YELLOW]雪橇步兵[ENDCOLOR]</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_CIV5_DENMARK_SKI_INFANTRY_HELP">
-			<Text>擅長在雪原、凍土和丘陵地形作戰的精英陸軍近戰單位。 [NEWLINE][NEWLINE]需要冬季兩項運動解鎖。你最多只能組建十隊雪橇步兵，且無法通過金錢購買。</Text>
+			<Text>擅長在雪原、凍土和丘陵地形作戰的精英陸軍近戰單位。 [NEWLINE][NEWLINE]需要冬季兩項運動解鎖。你最多只能組建十隊雪橇步兵。</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_CIV5_DENMARK_SKI_INFANTRY_STRATEGY">
 			<Text>雪撬步兵正如他的名字所描述的，非常擅長在雪原、凍土和丘陵地形中作戰。在這些地形上，他們不但有戰鬥力加成，且移動力加倍，甚至坦克都無法追上他們。</Text>
@@ -16310,6 +16325,13 @@
 		</Replace>
 		<Row Tag="TXT_KEY_EUPANEL_CAPTURE_CHANCE_SP">
 			<Text>[COLOR_CYAN]擊沉後的俘虜幾率[ENDCOLOR]</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_POPULATION_GROWTH_POLLUTION_SHORT">
+			<Text>人口增長（污染）</Text>
+		</Row>
+		<Row Tag="TXT_KEY_FOOD_MAX_KEPT">
+			<Text>人口增長後，最多可以保留{1_Percent}%[ICON_FOOD]食物</Text>
 		</Row>
 	</Language_zh_Hant_HK>
 </GameData>
