@@ -5874,7 +5874,7 @@
 
 		<Replace Tag="TXT_KEY_TRAIT_CAPITAL_BUILDINGS_CHEAPER">
 			<Text>
-				[ICON_BULLET]所有城市+2[ICON_PRODUCTION]产能。
+				[ICON_BULLET]所有城市+2[ICON_PRODUCTION]产能（随时代增加）。
 				[NEWLINE][ICON_BULLET]城市建造建筑时+15%[ICON_PRODUCTION]产能。
 			</Text>
 		</Replace>
@@ -6505,31 +6505,31 @@
 			<Text>地区势力</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_PRINCE_HELP">
-			<Text>电脑在人口，产能，金钱，快乐和战斗力上有中等加成。你每进入一个新时代，电脑的加成都会增加。</Text>
+			<Text>电脑在人口，产能，金钱，快乐和战斗力上有中等加成。每进入一个新时代，电脑的加成都会增加。</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_KING">
 			<Text>千乘之国</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_KING_HELP">
-			<Text>电脑在人口，产能，金钱，快乐和战斗力上有较大加成。电脑初始拥有2个移民，且你每进入一个新时代，电脑的加成都会增加。与“天神”等级难度相当。</Text>
+			<Text>电脑在人口，产能，金钱，快乐和战斗力上有较大加成。电脑初始拥有2个移民，且每进入一个新时代，电脑的加成都会增加。与“天神”等级难度相当。</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_EMPEROR">
 			<Text>一方霸主</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_EMPEROR_HELP">
-			<Text>电脑在人口，产能，金钱，快乐和战斗力上有很大加成。电脑初始拥有2个移民，且你每进入一个新时代，电脑的加成都会大量增加。</Text>
+			<Text>电脑在人口，产能，金钱，快乐和战斗力上有很大加成。电脑初始拥有2个移民，且每进入一个新时代，电脑的加成都会大量增加。</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_IMMORTAL">
 			<Text>世界强权</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_IMMORTAL_HELP">
-			<Text>电脑在人口，产能，金钱，快乐和战斗力上有极大加成。电脑初始拥有3个移民，且你每进入一个新时代，电脑的加成都会剧增。</Text>
+			<Text>电脑在人口，产能，金钱，快乐和战斗力上有极大加成。电脑初始拥有3个移民，且每进入一个新时代，电脑的加成都会剧增。</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_DEITY">
 			<Text>超级大国</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_DEITY_HELP">
-			<Text>电脑在人口，产能，金钱，快乐和战斗力上的加成丧心病狂。电脑初始拥有4个移民，且你每进入一个新时代，电脑的加成都会疯涨。 </Text>
+			<Text>电脑在人口，产能，金钱，快乐和战斗力上的加成丧心病狂。电脑初始拥有4个移民，且每进入一个新时代，电脑的加成都会疯涨。 </Text>
 		</Replace>
 
 		<!-- *******************************New Resoultions Texts********************************************-->
@@ -6604,6 +6604,7 @@
 				[COLOR_POSITIVE_TEXT]贵族政治[ENDCOLOR]
 				[NEWLINE][ICON_BULLET]新建城市+1[ICON_CITIZEN]人口(但是每1个移民仍等于1人口)。
 				[NEWLINE][ICON_BULLET]小镇（即6人口以下的城市）新增人口时会保留100%的余粮（在增长下一个人口后生效）。
+				[NEWLINE][ICON_BULLET]所有城市的余粮积累值立即充满。
 			</Text>
 		</Replace>
 
@@ -6618,7 +6619,7 @@
 			<Text>
 				[COLOR_POSITIVE_TEXT]律法统治[ENDCOLOR]
 				[NEWLINE][ICON_BULLET]所有城市中每5[ICON_CITIZEN]人口+1[ICON_HAPPINESS_1]快乐。
-				[NEWLINE][ICON_BULLET]城市数量为国家奇观带来的建造成本增加量-33%。
+				[NEWLINE][ICON_BULLET]所有城市每一级城市规模+1[ICON_HAPPINESS_1]快乐。
 			</Text>
 		</Replace>
 
@@ -6638,7 +6639,7 @@
 		<Replace Tag="TXT_KEY_POLICY_MONARCHY_HELP">
 			<Text>
 				[COLOR_POSITIVE_TEXT]君主政体[ENDCOLOR]
-				[NEWLINE][ICON_BULLET]城市规模导致的[ICON_HAPPINESS_4]不满减半。
+				[NEWLINE][ICON_BULLET]城市数量为国家奇观带来的建造成本增加量减半。
 				[NEWLINE][ICON_BULLET][ICON_CAPITAL]首都每个[ICON_CITIZEN]人口+1[ICON_GOLD]金钱，每3个[ICON_CITIZEN]人口+1[ICON_FOOD]食物、[ICON_CULTURE]文化、[ICON_PRODUCTION]产能、[ICON_RESEARCH]科研。
 			</Text>
 		</Replace>
@@ -8253,7 +8254,7 @@
 			<Text>和平时期[ICON_FOOD]食物积累速率提高25%</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_TEARS_OF_GODS">
-			<Text>每一处钻石和珍珠+2[ICON_PEACE]信仰、+2[ICON_CULTURE]文化</Text>
+			<Text>每一处宝石和珍珠+2[ICON_PEACE]信仰、+2[ICON_CULTURE]文化</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_PAPAL_PRIMACY">
 			<Text>对信仰此宗教的城邦的[ICON_INFLUENCE]影响力下限值+35且[ICON_INFLUENCE]影响力恢复速率+300%，宗教裁判官位于同盟城邦附近可以阻止其被其他文明传教</Text>
@@ -11191,7 +11192,7 @@
 			<Text>攻城锤是匈人的特色单位，替代投石机，用于突破敌军城市的防御。它们拥有高额的攻城加成，且仅需兵营即可建造，但对近战攻击毫无反抗能力。</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_UNIT_HELP_ASSYRIAN_SIEGE_TOWER">
-			<Text>攻城锤是亚述的特色单位，替代投石机，强大且便宜的近程压制单位，可以给周边的所有单位提供攻城加成。</Text>
+			<Text>攻城锤是亚述的特色单位，替代投石机，强大的近程压制单位，可以给周边的所有单位提供攻城加成。</Text>
 		</Replace>
 
 		<Row Tag="TXT_KEY_UNIT_SLOOP_OF_WAR">
@@ -16471,6 +16472,10 @@
 			</Text>
 		</Replace>
 
+		<Row Tag="TXT_KEY_BUILD_BLOCKED_MAX_BUILD_NUM">
+			<Text>地块超出本回合最大可改良次数。</Text>
+		</Row>
+
 		<Replace Tag="TXT_KEY_PLOTROLL_OCEAN">
 			<Text>海洋</Text>
 		</Replace>
@@ -16520,12 +16525,67 @@
 		<Row Tag="TXT_KEY_EUPANEL_CAPTURE_CHANCE_SP">
 			<Text>[COLOR_CYAN]战胜时俘获敌军的几率[ENDCOLOR]</Text>
 		</Row>
-
 		<Row Tag="TXT_KEY_POPULATION_GROWTH_POLLUTION_SHORT">
 			<Text>人口增长（污染）</Text>
 		</Row>
 		<Row Tag="TXT_KEY_FOOD_MAX_KEPT">
 			<Text>人口增长后，最多可以保留{1_Percent}%[ICON_FOOD]食物</Text>
+		</Row>
+		<Row Tag="TXT_KEY_FOOD_KEPT_NOW">
+			<Text>[ICON_BULLET]城市当前的[ICON_FOOD]余粮积累值为: {1_Num}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TRADE_BONUS_PER_ERA">
+			<Text>/每个时代</Text>
+		</Row>
+		<Row Tag="TXT_KEY_Building_PER_ERA">
+			<Text>/每个时代</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CHOOSE_INTERNATIONAL_TRADE_ROUTE_ITEM_TT_ERA">
+			<Text>从{1_CityName}得到的时代金钱奖励: {2_Num}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_STRATEGIC_ENVIRONMENT_COMBAT_MOD">
+			<Text>战争领域修正</Text>
+		</Row>
+		<Row Tag="TXT_KEY_COMBAT">
+			<Text>[ICON_STRENGTH]战斗力</Text>
+		</Row>
+		<Row Tag="TXT_KEY_WITHIN_BORDERS">
+			<Text>境内</Text>
+		</Row>
+		<Row Tag="TXT_KEY_ENEMY">
+			<Text>敌方</Text>
+		</Row>
+		<Row Tag="TXT_KEY_ALLY">
+			<Text>友方</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_CITY_STATE_GIFT_CULTURE_FIRST">
+			<Text>他们赠予你失传的史诗典籍，你获得[COLOR_POSITIVE_TEXT]{1_NumCulture}[ICON_CULTURE]文化[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_STATE_GIFT_CULTURE_OTHER">
+			<Text>他们的吟游诗人为你演唱古老歌谣，你获得[COLOR_POSITIVE_TEXT]{1_NumCulture}[ICON_CULTURE]文化[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_STATE_GIFT_GOLD_FIRST">
+			<Text>他们为你献上装满异国钱币的宝箱，你额外获得[COLOR_POSITIVE_TEXT]{1_NumGold}[ICON_GOLD]金钱[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_STATE_GIFT_GOLD_OTHER">
+			<Text>他们赠送你一袋贸易盈余的金币，你额外获得[COLOR_POSITIVE_TEXT]{1_NumGold}[ICON_GOLD]金钱[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_STATE_GIFT_MILITARY_FIRST">
+			<Text>他们的战争酋长与你歃血为盟，你对他们提升[COLOR_POSITIVE_TEXT]{1_NumInfluence}[ICON_INFLUENCE]影响力[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_STATE_GIFT_MILITARY_OTHER">
+			<Text>他们以古老战旗作为友谊见证，你对他们提升[COLOR_POSITIVE_TEXT]{1_NumInfluence}[ICON_INFLUENCE]影响力[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_STATE_GIFT_FOOD_FIRST">
+			<Text>他们给你送来稀有的深海渔获，首都获得[COLOR_POSITIVE_TEXT]{1_NumFood}[ICON_FOOD]粮食[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_STATE_GIFT_FOOD_OTHER">
+			<Text>他们向你分享了近海渔场的收获，首都获得[COLOR_POSITIVE_TEXT]{1_NumFood}[ICON_FOOD]粮食[ENDCOLOR]。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_POLICY_AIBONUS">
+			<Text>励精图治</Text>
 		</Row>
 	</Language_zh_CN>
 </GameData>

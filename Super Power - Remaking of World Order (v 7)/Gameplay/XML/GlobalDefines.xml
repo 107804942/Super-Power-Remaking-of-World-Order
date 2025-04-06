@@ -574,7 +574,7 @@
 			<Where Name="RELIGION_MIN_FAITH_FIRST_PANTHEON" />
 		</Update>
 		<Update>
-			<Set Value="2"/>
+			<Set Value="0"/>
 			<Where Name="RELIGION_GAME_FAITH_DELTA_NEXT_PANTHEON" />
 		</Update>
 		<Update>
@@ -761,6 +761,10 @@
 		<Update>
 			<Set Value="1"/>
 			<Where Name="MAXIMUM_WORK_PLOT_DISTANCE_MINOR_REDUCE" />
+		</Update>
+		<Update>
+			<Set Value="1"/>
+			<Where Name="NUM_OUTSIZE_PLOT_MAX_BUILD" />
 		</Update>
 
 		<Update>

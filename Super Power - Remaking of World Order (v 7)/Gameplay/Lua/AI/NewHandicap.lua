@@ -256,6 +256,7 @@ local AIEraBonus = {
     GameInfo.Policies["POLICY_AI_MODERN"].ID,
     GameInfo.Policies["POLICY_AI_WORLDWAR"].ID,
     GameInfo.Policies["POLICY_AI_ATOMIC"].ID,
+    GameInfo.Policies["POLICY_AI_INFORMATION"].ID,
 }
 function PlayerIntoNewEra(playerID, era) -- AI will get bonus when Human Player entering new Eras
     local handicap = Game:GetHandicapType();
@@ -283,14 +284,12 @@ function PlayerIntoNewEra(playerID, era) -- AI will get bonus when Human Player 
     end
     
     -- AI will get bouns when entering new Eras
-    local MaxLength = era;
-    if MaxLength > #AIEraBonus then
-        MaxLength = #AIEraBonus
-    end
+    local MaxLength = math.min(#AIEraBonus, handicap + 1, era);
+
     for i = 1, MaxLength, 1 do
         player:SetHasPolicy(AIEraBonus[i], true, true)
     end
-    print("AI Player Enter New Era: " .. era .." ".. MaxLength)
+    print("AI Player Enter New Era: " .. era .." MaxIndex=".. MaxLength)
 end
 GameEvents.PlayerSetEra.Add(PlayerIntoNewEra)
 
@@ -740,7 +739,7 @@ function AIPromotion(iPlayer, iCity, iUnit, bGold, bFaith)
 
     ------------------------AI with many coastal cities will build more naval units other than land units
     local iUnitClassCount = player:GetUnitClassCount(ThisUnitClass)
-    if handicap >= 3 and unit:IsCombatUnit() and unitBuiltCity:IsCoastal(GameDefines["MIN_WATER_SIZE_FOR_OCEAN"]) and iUnitClassCount > AICityCount / 2 then
+    if handicap >= 4 and unit:IsCombatUnit() and unitBuiltCity:IsCoastal(GameDefines["MIN_WATER_SIZE_FOR_OCEAN"]) and iUnitClassCount > AICityCount / 2 then
 
         ---------------------------------Count the ratio of coastal cities
         local AICoastalCitiesCount = 0
@@ -761,7 +760,7 @@ function AIPromotion(iPlayer, iCity, iUnit, bGold, bFaith)
                 print("Coastal AI build more naval units other than land units!")
             end
 
-            if iUnitClassCount > 15 and iUnitClassCount > AICityCount * 2 and not PlayerAtWarWithHuman(player) then
+            if iUnitClassCount > 5 and iUnitClassCount > AICityCount * 2 and not PlayerAtWarWithHuman(player) then
                 unit:Kill()
                 print("AI has too many this type of land units! So remove it!")
             end
@@ -811,19 +810,19 @@ function AIResearchCatchUp(HumanResearchPerTurn, HumanCurrentTech, AIplayer)
     end
 
     if AICurrentTech >= 30 and AIResearchPerTurn > 1 then
-        if HumanCurrentTech - AICurrentTech >= 15 then -- HumanResearchPerTurn > AIResearchPerTurn * 2 or 
+        if HumanCurrentTech - AICurrentTech >= 15 then
             AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV1"], true, true)
             AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV2"], true, true)
             AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV3"], true, true)
             print("Human's research is too fast -2X, AI needs to catch up sooner!")
 
-        elseif HumanCurrentTech - AICurrentTech >= 7 then -- HumanResearchPerTurn > AIResearchPerTurn * 1.5 or 
+        elseif HumanCurrentTech - AICurrentTech >= 7 then
             AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV1"], true, true)
             AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV2"], true, true)
             AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV3"], false)
             print("Human's research is fast -1.5X, AI needs to catch up!")
 
-        elseif HumanResearchPerTurn > AIResearchPerTurn then
+        elseif HumanCurrentTech > AICurrentTech then
             AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV1"], true, true)
             AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV2"], false)
             AIplayer:SetHasPolicy(GameInfoTypes["POLICY_AI_BONUS_RESEARCH_LV3"], false)

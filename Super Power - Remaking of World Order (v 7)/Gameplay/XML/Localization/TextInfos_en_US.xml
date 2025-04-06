@@ -7119,31 +7119,31 @@
 			<Text>Rising Powers</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_PRINCE_HELP" >
-			<Text>Callous AI with medium bonuses on Growth, Production, Gold, Happiness and Combat. AI will get stronger when you enter a new era. </Text>
+			<Text>Callous AI with medium bonuses on Growth, Production, Gold, Happiness and Combat. AI will get stronger when enter a new era. </Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_KING" >
 			<Text>Regional Powers</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_KING_HELP" >
-			<Text>Aggressive AI with large bonuses on Growth, Production, Gold, Happiness and Combat. AI start with 2 settlers and AI will get stronger when you enter a new era. Equals "Deity".</Text>
+			<Text>Aggressive AI with large bonuses on Growth, Production, Gold, Happiness and Combat. AI start with 2 settlers and AI will get stronger when enter a new era. Equals "Deity".</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_EMPEROR" >
 			<Text>Great Powers</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_EMPEROR_HELP" >
-			<Text>Ferocious AI with great bonuses on Growth, Production, Gold, Happiness and Combat. AI start with 2 settlers and AI will get even stronger when you enter a new era. </Text>
+			<Text>Ferocious AI with great bonuses on Growth, Production, Gold, Happiness and Combat. AI start with 2 settlers and AI will get even stronger when enter a new era. </Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_IMMORTAL" >
 			<Text>Potential Superpowers</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_IMMORTAL_HELP" >
-			<Text>Crazy AI with huge bonuses on Growth, Production, Gold, Happiness and Combat. AI start with 3 settlers and AI will get much more stronger when you enter a new era. </Text>
+			<Text>Crazy AI with huge bonuses on Growth, Production, Gold, Happiness and Combat. AI start with 3 settlers and AI will get much more stronger when enter a new era. </Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_DEITY" >
 			<Text>Superpowers</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_DEITY_HELP" >
-			<Text>Insane AI with insane bonuses on Growth, Production, Gold, Happiness and Combat. AI start with 4 settlers and AI will get on steroids when you enter a new era. </Text>
+			<Text>Insane AI with insane bonuses on Growth, Production, Gold, Happiness and Combat. AI start with 4 settlers and AI will get on steroids when enter a new era. </Text>
 		</Replace>
 
 
@@ -7403,6 +7403,7 @@
 				[COLOR_POSITIVE_TEXT]Aristocracy[ENDCOLOR]
 				[NEWLINE][ICON_BULLET]New Cities start with an extra 1 [ICON_CITIZEN] Citizen. (But one Settler Unit still equals one Population)
 				[NEWLINE][ICON_BULLET]100% [ICON_FOOD] is carried over after a new [ICON_CITIZEN] Citizen is born for every Town (Cities with a [ICON_CITIZEN] Population less than 6). It won't be effective instantly but after the next new [ICON_CITIZEN] Citizen is born.
+				[NEWLINE][ICON_BULLET]The accumulation of food kept in all city immediately filled up.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_LANDED_ELITE_HELP" >
@@ -7416,7 +7417,7 @@
 			<Text>
 				[COLOR_POSITIVE_TEXT]Legalism[ENDCOLOR]
 				[NEWLINE][ICON_BULLET]+1 [ICON_HAPPINESS_1] Hapiness for every 5 [ICON_CITIZEN] Citizens in cities directly under the central government.
-				[NEWLINE][ICON_BULLET]The increase in construction cost for National Wonders due to the number of cities is reduced by 33%.
+				[NEWLINE][ICON_BULLET]+1 [ICON_HAPPINESS_1] to every city's Population Size in all cities.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_OLIGARCHY_HELP" >
@@ -7434,7 +7435,7 @@
 		<Replace Tag="TXT_KEY_POLICY_MONARCHY_HELP" >
 			<Text>
 				[COLOR_POSITIVE_TEXT]Monarchy[ENDCOLOR]
-				[NEWLINE][ICON_BULLET]-50% extra [ICON_HAPPINESS_4] Unhappiness due to city's Population Size.
+				[NEWLINE][ICON_BULLET]The increase in construction cost for National Wonders due to the number of cities is reduced by 50%.
 				[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] Gold for every [ICON_CITIZEN] Citizens and +1 [ICON_FOOD] Food, [ICON_CULTURE] Culture, [ICON_PRODUCTION] Production, [ICON_RESEARCH] Science for every 3 [ICON_CITIZEN] Citizens in the [ICON_CAPITAL] Capital.
 			</Text>
 		</Replace>
@@ -10425,7 +10426,7 @@
 			<Text>
 				[ICON_BULLET]+3 [ICON_CULTURE] Culture for all cities and it never expires.
 				[NEWLINE][ICON_BULLET]+1 [ICON_TOURISM] Tourism output for all Great Works.
-        [NEWLINE][ICON_BULLET]Earns a free [ICON_CULTURE] social policy upon first conquering the original capital of a major civ and spreads a one-time [ICON_TOURISM] tourism yield to all civs they have met.
+				[NEWLINE][ICON_BULLET]Earns a free [ICON_CULTURE] social policy upon first conquering the original capital of a major civ and spreads a one-time [ICON_TOURISM] tourism yield to all civs they have met.
 			</Text>
 		</Replace>
 
@@ -10440,7 +10441,7 @@
 
 		<Replace Tag="TXT_KEY_TRAIT_CAPITAL_BUILDINGS_CHEAPER">
 			<Text>
-				[ICON_BULLET]+2 [ICON_PRODUCTION] Production for all cities and it never expires. 
+				[ICON_BULLET]+2 [ICON_PRODUCTION] Production for all cities(increase with Era). 
 				[NEWLINE][ICON_BULLET]+15% [ICON_PRODUCTION] Production towards any buildings in all cities.
 			</Text>
 		</Replace>
@@ -12869,7 +12870,7 @@
 		<Text>The Battering Ram is a Hunnic unique unit that replaces the Catapult, designed to break through the defenses of enemy cities. It has a high bonus against cities and only requires a Barracks to be built, but it is defenseless against melee attacks.</Text>
 	</Replace>
 	<Replace Tag="TXT_KEY_UNIT_HELP_ASSYRIAN_SIEGE_TOWER">
-		<Text>Powerful and cheap melee siege unit that replaces the Catapult. It grants a city attack bonus to all nearby units. May only be built by the Assyrians.</Text>
+		<Text>Powerful melee siege unit that replaces the Catapult. It grants a city attack bonus to all nearby units. May only be built by the Assyrians.</Text>
 	</Replace>
 
 	<Replace Tag="TXT_KEY_UNIT_HUN_BATTERING_RAM_STRATEGY">
@@ -18132,6 +18133,10 @@
 			</Text>
 		</Replace>
 
+		<Row Tag="TXT_KEY_BUILD_BLOCKED_MAX_BUILD_NUM">
+			<Text>The Plot exceeds the max number of builds allowed in this turn.</Text>
+		</Row>
+
 		<Replace Tag="TXT_KEY_PLOTROLL_OCEAN">
 			<Text>Coast and Ocean</Text>
 		</Replace>
@@ -18180,12 +18185,67 @@
 		<Row Tag="TXT_KEY_EUPANEL_CAPTURE_CHANCE_SP">
 			<Text>[COLOR_CYAN]Capture Chance if Sunk[ENDCOLOR]</Text>
 		</Row>
-		
 		<Row Tag="TXT_KEY_POPULATION_GROWTH_POLLUTION_SHORT">
 			<Text>Population Growth (From pollution)</Text>
 		</Row>
 		<Row Tag="TXT_KEY_FOOD_MAX_KEPT">
 			<Text>After population growth, up to {1_Percent}% of [ICON_FOOD] Food can be retained.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_FOOD_KEPT_NOW">
+			<Text>[ICON_BULLET]The accumulation of [ICON_FOOD] Food Kept in city is: {1_Num}.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TRADE_BONUS_PER_ERA">
+			<Text>/Per Era</Text>
+		</Row>
+		<Row Tag="TXT_KEY_Building_PER_ERA">
+			<Text>/Per Era</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CHOOSE_INTERNATIONAL_TRADE_ROUTE_ITEM_TT_ERA">
+			<Text>Era gold bonus from {1_CityName}: {2_Num}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_STRATEGIC_ENVIRONMENT_COMBAT_MOD">
+			<Text>Strategic Environment Bonus</Text>
+		</Row>
+		<Row Tag="TXT_KEY_COMBAT">
+			<Text>[ICON_STRENGTH]Combat Strength</Text>
+		</Row>
+		<Row Tag="TXT_KEY_WITHIN_BORDERS">
+			<Text>within borders</Text>
+		</Row>
+		<Row Tag="TXT_KEY_ENEMY">
+			<Text>Enemy</Text>
+		</Row>
+		<Row Tag="TXT_KEY_ALLY">
+			<Text>Ally</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_CITY_STATE_GIFT_CULTURE_FIRST">
+			<Text>They present you with long-lost epic tomes, awarding you [COLOR_POSITIVE_TEXT] {1_NumCulture} [ICON_CULTURE] Culture[ENDCOLOR].</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_STATE_GIFT_CULTURE_OTHER">
+			<Text>Their bards sing ancient ballads for you, giving you [COLOR_POSITIVE_TEXT] {1_NumCulture} [ICON_CULTURE] Culture[ENDCOLOR].</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_STATE_GIFT_GOLD_FIRST">
+			<Text>They offer you a chest filled with exotic coins, awarding you [COLOR_POSITIVE_TEXT] {1_NumGold} [ICON_GOLD] Gold[ENDCOLOR].</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_STATE_GIFT_GOLD_OTHER">
+			<Text>They gift you a pouch of trade surplus coins, providing you [COLOR_POSITIVE_TEXT] {1_NumGold} [ICON_GOLD] Gold[ENDCOLOR].</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_STATE_GIFT_MILITARY_FIRST">
+			<Text>Their war chief forms a blood pact with you, increasing your [COLOR_POSITIVE_TEXT] {1_NumInfluence} [ICON_INFLUENCE] Influence with them[ENDCOLOR].</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_STATE_GIFT_MILITARY_OTHER">
+			<Text>They present an ancient battle standard as a token of friendship, raising your [COLOR_POSITIVE_TEXT] {1_NumInfluence} [ICON_INFLUENCE] Influence  with them[ENDCOLOR].</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_STATE_GIFT_FOOD_FIRST">
+			<Text>They deliver rare deep-sea catches to you, providing [COLOR_POSITIVE_TEXT]{1_NumFood} [ICON_FOOD] Food in your Capital[ENDCOLOR].</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_STATE_GIFT_FOOD_OTHER">
+			<Text>They share the harvest from coastal fisheries, adding [COLOR_POSITIVE_TEXT]{1_NumFood} [ICON_FOOD] Food to your Capital[ENDCOLOR].</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_POLICY_AIBONUS">
+			<Text>Strive for excellence</Text>
 		</Row>
 	</Language_en_US>
 </GameData>

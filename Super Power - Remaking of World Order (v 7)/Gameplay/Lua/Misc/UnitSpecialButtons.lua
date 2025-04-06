@@ -752,7 +752,7 @@ EmergencyHealButton = {
         for i = 0, unitCount - 1, 1 do
             local pFoundUnit = plot:GetUnit(i)
             if pFoundUnit:IsCombatUnit() and not pFoundUnit:CanMove() and Players[unit:GetOwner()] == Players[pFoundUnit:GetOwner()] and pFoundUnit:GetDomainType() == DomainTypes.DOMAIN_LAND then
-                local AddMoves = math.floor(pFoundUnit:MaxMoves() / (3 * GameDefines["MOVE_DENOMINATOR"])) * GameDefines["MOVE_DENOMINATOR"]
+                local AddMoves = pFoundUnit:MaxMoves() / 3
                 pFoundUnit:SetMoves(AddMoves)
                 pFoundUnit:SetMadeAttack(true)
                 unit:SetMoves(0)
@@ -1197,6 +1197,7 @@ BuildMilitaryAcademyButton = {
 		and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_GREAT_ADMIRAL"].ID)) 
 		then
             print("Mongolian Khan cannot be consumed!")
+            UI.SetDirty(InterfaceDirtyBits.UnitInfo_DIRTY_BIT, true);
             return
         else
             unit:Kill()

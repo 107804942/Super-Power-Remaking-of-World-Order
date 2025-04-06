@@ -533,7 +533,7 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
         <Type>Mod</Type>
         <Name>(1)CIV5MPDLL</Name>
         <Id>a2969a0a-e4da-41cc-9e0b-19b29aa971d8</Id>
-        <MinVersion>43</MinVersion>
+        <MinVersion>44</MinVersion>
         <MaxVersion>999</MaxVersion>
       </Association>
     </ModDependencies>
@@ -618,6 +618,7 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
     <Folder Include="UI\Art\Models\Improvements\MountainCity" />
     <Folder Include="UI\Art\Models\Improvements\CoastalCity" />
     <Folder Include="UI\Art\Models\Improvements\Kuna" />
+    <Folder Include="UI\Art\Models\Improvements\Necropolis\" />
     <Folder Include="UI\Art\Models\Units Extra" />
     <Folder Include="UI\Art\Models\Resources\Luxury Amber" />
     <Folder Include="UI\Art\Models\Resources\Luxury Coffee" />
@@ -5920,6 +5921,10 @@ Some Imgaes and Visual Elements are from the game: ACE Combat (published by Namc
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="UI\InGame\Popups\CityStateDiploPopup.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\InGame\Popups\CityStateGreetingPopup.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
