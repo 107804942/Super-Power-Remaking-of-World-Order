@@ -2220,6 +2220,12 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 			insert( buildings, BuildingColor( L(item.Description) ) )
 		end
 	end
+	for row in GameInfo.Building_BuildingsNeededInCity{ BuildingType = buildingType } do
+		local item = GameInfo.Buildings[ row.PreBuildingType ]
+		if item and not buildings[ item ] then
+			insert( buildings, BuildingColor( L(item.Description) ) )
+		end
+	end
 	items = {}
 	if (building.MutuallyExclusiveGroup or -1) >= 0 then
 		for row in GameInfo.Buildings{ MutuallyExclusiveGroup = building.MutuallyExclusiveGroup } do
@@ -2236,28 +2242,16 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 		insert( tips, L"TXT_KEY_PEDIA_REQ_BLDG_LABEL" .. " " .. concat( buildings, ", ") )
 	end
 
-	
-	--New for Buildings Needed
-	--local buildings2 = {}
-	--for row in GameInfo.Building_ClassesNeededInCityOR( thisBuildingType ) do
-		--local item = GetCivBuilding( activeCivilizationType, row.BuildingClassType )
-		--if item  then
-		   --insert( buildings2, BuildingColor( L(item.Description) ) )
-		--end
-	--end
-	--if #buildings2 > 0 then
-		--insert( tips, L"TXT_KEY_PEDIA_REQ_BLDG_LABEL2_SP" .. " " .. concat( buildings2, ", ") )
-	--end
-
-
-
-
-	--end
-
 	-- Required Buildings Global:
 	local buildingsGloabl = {}
 	for row in GameInfo.Building_ClassesNeededGlobal( thisBuildingType ) do
 		local item = GetCivBuilding( activeCivilizationType, row.BuildingClassType )
+		if item and not buildingsGloabl[ item ] then
+			insert( buildingsGloabl, BuildingColor( L(item.Description) ) )
+		end
+	end
+	for row in GameInfo.Building_BuildingsNeededGlobal{ BuildingType = buildingType } do
+		local item = GameInfo.Buildings[ row.PreBuildingType ]
 		if item and not buildingsGloabl[ item ] then
 			insert( buildingsGloabl, BuildingColor( L(item.Description) ) )
 		end
@@ -2357,6 +2351,10 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 		local buildingUnlocked = GameInfo.Buildings[ row.BuildingType ]
 		SetKey( buildingsUnlocked, buildingUnlocked and buildingUnlocked.BuildingClass )
 	end
+	for row in GameInfo.Building_BuildingsNeededInCity{ PreBuildingType = buildingType } do
+		local buildingUnlocked = GameInfo.Buildings[ row.BuildingType ]
+		SetKey( buildingsUnlocked, buildingUnlocked and buildingUnlocked.BuildingClass )
+	end
 	items = {}
 	for buildingUnlocked in pairs(buildingsUnlocked) do
 		buildingUnlocked = GetCivBuilding( activeCivilizationType, buildingUnlocked )
@@ -2371,6 +2369,10 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 	-- Buildings Unlocked Global:
 	local buildingsUnlockedGlobal = {}
 	for row in GameInfo.Building_ClassesNeededGlobal( thisBuildingClassType ) do
+		local buildingUnlocked = GameInfo.Buildings[ row.BuildingType ]
+		SetKey( buildingsUnlockedGlobal, buildingUnlocked and buildingUnlocked.BuildingClass )
+	end
+	for row in GameInfo.Building_BuildingsNeededGlobal{ PreBuildingType = buildingType } do
 		local buildingUnlocked = GameInfo.Buildings[ row.BuildingType ]
 		SetKey( buildingsUnlockedGlobal, buildingUnlocked and buildingUnlocked.BuildingClass )
 	end
@@ -3898,6 +3900,15 @@ if Game then
 					insert( treaties, negativeOrPositiveTextColor[isActiveDeal] .. "[ICON_STRENGTH]"
 							.. L"TXT_KEY_DO_PACT"
 							.. "[ENDCOLOR]" .. GetDealTurnsRemaining( TradeableItems.TRADE_ITEM_DEFENSIVE_PACT )
+					)
+				end
+
+				-- Military Promise
+				local iMilitaryPromiseTurnLeft = Players[playerID]:GetMilitaryPromiseTurnLeft(activePlayerID)
+				if iMilitaryPromiseTurnLeft >= 0 then
+					insert( treaties, negativeOrPositiveTextColor[false] .. "[ICON_CITY_STATE]"
+							.. L"TXT_KEY_MILITARY_PROMISE"
+							.. "[ENDCOLOR]" .. inParentheses(iMilitaryPromiseTurnLeft)
 					)
 				end
 			end
