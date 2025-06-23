@@ -1,11 +1,13 @@
 
---Traditional Policies: CapitalYieldChanges +4
+--Traditional Policies: CapitalYieldChanges
 INSERT INTO Policy_CapitalYieldPerPopChanges (PolicyType,YieldType,Yield)
 SELECT 'POLICY_MONARCHY','YIELD_GOLD',100 UNION ALL
 SELECT 'POLICY_MONARCHY','YIELD_FOOD',34 UNION ALL
 SELECT 'POLICY_MONARCHY','YIELD_CULTURE',34 UNION ALL
 SELECT 'POLICY_MONARCHY','YIELD_SCIENCE',34 UNION ALL
 SELECT 'POLICY_MONARCHY','YIELD_PRODUCTION',34 ;
+
+--INSERT INTO Policy_CapitalYieldChanges(PolicyType,YieldType,Yield);
 
 --POLICY_LANDED_ELITE
 INSERT INTO Policy_ImprovementYieldChanges (PolicyType,ImprovementType,YieldType,Yield)

@@ -1693,7 +1693,19 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 		end
 	end
 
+	for specialist in GameInfo.Specialists() do
+		tip = GetYieldStringSpecial( "Yield", "%s%+i%%%s", GameInfo.Building_SpecialistYieldModifiersGlobal{ BuildingType = buildingType, SpecialistType = specialist.Type } )
+		if tip ~= "" then
+			insert( tips, UnitColor( L(specialist.Description) ) .. ":" .. tip )
+		end
+	end
 
+	for specialist in GameInfo.Specialists() do
+		tip =GetYieldStringSpecial( "Yield", "%s%+i%%%s", GameInfo.Building_SpecialistYieldModifiers{ BuildingType = buildingType, SpecialistType = specialist.Type } )
+		if tip ~= "" then
+			insert( tips, L"TXT_KEY_LOCAL_SPECIALIST_SP" .. UnitColor( L(specialist.Description) ) .. ":" .. tip )
+		end
+	end
 
 
 	-- River Yields enhanced by Building
@@ -1921,6 +1933,20 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 		if yieldInfo and (value or 0) > 0 then
 			insert(tips,
 				( " +" .. value .."%" ..L(yieldInfo.IconString) ..L("TXT_KEY_Building_PER_ERA")))
+		end
+	end
+	for row in GameInfo.Building_CityStateTradeRouteYieldModifiers(thisBuildingType) do
+		local yieldInfo = GameInfo.Yields[row.YieldType]
+		local value = row.Yield or 0
+		if yieldInfo and value > 0 then
+			insert(tips, L("TXT_KEY_CSTRPM1111") .. " +" .. value .. "%" .. L(yieldInfo.IconString))
+		end
+	end
+	for row in GameInfo.Building_CityStateTradeRouteYieldModifiersGlobal(thisBuildingType) do
+		local yieldInfo = GameInfo.Yields[row.YieldType]
+		local value = row.Yield or 0
+		if yieldInfo and value > 0 then
+			insert(tips, L("TXT_KEY_CSTRPMG") .. " +" .. value .. "%" .. L(yieldInfo.IconString))
 		end
 	end
 

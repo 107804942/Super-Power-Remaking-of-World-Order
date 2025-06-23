@@ -16,7 +16,7 @@
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_VERSION">
-			<Text>[COLOR_YELLOW]版本號 10.93[ENDCOLOR]</Text>
+			<Text>[COLOR_YELLOW]版本號 10.94[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MOD_SETUP">
@@ -1040,7 +1040,10 @@
 		</Row>
 
 		<Row Tag="TXT_KEY_BUILDING_CEILIDH_HALL_HELP">
-			<Text>本城市所有已開發的森林地塊+1[ICON_CULTURE]文化值。[NEWLINE][NEWLINE]城市必須擁有畫廊。</Text>
+			<Text>
+				[ICON_BULLET]本城有市民工作的森林地塊+1[ICON_CULTURE]文化。
+				[NEWLINE][ICON_BULLET]每一位音樂家爲城市+1[ICON_TOURISM]魅力並+5%[ICON_TOURISM]魅力産出。
+			</Text>
 		</Row>
 
 		<Row>
@@ -1067,7 +1070,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_AUSTRIA_MUSIC_SCHOOL_HELP</Tag>
-			<Text>本城+25%[ICON_GREAT_PEOPLE]偉人點數累積。[NEWLINE][NEWLINE]每座音樂學院建立時獲得一次性的500[ICON_GOLD]金幣獎勵。（標準速度）[NEWLINE][NEWLINE]城市必須擁有畫廊。</Text>
+			<Text>本城+25%[ICON_GREAT_PEOPLE]偉人點數累積。[NEWLINE][NEWLINE]每座音樂學院建立時獲得一次性的500[ICON_GOLD]金幣獎勵（標準速度）。</Text>
 		</Row>
 
 		<Row>
@@ -1094,7 +1097,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_SIAM_PHRAKAEW_HELP</Tag>
-			<Text>有玉佛寺的城市中每支至少有一個信眾的宗教為本城+9[ICON_CULTURE]文化值+6[ICON_PEACE]信仰值。[NEWLINE][NEWLINE]城市必須擁有歌劇院。
+			<Text>有玉佛寺的城市中每支至少有一個信眾的宗教為本城+9[ICON_CULTURE]文化值+6[ICON_PEACE]信仰值。[NEWLINE][NEWLINE]城市必須擁有露天劇場、畫廊、歌劇院。
 			</Text>
 		</Row>
 
@@ -1340,8 +1343,8 @@
 		<Replace Tag="TXT_KEY_WONDER_GREAT_LIBRARY_HELP">
 			<Text>
 				[ICON_BULLET]向所在城市贈送一個圖書館。
-				[NEWLINE][ICON_BULLET]所有圖書館+3[ICON_RESEARCH]科研。
-				[NEWLINE][ICON_BULLET]+15%本地大科學家、大文學家點數積累。
+				[NEWLINE][ICON_BULLET]本城市中每2[ICON_CITIZEN]市民+1[ICON_RESEARCH]科技值。
+				[NEWLINE][ICON_BULLET]+20%本地大科學家、大文學家點數積累。
 				[NEWLINE][ICON_BULLET]擁有2個文學傑作展位。
 			</Text>
 		</Replace>
@@ -1900,10 +1903,13 @@
 
 		<!--****************************National Wonders*************************************-->
 
-		<Update>
-			<Where Tag="TXT_KEY_BUILDING_HEROIC_EPIC_HELP" />
-			<Set Text="需要開啟榮譽政策樹。[NEWLINE][NEWLINE]所有城市新訓練的單位+15經驗。擁有一個文學傑作展位。[NEWLINE][NEWLINE]只能在中型城市（15人口）建造。建造價格隨城市數量增加。" />
-		</Update>
+		<Replace Tag="TXT_KEY_BUILDING_HEROIC_EPIC_HELP">
+			<Text>
+				需要開啟榮譽政策樹。
+				[NEWLINE][NEWLINE]所有城市新訓練的單位+15經驗。擁有一個文學傑作展位。
+				[NEWLINE][NEWLINE]只能在小型城市（6人口）建造。建造價格隨城市數量增加。
+			</Text>
+		</Replace>
 
 		<Replace Tag="TXT_KEY_BUILDING_CIRCUS_MAXIMUS_HELP">
 			<Text>+10[ICON_HAPPINESS_1]全局快樂，必須先在所有城市建造馬戲團。建造價格隨城市數量增加。</Text>
@@ -2050,7 +2056,11 @@
 		</Replace>
 
 		<Replace Tag="TXT_KEY_BUILDING_NATIONAL_EPIC_HELP">
-			<Text>需要開啟虔信政策樹。[NEWLINE][NEWLINE]本城市[ICON_GREAT_PEOPLE]偉人點數累積+33%。[NEWLINE][NEWLINE]只能在中型城市（15人口）建造。建造成本隨城市數量增加。</Text>
+			<Text>
+				需要開啟虔信政策樹。
+				[NEWLINE][NEWLINE]本城市[ICON_GREAT_PEOPLE]偉人點數累積+20%。
+				[NEWLINE][NEWLINE]只能在小型城市（6人口）建造。建造成本隨城市數量增加。
+			</Text>
 		</Replace>
 
 		<Row Tag="TXT_KEY_BUILDING_NATIONAL_LIBRARY">
@@ -2362,11 +2372,11 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_ART_GALLERY_HELP</Tag>
-			<Text>城市必須擁有露天劇場。</Text>
+			<Text>提供兩個藝術家席位而且擁有一個美術傑作展位。</Text>
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_ART_GALLERY_STRATEGY</Tag>
-			<Text>畫廊可以增加城市的文化產出而且擁有一個美術傑作展位。[NEWLINE][NEWLINE]城市必須擁有露天劇場。</Text>
+			<Text>畫廊可以增加城市的文化產出而且擁有一個美術傑作展位。</Text>
 		</Row>
 
 		<!-- Culture Buildings Change -->
@@ -6486,12 +6496,11 @@
 				[COLOR_POSITIVE_TEXT]傳統政策[ENDCOLOR]適宜於繁榮精幹的帝國。
 				[NEWLINE][NEWLINE]啟用傳統政策：
 				[NEWLINE][ICON_BULLET]使[ICON_CAPITAL]首都+3[ICON_CULTURE]文化，+3[ICON_RESEARCH]科研。
-				[NEWLINE][ICON_BULLET]首都出發的商路+5距離基數、+5[ICON_GOLD]金錢。
+				[NEWLINE][ICON_BULLET]首都出發的商路+5距離、+5[ICON_GOLD]金錢。
 				[NEWLINE][ICON_BULLET]城市地塊擴張所需文化成本-25%。
 				[NEWLINE][ICON_BULLET]允許建造空中花園。
 				[NEWLINE][NEWLINE]推行所有傳統政策：
 				[NEWLINE][ICON_BULLET]使所有城市+15%[ICON_RESEARCH]科研、[ICON_CULTURE]文化和[ICON_PRODUCTION]產能產出。
-				[NEWLINE][ICON_BULLET]開啟[ICON_GOLDEN_AGE]黃金時代所需要的[ICON_GOLDEN_AGE]黃金時代點數減少25%。
 				[NEWLINE][ICON_BULLET]在工業時代後可以用[ICON_PEACE]信仰購買大工程師。
 				[NEWLINE][NEWLINE][COLOR_WARNING_TEXT]不能與自主政策同時開啟。[ENDCOLOR]
 			</Text>
@@ -6502,7 +6511,7 @@
 				[COLOR_POSITIVE_TEXT]貴族政治[ENDCOLOR]
 				[NEWLINE][ICON_BULLET]新建城市+1[ICON_CITIZEN]人口(但是每1個移民仍等於1人口)。
 				[NEWLINE][ICON_BULLET]小鎮（即6人口以下的城市）新增人口時會保留100%的余糧（在增長下一個人口後生效）。
-				[NEWLINE][ICON_BULLET]所有城市的余糧積累值立即充滿。
+				[NEWLINE][ICON_BULLET]所有城市的[ICON_FOOD]食物積累值、余糧積累值立即充滿。
 			</Text>
 		</Replace>
 
@@ -6516,8 +6525,13 @@
 		<Replace Tag="TXT_KEY_POLICY_LEGALISM_HELP">
 			<Text>
 				[COLOR_POSITIVE_TEXT]律法統治[ENDCOLOR]
-				[NEWLINE][ICON_BULLET]所有城市中每5[ICON_CITIZEN]人口+1[ICON_HAPPINESS_1]快樂。
-				[NEWLINE][ICON_BULLET]所有城市每一級城市規模+1[ICON_HAPPINESS_1]快樂。
+				[NEWLINE]各個不同規模的城市獲得相應的額外文化產出：
+				[NEWLINE][ICON_BULLET][ICON_CITYBANNER_CITY_SMALL]小型城市（6[ICON_CITIZEN]人口）：+4[ICON_CULTURE]文化。
+				[NEWLINE][ICON_BULLET][ICON_CITYBANNER_CITY_MEDIUM]中型城市（15[ICON_CITIZEN]人口）：+8[ICON_CULTURE]文化。
+				[NEWLINE][ICON_BULLET][ICON_CITYBANNER_CITY_LARGE]大型城市（26[ICON_CITIZEN]人口）：+14[ICON_CULTURE]文化。
+				[NEWLINE][ICON_BULLET][ICON_CITYBANNER_CITY_XL]特大城市（40[ICON_CITIZEN]人口）：+20[ICON_CULTURE]文化。
+				[NEWLINE][ICON_BULLET][ICON_CITYBANNER_CITY_XXL]巨型城市（60[ICON_CITIZEN]人口）：+28[ICON_CULTURE]文化。
+				[NEWLINE][ICON_BULLET][ICON_CITYBANNER_CITY_GLOBAL]大都會（80[ICON_CITIZEN]人口）：+36[ICON_CULTURE]文化。
 			</Text>
 		</Replace>
 
@@ -6537,7 +6551,7 @@
 		<Replace Tag="TXT_KEY_POLICY_MONARCHY_HELP">
 			<Text>
 				[COLOR_POSITIVE_TEXT]君主政體[ENDCOLOR]
-				[NEWLINE][ICON_BULLET]城市數量為國家奇觀帶來的建造成本增加量减半。
+				[NEWLINE][ICON_BULLET]開啟[ICON_GOLDEN_AGE]黃金時代所需要的[ICON_GOLDEN_AGE]黃金時代點數減少25%。
 				[NEWLINE][ICON_BULLET][ICON_CAPITAL]首都每個[ICON_CITIZEN]人口+1[ICON_GOLD]金錢，每3個[ICON_CITIZEN]人口+1[ICON_FOOD]食物、[ICON_CULTURE]文化、[ICON_PRODUCTION]產能、[ICON_RESEARCH]科研。
 			</Text>
 		</Replace>
@@ -6548,13 +6562,8 @@
 		<Replace Tag="TXT_KEY_POLICY_PREFECTURE_HELP">
 			<Text>
 				[COLOR_POSITIVE_TEXT]郡縣製度[ENDCOLOR]
-				[NEWLINE]各個不同規模的城市獲得相應的額外文化產出：
-				[NEWLINE][ICON_BULLET][ICON_CITYBANNER_CITY_SMALL]小型城市（6[ICON_CITIZEN]人口）：+4[ICON_CULTURE]文化。
-				[NEWLINE][ICON_BULLET][ICON_CITYBANNER_CITY_MEDIUM]中型城市（15[ICON_CITIZEN]人口）：+8[ICON_CULTURE]文化。
-				[NEWLINE][ICON_BULLET][ICON_CITYBANNER_CITY_LARGE]大型城市（26[ICON_CITIZEN]人口）：+14[ICON_CULTURE]文化。
-				[NEWLINE][ICON_BULLET][ICON_CITYBANNER_CITY_XL]特大城市（40[ICON_CITIZEN]人口）：+20[ICON_CULTURE]文化。
-				[NEWLINE][ICON_BULLET][ICON_CITYBANNER_CITY_XXL]巨型城市（60[ICON_CITIZEN]人口）：+28[ICON_CULTURE]文化。
-				[NEWLINE][ICON_BULLET][ICON_CITYBANNER_CITY_GLOBAL]大都會（80[ICON_CITIZEN]人口）：+36[ICON_CULTURE]文化。
+				[NEWLINE][ICON_BULLET]所有新單位+15點經驗。
+				[NEWLINE][ICON_BULLET]所有城市中每5[ICON_CITIZEN]人口+1[ICON_HAPPINESS_1]快樂。
 			</Text>
 		</Replace>
 		<Row Tag="TXT_KEY_POLICY_PREFECTURE_TEXT">
@@ -6581,8 +6590,9 @@
 		<Row Tag="TXT_KEY_POLICY_CENTRALISATION_HELP">
 			<Text>
 				[COLOR_POSITIVE_TEXT]中央集權[ENDCOLOR]
-				[NEWLINE][ICON_BULLET]所有新單位+15點經驗。
-				[NEWLINE][ICON_BULLET]戰爭傷亡導致的[ICON_PIRATE]人口損失減少33%.
+				[NEWLINE][ICON_BULLET]所有城市每一級城市規模+1[ICON_HAPPINESS_1]快樂。
+				[NEWLINE][ICON_BULLET]戰爭傷亡導致的[ICON_PIRATE]人口損失減少33%。
+				[NEWLINE][ICON_BULLET]城市數量為國家奇觀帶來的建造成本增加量减半。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_POLICY_CENTRALISATION_TEXT">
@@ -7987,13 +7997,13 @@
 			<Text>牧場+1[ICON_CULTURE]文化,[ICON_RES_COW]牛+2[ICON_PEACE]信仰、[ICON_RES_SHEEP]羊+1[ICON_FOOD]食物、[ICON_RES_HORSE]馬+1[ICON_PRODUCTION]產能</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_EARTH_MOTHER">
-			<Text>香料、柑橘、香蕉和棉花+1[ICON_PEACE]信仰、+1[ICON_FOOD]食物</Text>
+			<Text>[ICON_RES_SPICES]香料、[ICON_RES_CITRUS]柑橘、[ICON_RES_BANANA]香蕉和[ICON_RES_COTTON]棉花+1[ICON_PEACE]信仰、+1[ICON_FOOD]食物</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_FERTILITY_RITES">
 			<Text>糧倉+2[ICON_PEACE]信仰，[ICON_RES_WHEAT]小麥+1[ICON_PEACE]信仰</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_GOD_CRAFTSMEN">
-			<Text>玉石、琥珀、珊瑚和天青石+1[ICON_PEACE]信仰、+1[ICON_PRODUCTION]產能</Text>
+			<Text>[ICON_RES_JADE]玉石、[ICON_RES_AMBER]琥珀、[ICON_RES_CORAL]珊瑚和[ICON_RES_LAPIS]天青石+1[ICON_PEACE]信仰、+1[ICON_PRODUCTION]產能</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_DANCE_AURORA">
 			<Text>凍土地塊+1[ICON_PEACE]信仰，位於凍土地塊的城市+2[ICON_FOOD]食物</Text>
@@ -8023,7 +8033,7 @@
 			<Text>種植園+1[ICON_CULTURE]文化、+1[ICON_GOLD]金錢，[ICON_RES_SILK]絲綢、[ICON_RES_TEA]茶葉、[ICON_RES_DYE]染料+1[ICON_CULTURE]文化</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_SUN_GOD">
-			<Text>橄欖、蔗糖、香水和煙草+1[ICON_PEACE]信仰、+1[ICON_RESEARCH]科研</Text>
+			<Text>[ICON_RES_OLIVE]橄欖、[ICON_RES_SUGAR]蔗糖、[ICON_RES_PERFUME]香水和[ICON_RES_TOBACCO]煙草+1[ICON_PEACE]信仰、+1[ICON_RESEARCH]科研</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_GOD_WAR">
 			<Text>在你的城市6格以內戰鬥勝利時獲得[ICON_PEACE]信仰，兵營、軍械所+2[ICON_PEACE]信仰</Text>
@@ -8128,7 +8138,7 @@
 			<Text>風景地標、學園、海關、製造中心、宗教聖地+5[ICON_PEACE]信仰</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_FORMAL_LITURGY">
-			<Text>每一處黃金、白銀、赤銅、鐵礦、鹽資源+1[ICON_PEACE]信仰、+1[ICON_CULTURE]文化</Text>
+			<Text>每一處[ICON_RES_GOLD]黃金、[ICON_RES_SILVER]白銀、[ICON_RES_COPPER]赤銅、[ICON_RES_IRON]鐵礦、[ICON_RES_SALT]鹽資源+1[ICON_PEACE]信仰、+1[ICON_CULTURE]文化</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_GOD_FESTIVALS">
 			<Text>每一處紅酒和熏香+2[ICON_PEACE]信仰、+2[ICON_CULTURE]文化</Text>
@@ -8146,7 +8156,7 @@
 			<Text>和平時期[ICON_FOOD]食物積累速率提高25%</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_TEARS_OF_GODS">
-			<Text>每一處寶石和珍珠+2[ICON_PEACE]信仰、+2[ICON_CULTURE]文化</Text>
+			<Text>每一處[ICON_RES_GEMS]寶石和[ICON_RES_PEARLS]珍珠+2[ICON_PEACE]信仰、+2[ICON_CULTURE]文化</Text>
 		</Replace>
 
 
@@ -8178,7 +8188,7 @@
 			<Text>你的間諜可向所處城市註入宗教壓力。額外提供一名[ICON_SPY]間諜</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_EVANGELISM">
-			<Text>傳教士的傳教活動能消解其他宗教的壓力。宗教單位傳教次數+1</Text>
+			<Text>傳教士的傳教活動能消解其他宗教的壓力，且傳教次數+1</Text>
 		</Replace>
 
 		<!--**************************************************New Belief Texts*************************************-->
@@ -15727,6 +15737,21 @@
 		</Row>
 		<Row Tag="TXT_KEY_EUPANEL_WORLD_CONGRESS_MODIFIER">
 			<Text>世界議會加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_ATTACK_VS_DOMAIN_SP">
+			<Text>對領域攻擊加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_DEFENSE_VS_DOMAIN_SP" >
+			<Text>對領域防禦加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_BONUS_VS_FULLY_HEALED_UNITS_SP">
+			<Text>對抗滿血單位加成</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_BONUS_VS_MORE_50_HP_UNITS_SP">
+			<Text>目標高于50%HP</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_BONUS_VS_LESS_50_HP_UNITS_SP">
+			<Text>目標不高于50%HP</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_CO_SP_MOVE_TEAMMATE_STOPPED">

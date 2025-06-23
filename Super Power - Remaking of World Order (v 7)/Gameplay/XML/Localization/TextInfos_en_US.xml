@@ -16,7 +16,7 @@
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_VERSION">
-			<Text>[COLOR_YELLOW]Version 10.93[ENDCOLOR]</Text>
+			<Text>[COLOR_YELLOW]Version 10.94[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MOD_SETUP">
@@ -3551,7 +3551,10 @@
 
 
 		<Row Tag="TXT_KEY_BUILDING_CEILIDH_HALL_HELP">
-			<Text>+1 [ICON_CULTURE] Culture for each worked [COLOR_POSITIVE_TEXT]Forest[ENDCOLOR] Tiles in this city. [NEWLINE][NEWLINE]City must have an Amphitheater.</Text>
+			<Text>
+				[ICON_BULLET]+1 [ICON_CULTURE] Culture for each worked [COLOR_POSITIVE_TEXT]Forest[ENDCOLOR] Tiles in this city.
+				[NEWLINE][ICON_BULLET]+1 [ICON_TOURISM] Tourism and +5% [ICON_TOURISM] Tourism output per Musican Specialist this City.
+			</Text>
 		</Row>
 
 
@@ -3585,7 +3588,7 @@
 			<Text>
 				+25% [ICON_GREAT_PEOPLE] Generation of Great People.
 				[NEWLINE][NEWLINE]Receive one-time 500 [ICON_GOLD] Gold (at Normal Game Speed) after a Music Academy is built.
-				[NEWLINE][NEWLINE]City must have an Art Gallery.</Text>
+			</Text>
 		</Row>
 		
 
@@ -3601,8 +3604,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_FRENCH_SALON_HELP</Tag>
-			<Text>+5% [ICON_GREAT_PEOPLE] Generation of Great People in all Cities.
-			[NEWLINE][NEWLINE]City must have an Amphitheater.</Text>
+			<Text>+5% [ICON_GREAT_PEOPLE] Generation of Great People in all Cities.</Text>
 		</Row>
 
 
@@ -3620,7 +3622,7 @@
 			<Tag>TXT_KEY_BUILDING_SIAM_PHRAKAEW_HELP</Tag>
 			<Text>
 				+9 [ICON_CULTURE] Culture +6 [ICON_PEACE] Faith for each World Religion that has at least 1 follower in the city. No maintenance.
-				[NEWLINE][NEWLINE]City must have an Opera House.
+				[NEWLINE][NEWLINE]City must have an Amphitheater, an Art Gallery and an Opera House.
 			</Text>
 		</Row>
 
@@ -3904,8 +3906,8 @@
 		<Replace Tag="TXT_KEY_WONDER_GREAT_LIBRARY_HELP">
 			<Text>
 				[ICON_BULLET]Provides a free Library in the city which it is built.
-				[NEWLINE][ICON_BULLET]+3 [ICON_RESEARCH] Science for every Library.
-				[NEWLINE][ICON_BULLET]Earn Great Scientists and Great Writer 15% faster for local City.
+				[NEWLINE][NEWLINE]+1 [ICON_RESEARCH] Science for every 2 [ICON_CITIZEN] Citizens in this City.
+				[NEWLINE][ICON_BULLET]Earn Great Scientists and Great Writer 20% faster for local City.
 			</Text>
 		</Replace>
 
@@ -4081,7 +4083,10 @@
 			<Set Text="1 free Great Artist appears near the City where the Wonder was built." />
 		</Update>	
 
-
+		<Update>
+			<Where Tag="TXT_KEY_WONDER_LOUVRE_HELP" />
+			<Set Text="Requires Aesthetics. 1 free Great Artist appears near the City where the Wonder was built." />
+		</Update>
 
 
 
@@ -4512,13 +4517,13 @@
 		
 	<!--****************************National Wonders*************************************-->
 
-		<Update>
-			<Where Tag="TXT_KEY_BUILDING_HEROIC_EPIC_HELP" />
-			<Set
-				Text="Requires Honor.
-				 [NEWLINE][NEWLINE]+15 XP for new units built in all cities.
-				 [NEWLINE][NEWLINE]Must be built in Medium Cities. The cost goes up the more cities there are in the empire." />
-		</Update>
+		<Replace Tag="TXT_KEY_BUILDING_HEROIC_EPIC_HELP">
+			<Text>
+				Requires Honor.
+				[NEWLINE][NEWLINE]+15 XP for new units built in all cities.
+				[NEWLINE][NEWLINE]Must be built in Small Cities. The cost goes up the more cities there are in the empire.
+			</Text>
+		</Replace>
 
 
 		<Replace Tag="TXT_KEY_BUILDING_CIRCUS_MAXIMUS_HELP">
@@ -4692,7 +4697,8 @@
 		<Replace Tag="TXT_KEY_BUILDING_NATIONAL_EPIC_HELP">
 			<Text>
 				Requires Piety.
-				[NEWLINE][NEWLINE]+33% [ICON_GREAT_PEOPLE] generation of Great People in the city.  [NEWLINE][NEWLINE]Must be built in Medium Cities. The cost goes up the more cities there are in the empire.</Text>
+				[NEWLINE][NEWLINE]+20% [ICON_GREAT_PEOPLE] generation of Great People in the city.  
+				[NEWLINE][NEWLINE]Must be built in Small Cities. The cost goes up the more cities there are in the empire.</Text>
 		</Replace>
 
 		<!-- Description tags -->
@@ -5045,9 +5051,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_ART_GALLERY_HELP</Tag>
-			<Text>
-				City must have an Amphitheater.
-			</Text>
+			<Text>Provide two artist slot and contains 1 slots for Great Works of Art.</Text>
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_ART_GALLERY_STRATEGY</Tag>
@@ -5061,7 +5065,7 @@
 
 		
 		<Replace Tag="TXT_KEY_BELIEF_CATHEDRALS">
-			<Text> Use [ICON_PEACE] Faith to purchase Cathedrals (+1 [ICON_PEACE] Faith, +2 [ICON_CULTURE] Culture, +2 [ICON_HAPPINESS_1] Happiness. One artist slot.</Text>
+			<Text>Use [ICON_PEACE] Faith to purchase Cathedrals (+1 [ICON_PEACE] Faith, +2 [ICON_CULTURE] Culture, +2 [ICON_HAPPINESS_1] Happiness. One artist slot).</Text>
 		</Replace>
 
 		
@@ -7388,12 +7392,11 @@
 				[COLOR_POSITIVE_TEXT]Tradition[ENDCOLOR] is best for "tall" empires.
 				[NEWLINE][NEWLINE]Opening Effect:
 				[NEWLINE][ICON_BULLET]+5 [ICON_CULTURE] and +5 [ICON_RESEARCH] Science in the [ICON_CAPITAL] Capital.
-				[NEWLINE][ICON_BULLET]International trade routes from your Capital City +3 basic range and +3 [ICON_GOLD] Gold.
+				[NEWLINE][ICON_BULLET]International trade routes from your Capital City +5 range and +5 [ICON_GOLD] Gold.
 				[NEWLINE][ICON_BULLET]-25% [ICON_CULTURE] Culture Exponent cost for acquiring new plots in all cities.
 				[NEWLINE][ICON_BULLET]Wonder Unlocked: Hanging Gardens.
 				[NEWLINE][NEWLINE]Finishing Bonus:
 				[NEWLINE][ICON_BULLET]+15% [ICON_CULTURE] Culture, [ICON_RESEARCH] Science and [ICON_PRODUCTION] Production output in all cities.
-				[NEWLINE][ICON_BULLET]Amount of [ICON_HAPPINESS_1] Happiness required to start a [ICON_GOLDEN_AGE] Golden Age reduced by 25%.
 				[NEWLINE][ICON_BULLET]Allows the purchase of Great Engineers with [ICON_PEACE] Faith starting in the Industrial Era. [NEWLINE][NEWLINE][COLOR_WARNING_TEXT]This branch CANNOT be active at the same time as Liberty.[ENDCOLOR]</Text>
 		</Replace>
 		
@@ -7403,7 +7406,7 @@
 				[COLOR_POSITIVE_TEXT]Aristocracy[ENDCOLOR]
 				[NEWLINE][ICON_BULLET]New Cities start with an extra 1 [ICON_CITIZEN] Citizen. (But one Settler Unit still equals one Population)
 				[NEWLINE][ICON_BULLET]100% [ICON_FOOD] is carried over after a new [ICON_CITIZEN] Citizen is born for every Town (Cities with a [ICON_CITIZEN] Population less than 6). It won't be effective instantly but after the next new [ICON_CITIZEN] Citizen is born.
-				[NEWLINE][ICON_BULLET]The accumulation of food kept in all city immediately filled up.
+				[NEWLINE][ICON_BULLET]The accumulation of Food Kept and the accumulation of [ICON_FOOD] Food in all city immediately filled up.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_LANDED_ELITE_HELP" >
@@ -7416,8 +7419,13 @@
 		<Replace Tag="TXT_KEY_POLICY_LEGALISM_HELP" >
 			<Text>
 				[COLOR_POSITIVE_TEXT]Legalism[ENDCOLOR]
-				[NEWLINE][ICON_BULLET]+1 [ICON_HAPPINESS_1] Hapiness for every 5 [ICON_CITIZEN] Citizens in cities directly under the central government.
-				[NEWLINE][ICON_BULLET]+1 [ICON_HAPPINESS_1] to every city's Population Size in all cities.
+				[NEWLINE][ICON_BULLET]Gain additional [ICON_CULTURE] Culture in cities reached certain Population Size:
+				[NEWLINE][ICON_BULLET]Small City: +4 [ICON_CULTURE] Culture.
+				[NEWLINE][ICON_BULLET]Medium City: +8 [ICON_CULTURE] Culture.
+				[NEWLINE][ICON_BULLET]Large City: +14 [ICON_CULTURE] Culture.
+				[NEWLINE][ICON_BULLET]XL City: +20 [ICON_CULTURE] Culture.
+				[NEWLINE][ICON_BULLET]XXL City: +28 [ICON_CULTURE] Culture.
+				[NEWLINE][ICON_BULLET]Global City: +36 [ICON_CULTURE] Culture.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_OLIGARCHY_HELP" >
@@ -7435,30 +7443,19 @@
 		<Replace Tag="TXT_KEY_POLICY_MONARCHY_HELP" >
 			<Text>
 				[COLOR_POSITIVE_TEXT]Monarchy[ENDCOLOR]
-				[NEWLINE][ICON_BULLET]The increase in construction cost for National Wonders due to the number of cities is reduced by 50%.
+				[NEWLINE][ICON_BULLET]Amount of [ICON_HAPPINESS_1] Happiness required to start a [ICON_GOLDEN_AGE] Golden Age reduced by 25%.
 				[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] Gold for every [ICON_CITIZEN] Citizens and +1 [ICON_FOOD] Food, [ICON_CULTURE] Culture, [ICON_PRODUCTION] Production, [ICON_RESEARCH] Science for every 3 [ICON_CITIZEN] Citizens in the [ICON_CAPITAL] Capital.
 			</Text>
 		</Replace>
 
-		
-		
-		
-		
-		
-		
 		<Row Tag="TXT_KEY_POLICY_PREFECTURE">
 			<Text>Prefeture</Text>
 		</Row>
 		<Row Tag="TXT_KEY_POLICY_PREFECTURE_HELP" >
 			<Text>
 				[COLOR_POSITIVE_TEXT]Prefeture[ENDCOLOR]
-				[NEWLINE][ICON_BULLET]Gain additional [ICON_CULTURE] Culture in cities reached certain Population Size:
-				[NEWLINE][ICON_BULLET]Small City: +4 [ICON_CULTURE] Culture.
-				[NEWLINE][ICON_BULLET]Medium City: +8 [ICON_CULTURE] Culture.
-				[NEWLINE][ICON_BULLET]Large City: +14 [ICON_CULTURE] Culture.
-				[NEWLINE][ICON_BULLET]XL City: +20 [ICON_CULTURE] Culture.
-				[NEWLINE][ICON_BULLET]XXL City: +28 [ICON_CULTURE] Culture.
-				[NEWLINE][ICON_BULLET]Global City: +36 [ICON_CULTURE] Culture.
+				[NEWLINE][ICON_BULLET]New Units receive +15 XP.
+				[NEWLINE][ICON_BULLET]+1 [ICON_HAPPINESS_1] Hapiness for every 5 [ICON_CITIZEN] Citizens in cities directly under the central government.
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_POLICY_PREFECTURE_TEXT">
@@ -7489,8 +7486,11 @@
 		</Row>
 		<Row Tag="TXT_KEY_POLICY_CENTRALISATION_HELP" >
 			<Text>
-				[COLOR_POSITIVE_TEXT]Centralisation[ENDCOLOR][NEWLINE][ICON_BULLET]New Units receive +15 XP.
-				[NEWLINE][ICON_BULLET][ICON_PIRATE] Population Loss from Unit Casualties reduced by 33%.</Text>
+				[COLOR_POSITIVE_TEXT]Centralisation[ENDCOLOR]
+				[NEWLINE][ICON_BULLET]+1 [ICON_HAPPINESS_1] to every city's Population Size in all cities.
+				[NEWLINE][ICON_BULLET][ICON_PIRATE] Population Loss from Unit Casualties reduced by 33%.
+				[NEWLINE][ICON_BULLET]The increase in construction cost for National Wonders due to the number of cities is reduced by 50%.
+			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_POLICY_CENTRALISATION_TEXT">
 			<Text>
@@ -9005,13 +9005,13 @@
 			<Text>+1 [ICON_HAPPINESS_1] Happiness from cities onrivers, +1 [ICON_PEACE] Faith from Lake and Coast</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_GOD_CRAFTSMEN">
-			<Text>+1 [ICON_PEACE] Faith and +1[ICON_PRODUCTION] Production for each Amber, Jade, Coral and Lapis Lazuli resource</Text>
+			<Text>+1 [ICON_PEACE] Faith and +1[ICON_PRODUCTION] Production for each [ICON_RES_AMBER]Amber, [ICON_RES_JADE]Jade, [ICON_RES_CORAL]Coral and [ICON_RES_LAPIS]Lapis Lazuli resource</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_SUN_GOD">
-			<Text>+1 [ICON_PEACE] Faith and +1 [ICON_RESEARCH] Science for each Olive, Sugar, Perfume and Tobacco resource</Text>
+			<Text>+1 [ICON_PEACE] Faith and +1 [ICON_RESEARCH] Science for each [ICON_RES_OLIVE]Olive, [ICON_RES_SUGAR]Sugar, [ICON_RES_PERFUME]Perfume and [ICON_RES_TOBACCO]Tobacco resource</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_EARTH_MOTHER">
-			<Text>+1 [ICON_PEACE] Faith and +1 [ICON_FOOD] Food for each Spices, Citrus, Banana and Cotton resource</Text>
+			<Text>+1 [ICON_PEACE] Faith and +1 [ICON_FOOD] Food for each [ICON_RES_SPICES]Spices, [ICON_RES_CITRUS]Citrus, [ICON_RES_BANANA]Banana and [ICON_RES_COTTON]Cotton resource</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_GODDESS_HUNT">
 			<Text>+1 [ICON_FOOD] Food and +1 [ICON_PEACE] Faith from Camps, +1 [ICON_CULTURE] Culture from [ICON_RES_BISON] and [ICON_RES_DEER]</Text>
@@ -9076,7 +9076,7 @@
 			<Text>+5 [ICON_PEACE] Faith from Landmarks, Academies, Customs Houses, Manufactories and Holy Sites</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_FORMAL_LITURGY">
-			<Text>+1 [ICON_PEACE] Faith and +1 [ICON_CULTURE] Culture for each Gold, Silver, Copper, Iron and Salt</Text>
+			<Text>+1 [ICON_PEACE] Faith and +1 [ICON_CULTURE] Culture for each [ICON_RES_GOLD]Gold, [ICON_RES_SILVER]Silver, [ICON_RES_COPPER]Copper, [ICON_RES_IRON]Iron and [ICON_RES_SALT]Salt</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_GOD_FESTIVALS">
 			<Text>+2 [ICON_PEACE] Faith and +2 [ICON_CULTURE] Culture for each Wine and Incense</Text>
@@ -9097,7 +9097,7 @@
 			<Text>+1 [ICON_CULTURE] Culture for every Fishing Net, +1 [ICON_PEACE] Faith and +1 [ICON_CULTURE] Culture for every Fishing Boat</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_TEARS_OF_GODS">
-			<Text>+2 [ICON_PEACE] Faith and +2 [ICON_CULTURE] Culture for every Gem and Pearl</Text>
+			<Text>+2 [ICON_PEACE] Faith and +2 [ICON_CULTURE] Culture for every [ICON_RES_GEMS]Gem and [ICON_RES_PEARLS]Pearl</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_GOD_KING">
 			<Text>Palace provides +2 [ICON_PEACE] Faith, +1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production, +1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production and +1 [ICON_PEACE] Faith from each [ICON_CITYBANNER_CITY_LV1] City Hall [COLOR_NEGATIVE_TEXT](Lv1)[ENDCOLOR]</Text>
@@ -9131,7 +9131,7 @@
 			<Text>Your spies exert religious pressure on the cities they occupy. Provides an additional [ICON_SPY] Spy</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_EVANGELISM">
-			<Text>Missionaries' Spread Religion action erodes existing pressure from other religions. +1 Extra Religion Spread for each Religious Unit</Text>
+			<Text>Missionaries' Spread Religion action erodes existing pressure from other religions and +1 Extra Religion Spread</Text>
 		</Replace>
 		
 
@@ -17582,6 +17582,21 @@
 		</Row>
 		<Row Tag="TXT_KEY_EUPANEL_WORLD_CONGRESS_MODIFIER">
 			<Text>World Congress Modifier</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_ATTACK_VS_DOMAIN_SP">
+			<Text>Attack Penalty VS Domain</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_DEFENSE_VS_DOMAIN_SP" >
+			<Text>Defense Bonus VS Domain</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_BONUS_VS_FULLY_HEALED_UNITS_SP">
+			<Text>Bonus VS Fully-Healed Units</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_BONUS_VS_MORE_50_HP_UNITS_SP">
+			<Text>Target above 50% HP</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_BONUS_VS_LESS_50_HP_UNITS_SP">
+			<Text>Target below/at 50% HP</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_CO_SP_MOVE_TEAMMATE_STOPPED">
