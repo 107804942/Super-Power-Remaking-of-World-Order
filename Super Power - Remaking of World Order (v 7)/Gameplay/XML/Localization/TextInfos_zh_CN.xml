@@ -44,16 +44,16 @@
 			<Text>[COLOR_YELLOW]全部[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_IMMIGRATION">
-			<Text>SP-关闭 [COLOR_YELLOW]国际移民[ENDCOLOR]</Text>
+			<Text>SP-禁用 [COLOR_YELLOW]国际移民[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_IMMIGRATION_HELP">
-			<Text>国际移民：允许人口跨境流动。</Text>
+			<Text>国际移民：允许人口跨境流动。勾选后禁用此功能。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_NUCLEARWINTER">
-			<Text>SP-关闭 [COLOR_YELLOW]核冬天[ENDCOLOR]</Text>
+			<Text>SP-禁用 [COLOR_YELLOW]核冬天[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_NUCLEARWINTER_HELP">
-			<Text>核冬天：核战争将会引发灾难性的全球气候变化。</Text>
+			<Text>核冬天：核战争将会引发灾难性的全球气候变化。勾选后禁用此功能。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_RECORD_MODE">
 			<Text>SP-记录模式</Text>
@@ -62,22 +62,22 @@
 			<Text>记录使用额外模组数量及记录读档次数。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_CORPS_MODE_HIGH">
-			<Text>SP-军团模式（高）</Text>
+			<Text>SP-拓展 [COLOR_GREY]军团模式（高）[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_CORPS_MODE_HIGH_HELP">
-			<Text>允许建立军团和集团军，兵力规模等级高(150%)。</Text>
+			<Text>勾选后在军团模式下全局兵力产出变更为150%。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_CORPS_MODE_CLOSE">
-			<Text>SP-关闭 [COLOR_YELLOW]军团模式[ENDCOLOR]</Text>
+			<Text>SP-禁用 [COLOR_YELLOW]军团模式[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_CORPS_MODE_CLOSE_HELP">
-			<Text>军团模式：允许建立军团和集团军（详情见百科战斗规则页）</Text>
+			<Text>军团模式：允许建立军团和集团军（详情见百科战斗规则页）。勾选后禁用此功能。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_CORPS_MODE_LOW">
-			<Text>SP-军团模式（低）</Text>
+			<Text>SP-拓展 [COLOR_GREY]军团模式（低）[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_CORPS_MODE_LOW_HELP">
-			<Text>允许建立军团和集团军，兵力规模等级低(50%)。</Text>
+			<Text>勾选后在军团模式下全局兵力产出变更为50%。</Text>
 		</Row>
 
 
@@ -878,11 +878,17 @@
 		</Row>
 
 		<Replace Tag="TXT_KEY_BUILDING_CARAVANSARY_HELP">
-			<Text>通向其他文明的陆地商路额外+6基础[ICON_GOLD]金钱。</Text>
+			<Text>
+				[ICON_BULLET]从本城市出发的陆地商队范围增加20%。
+				[NEWLINE][ICON_BULLET]通向其他文明的陆地商路+6基础[ICON_GOLD]金钱。
+			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_BAZAAR_HELP">
 			<Text>
-				本城市的每处[ICON_RES_OIL]石油和绿洲+2[ICON_GOLD]金钱产出。[NEWLINE][NEWLINE]通向其他文明的陆地商路额外+6基础[ICON_GOLD]金钱。
+				[ICON_BULLET]+2[ICON_PEACE]信仰。
+				[NEWLINE][ICON_BULLET]从本城市出发的陆地商队范围增加20%。
+				[NEWLINE][ICON_BULLET]本城每处[ICON_RES_OIL]石油和绿洲+2[ICON_GOLD]金钱产出。
+				[NEWLINE][ICON_BULLET]通向其他文明的陆地商路+6基础[ICON_GOLD]金钱。
 			</Text>
 		</Replace>
 
@@ -1406,10 +1412,14 @@
 			<Set Text="所有城市-10%[ICON_CITIZEN]人口增长阈值。向所在城市赠送一个花园。" />
 		</Update>
 
-		<Update>
-			<Where Tag="TXT_KEY_WONDER_COLOSSUS_HELP" />
-			<Set Text="获得一条额外的商路和一艘免费的货船。[NEWLINE][NEWLINE]所有由此城市出发的商路+50%距离。城市必须沿海。[NEWLINE][NEWLINE]本城出发的商路+1[ICON_RESEARCH]科研、+1[ICON_CULTURE]文化。" />
-		</Update>
+		<Replace Tag="TXT_KEY_WONDER_COLOSSUS_HELP">
+			<Text>
+				[ICON_BULLET]获得一条额外的商路和一艘免费的货船。
+				[NEWLINE][ICON_BULLET]所有由此城市出发的海上商路+50%距离。
+				[NEWLINE][ICON_BULLET]本城出发的商路+1[ICON_RESEARCH]科研、+1[ICON_CULTURE]文化。
+				[NEWLINE][NEWLINE]城市必须沿海。
+			</Text>
+		</Replace>
 
 		<Update>
 			<Where Tag="TXT_KEY_WONDER_ORACLE_HELP" />
@@ -2940,8 +2950,7 @@
 		<Row Tag="TXT_KEY_TRO_LOCATE_RECALL_TT">
 			<Text>
 				单击[COLOR_WARNING_TEXT]取消[ENDCOLOR]并[COLOR_WARNING_TEXT]召回[ENDCOLOR]此贸易单位。
-				[NEWLINE][NEWLINE][ICON_BULLET]如果这是国内商路，您可以立即重新分配贸易路线。
-				[NEWLINE][NEWLINE][ICON_BULLET]如果这是国际商路，贸易路线立即取消。然而，你必须等到这个贸易单位回到它的家乡才可以重新分配它。
+				[NEWLINE][ICON_BULLET]下回合，您可以重新分配此贸易路线。
 			</Text>
 		</Row>
 
@@ -5043,16 +5052,14 @@
 			<Set Text="现在，我们的人民皆服右衽、闻雅乐。我担心世界其他地方，也会屈服于你文化的影响力之下。" />
 		</Update>
 		<Row Tag="TXT_KEY_CO_IMMIGRATION_COUNTER_HEADER">
-			<Text>[ICON_TEAM_4] / [ICON_TEAM_2]</Text>
+			<Text>[ICON_TEAM_2][ICON_TEAM_1][ICON_TEAM_4]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CO_IMMIGRATION_COUNTER_HEADER_TT">
 			<Text>
-				左侧：当前[ICON_TEAM_4]国际移民迁入速率。
-				[NEWLINE][ICON_BULLET]迁入速率体现了本文明对该国人民的吸引力。
-				[NEWLINE][ICON_BULLET]如果你的迁入速率大于等于4且比移出速率更高，则该国每回合会[ICON_TEAM_4]移民到你的国家一单位[ICON_CITIZEN]人口。
-				[NEWLINE][NEWLINE][NEWLINE]右侧：当前[ICON_TEAM_2]国际移民移出速率。
-				[NEWLINE][ICON_BULLET]移出速率体现了该文明对你的国民的吸引力。
-				[NEWLINE][ICON_BULLET]如果你的移出速率大于等于4且比迁入速率更高，则本国每回合会[ICON_TEAM_4]移民到目标国家一单位[ICON_CITIZEN]人口。
+				移民综合速率 ([ICON_TEAM_2][COLOR_NEGATIVE_TEXT]移出阈值[ENDCOLOR] - 国际移民进度 - [COLOR_POSITIVE_TEXT]迁入阈值[ENDCOLOR][ICON_TEAM_4])。
+				[NEWLINE][ICON_BULLET]移民综合速率基于迁入速率和移出速率的差值。迁入速率体现了本文明对该国人民的吸引力，移出速率则体现了该文明对你的国民的吸引力。
+				[NEWLINE][ICON_BULLET]如果国际移民进度达到[COLOR_POSITIVE_TEXT]迁入阈值[ENDCOLOR]，则该国会[ICON_TEAM_4]移民到你的国家一单位[ICON_CITIZEN]人口。
+				[NEWLINE][ICON_BULLET]如果国际移民进度达到[COLOR_NEGATIVE_TEXT]移出阈值[ENDCOLOR]，则本国会[ICON_TEAM_2]移民到目标国家一单位[ICON_CITIZEN]人口。
 				[NEWLINE][NEWLINE]基础[ICON_TEAM_4]迁移速率由文化影响度决定（默默无闻：0，初具风情：1，口耳相传：2，广受称誉：3，无远弗届：4，绝对支配：5）。但迁移速率也会受到两国间外交关系的影响。
 			</Text>
 		</Row>
@@ -5822,7 +5829,7 @@
 		<Replace Tag="TXT_KEY_TRAIT_ART_OF_WAR">
 			<Text>
 				[ICON_BULLET]所有陆军单位都自带消灭敌人后，获得相当于敌单位战斗力数值50%的[ICON_GOLDEN_AGE]黄金时代点数的晋升。
-				[NEWLINE][ICON_BULLET]黄金时代中，所有城市的[ICON_CITIZEN]人口增长所需粮食-20%，消除来自城市数量的[ICON_RESEARCH]科研花费增加。
+				[NEWLINE][ICON_BULLET]黄金时代中，所有城市的[ICON_CITIZEN]人口增长所需粮食-20%，来自城市数量的[ICON_RESEARCH]科研阈值减半。
 			</Text>
 		</Replace>
 		<Row Tag="TXT_KEY_SP_UA_CHINA_GOLDENAGE_ANNOUNCE">
@@ -5832,7 +5839,7 @@
 			<Text>
 				中国进入了一个崭新的[ICON_GOLDEN_AGE][COLOR_POSITIVE_TEXT]盛世[ENDCOLOR]！
 				[NEWLINE][NEWLINE]所有金钱产出的地块额外+1[ICON_GOLD]金钱产出，全国+20%[ICON_PRODUCTION]产能，[ICON_CULTURE]文化。
-				[NEWLINE]所有城市的[ICON_CITIZEN]人口增长所需粮食-20%，消除来自城市数量的[ICON_RESEARCH]科研花费增加。
+				[NEWLINE]所有城市的[ICON_CITIZEN]人口增长所需粮食-20%，来自城市数量的[ICON_RESEARCH]科研阈值减半。
 			</Text>
 		</Row>
 
@@ -5925,7 +5932,7 @@
 
 		<Replace Tag="TXT_KEY_TRAIT_BUFFALO_HORNS">
 			<Text>
-				[ICON_BULLET]所有军事单位获得晋升所需经验值-50%，陆上单位维护费-15%。
+				[ICON_BULLET]所有军事单位获得晋升所需经验值-50%，且不会因为赤字被解散。
 				[NEWLINE][ICON_BULLET]境内有市民工作的每处[ICON_RES_GOLD]黄金、[ICON_RES_SILVER]白银和[ICON_RES_GEMS]宝石资源+5[ICON_GOLD]金钱。
 			</Text>
 		</Replace>
@@ -6047,22 +6054,24 @@
 			<Text>
 				[ICON_BULLET]河流及其相邻区块不会阻碍己方单位[ICON_MOVES]移动。
 				[NEWLINE][ICON_BULLET]陆地商路能够通过河流线延长（视为道路）。
-				[NEWLINE][ICON_BULLET]所有贸易站+1[ICON_GOLD]金钱产出。
 				[NEWLINE][ICON_BULLET]沿河城市减少200点离心倾向。
 			</Text>
 		</Replace>
 
+		<Replace Tag="TXT_KEY_TRAIT_BONUS_AGAINST_TECH_SHORT">
+			<Text>所罗门王</Text>
+		</Replace>
 		<Replace Tag="TXT_KEY_TRAIT_BONUS_AGAINST_TECH">
 			<Text>
-				[ICON_BULLET]与拥有更多城市的文明的单位作战时获得25%战斗力加成。
-				[NEWLINE][ICON_BULLET]所有专家+2[ICON_CULTURE]文化产出。
+				[ICON_BULLET]所有专家+2[ICON_CULTURE]文化产出。
+				[NEWLINE][ICON_BULLET]允许使用[ICON_PEACE]信仰购买露天剧场、画廊、歌剧院。
 			</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_TRAIT_POPULATION_GROWTH">
 			<Text>
 				[ICON_BULLET]城市[ICON_CITIZEN]人口带来的[ICON_HAPPINESS_4]不满-20%。
-				[NEWLINE][ICON_BULLET]城市中每个主流宗教信徒+1%[ICON_FOOD]粮食产出。
+				[NEWLINE][ICON_BULLET]城市中每个主流宗教信徒+1%[ICON_FOOD]粮食产出（至多+25%）。
 			</Text>
 		</Replace>
 
@@ -6090,7 +6099,7 @@
 
 		<Replace Tag="TXT_KEY_TRAIT_CITY_STATE_BONUSES">
 			<Text>
-				[ICON_BULLET]友好城邦提供的[ICON_FOOD]食物,[ICON_CULTURE]文化,[ICON_PEACE]信仰增加50%。
+				[ICON_BULLET]友好城邦提供的[ICON_FOOD]食物，[ICON_CULTURE]文化，[ICON_PEACE]信仰增加50%。
 				[NEWLINE][ICON_BULLET]军事城邦赠送的单位获得免费20经验。
 				[NEWLINE][ICON_BULLET]可以把伟人作为礼物单位送给城邦并获得150点[ICON_INFLUENCE]影响力。
 			</Text>
@@ -6100,6 +6109,7 @@
 			<Text>
 				[ICON_BULLET]陆上商队+50%距离，商队传输宗教压力提高3倍。
 				[NEWLINE][ICON_BULLET]每处绿洲+2[ICON_CULTURE]文化和+2[ICON_PEACE]信仰。
+				[NEWLINE][ICON_BULLET]信仰你创立的宗教的伊斯兰先知产出的[ICON_CULTURE]文化翻倍。
 			</Text>
 		</Replace>
 
@@ -6476,7 +6486,7 @@
 			<Text>伊斯兰先知</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_ARABIAN_PROPHET_HELP">
-			<Text>伊斯兰先知是阿拉伯文明的特殊单位，替代大先知。该单位能够创建或强化宗教，建造圣地，传教5次（比普通大先知多一次）等，同时还可以消耗他一次性产出大量[ICON_CULTURE]文化（即使仅剩1次传教次数也可使用该能力，产出数值同大文学家）。</Text>
+			<Text>伊斯兰先知是阿拉伯文明的特殊单位，替代大先知。该单位能够创建或强化宗教，建造圣地，传教5次（比普通大先知多一次）等，同时还可以消耗他一次性产出大量[ICON_CULTURE]文化（即使仅剩1次传教次数也可使用该能力）。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_ARABIAN_PROPHET_TEXT">
 			<Text>穆斯林认为先知（阿拉伯语：نبي）是凡人，是真主派遣的。每位先知都带来了伊斯兰式的基本信息，包括独一造物主的信仰，避免偶像崇拜与罪恶。他们都向大众传播伊斯兰教，并告知将出现见证律法的最后先知，他是真主所派遣的最后使者：穆罕默德。他们都向不同人群传播同一个讯息，并教导互有细微差异的律法。这些细微差异构成了伊斯兰教，然而主流穆斯林不认为这些差异是伊斯兰教支离破碎的版本。伊斯兰传统认为真主向万国万邦派遣使者。在伊斯兰教里，惟独穆罕默德是真主派来教化全世界的使者，其他使者只向特定民族或国家宣教。[NEWLINE][NEWLINE]不像犹太教和基督教，伊斯兰教还区分了使者（rasul，رسول）和先知（nabi，نبی）。这两种身分都是真主启示的。不同的是，「使者」还带来了真主启示的经典。每位「使者」都是「先知」，但并不是每位「先知」都是「使者」。[NEWLINE][NEWLINE]穆斯林认为阿丹（亚当）是第一位先知，而穆罕默德则是最后一位；因此穆罕默德的头衔是「众先知的封印」。在伊斯兰教里，尔撒（耶稣）是先知（并非每个人都如此认为）也是使者，因为他接受真主的「启示」并带来了《引支勒》。穆斯林相信，真主派遣了超过124,000位使者，这在权威的圣训中就提及了。根据圣训记载，其中有五位使者是最劳苦功高的，他们分别是努哈（挪亚）、易卜拉欣（亚伯拉罕）、穆萨（摩西）、尔撒（耶稣）以及穆罕默德。 </Text>
@@ -6597,8 +6607,8 @@
 			<Text>
 				[COLOR_POSITIVE_TEXT]传统政策[ENDCOLOR]适宜于繁荣精干的帝国。
 				[NEWLINE][NEWLINE]启用传统政策：
-				[NEWLINE][ICON_BULLET]使[ICON_CAPITAL]首都+3[ICON_CULTURE]文化，+3[ICON_RESEARCH]科研。
-				[NEWLINE][ICON_BULLET]首都出发的商路+5距离、+5[ICON_GOLD]金钱。
+				[NEWLINE][ICON_BULLET]使[ICON_CAPITAL]首都+3[ICON_CULTURE]文化、+3[ICON_RESEARCH]科研。
+				[NEWLINE][ICON_BULLET]首都出发的商路+3距离、+3[ICON_GOLD]金钱。
 				[NEWLINE][ICON_BULLET]城市地块扩张所需文化成本-25%。
 				[NEWLINE][ICON_BULLET]允许建造空中花园。
 				[NEWLINE][NEWLINE]推行所有传统政策：
@@ -6839,10 +6849,10 @@
 		<Replace Tag="TXT_KEY_POLICY_WARRIOR_CODE_HELP">
 			<Text>
 				[COLOR_POSITIVE_TEXT]尚武精神[ENDCOLOR]
-				[NEWLINE][ICON_BULLET]军营，军械所，兵工厂，军事基地+1[ICON_PRODUCTION]产能。[ICON_PUPPET]傀儡城市+6[ICON_GOLD]金钱。
-				[NEWLINE][ICON_BULLET]马厩，冶铁坊，城墙，城堡+2[ICON_CULTURE]文化。
+				[NEWLINE][ICON_BULLET]军营、军械所+1[ICON_PRODUCTION]产能，兵工厂、军事基地+2[ICON_PRODUCTION]产能。
+				[NEWLINE][ICON_BULLET]马厩、冶铁坊、城墙、城堡+2[ICON_CULTURE]文化。
 				[NEWLINE][ICON_BULLET]建造军事单位时+15%[ICON_PRODUCTION]产能。
-				[NEWLINE][ICON_BULLET]研发数学后，攻占敌方城市赠送法院
+				[NEWLINE][ICON_BULLET]驻军可以消除来自[ICON_OCCUPIED]被占领城市的额外[ICON_HAPPINESS_4]不满。
 			</Text>
 		</Replace>
 
@@ -6885,7 +6895,8 @@
 			<Text>
 				[COLOR_POSITIVE_TEXT]军事传统[ENDCOLOR]
 				[NEWLINE][ICON_BULLET]升级单位所需的[ICON_GOLD]金钱减少60%。
-				[NEWLINE][ICON_BULLET]军营，军械所，城墙，城堡,马厩和军事学院+1[ICON_HAPPINESS_1]快乐.
+				[NEWLINE][ICON_BULLET]军营、军械所、城墙、城堡、马厩和军事学院+1[ICON_HAPPINESS_1]快乐。
+				[NEWLINE][ICON_BULLET]城市规模达到[ICON_CITYBANNER_CITY_SMALL]小型城市及以上时+5[ICON_RES_MANPOWER]人力。
 			</Text>
 		</Replace>
 
@@ -7381,7 +7392,7 @@
 		<Replace Tag="TXT_KEY_POLICY_CAPITALISM_HELP">
 			<Text>
 				[COLOR_POSITIVE_TEXT]资本主义[ENDCOLOR]
-				[NEWLINE]每条商路+10[ICON_GOLD]金钱，为全国+3%[ICON_RESEARCH]科研产出。
+				[NEWLINE]每条商路+10[ICON_GOLD]金钱，为全国+2%[ICON_RESEARCH]科研产出。
 				[NEWLINE]商业家产出的[ICON_RES_CONSUMER]商品数量额外+3。
 			</Text>
 		</Replace>
@@ -7531,7 +7542,10 @@
 		</Replace>
 
 		<Replace Tag="TXT_KEY_POLICY_FIVE_YEAR_PLAN_HELP">
-			<Text>[COLOR_POSITIVE_TEXT]五年计划[ENDCOLOR][NEWLINE]每处矿井、采石场、伐木场、油井、海上钻井平台、捕捞船+1[ICON_PRODUCTION]产能。</Text>
+			<Text>
+				[COLOR_POSITIVE_TEXT]五年计划[ENDCOLOR]
+				[NEWLINE]每处矿井、采石场、伐木场、油井、海上钻井平台、捕捞船+1[ICON_PRODUCTION]产能，+100%建造速度。
+			</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_HELP">
@@ -8126,7 +8140,7 @@
 			<Text>荒漠+1[ICON_PEACE]信仰，绿洲额外+1[ICON_CULTURE]文化、+1[ICON_PEACE]信仰</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_GOD_KING">
-			<Text>宫殿+2[ICON_PEACE]信仰、+1[ICON_FOOD]食物、[ICON_PRODUCTION]产能，[ICON_CITYBANNER_CITY_LV1]一级城市+1[ICON_FOOD]食物、[ICON_PRODUCTION]产能、[ICON_PEACE]信仰</Text>
+			<Text>宫殿+2[ICON_PEACE]信仰、+1[ICON_FOOD]食物、[ICON_PRODUCTION]产能，[ICON_CITYBANNER_CITY_LV1]一级城市+1[ICON_PEACE]信仰、[ICON_FOOD]食物、[ICON_PRODUCTION]产能</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_GODDESS_HUNT">
 			<Text>猎场+1[ICON_FOOD]食物、+1[ICON_PEACE]信仰，[ICON_RES_BISON]野牛、[ICON_RES_DEER]野鹿+1[ICON_CULTURE]文化</Text>
@@ -8166,6 +8180,12 @@
 		</Row>
 		<Row Tag="TXT_KEY_BELIEF_SONE_OF_SIREN">
 			<Text>来自环礁的基础产出翻倍，沿海城市+2[ICON_PEACE]信仰</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_SACRED_RITES_SHORT">
+			<Text>圣禋</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_SACRED_RITES">
+			<Text>临近城市的石祭坛+1[ICON_PEACE]信仰</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BELIEF_SLASH_AND_BURN_SHORT">
 			<Text>刀耕火种</Text>
@@ -8273,7 +8293,7 @@
 			<Text>向城邦赠送[ICON_GOLD]金钱增加影响力的效果提升50%。对信仰此宗教的城邦的[ICON_INFLUENCE]影响力下限值+30</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_JESUIT_EDUCATION">
-			<Text>可以使用[ICON_PEACE]信仰购买学院、大学、公立学校和研发实验室。学院、大学、公立学校和研发实验室+2[ICON_PEACE]信仰</Text>
+			<Text>可以使用[ICON_PEACE]信仰购买学院、大学、公立学校和研发实验室。学院、大学、公立学校和研发实验室+1[ICON_PEACE]信仰</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_SACRED_SITES">
 			<Text>每座使用[ICON_PEACE]信仰购买的建筑+2[ICON_TOURISM]魅力。学园、海关、制造中心、宗教圣地+5[ICON_CULTURE]文化</Text>
@@ -8468,7 +8488,7 @@
 				[NEWLINE][ICON_BULLET]绝大部分军事单位和世界奇观都会消耗你的人力资源。
 				[NEWLINE][ICON_BULLET]人力资源主要通过城市和人口提供，部分建筑和奇观也可以提供。
 				[NEWLINE]
-				[NEWLINE][ICON_BULLET]人力资源充足时(数量>25)，玩家使用[ICON_GOLD]金钱购买单位和建筑获得打折加成，公式为P= 5*n/c/2，其中为n电力资源数量，c为城市数量。
+				[NEWLINE][ICON_BULLET]人力资源充足时(数量>25)，玩家使用[ICON_GOLD]金钱购买单位和建筑获得打折加成，公式为P= 5*n/c/2，其中为n人力资源数量，c为城市数量。
 				[NEWLINE][ICON_BULLET]人力资源至多带来35%的购买减成。
 			</Text>
 		</Row>
@@ -8521,14 +8541,14 @@
 				只有陆军可以组建“军团”或者“集团军”；[NEWLINE]
 				[ICON_BULLET]城市拥有兵工厂后允许使用两个相同单位组建“军团”，[ICON_STRENGTH]战斗力+10%，血量上限+100%；[NEWLINE]
 				[ICON_BULLET]城市拥有军事基地后允许使用军团单位和一个同类普通单位组建“集团军”，[ICON_STRENGTH]战斗力再+15%，血量上限再+100%；[NEWLINE]
-				[ICON_BULLET]AI新造/新刷单位优先补充旧单位的损失，其次在条件满足的情况下合入旧单位（根据游戏难度合入概率依次为8级100%，7级90%...），最后才会真正产生一个新单位；[NEWLINE]
+				[ICON_BULLET]AI新造/新刷单位优先补充旧单位的损失，其次在条件满足的情况下合入旧单位（根据游戏难度合入概率有浮动变化）；[NEWLINE]
 				使用相同单位合成军团可以同时合并两个单位的晋升，并由此得到一个强力单位；[NEWLINE]
 				使用陆军统帅可以无视军团/集团军组建上限为单位直接赋予“军团”或“集团军”晋升（赋予“集团军”晋升需要城市拥有兵工厂，每个陆军统帅仅能进行一次）；[NEWLINE][NEWLINE]
 				引入“兵力”设定，兵力决定你总共能拥有的军事单位数量，兵力为0后不能建造军事单位，新获得的军事单位也会被清除，AI兵力为0后也将停止刷出单位：[NEWLINE]
 				[ICON_BULLET]默认情况下除小镇以外的每个城市规模等级提供4兵力点，初始24点，每个兵工厂提供2点军团上限，军事基地提供2点军团和集团军组建上限；[NEWLINE]
 				[ICON_BULLET]军团模式（高）：兵力以及军团/集团军组建上限增加50%；[NEWLINE]
 				[ICON_BULLET]军团模式（低）：兵力以及军团/集团军组建上限减少50%；[NEWLINE][NEWLINE]
-				特别注意，兵力数量增长只和城市规模相关，军团/集团军的组建上限只与兵工厂和军事基地的数量有关，使用陆军统帅升级可以无视数量上限，但是并不会增加上限（你会看到组建按钮显示可组建数量为负数）；[NEWLINE]
+				特别注意，兵力数量增长只和城市规模相关，军团/集团军的组建上限只与兵工厂和军事基地的数量有关，使用陆军统帅升级可以无视数量上限；[NEWLINE]
 				（平民、要塞及空军单位不计入兵力消耗，也不进行单位合并操作）
 			</Text>
 		</Row>
@@ -9458,8 +9478,7 @@
 			<Text>
 				[ICON_BULLET]只能建在丛林或森林。
 				[NEWLINE][ICON_BULLET]不能同时在相邻的地块建造玛雅祭坛。
-				[NEWLINE][ICON_BULLET]玛雅祭坛每邻近一处丛林和森林+1[ICON_RESEARCH]科研产出。
-				[NEWLINE][ICON_BULLET]玛雅祭坛上的每一位大先知提供+2[ICON_RESEARCH][ICON_PEACE][ICON_GOLDEN_AGE]产出。
+				[NEWLINE][ICON_BULLET]每邻近一处伟人设施+2[ICON_RESEARCH]科研产出。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_IMPROVEMENT_MAYA_ALTAR_TEXT">
@@ -11201,10 +11220,10 @@
 		</Replace>
 
 		<Replace Tag="TXT_KEY_UNIT_HELP_HUN_BATTERING_RAM">
-			<Text>攻城锤是匈人的特色单位，替代投石机，用于突破敌军城市的防御。它们拥有高额的攻城加成，且仅需兵营即可建造，但对近战攻击毫无反抗能力。</Text>
+			<Text>攻城锤是匈人的特色单位，替代投石机，用于突破敌军城市的防御。它们拥有高额的攻城加成，且攻击时可以额外获得4经验（不可继承），仅需兵营即可建造，但对近战攻击毫无反抗能力。</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_UNIT_HELP_ASSYRIAN_SIEGE_TOWER">
-			<Text>攻城锤是亚述的特色单位，替代投石机，强大的近程压制单位，可以给周边的所有单位提供攻城加成。</Text>
+			<Text>攻城塔是亚述的特色单位，替代投石机，强大的近程压制单位，可以给周边的所有单位提供攻城加成。</Text>
 		</Replace>
 
 		<Row Tag="TXT_KEY_UNIT_SLOOP_OF_WAR">
@@ -12038,10 +12057,10 @@
 			<Plurality>2</Plurality>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_PROTOTYPE_AIRSHIP_HELP">
-			<Text>能够装载4架飞机的巨型飞艇。可跨越山脉和水域。[NEWLINE][NEWLINE]需要巨型飞艇工程解锁，你只能建造一艘。</Text>
+			<Text>能够装载6架飞机的巨型飞艇。可跨越山脉和水域。[NEWLINE][NEWLINE]需要巨型飞艇工程解锁，你只能建造一艘。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_PROTOTYPE_AIRSHIP_STRATEGY">
-			<Text>这艘巨型飞艇能够装载4架飞机，通过晋升还可以继续增加。她能够作为移动载机平台，保证你的敌人始终处于你空军轰炸机的航程之内，航程较短的早期飞机尤其需要她。飞艇本身没有攻击能力，但其防御力很强。建议尽早建造此项目，后期喷气式飞机航程大幅度提升，恐怕就不需要这艘老古董的支援了。</Text>
+			<Text>这艘巨型飞艇能够装载6架飞机。她能够作为移动载机平台，保证你的敌人始终处于你空军轰炸机的航程之内，航程较短的早期飞机尤其需要她。飞艇本身没有攻击能力，但其防御力很强。建议尽早建造此项目，后期喷气式飞机航程大幅度提升，恐怕就不需要这艘老古董的支援了。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_PROTOTYPE_AIRSHIP_HEADING">
 			<Text>[COLOR_YELLOW]齐柏林号飞艇[ENDCOLOR]</Text>
@@ -12471,6 +12490,7 @@
 				[NEWLINE][ICON_BULLET]不受[COLOR_POSITIVE_TEXT]负面效果[ENDCOLOR]影响。
 				[NEWLINE][ICON_BULLET]处于境外每回合会-50HP且-25%[ICON_STRENGTH]战斗力。
 				[NEWLINE][ICON_BULLET]不能[COLOR_NEGATIVE_TEXT]移动[ENDCOLOR]，不能获得[COLOR_NEGATIVE_TEXT]晋升[ENDCOLOR]。
+				[NEWLINE]
 				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]攻城单位[ENDCOLOR]克制。
 			</Text>
 		</Row>
@@ -12528,21 +12548,24 @@
 			<Text>方阵步兵</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_ANTI_MOUNTED_HELP">
-			<Text>克制[COLOR_POSITIVE_TEXT]骑乘[ENDCOLOR]单位，被[COLOR_NEGATIVE_TEXT]远程攻击[ENDCOLOR]克制。[NEWLINE]驻守时每回合额外回复15HP。</Text>
+			<Text>
+				造价低廉、专门对抗重装骑兵的单位。
+				[NEWLINE][ICON_BULLET]驻守时每回合额外回复15HP。
+				[NEWLINE][NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]重装骑兵[ENDCOLOR]单位。
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]陆军远程[ENDCOLOR]单位克制。
+			</Text>
 		</Replace>
-		<!--
-		<Replace Tag="TXT_KEY_PROMOTION_ANTI_MOUNTED_II">
-			<Text>长枪武器</Text>
-		</Replace>
-		<Replace Tag="TXT_KEY_PROMOTION_ANTI_MOUNTED_II_HELP" >
-			<Text>面对[COLOR_POSITIVE_TEXT]骑乘[ENDCOLOR]单位战斗力加成。</Text>
-		</Replace>
-		-->
+
 		<Replace Tag="TXT_KEY_PROMOTION_ANTI_TANK">
 			<Text>反装甲单位</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_ANTI_TANK_HELP">
-			<Text>克制[COLOR_POSITIVE_TEXT]装甲[ENDCOLOR]单位，被[COLOR_NEGATIVE_TEXT]防空单位[ENDCOLOR]克制。[NEWLINE]驻守时每回合额外回复15HP。</Text>
+			<Text>
+				造价低廉、专门对抗装甲的单位。
+				[NEWLINE][ICON_BULLET]驻守时每回合额外回复15HP。
+				[NEWLINE][NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]装甲[ENDCOLOR]单位。
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]陆军远程[ENDCOLOR]单位克制。
+			</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_PROMOTION_FORMATION_1_HELP">
@@ -12589,7 +12612,16 @@
 			<Text>重装骑兵</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_KNIGHT_COMBAT_HELP">
-			<Text>克制[COLOR_POSITIVE_TEXT]攻城[ENDCOLOR]单位，被[COLOR_NEGATIVE_TEXT]方阵步兵[ENDCOLOR]克制。[COLOR_POSITIVE_TEXT]攻击[ENDCOLOR]时+50%战斗力。能够冲锋击退敌方单位，并对其同格单位造成50%的[COLOR_POSITIVE_TEXT]践踏[ENDCOLOR]伤害。[NEWLINE]可攻击后移动。[NEWLINE]攻击[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]失去所有[ICON_MOVES]移动力。[NEWLINE]没有地形防御加成。</Text>
+			<Text>
+				快速且强力的单位，专用于突破敌军防线及消灭敌方远程单位。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]攻击[ENDCOLOR]时+50%战斗力。
+				[NEWLINE][ICON_BULLET]能够冲锋击退敌方单位，并对其同格单位造成50%的[COLOR_POSITIVE_TEXT]践踏[ENDCOLOR]伤害。
+				[NEWLINE][ICON_BULLET]可攻击后移动。
+				[NEWLINE][ICON_BULLET]没有地形防御加成。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]方阵步兵[ENDCOLOR]克制。
+				[NEWLINE][ICON_BULLET]攻击[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]失去所有[ICON_MOVES]移动力。
+			</Text>
 		</Row>
 
 		<!--<Row Tag="TXT_KEY_PROMOTION_LANDIRONCLAD">
@@ -12603,7 +12635,16 @@
 			<Text>装甲单位</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_TANK_COMBAT_HELP">
-			<Text>克制[COLOR_POSITIVE_TEXT]炮兵[ENDCOLOR]单位，被[COLOR_NEGATIVE_TEXT]反装甲和直升机[ENDCOLOR]单位克制。[COLOR_POSITIVE_TEXT]攻击[ENDCOLOR]时+50%战斗力。能够冲锋击退敌方单位，并对其同格单位造成50%的[COLOR_POSITIVE_TEXT]碾压[ENDCOLOR]伤害。[NEWLINE]可攻击后移动。[NEWLINE]攻击[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]失去所有[ICON_MOVES]移动力。[NEWLINE]没有地形防御加成。</Text>
+			<Text>
+				快速且强力的单位，专用于突破敌军防线及消灭敌方远程单位。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]攻击[ENDCOLOR]时+50%战斗力。
+				[NEWLINE][ICON_BULLET]能够冲锋击退敌方单位，并对其同格单位造成50%的[COLOR_POSITIVE_TEXT]碾压[ENDCOLOR]伤害。
+				[NEWLINE][ICON_BULLET]可攻击后移动。
+				[NEWLINE][ICON_BULLET]没有地形防御加成。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]反装甲[ENDCOLOR]单位克制。
+				[NEWLINE][ICON_BULLET]攻击[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]失去所有[ICON_MOVES]移动力。
+			</Text>
 		</Row>
 
 		<Replace Tag="TXT_KEY_PROMOTION_CHARGE_1">
@@ -12640,14 +12681,16 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_ARCHERY_COMBAT_HELP">
 			<Text>
-				[ICON_BULLET]克制[COLOR_POSITIVE_TEXT]方阵步兵[ENDCOLOR]，[COLOR_POSITIVE_TEXT]反装甲[ENDCOLOR]和[COLOR_POSITIVE_TEXT]陆军游猎[ENDCOLOR]单位。
-				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]近战[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]攻城[ENDCOLOR]单位克制。
+				远程单位，具有远程打击与迟滞敌人效果。
 				[NEWLINE][ICON_BULLET]对[COLOR_POSITIVE_TEXT]开阔[ENDCOLOR]地形中的单位+25%[ICON_RANGE_STRENGTH]远程战斗力。
 				[NEWLINE][ICON_BULLET]自身所处[COLOR_POSITIVE_TEXT]高度[ENDCOLOR]大于敌方单位时，每点高度+25%战斗力，上限50%。
 				[NEWLINE][ICON_BULLET]没有地形防御加成。
 				[NEWLINE][ICON_BULLET]当本单位与[COLOR_POSITIVE_TEXT]步兵[ENDCOLOR]、[COLOR_POSITIVE_TEXT]反制[ENDCOLOR]或[COLOR_POSITIVE_TEXT]炮台[ENDCOLOR]单位重叠时，如果被敌方[COLOR_POSITIVE_TEXT]近战[ENDCOLOR]单位攻击，本单位会自动反击。
 				[NEWLINE][ICON_BULLET]每回合反击次数无限。
 				[NEWLINE][ICON_BULLET]如果你的掩护单位被消灭，则不能反击。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]方阵步兵[ENDCOLOR]，[COLOR_POSITIVE_TEXT]反装甲[ENDCOLOR]和[COLOR_POSITIVE_TEXT]陆军游猎[ENDCOLOR]单位。
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]近战[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]攻城[ENDCOLOR]单位克制。
 			</Text>
 		</Row>
 
@@ -12655,7 +12698,13 @@
 			<Text>防空火力</Text>
 		</Replace>
 		<Row Tag="TXT_KEY_PROMOTION_ANTI_AIR_HELP">
-			<Text>每回合能够进行一次对空拦截。对[COLOR_POSITIVE_TEXT]攻击机[ENDCOLOR]和[COLOR_POSITIVE_TEXT]直升机[ENDCOLOR]单位拥有战斗力加成，被[COLOR_NEGATIVE_TEXT]近战[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]攻城[ENDCOLOR]单位克制。[NEWLINE]没有地形防御加成。</Text>
+			<Text>
+				可以拦截试图轰炸附近单位的敌军飞机。
+				[NEWLINE][ICON_BULLET]每回合能够进行一次对空拦截。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]对[COLOR_POSITIVE_TEXT]攻击机[ENDCOLOR]和[COLOR_POSITIVE_TEXT]直升机[ENDCOLOR]单位拥有战斗力加成。
+				[NEWLINE][ICON_BULLET]拦截[COLOR_NEGATIVE_TEXT]战略轰炸机[ENDCOLOR]时效果不佳。
+			</Text>
 		</Row>
 
 		<!--<Row Tag="TXT_KEY_PROMOTION_ANTI_INFANTRY">
@@ -12750,14 +12799,35 @@
 			<Text>骑射单位</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_HITANDRUN_HELP">
-			<Text>可进行远程攻击亦可近战攻击。[NEWLINE]可攻击后移动。[NEWLINE]攻击[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]战斗力减成。[NEWLINE]没有地形防御加成。</Text>
+			<Text>
+				游击作战单位，专用于削弱敌方坚固防线或追击受伤敌军，同时擅长执行侦察任务。
+				[NEWLINE][ICON_BULLET]可[COLOR_POSITIVE_TEXT]远程攻击[ENDCOLOR]亦可[COLOR_POSITIVE_TEXT]近战攻击[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]可以攻击后移动。
+				[NEWLINE][ICON_BULLET]不受敌方控制区域（ZOC）阻碍。
+				[NEWLINE][ICON_BULLET]没有地形防御加成。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]民兵[ENDCOLOR]单位及[COLOR_POSITIVE_TEXT]特战[ENDCOLOR]单位。
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]陆军远程[ENDCOLOR]单位克制。
+				[NEWLINE][ICON_BULLET]攻击[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]以及[COLOR_NEGATIVE_TEXT]海军正规军[ENDCOLOR]获得战斗力减成。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_HELI_ATTACK">
 			<Text>直升机单位</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_HELI_ATTACK_HELP">
-			<Text>[COLOR_POSITIVE_TEXT]悬浮[ENDCOLOR]移动。[NEWLINE]可进行远程攻击亦可近战攻击。[NEWLINE]可攻击后移动。[NEWLINE]克制[COLOR_POSITIVE_TEXT]攻城[ENDCOLOR]单位，被[COLOR_NEGATIVE_TEXT]防空[ENDCOLOR]单位克制。[NEWLINE]攻击[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]战斗力减成。[NEWLINE]没有地形防御加成。</Text>
+			<Text>
+				悬浮单位，专用于削弱敌方坚固防线或追击受伤敌军，同时擅长执行侦察任务。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]悬浮[ENDCOLOR]移动。
+				[NEWLINE][ICON_BULLET]可[COLOR_POSITIVE_TEXT]远程攻击[ENDCOLOR]亦可[COLOR_POSITIVE_TEXT]近战攻击[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]可以攻击后移动。
+				[NEWLINE][ICON_BULLET]不受敌方控制区域（ZOC）阻碍。
+				[NEWLINE][ICON_BULLET]没有地形防御加成。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]民兵[ENDCOLOR]单位及[COLOR_POSITIVE_TEXT]特战[ENDCOLOR]单位。
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]防空[ENDCOLOR]单位克制。
+				[NEWLINE][ICON_BULLET]攻击[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]获得战斗力减成。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SUNDER_1">
@@ -12796,7 +12866,16 @@
 			<Text>攻城武器</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_CITY_SIEGE_HELP">
-			<Text>攻击[COLOR_POSITIVE_TEXT]城市[ENDCOLOR]+200%[ICON_STRENGTH]战斗力，攻击[COLOR_POSITIVE_TEXT]军事要塞火力点[ENDCOLOR]+200%[ICON_STRENGTH]战斗力，攻击[COLOR_POSITIVE_TEXT]驻扎单位[ENDCOLOR]和[COLOR_POSITIVE_TEXT]陆军远程[ENDCOLOR]+50%[ICON_STRENGTH]战斗力，被[COLOR_NEGATIVE_TEXT]近战[ENDCOLOR]单位克制。[NEWLINE]攻击目标时对同一格单位造成50%伤害。[NEWLINE]攻击木制船只有几率造成[COLOR_NEGATIVE_TEXT]局部损伤[ENDCOLOR]或[COLOR_NEGATIVE_TEXT]严重损伤[ENDCOLOR][NEWLINE]没有地形防御加成。</Text>
+			<Text>
+				攻城武器，用于攻击敌方城市与要塞，能造成穿透伤害并打击敌军士气。
+				[NEWLINE][ICON_BULLET]攻击目标时对同一格单位造成50%伤害。
+				[NEWLINE][ICON_BULLET]攻击木制船只有几率造成[COLOR_NEGATIVE_TEXT]局部损伤[ENDCOLOR]或[COLOR_NEGATIVE_TEXT]严重损伤[ENDCOLOR]
+				[NEWLINE][ICON_BULLET]没有地形防御加成。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]攻击[COLOR_POSITIVE_TEXT]城市[ENDCOLOR]、[COLOR_POSITIVE_TEXT]固定炮台[ENDCOLOR]+200%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]攻击[COLOR_POSITIVE_TEXT]驻扎单位[ENDCOLOR]和[COLOR_POSITIVE_TEXT]陆军远程[ENDCOLOR]+50%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]近战[ENDCOLOR]单位克制。
+			</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_PROMOTION_VOLLEY">
@@ -12830,7 +12909,15 @@
 			<Text>覆盖火力</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPLASH_DAMAGE_HELP">
-			<Text>对目标相邻区域造成50%伤害，攻击[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]驻防单位[ENDCOLOR]攻击力较弱，被[COLOR_NEGATIVE_TEXT]近战[ENDCOLOR]单位克制。[NEWLINE]没有地形防御加成。</Text>
+			<Text>
+				重型强力武器，可对敌军单位造成范围伤害。
+				[NEWLINE][ICON_BULLET]对目标单位每一个[COLOR_POSITIVE_TEXT]相邻地块[ENDCOLOR]的一个敌军造成50%伤害。
+				[NEWLINE][ICON_BULLET]攻击[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]不会对其中的单位造成伤害。
+				[NEWLINE][ICON_BULLET]没有地形防御加成。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]攻击[COLOR_NEGATIVE_TEXT]驻扎单位[ENDCOLOR]获得战斗力减成。
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]近战[ENDCOLOR]单位克制。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_CLUSTER_ROCKET_1">
@@ -12918,10 +13005,11 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_RECON_UNIT_HELP">
 			<Text>
-				[ICON_BULLET]对其他单位隐形，能够发现其他伪装单位。
-				[NEWLINE][ICON_BULLET]不能掠夺和占领城市。
-				[NEWLINE][ICON_BULLET]没有地形防御加成。
+				侦察单位，专精于侦察与地图探索。
+				[NEWLINE][ICON_BULLET]对其他单位隐形，能够发现其他伪装单位。
 				[NEWLINE][ICON_BULLET]能够在[COLOR_POSITIVE_TEXT]境外友方地域[ENDCOLOR]恢复且恢复时额外+15点生命值。
+				[NEWLINE][ICON_BULLET]没有地形防御加成。
+				[NEWLINE][ICON_BULLET]不能[COLOR_NEGATIVE_TEXT]掠夺[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]占领[ENDCOLOR]城市。
 			</Text>
 		</Row>
 
@@ -12977,7 +13065,19 @@
 			<Text>特战单位</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPECIAL_FORCES_COMBAT_HELP">
-			<Text>对其他单位隐形，能够发现其他伪装单位。[NEWLINE]回复时额外+15HP。[NEWLINE]能够攻击后移动。[NEWLINE][ICON_BULLET]能够使用敌方道路。[NEWLINE]劫掠不消耗移动力。[NEWLINE][ICON_BULLET]空军单位无法发现或攻击此类单位。[NEWLINE]克制[COLOR_POSITIVE_TEXT]民兵[ENDCOLOR]单位，被[COLOR_NEGATIVE_TEXT]常规部队[ENDCOLOR]克制。[NEWLINE]不能通过[ICON_GOLD]金钱[COLOR_NEGATIVE_TEXT]购买[ENDCOLOR]。</Text>
+			<Text>
+				具有多种独特能力的特种部队单位，可执行常规军队无法完成的特殊任务。
+				[NEWLINE][ICON_BULLET]对其他单位隐形，能够发现其他伪装单位。
+				[NEWLINE][ICON_BULLET]回复时额外+30HP。
+				[NEWLINE][ICON_BULLET]能够攻击后移动。
+				[NEWLINE][ICON_BULLET]能够使用敌方道路。
+				[NEWLINE][ICON_BULLET]劫掠不消耗移动力。
+				[NEWLINE][ICON_BULLET]路基飞机无法发现或攻击此类单位。
+				[NEWLINE][ICON_BULLET]不能通过[ICON_GOLD]金钱[COLOR_NEGATIVE_TEXT]购买[ENDCOLOR]。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]民兵[ENDCOLOR]单位
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]常规部队[ENDCOLOR]尤其是[COLOR_NEGATIVE_TEXT]陆军游猎[ENDCOLOR]单位克制。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SP_FORCE_1">
@@ -13067,14 +13167,26 @@
 		<Row Tag="TXT_KEY_PROMOTION_MILITIA_COMBAT_HELP">
 			<Text>
 				廉价的民兵单位，适合驻防城市或者打游击战。它可以做后勤单位来加速周围其他单位HP恢复速度，因为便宜，也可以当炮灰使用。
-				[NEWLINE][ICON_BULLET]每回合额外恢复15HP。[NEWLINE][ICON_BULLET]可以转职为工人单位。[NEWLINE][ICON_BULLET]友方地域内+25%[ICON_STRENGTH]战斗力。[NEWLINE][ICON_BULLET]攻击[COLOR_POSITIVE_TEXT]城市[ENDCOLOR]时+50% [ICON_STRENGTH]战斗力。[NEWLINE][ICON_BULLET]境外作战-25%[ICON_STRENGTH]战斗力。[NEWLINE]被[COLOR_NEGATIVE_TEXT]正规军[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]特战[ENDCOLOR]单位克制。
+				[NEWLINE][ICON_BULLET]每回合额外恢复15HP。
+				[NEWLINE][ICON_BULLET]可以转职为工人单位。
+				[NEWLINE][ICON_BULLET]友方地域内+25%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]攻击[COLOR_POSITIVE_TEXT]城市[ENDCOLOR]时+50% [ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]境外作战-25%[ICON_STRENGTH]战斗力。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]正规军[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]特战[ENDCOLOR]单位克制。
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_MILITIA_NAVAL_HELP">
 			<Text>
 				廉价的绿水海军单位，适合近海防御。它可以做后勤单位来加速周围其他单位HP恢复速度，因为便宜，也可以当炮灰使用。
-				[NEWLINE][ICON_BULLET]每回合额外恢复15HP。[NEWLINE][ICON_BULLET]友方地域内+25%[ICON_STRENGTH]战斗力。[NEWLINE][ICON_BULLET]攻击[COLOR_POSITIVE_TEXT]城市[ENDCOLOR]时+50% [ICON_STRENGTH]战斗力。[NEWLINE][ICON_BULLET]境外作战-25%[ICON_STRENGTH]战斗力。[NEWLINE]被[COLOR_NEGATIVE_TEXT]正规军[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]特战[ENDCOLOR]单位克制。[NEWLINE]不能进入[COLOR_NEGATIVE_TEXT]大洋[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]每回合额外恢复15HP。
+				[NEWLINE][ICON_BULLET]友方地域内+25%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]攻击[COLOR_POSITIVE_TEXT]城市[ENDCOLOR]时+50% [ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]境外作战-25%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]不能进入[COLOR_NEGATIVE_TEXT]大洋[ENDCOLOR]。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]正规军[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]特战[ENDCOLOR]单位克制。
 			</Text>
 		</Row>
 
@@ -13116,7 +13228,16 @@
 			<Text>空优战机</Text>
 		</Replace>
 		<Row Tag="TXT_KEY_PROMOTION_ANTI_AIR_II_HELP">
-			<Text>每回合能够拦截一次。[NEWLINE]每回合能够执行“空中游猎”指令且游猎时+50%战斗力。[NEWLINE]执行游猎后仍然可以执行拦截。[COLOR_POSITIVE_TEXT]攻击机[ENDCOLOR]和[COLOR_POSITIVE_TEXT]轰炸机[ENDCOLOR]单位拥有战斗力加成。[NEWLINE]拥有6格的侦查范围。[NEWLINE]但无法攻击地面和海面单位。[NEWLINE]不能转场到航空母舰上。</Text>
+			<Text>
+				制空战斗机，专为夺取战场制空权与拦截敌方空中目标而设计。
+				[NEWLINE][ICON_BULLET]每回合能够拦截一次。
+				[NEWLINE][ICON_BULLET]每回合能够执行“空中游猎”指令且游猎时+75%战斗力。
+				[NEWLINE][ICON_BULLET]执行游猎后仍然可以执行拦截。
+				[NEWLINE][ICON_BULLET]不能转场到航空母舰上。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]对[COLOR_POSITIVE_TEXT]攻击机[ENDCOLOR]和[COLOR_POSITIVE_TEXT]轰炸机[ENDCOLOR]单位拥有战斗力加成。
+				[NEWLINE][ICON_BULLET]无法攻击[COLOR_NEGATIVE_TEXT]地面[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]海面[ENDCOLOR]单位。
+			</Text>
 		</Row>
 
 		<!--<Replace Tag="TXT_KEY_PROMOTION_ANTI_FIGHTER" >
@@ -13160,7 +13281,15 @@
 			<Text>攻击机</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_AIR_ATTACK_HELP">
-			<Text>对所有[COLOR_POSITIVE_TEXT]陆军单位[ENDCOLOR]有战斗力加成，被[COLOR_NEGATIVE_TEXT]战斗机[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]防空[ENDCOLOR]单位克制。[NEWLINE]不能攻击隐形单位。[NEWLINE]不能转场到航空母舰上。</Text>
+			<Text>
+				攻击机，专用于打击战场或城内的敌军地面及海军单位。
+				[NEWLINE][ICON_BULLET]每回合可进行[COLOR_POSITIVE_TEXT]两次[ENDCOLOR]攻击。
+				[NEWLINE][ICON_BULLET]无法攻击[COLOR_NEGATIVE_TEXT]隐形单位[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]不能转场到航空母舰上。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]对[COLOR_POSITIVE_TEXT]地面[ENDCOLOR]和[COLOR_POSITIVE_TEXT]海面[ENDCOLOR]单位拥有战斗力加成。
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]战斗机[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]防空[ENDCOLOR]单位克制。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_AIR_BOMBARDMENT_1">
@@ -13206,7 +13335,14 @@
 			<Text>战略轰炸机</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_STRATEGIC_BOMBER_HELP">
-			<Text>能对[COLOR_POSITIVE_TEXT]城市和固定炮台[ENDCOLOR]造成巨大伤害，被[COLOR_NEGATIVE_TEXT]战斗机[ENDCOLOR]单位克制。[NEWLINE]不能攻击隐形单位。[NEWLINE]不能转场到航空母舰上。</Text>
+			<Text>
+				战略轰炸机，专为攻击敌方城市、摧毁敌国战争潜力而设计的战略武器。
+				[NEWLINE][ICON_BULLET]能对[COLOR_POSITIVE_TEXT]城市和固定炮台[ENDCOLOR]造成巨大伤害。
+				[NEWLINE][ICON_BULLET]不能转场到航空母舰上。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]战斗机[ENDCOLOR]单位克制。
+				[NEWLINE][ICON_BULLET]不能攻击[COLOR_NEGATIVE_TEXT]隐形[ENDCOLOR]单位。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_NAPALMBOMB_1">
@@ -13378,7 +13514,7 @@
 				[NEWLINE][ICON_BULLET]对目标同一地格的单位造成50%的伤害。
 				[NEWLINE][ICON_BULLET]每回合可以执行2次拦截（3格内）。
 				[NEWLINE]
-				[NEWLINE][ICON_BULLET]面对[COLOR_POSITIVE_TEXT]空中游猎[ENDCOLOR]战斗力加成
+				[NEWLINE][ICON_BULLET]面对[COLOR_POSITIVE_TEXT]空中游猎[ENDCOLOR]获得战斗力加成。
 				[NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]堡垒[ENDCOLOR]单位。
 				[NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]海军近战[ENDCOLOR]单位和[COLOR_POSITIVE_TEXT]导弹[ENDCOLOR]单位。
 				[NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]战斗机[ENDCOLOR]单位和[COLOR_POSITIVE_TEXT]直升机[ENDCOLOR]单位。
@@ -13410,6 +13546,16 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_ARMOR_BATTLESHIP_2_HELP">
 			<Text>+33%[ICON_STRENGTH]防御力。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_HEAVY_ARMOR">
+			<Text>重装防御</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HEAVY_ARMOR_HELP">
+			<Text>
+				[ICON_BULLET]+33%[ICON_STRENGTH]防御力。
+				[NEWLINE][ICON_BULLET]受到的最终伤害-5。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_DRONE_CARRIER">
@@ -13490,7 +13636,16 @@
 			<Text>舰载战机</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_CARRIER_FIGHTER_HELP">
-			<Text>只能部署在航空母舰上。[NEWLINE]能够与航空母舰共享经验和晋升。[NEWLINE]每回合能够攻击两次。[NEWLINE]每回合拥有两次[COLOR_POSITIVE_TEXT]拦截[ENDCOLOR]或[COLOR_POSITIVE_TEXT]游猎[ENDCOLOR]的机会。[NEWLINE]能够在游猎后继续拦截。</Text>
+			<Text>
+				航空母舰携带的多用途战斗机
+				[NEWLINE][ICON_BULLET]只能部署在航空母舰上。
+				[NEWLINE][ICON_BULLET]能够与航空母舰共享经验和晋升。
+				[NEWLINE][ICON_BULLET]每回合能够攻击两次。
+				[NEWLINE][ICON_BULLET]每回合拥有两次[COLOR_POSITIVE_TEXT]拦截[ENDCOLOR]或[COLOR_POSITIVE_TEXT]游猎[ENDCOLOR]的机会。
+				[NEWLINE][ICON_BULLET]能够在游猎后继续拦截。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]对[COLOR_POSITIVE_TEXT]地面[ENDCOLOR]和[COLOR_POSITIVE_TEXT]海面[ENDCOLOR]单位拥有战斗力加成。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_CARRIER_FIGHTER_ANTI_AIR_1">
@@ -13976,6 +14131,14 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_MULTIPURPOSE_DESTROYER_HELP">
 			<Text>+1攻击次数（可叠加）。[NEWLINE]对潜艇和空军单位+100%[ICON_STRENGTH]战斗力。+2[ICON_MOVES]移动力。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_GOLDEN_PERSONAL_GUARD">
+			<Text>黄金亲卫</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_GOLDEN_PERSONAL_GUARD_HELP">
+			<Text>
+				[ICON_BULLET]两环内每一个大军事家为自身+25%战斗力（上限50%）。
+			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SP_FULL_MOON_STRIKE">
 			<Text>满月突击</Text>
@@ -14491,10 +14654,6 @@
 		</Replace>
 		<Replace Tag="TXT_KEY_PEDIA_DEFENSE_EXTRA_HEAL_PERCENT">
 			<Text>+{1_Heal}%最大生命值回复</Text>
-		</Replace>
-
-		<Replace Tag="TXT_KEY_FREEPROMOTIONS">
-			<Text>[COLOR_CYAN]免费晋升:[ENDCOLOR]</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_PEDIA_MAXHP_LABEL_SP">
@@ -15099,55 +15258,56 @@
 
 		<Row Tag="TXT_KEY_GAME_OPTION_HUMAN_ALL_UC">
 			<Text>
-				SP-开启 [COLOR_YELLOW]人类玩家全UC[ENDCOLOR]
+				SP-拓展 [COLOR_GREY]人类玩家全UC[ENDCOLOR]
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_HUMAN_ALL_UC_HELP">
 			<Text>
-				开启后，允许人类玩家建造或训练所有文明的特殊建筑、改良设施和单位。
+				勾选后，允许人类玩家建造或训练所有文明的特殊建筑、改良设施和单位。
 				[NEWLINE][COLOR_YELLOW]注[ENDCOLOR]：部分建筑特效生效的前提是该文明在场，如伊斯兰大学和诺曼营地等，若文明不在场，玩家只能获取其基础产出。
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_GAME_OPTION_CIV_CONQUER">
 			<Text>
-				SP-开启 [COLOR_YELLOW]文明征服[ENDCOLOR]
+				SP-拓展 [COLOR_GREY]文明征服[ENDCOLOR]
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_GAME_OPTION_CIV_CONQUER_HELP">
 			<Text>
-				开启后，占领文明的原始首都后，解锁该文明的特殊建筑、改良设施和单位。
+				勾选后，占领文明的原始首都后，解锁该文明的特殊建筑、改良设施和单位。
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_GAME_OPTION_PROJECT_CAPTURE">
 			<Text>
-				SP-开启 [COLOR_YELLOW]精英工程获取[ENDCOLOR]
+				SP-拓展 [COLOR_GREY]精英工程获取[ENDCOLOR]
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_GAME_OPTION_PROJECT_CAPTURE_HELP">
 			<Text>
-				开启后允许玩家在攻占拥有精英工程的城市后在自己首都得到相同的精英工程（原拥有者不会失去工程）。
+				勾选后允许玩家在攻占拥有精英工程的城市后在自己首都得到相同的精英工程（原拥有者不会失去工程）。
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_GAME_OPTION_ABLE_GIFT_MILITIA">
 			<Text>
-				SP-开启 [COLOR_YELLOW]赠送民兵单位[ENDCOLOR]
+				SP-拓展 [COLOR_GREY]赠送民兵单位[ENDCOLOR]
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_GAME_OPTION_ABLE_GIFT_MILITIA_HELP">
 			<Text>
-				开启后允许向城邦赠送民兵单位以获取影响力。
+				勾选后允许向城邦赠送民兵单位以获取影响力。
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MISSION_SUPPLY_EXOTIC_GOODS_TOOLTIP">
 			<Text>
 				满移动力时，可在拥有商站的城市中补充商品。
+				[NEWLINE][COLOR_POSITIVE_TEXT]右键点击[ENDCOLOR]，对所有符合条件的单位执行该操作。
 			</Text>
 		</Row>
 
@@ -15508,7 +15668,7 @@
 			<Text>
 				[ICON_BULLET]替代露天剧场，造价更低。
 				[NEWLINE][ICON_BULLET]本城[ICON_WAR]军事单位训练速度+15%。
-				[NEWLINE][ICON_BULLET]军事单位晋升时，每个伊扎卡使你获得当前时代/2的[ICON_CULTURE]文化（至少为1）。
+				[NEWLINE][ICON_BULLET]非民兵单位晋升时，每个伊扎卡使你获得当前时代/2的[ICON_CULTURE]文化（至少为1）。
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_ZULU_IZIKO_TEXT">
@@ -15851,8 +16011,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_BUILDING_SWEDEN_NOBEL_PRIZE_HELP">
 			<Text>
-				[ICON_BULLET]只需26人口即可建造。
-				[NEWLINE][ICON_BULLET]瑞典或盟友诞生一位大科学家时，为双方带来一次性[ICON_RESEARCH]科研产出，数值相当于该大科学家当前强度的15%。
+				[ICON_BULLET]科学家：+2[ICON_RESEARCH]科研，+2[ICON_GOLD]维护费。
+				[NEWLINE][ICON_BULLET]瑞典或盟友诞生一位大科学家时，为双方带来一次性[ICON_RESEARCH]科研产出，数值相当于该大科学家当前强度的20%。
+				[NEWLINE][NEWLINE]文明的城市数量越多建造成本越高。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_YIELD_OVERFLOW">
@@ -16023,6 +16184,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_20">
 			<Text>向同一个AI购买大量资源后对方会坐地起价，请和多个AI交易保证自己的资源安全。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_21">
+			<Text>SP的额外选项并非游戏主线，请根据自身实际需求进行选择。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_DIPLOMACY_MARRIAGE_TITLE">
@@ -16522,7 +16686,7 @@
 			<Text>石祭坛</Text>
 		</Row>
 		<Row Tag="TXT_KEY_IMPROVEMENT_CAIRN_SP_TEXT">
-			<Text>石祭坛指的是人造的石堆。石祭坛遍布世界各地，分布在高地、高沼地、山顶、水路附近和海上悬崖，也在贫瘠的沙漠和苔原地区。它们大小不一，从小的石头标记到整个人造山，复杂程度从松散的圆锥形石堆到微妙平衡的雕塑和精心制作的巨石工程。石祭坛可能被粉刷或装饰，例如为了增加能见度或出于宗教原因。[NEWLINE][NEWLINE]在现代，石祭坛经常作为地标，自古以来就有这种用途。从史前开始，它们也被建造为坟墓纪念碑，或用于防御、狩猎、仪式、天文和其他目的。</Text>
+			<Text>石祭坛遍布世界各地，分布在高地、高沼地、山顶、水路附近和海上悬崖，也在贫瘠的沙漠和苔原地区。它们大小不一，从小的石头标记到整个人造山，复杂程度从松散的圆锥形石堆到微妙平衡的雕塑和精心制作的巨石工程。石祭坛可能被粉刷或装饰，例如为了增加能见度或出于宗教原因。[NEWLINE][NEWLINE]在现代，石祭坛经常作为地标，自古以来就有这种用途。从史前开始，它们也被建造为坟墓纪念碑，或用于防御、狩猎、仪式、天文和其他目的。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_IMPROVEMENT_CAIRN_SP_HELP">
 			<Text>该改良设施为所建成地块提供1[ICON_PEACE]信仰、1[ICON_GOLDEN_AGE]黄金时代点数。教育学后过时，无法再建造。</Text>
@@ -16621,5 +16785,21 @@
 		<Row Tag="TXT_KEY_MILITARY_PROMISE">
 			<Text>承诺撤军</Text>
 		</Row>
+
+		<Replace Tag="TXT_KEY_FOODMOD_PLAYER">
+			<Text>[NEWLINE][ICON_BULLET]全文明修正（余粮）: {1_Num}%</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_FOODMOD_CAPITAL">
+			<Text>[NEWLINE][ICON_BULLET][ICON_CAPITAL]首都修正（余粮）: {1_Num}%</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_FOODMOD_RELIGION">
+			<Text>[NEWLINE][ICON_BULLET]宗教信条修正（余粮）: {1_Num}%</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_FOODMOD_UNHAPPY">
+			<Text>[NEWLINE][ICON_BULLET][COLOR_WARNING_TEXT][ICON_HAPPINESS_4]不满修正（余粮）: {1_Num}%[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_FOODMOD_WLTKD">
+			<Text>[NEWLINE][ICON_BULLET]我们爱领袖日修正（余粮）: {1_Num}%</Text>
+		</Replace>
 	</Language_zh_CN>
 </GameData>

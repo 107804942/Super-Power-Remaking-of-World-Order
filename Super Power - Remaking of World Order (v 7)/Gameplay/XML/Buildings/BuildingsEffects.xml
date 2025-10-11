@@ -1147,11 +1147,6 @@
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>5</Yield>
 		</Row>
-		<Row>
-			<BuildingType>BUILDING_COLOSSUS</BuildingType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>5</Yield>
-		</Row>
 	
 		<Row>
 			<BuildingType>BUILDING_MONUMENT</BuildingType>
@@ -1232,11 +1227,6 @@
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_PYRAMID</BuildingType>
-			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_COLOSSUS</BuildingType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<Yield>1</Yield>
 		</Row>
@@ -1677,11 +1667,6 @@
 		<Row>
 			<BuildingType>BUILDING_WAT</BuildingType>
 			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>3</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_WAT</BuildingType>
-			<YieldType>YIELD_FAITH</YieldType>
 			<Yield>3</Yield>
 		</Row>
 
@@ -3732,8 +3717,8 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<MovesChange>1</MovesChange>
-			<PortraitIndex>33</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>50</PortraitIndex>
+			<IconAtlas>SP10_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_SHARED</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_MOSQUE_OF_DJENNE</PediaEntry>
 		</Row>
@@ -5375,7 +5360,7 @@
 		<Row>
 			<BuildingType>BUILDING_TEMPLE</BuildingType>
 			<FlavorType>FLAVOR_RELIGION</FlavorType>
-			<Flavor>60</Flavor>
+			<Flavor>80</Flavor>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_ASSUR_TEMPLE</BuildingType>
@@ -6053,7 +6038,7 @@
 		<Row>
 			<BuildingType>BUILDING_SHRINE</BuildingType>
 			<FlavorType>FLAVOR_RELIGION</FlavorType>
-			<Flavor>35</Flavor>
+			<Flavor>45</Flavor>
 		</Row>
 	
 		<Row>

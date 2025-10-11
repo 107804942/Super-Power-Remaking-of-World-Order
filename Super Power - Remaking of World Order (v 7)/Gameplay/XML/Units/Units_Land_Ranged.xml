@@ -612,6 +612,7 @@
 			<IconAtlas>EXPANSION_UNIT_ATLAS_1</IconAtlas>
 			<PortraitIndex>2</PortraitIndex>
 			<ExtraMaintenanceCost>4</ExtraMaintenanceCost>
+			<ExtraXPValueAttack>4</ExtraXPValueAttack>
 		</Row>
 		<Row>
 			<Class>UNITCLASS_CATAPULT</Class>
@@ -1439,11 +1440,7 @@
 		</Row>
 		<Row>
 			<UnitType>UNIT_ASSYRIAN_SIEGE_TOWER</UnitType>
-			<PromotionType>PROMOTION_ARMOR_BATTLESHIP_1</PromotionType>
-		</Row>
-		<Row>
-			<UnitType>UNIT_ASSYRIAN_SIEGE_TOWER</UnitType>
-			<PromotionType>PROMOTION_ARMOR_BATTLESHIP_2</PromotionType>
+			<PromotionType>PROMOTION_HEAVY_ARMOR</PromotionType>
 		</Row>
 		<Row>
 			<UnitType>UNIT_ASSYRIAN_SIEGE_TOWER</UnitType>

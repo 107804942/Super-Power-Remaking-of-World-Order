@@ -43,16 +43,16 @@
 			<Text>[COLOR_YELLOW]全部[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_IMMIGRATION">
-			<Text>SP-關閉 [COLOR_YELLOW]國際移民[ENDCOLOR]</Text>
+			<Text>SP-禁用 [COLOR_YELLOW]國際移民[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_IMMIGRATION_HELP">
-			<Text>國際移民：允許人口跨境流動。</Text>
+			<Text>國際移民：允許人口跨境流動。勾選後禁用此功能。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_NUCLEARWINTER">
-			<Text>SP-關閉 [COLOR_YELLOW]核冬天[ENDCOLOR]</Text>
+			<Text>SP-禁用 [COLOR_YELLOW]核冬天[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_NUCLEARWINTER_HELP">
-			<Text>核冬天：核戰爭將會引發災難性的全球氣候變化。</Text>
+			<Text>核冬天：核戰爭將會引發災難性的全球氣候變化。勾選後禁用此功能。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_RECORD_MODE">
 			<Text>SP-記錄模式</Text>
@@ -61,22 +61,22 @@
 			<Text>記錄使用額外模組數量及記錄讀檔次數。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_CORPS_MODE_HIGH">
-			<Text>SP-軍團模式（高）</Text>
+			<Text>SP-拓展 [COLOR_GREY]軍團模式（高）[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_CORPS_MODE_HIGH_HELP">
-			<Text>允許建立軍團和集團軍，兵力規模等級高(150%)。</Text>
+			<Text>勾選後在軍團模式下全局兵力産出變更爲150%。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_CORPS_MODE_CLOSE">
-			<Text>SP-關閉 [COLOR_YELLOW]軍團模式[ENDCOLOR]</Text>
+			<Text>SP-禁用 [COLOR_YELLOW]軍團模式[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_CORPS_MODE_CLOSE_HELP">
-			<Text>軍團模式：允許建立軍團和集團軍（詳情見百科戰鬥規則頁）</Text>
+			<Text>軍團模式：允許建立軍團和集團軍（詳情見百科戰鬥規則頁）。勾選後禁用此功能。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_CORPS_MODE_LOW">
-			<Text>SP-軍團模式（低）</Text>
+			<Text>SP-拓展 [COLOR_GREY]軍團模式（低）[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_SP_CORPS_MODE_LOW_HELP">
-			<Text>允許建立軍團和集團軍，兵力規模等級低(50%)。</Text>
+			<Text>勾選後在軍團模式下全局兵力産出變更爲50%。</Text>
 		</Row>
 
 
@@ -541,7 +541,7 @@
 			<Text>
 				[ICON_BULLET]+1[ICON_HAPPINESS_1]本地快樂。
 				[NEWLINE][ICON_BULLET]城市內所有的[COLOR_POSITIVE_TEXT]森林[ENDCOLOR]區塊+1[ICON_PRODUCTION]產能、[COLOR_POSITIVE_TEXT]叢林[ENDCOLOR]區塊+1[ICON_FOOD]食物。
-				[NEWLINE][ICON_BULLET]本城範圍內的每壹處有市民工作的森林或叢林為城市+1%[ICON_PRODUCTION]產能產出。
+				[NEWLINE][ICON_BULLET]本城範圍內的每一處有市民工作的森林或叢林為城市+1%[ICON_PRODUCTION]產能產出。
 			</Text>
 		</Replace>
 
@@ -622,7 +622,7 @@
 				[NEWLINE][ICON_BULLET]本城有市民工作的[ICON_RES_IRON]鐵、[ICON_RES_COPPER]銅、[ICON_RES_COAL]煤、[ICON_RES_ALUMINUM]鋁和[ICON_RES_URANIUM]鈾資源+1[ICON_PRODUCTION]產能。
 				[NEWLINE][ICON_BULLET]本城有市民工作的礦井+1[ICON_PRODUCTION]產能。
 				[NEWLINE][ICON_BULLET]建造軍事單位+15%[ICON_PRODUCTION]產能累積。
-				[NEWLINE][ICON_BULLET]城市附近必須擁有上述資源的壹種或多種。
+				[NEWLINE][ICON_BULLET]城市附近必須擁有上述資源的一種或多種。
 				[NEWLINE][ICON_BULLET][COLOR_NEGATIVE_TEXT]汙染[ENDCOLOR]將會導致[ICON_FOOD]食物累積-5%。
 				[NEWLINE][ICON_BULLET]需要1單位[ICON_RES_ELECTRICITY]電力。
 			</Text>
@@ -845,17 +845,24 @@
 		<Row>
 			<Tag>TXT_KEY_BUILDING_VENICE_FONDACO_HELP</Tag>
 			<Text>
-				[ICON_BULLET][ICON_BULLET]從本城市出發的海陸商隊範圍增加50%。
+				[ICON_BULLET]從本城市出發的海陸商隊範圍增加50%。
 				[NEWLINE][ICON_BULLET]城市人口增長不受缺少衛生設施的影響。
 				[NEWLINE][ICON_BULLET]國際移民進入城市不受城市規模的影響。
 			</Text>
 		</Row>
 
 		<Replace Tag="TXT_KEY_BUILDING_CARAVANSARY_HELP">
-			<Text>通向其他文明的陸地商路額外+6基礎[ICON_GOLD]金幣。</Text>
+			<Text>
+				[ICON_BULLET]從本城市出發的陸地商隊範圍增加20%。
+				[NEWLINE][ICON_BULLET]通向其他文明的陸地商路+6基礎[ICON_GOLD]金幣。
+			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_BAZAAR_HELP">
-			<Text>本城市的每處[ICON_RES_OIL]石油和綠洲+2[ICON_GOLD]金幣產出。[NEWLINE][NEWLINE]通向其他文明的陸地商路額外+6基礎[ICON_GOLD]金幣。
+			<Text>
+				[ICON_BULLET]+2[ICON_PEACE]信仰。
+				[NEWLINE][ICON_BULLET]從本城市出發的陸地商隊範圍增加20%。
+				[NEWLINE][ICON_BULLET]本城每處[ICON_RES_OIL]石油和綠洲+2[ICON_GOLD]金幣產出。
+				[NEWLINE][ICON_BULLET]通向其他文明的陸地商路+6基礎[ICON_GOLD]金幣。
 			</Text>
 		</Replace>
 
@@ -1364,10 +1371,14 @@
 			<Set Text="所有城市-10%[ICON_CITIZEN]人口成長閾值。向所在城市贈送一個花園。" />
 		</Update>
 
-		<Update>
-			<Where Tag="TXT_KEY_WONDER_COLOSSUS_HELP" />
-			<Set Text="獲得一條額外的商路和一艘免費的貨船。[NEWLINE][NEWLINE]所有由此城市出發的商路+50%距離。城市必須沿海。[NEWLINE][NEWLINE]本城出發的商路+1[ICON_RESEARCH]科研、+1[ICON_CULTURE]文化。" />
-		</Update>
+		<Replace Tag="TXT_KEY_WONDER_COLOSSUS_HELP">
+			<Text>
+				[ICON_BULLET]獲得一條額外的商路和一艘免費的貨船。
+				[NEWLINE][ICON_BULLET]所有由此城市出發的海上商路+50%距離。
+				[NEWLINE][ICON_BULLET]本城出發的商路+1[ICON_RESEARCH]科研、+1[ICON_CULTURE]文化。
+				[NEWLINE][NEWLINE]城市必須沿海。
+			</Text>
+		</Replace>
 
 		<Update>
 			<Where Tag="TXT_KEY_WONDER_ORACLE_HELP" />
@@ -2764,7 +2775,7 @@
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_SATRAPS_COURT_HELP">
 			<Text>
-				替代#市政廳[COLOR_NEGATIVE_TEXT]（壹級）[ENDCOLOR]，和普通[COLOR_NEGATIVE_TEXT]一級[ENDCOLOR]市政廳相比：
+				替代#市政廳[COLOR_NEGATIVE_TEXT]（一級）[ENDCOLOR]，和普通[COLOR_NEGATIVE_TEXT]一級[ENDCOLOR]市政廳相比：
 				[NEWLINE][ICON_BULLET]無維護費，不消耗額外消費品且不會造成額外政策閾值上漲，沒有額外[ICON_HAPPINESS_4]不滿。
 				[NEWLINE][ICON_BULLET]每座總督府+2[ICON_HAPPINESS_1]全局快樂，+4%[ICON_GOLDEN_AGE]黃金時代長度。
 			</Text>
@@ -2845,7 +2856,7 @@
 		</Row>
 
 		<Row Tag="TXT_KEY_SELL_BUILDING_CITY_HALL">
-			<Text>你確定要出售市政廳嗎？你將花費{1_Num}[ICON_GOLD]金錢用於扶持傀儡並將其轉化為傀儡城市，你可省去{2_Num}[ICON_GOLD]金錢/回合的維護費以及直轄城市帶來的政策閾值、不滿等，此外城市將進入壹定回合的[COLOR_NEGATIVE_TEXT]無政府時間[ENDCOLOR]（回合數等於人口的壹半）。</Text>
+			<Text>你確定要出售市政廳嗎？你將花費{1_Num}[ICON_GOLD]金錢用於扶持傀儡並將其轉化為傀儡城市，你可省去{2_Num}[ICON_GOLD]金錢/回合的維護費以及直轄城市帶來的政策閾值、不滿等，此外城市將進入一定回合的[COLOR_NEGATIVE_TEXT]無政府時間[ENDCOLOR]（回合數等於人口的一半）。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SELL_CITY_HALL_DIABLE">
 			<Text>[COLOR_NEGATIVE_TEXT][ICON_GOLD]金錢不足[ENDCOLOR]</Text>
@@ -2884,8 +2895,7 @@
 		<Row Tag="TXT_KEY_TRO_LOCATE_RECALL_TT">
 			<Text>
 				單擊[COLOR_WARNING_TEXT]取消[ENDCOLOR]並[COLOR_WARNING_TEXT]召回[ENDCOLOR]此貿易單位。
-				[NEWLINE][NEWLINE][ICON_BULLET]如果這是國內商路，您可以立即重新分配貿易路線。
-				[NEWLINE][NEWLINE][ICON_BULLET]如果這是國際商路，貿易路線立即取消。然而，你必須等到這個貿易單位回到它的家鄉才可以重新分配它。
+				[NEWLINE][ICON_BULLET]下回合，您可以重新分配此貿易路線。
 			</Text>
 		</Row>
 
@@ -4536,7 +4546,7 @@
 		<Row Tag="TXT_KEY_CONCEPT_SP_NUCLEAR_WINTER_DETAILS_SUMMARY">
 			<Text>
 				觸發條件：核爆炸會增加全球核冬天進程。當核冬天進程達到閾值時，核冬天的扳機將被摳動。
-				[NEWLINE][NEWLINE]效果：核冬天擁有四個階段，如果有更多核爆炸，核冬天就會進入下壹個階段。
+				[NEWLINE][NEWLINE]效果：核冬天擁有四個階段，如果有更多核爆炸，核冬天就會進入下一個階段。
 				[NEWLINE][NEWLINE]1，凜冬將至——核冬天進程達到50。你在發生核爆炸時會收到核冬天即將降臨的警告。
 				[NEWLINE]2，災變夜——核冬天進程達到75。輻射煙雲遮蔽了太陽，地球開始了長夜，各個城市的人口增長減慢。
 				[NEWLINE]3，末世——核冬天進程達到225。大量的輻射塵覆蓋了土壤，全球性的饑荒開始。
@@ -4951,16 +4961,14 @@
 			<Set Text="現在，我們的人民皆服右衽、聞雅樂。我擔心世界其他地方，也會屈服於你文化的影響力之下。" />
 		</Update>
 		<Row Tag="TXT_KEY_CO_IMMIGRATION_COUNTER_HEADER">
-			<Text>[ICON_TEAM_4] / [ICON_TEAM_2]</Text>
+			<Text>[ICON_TEAM_2][ICON_TEAM_1][ICON_TEAM_4]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CO_IMMIGRATION_COUNTER_HEADER_TT">
 			<Text>
-				左側：當前[ICON_TEAM_4]國際移民遷入速率。
-				[NEWLINE][ICON_BULLET]遷入速率體現了本文明對該國人民的吸引力。
-				[NEWLINE][ICON_BULLET]如果你的遷入速率大於等於4且比移出速率更高，則該國每回合會[ICON_TEAM_4]移民到你的國家一單位[ICON_CITIZEN]人口。
-				[NEWLINE][NEWLINE][NEWLINE]右側：當前[ICON_TEAM_2]國際移民移出速率。
-				[NEWLINE][ICON_BULLET]移出速率體現了該文明對你的國民的吸引力。
-				[NEWLINE][ICON_BULLET]如果你的移出速率大於等於4且比遷入速率更高，則本國每回合會[ICON_TEAM_4]移民到目標國家一單位[ICON_CITIZEN]人口。
+				移民綜合速率 ([ICON_TEAM_2][COLOR_NEGATIVE_TEXT]移出閾值[ENDCOLOR] - 國際移民進度 - [COLOR_POSITIVE_TEXT]遷入閾值[ENDCOLOR][ICON_TEAM_4])。
+				[NEWLINE][ICON_BULLET]移民綜合速率基於遷入速率和移出速率的差值。遷入速率體現了本文明對該國人民的吸引力，移出速率則體現了該文明對你的國民的吸引力。
+				[NEWLINE][ICON_BULLET]如果國際移民進度達到[COLOR_POSITIVE_TEXT]遷入閾值[ENDCOLOR]，則該國會[ICON_TEAM_4]移民到你的國家一單位[ICON_CITIZEN]人口。
+				[NEWLINE][ICON_BULLET]如果國際移民進度達到[COLOR_NEGATIVE_TEXT]移出閾值[ENDCOLOR]，則本國會[ICON_TEAM_2]移民到目標國家一單位[ICON_CITIZEN]人口。
 				[NEWLINE][NEWLINE]基礎[ICON_TEAM_4]遷移速率由文化影響度決定（默默無聞：0，初具風情：1，口耳相傳：2，廣受稱譽：3，無遠弗屆：4，絕對支配：5）。但遷移速率也會受到兩國間外交關係的影響。
 			</Text>
 		</Row>
@@ -5723,7 +5731,7 @@
 		<Replace Tag="TXT_KEY_TRAIT_ART_OF_WAR">
 			<Text>
 				[ICON_BULLET]所有陸軍單位都自帶消滅敵人後，獲得相當於敵單位戰鬥力數值50%的[ICON_GOLDEN_AGE]黃金時代點數的晉升。
-				[NEWLINE][ICON_BULLET]黃金時代中，所有城市的[ICON_CITIZEN]人口增長所需糧食-20%，消除來自城市數量的[ICON_RESEARCH]科研花費增加。
+				[NEWLINE][ICON_BULLET]黃金時代中，所有城市的[ICON_CITIZEN]人口增長所需糧食-20%，來自城市數量的[ICON_RESEARCH]科研阈值減半。
 			</Text>
 		</Replace>
 		<Row Tag="TXT_KEY_SP_UA_CHINA_GOLDENAGE_ANNOUNCE">
@@ -5733,7 +5741,7 @@
 			<Text>
 				中國進入了一個嶄新的[ICON_GOLDEN_AGE][COLOR_POSITIVE_TEXT]盛世[ENDCOLOR]！
 				[NEWLINE][NEWLINE]所有金錢產出的地塊額外+1[ICON_GOLD]金錢產出，全國+20%[ICON_PRODUCTION]產能，[ICON_CULTURE]文化。
-				[NEWLINE]所有城市的[ICON_CITIZEN]人口成長所需糧食-20%，消除來自城市數量的[ICON_RESEARCH]科研花費增加。
+				[NEWLINE]所有城市的[ICON_CITIZEN]人口成長所需糧食-20%，來自城市數量的[ICON_RESEARCH]科研阈值減半。
 			</Text>
 		</Row>
 
@@ -5826,7 +5834,7 @@
 
 		<Replace Tag="TXT_KEY_TRAIT_BUFFALO_HORNS">
 			<Text>
-				[ICON_BULLET]所有軍事單位獲得晉升所需經驗值-50%，陸上單位維護費-15%。
+				[ICON_BULLET]所有軍事單位獲得晉升所需經驗值-50%，且不會因爲赤字被解散。
 				[NEWLINE][ICON_BULLET]境內有市民工作的每處[ICON_RES_GOLD]黃金、[ICON_RES_SILVER]白銀和[ICON_RES_GEMS]寶石資源+5[ICON_GOLD]金錢。
 			</Text>
 		</Replace>
@@ -5947,22 +5955,24 @@
 			<Text>
 				[ICON_BULLET]河流及其相鄰區塊不會阻礙己方單位[ICON_MOVES]移動。
 				[NEWLINE][ICON_BULLET]陸地商路能夠通過河流線延長（視為道路）。
-				[NEWLINE][ICON_BULLET]所有貿易站+1[ICON_GOLD]金錢產出。
 				[NEWLINE][ICON_BULLET]沿河城市减少200点离心倾向。
 			</Text>
 		</Replace>
 
+		<Replace Tag="TXT_KEY_TRAIT_BONUS_AGAINST_TECH_SHORT">
+			<Text>所羅門王</Text>
+		</Replace>
 		<Replace Tag="TXT_KEY_TRAIT_BONUS_AGAINST_TECH">
 			<Text>
-				[ICON_BULLET]與擁有更多城市的文明的單位作戰時獲得25%戰鬥力加成。
-				[NEWLINE][ICON_BULLET]所有專家+2[ICON_CULTURE]文化產出。
+				[ICON_BULLET]所有專家+2[ICON_CULTURE]文化産出。
+				[NEWLINE][ICON_BULLET]允許使用[ICON_PEACE]信仰購買露天劇場、畫廊、歌劇院。
 			</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_TRAIT_POPULATION_GROWTH">
 			<Text>
 				[ICON_BULLET]城市[ICON_CITIZEN]人口帶來的[ICON_HAPPINESS_4]不滿-20%。
-				[NEWLINE][ICON_BULLET]城市中每個主流宗教信徒+1%[ICON_FOOD]糧食產出。
+				[NEWLINE][ICON_BULLET]城市中每個主流宗教信徒+1%[ICON_FOOD]糧食產出（至多+25%）。
 			</Text>
 		</Replace>
 
@@ -5990,7 +6000,7 @@
 
 		<Replace Tag="TXT_KEY_TRAIT_CITY_STATE_BONUSES">
 			<Text>
-				[ICON_BULLET]友好城邦提供的[ICON_FOOD]食物,[ICON_CULTURE]文化,[ICON_PEACE]信仰增加50%。
+				[ICON_BULLET]友好城邦提供的[ICON_FOOD]食物，[ICON_CULTURE]文化，[ICON_PEACE]信仰增加50%。
 				[NEWLINE][ICON_BULLET]軍事城邦贈送的單位獲得免費20經驗。
 				[NEWLINE][ICON_BULLET]可以把偉人作為禮物單位送給城邦並獲得150點[ICON_INFLUENCE]影響力。
 			</Text>
@@ -6000,6 +6010,7 @@
 			<Text>
 				[ICON_BULLET]陸上商隊+50%距離，商隊傳輸宗教壓力提高3倍。
 				[NEWLINE][ICON_BULLET]每處綠洲+2[ICON_CULTURE]文化和+2[ICON_PEACE]信仰。
+				[NEWLINE][ICON_BULLET]信仰你創立的宗教的伊斯蘭先知産出的[ICON_CULTURE]文化翻倍。
 			</Text>
 		</Replace>
 
@@ -6375,7 +6386,7 @@
 			<Text>伊斯蘭先知</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_ARABIAN_PROPHET_HELP">
-			<Text>伊斯蘭先知是阿拉伯文明的特殊單位，替代預言家。該單位能夠創建或強化宗教，建造聖地，傳教5次（比普通預言家多一次）等，同時還可以消耗他一次性產出大量[ICON_CULTURE]文化值（即使僅剩1次傳教次數也可使用該能力，產出數值同大文學家）。</Text>
+			<Text>伊斯蘭先知是阿拉伯文明的特殊單位，替代預言家。該單位能夠創建或強化宗教，建造聖地，傳教5次（比普通預言家多一次）等，同時還可以消耗他一次性產出大量[ICON_CULTURE]文化值（即使僅剩1次傳教次數也可使用該能力）。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_ARABIAN_PROPHET_TEXT">
 			<Text>穆斯林認為先知（阿拉伯語：نبي）是凡人，是真主派遣的。每位先知都帶來了伊斯蘭式的基本信息，包括獨一造物主的信仰，避免偶像崇拜與罪惡。他們都向大眾傳播伊斯蘭教，並告知將出現見證律法的最後先知，他是真主所派遣的最後使者：穆罕默德。他們都向不同人群傳播同一個訊息，並教導互有細微差異的律法。這些細微差異構成了伊斯蘭教，然而主流穆斯林不認為這些差異是伊斯蘭教支離破碎的版本。伊斯蘭傳統認為真主向萬國萬邦派遣使者。在伊斯蘭教裡，惟獨穆罕默德是真主派來教化全世界的使者，其他使者只向特定民族或國家宣教。[NEWLINE][NEWLINE]不像猶太教和基督教，伊斯蘭教還區分了使者（rasul，رسول）和先知（nabi，نبی）。這兩種身分都是真主啟示的。不同的是，「使者」還帶來了真主啟示的經典。每位「使者」都是「先知」，但並不是每位「先知」都是「使者」。[NEWLINE][NEWLINE]穆斯林認為阿丹（亞當）是第一位先知，而穆罕默德則是最後一位；因此穆罕默德的頭銜是「眾先知的封印」。在伊斯蘭教裡，爾撒（耶穌）是先知（並非每個人都如此認為）也是使者，因為他接受真主的「啟示」並帶來了《引支勒》。穆斯林相信，真主派遣了超過124,000位使者，這在權威的聖訓中就提及了。根據聖訓記載，其中有五位使者是最勞苦功高的，他們分別是努哈（挪亞）、易蔔拉欣（亞伯拉罕）、穆薩（摩西）、爾撒（耶穌）以及穆罕默德。 </Text>
@@ -6495,8 +6506,8 @@
 			<Text>
 				[COLOR_POSITIVE_TEXT]傳統政策[ENDCOLOR]適宜於繁榮精幹的帝國。
 				[NEWLINE][NEWLINE]啟用傳統政策：
-				[NEWLINE][ICON_BULLET]使[ICON_CAPITAL]首都+3[ICON_CULTURE]文化，+3[ICON_RESEARCH]科研。
-				[NEWLINE][ICON_BULLET]首都出發的商路+5距離、+5[ICON_GOLD]金錢。
+				[NEWLINE][ICON_BULLET]使[ICON_CAPITAL]首都+3[ICON_CULTURE]文化、+3[ICON_RESEARCH]科研。
+				[NEWLINE][ICON_BULLET]首都出發的商路+3距離、+3[ICON_GOLD]金錢。
 				[NEWLINE][ICON_BULLET]城市地塊擴張所需文化成本-25%。
 				[NEWLINE][ICON_BULLET]允許建造空中花園。
 				[NEWLINE][NEWLINE]推行所有傳統政策：
@@ -6737,10 +6748,10 @@
 		<Replace Tag="TXT_KEY_POLICY_WARRIOR_CODE_HELP">
 			<Text>
 				[COLOR_POSITIVE_TEXT]尚武精神[ENDCOLOR]
-				[NEWLINE][ICON_BULLET]軍營，軍械所，兵工廠，軍事基地+1[ICON_PRODUCTION]產能。[ICON_PUPPET]傀儡城市+6[ICON_GOLD]金錢。
-				[NEWLINE][ICON_BULLET]馬廄，冶鐵坊，城墻，城堡+2[ICON_CULTURE]文化。
+				[NEWLINE][ICON_BULLET]軍營、軍械所+1[ICON_PRODUCTION]産能，兵工廠、軍事基地+2[ICON_PRODUCTION]産能。
+				[NEWLINE][ICON_BULLET]馬廄、冶鐵坊、城牆、城堡+2[ICON_CULTURE]文化。
 				[NEWLINE][ICON_BULLET]建造軍事單位時+15%[ICON_PRODUCTION]產能。
-				[NEWLINE][ICON_BULLET]研發數學後，攻占敵方城市贈送法院
+				[NEWLINE][ICON_BULLET]驻军可以消除來自[ICON_OCCUPIED]被佔領城市的額外[ICON_HAPPINESS_4]不滿。
 			</Text>
 		</Replace>
 
@@ -6782,7 +6793,8 @@
 			<Text>
 				[COLOR_POSITIVE_TEXT]軍事傳統[ENDCOLOR]
 				[NEWLINE][ICON_BULLET]升級單位所需的[ICON_GOLD]金錢減少60%。
-				[NEWLINE][ICON_BULLET]軍營，軍械所，城墻，城堡,馬廄和軍事學院+1[ICON_HAPPINESS_1]快樂.
+				[NEWLINE][ICON_BULLET]軍營、軍械所、城墻、城堡、馬廄和軍事學院+1[ICON_HAPPINESS_1]快樂。
+				[NEWLINE][ICON_BULLET]城市規模達到[ICON_CITYBANNER_CITY_SMALL]小型城市及以上時+5[ICON_RES_MANPOWER]人力。
 			</Text>
 		</Replace>
 
@@ -7278,7 +7290,7 @@
 		<Replace Tag="TXT_KEY_POLICY_CAPITALISM_HELP">
 			<Text>
 				[COLOR_POSITIVE_TEXT]資本主義[ENDCOLOR]
-				[NEWLINE]每條商路+10[ICON_GOLD]金幣，為全國+3%[ICON_RESEARCH]科技值產出。
+				[NEWLINE]每條商路+10[ICON_GOLD]金幣，為全國+2%[ICON_RESEARCH]科技值產出。
 				[NEWLINE]商業家產出的[ICON_RES_CONSUMER]商品數量額外+3。
 			</Text>
 		</Replace>
@@ -7426,7 +7438,10 @@
 		</Replace>
 
 		<Replace Tag="TXT_KEY_POLICY_FIVE_YEAR_PLAN_HELP">
-			<Text>[COLOR_POSITIVE_TEXT]五年計劃[ENDCOLOR][NEWLINE]每處礦井、採石場、伐木場、油井、海上鑽井平臺、捕撈船+1[ICON_PRODUCTION]生產力。</Text>
+			<Text>
+				[COLOR_POSITIVE_TEXT]五年計劃[ENDCOLOR]
+				[NEWLINE]每處礦井、採石場、伐木場、油井、海上鑽井平臺、捕撈船+1[ICON_PRODUCTION]生產力，+100%建造速度。
+			</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_HELP">
@@ -8018,7 +8033,7 @@
 			<Text>荒漠+1[ICON_PEACE]信仰，綠洲額外+1[ICON_CULTURE]文化、+1[ICON_PEACE]信仰</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_GOD_KING">
-			<Text>宮殿+2[ICON_PEACE]信仰、+1[ICON_FOOD]食物、[ICON_PRODUCTION]產能，[ICON_CITYBANNER_CITY_LV1]一級城市+1[ICON_FOOD]食物、[ICON_PRODUCTION]產能、[ICON_PEACE]信仰</Text>
+			<Text>宮殿+2[ICON_PEACE]信仰、+1[ICON_FOOD]食物、[ICON_PRODUCTION]產能，[ICON_CITYBANNER_CITY_LV1]一級城市+1[ICON_PEACE]信仰、[ICON_FOOD]食物、[ICON_PRODUCTION]產能</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_GODDESS_HUNT">
 			<Text>獵場+1[ICON_FOOD]食物、+1[ICON_PEACE]信仰，[ICON_RES_BISON]野牛、[ICON_RES_DEER]野鹿+1[ICON_CULTURE]文化</Text>
@@ -8058,6 +8073,12 @@
 		</Row>
 		<Row Tag="TXT_KEY_BELIEF_SONE_OF_SIREN">
 			<Text>來自環礁的基礎產出翻倍，沿海城市+2[ICON_PEACE]信仰</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_SACRED_RITES_SHORT">
+			<Text>聖禋</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_SACRED_RITES">
+			<Text>臨近城市的石祭壇+1[ICON_PEACE]信仰</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BELIEF_SLASH_AND_BURN_SHORT">
 			<Text>刀耕火種</Text>
@@ -8167,7 +8188,7 @@
 			<Text>向城邦贈送[ICON_GOLD]金錢增加影響力的效果提升50%。對信仰此宗教的城邦的[ICON_INFLUENCE]影響力下限值+30</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_JESUIT_EDUCATION">
-			<Text>可以使用[ICON_PEACE]信仰購買學院、大學、公立學校和研發實驗室。學院、大學、公立學校和研發實驗室+2[ICON_PEACE]信仰</Text>
+			<Text>可以使用[ICON_PEACE]信仰購買學院、大學、公立學校和研發實驗室。學院、大學、公立學校和研發實驗室+1[ICON_PEACE]信仰</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_SACRED_SITES">
 			<Text>每座使用[ICON_PEACE]信仰購買的建築+2[ICON_TOURISM]魅力。學園、海關、製造中心、宗教聖地+5[ICON_CULTURE]文化</Text>
@@ -8362,7 +8383,7 @@
 				[NEWLINE][ICON_BULLET]絕大部分軍事單位和世界奇觀都會消耗你的人力資源。
 				[NEWLINE][ICON_BULLET]人力資源主要通過城市和人口提供，部分建築和奇觀也可以提供。
 				[NEWLINE]
-				[NEWLINE][ICON_BULLET]人力資源充足時(數量>25)，玩家使用[ICON_GOLD]金錢購買單位和建築獲得打折加成，公式為P= 5*n/c/2，其中為n電力資源數量，c為城市數量。
+				[NEWLINE][ICON_BULLET]人力資源充足時(數量>25)，玩家使用[ICON_GOLD]金錢購買單位和建築獲得打折加成，公式為P= 5*n/c/2，其中為n人力資源數量，c為城市數量。
 				[NEWLINE][ICON_BULLET]人力資源至多帶來35%的購買減成。
 			</Text>
 		</Row>
@@ -8415,14 +8436,14 @@
 				只有陸軍可以組建“軍團”或者“集團軍”；[NEWLINE]
 				[ICON_BULLET]城市擁有兵工廠後允許使用兩個相同單位組建“軍團”，[ICON_STRENGTH]戰鬥力+10%，血量上限+100%；[NEWLINE]
 				[ICON_BULLET]城市擁有軍事基地後允許使用軍團單位和壹個同類普通單位組建“集團軍”，[ICON_STRENGTH]戰鬥力再+15%，血量上限再+100%；[NEWLINE]
-				[ICON_BULLET]AI新造/新刷單位優先補充舊單位的損失，其次在條件滿足的情況下合入舊單位（根據遊戲難度合入概率依次為8級100%，7級90%...），最後才會真正產生壹個新單位；[NEWLINE]
-				使用相同單位合成軍團可以同時合並兩個單位的晉升，並由此得到壹個強力單位；[NEWLINE]
+				[ICON_BULLET]AI新造/新刷單位優先補充舊單位的損失，其次在條件滿足的情況下合入舊單位（根據遊戲難度合入概率有浮動變化）；[NEWLINE]
+				使用相同單位合成軍團可以同時合並兩個單位的晉升，並由此得到一個強力單位；[NEWLINE]
 				消耗陸軍統帥可以無視軍團/集團軍組建上限為單位直接賦予“軍團”或“集團軍”晉升（賦予“集團軍”晉升需要城市擁有兵工廠，每個陸軍統帥僅能進行一次）；[NEWLINE][NEWLINE]
 				引入“兵力”設定，兵力決定妳總共能擁有的軍事單位數量，兵力為0後不能建造軍事單位，新獲得的軍事單位也會被清除，AI兵力為0後也將停止刷出單位：[NEWLINE]
 				[ICON_BULLET]默認情況下除小鎮以外的每個城市規模等級提供4兵力點，初始24點，每個兵工廠提供2點軍團上限，軍事基地提供2點軍團和集團軍組建上限；[NEWLINE]
 				[ICON_BULLET]軍團模式（高）：兵力以及軍團/集團軍組建上限增加50%；[NEWLINE]
 				[ICON_BULLET]軍團模式（低）：兵力以及軍團/集團軍組建上限減少50%；[NEWLINE][NEWLINE]
-				特別註意，兵力數量增長只和城市規模相關，軍團/集團軍的組建上限只與兵工廠和軍事基地的數量有關，使用陸軍統帥升級可以無視數量上限，但是並不會增加上限（妳會看到組建按鈕顯示可組建數量為負數）；[NEWLINE]
+				特別註意，兵力數量增長只和城市規模相關，軍團/集團軍的組建上限只與兵工廠和軍事基地的數量有關，使用陸軍統帥升級可以無視數量上限；[NEWLINE]
 				（平民、要塞及空軍單位不計入兵力消耗，也不進行單位合並操作）
 			</Text>
 		</Row>
@@ -9346,8 +9367,7 @@
 			<Text>
 				[ICON_BULLET]只能建在叢林或森林。
 				[NEWLINE][ICON_BULLET]不能同時在相鄰的地塊建造瑪雅祭壇。
-				[NEWLINE][ICON_BULLET]瑪雅祭壇每鄰近一處叢林和森林+1[ICON_RESEARCH]科研產出。
-				[NEWLINE][ICON_BULLET]瑪雅祭壇上的每一位大先知提供+2[ICON_RESEARCH][ICON_PEACE][ICON_GOLDEN_AGE]產出。
+				[NEWLINE][ICON_BULLET]每鄰近一處偉人設施+2[ICON_RESEARCH]科研產出。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_IMPROVEMENT_MAYA_ALTAR_TEXT">
@@ -11055,10 +11075,10 @@
 		</Replace>
 
 		<Replace Tag="TXT_KEY_UNIT_HELP_HUN_BATTERING_RAM">
-			<Text>攻城錘是匈人的特色單位，替代投石機，用於突破敵軍城市的防禦。它們擁有高額的攻城加成，且僅需兵營即可建造，但對近戰攻擊毫無反抗能力。</Text>
+			<Text>攻城錘是匈人的特色單位，替代投石機，用於突破敵軍城市的防禦。它們擁有高額的攻城加成，且攻擊時可以額外獲得4經驗（不可繼承），僅需兵營即可建造，但對近戰攻擊毫無反抗能力。</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_UNIT_HELP_ASSYRIAN_SIEGE_TOWER">
-			<Text>攻城錘是亞述的特色單位，替代投石機，強大的近程壓制單位，可以給周邊的所有單位提供攻城加成。</Text>
+			<Text>攻城塔是亞述的特色單位，替代投石機，強大的近程壓制單位，可以給周邊的所有單位提供攻城加成。</Text>
 		</Replace>
 
 		<Row Tag="TXT_KEY_UNIT_SLOOP_OF_WAR">
@@ -11885,10 +11905,10 @@
 			<Plurality>2</Plurality>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_PROTOTYPE_AIRSHIP_HELP">
-			<Text>能夠裝載4架飛機的巨型飛艇。可跨越山脈和水域。[NEWLINE][NEWLINE]需要巨型飛艇工程解鎖，你只能建造一艘。</Text>
+			<Text>能夠裝載6架飛機的巨型飛艇。可跨越山脈和水域。[NEWLINE][NEWLINE]需要巨型飛艇工程解鎖，你只能建造一艘。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_PROTOTYPE_AIRSHIP_STRATEGY">
-			<Text>這艘巨型飛艇能夠裝載4架飛機，通過晉升還可以繼續增加。她能夠作為移動載機平臺，保證你的敵人始終處於你空軍轟炸機的航程之內，航程較短的早期飛機尤其需要她。飛艇本身沒有攻擊能力，但其防禦力很強。建議儘早建造此項目，後期噴氣式飛機航程大幅度提升，恐怕就不需要這艘老古董的支援了。</Text>
+			<Text>這艘巨型飛艇能夠裝載6架飛機。她能夠作為移動載機平臺，保證你的敵人始終處於你空軍轟炸機的航程之內，航程較短的早期飛機尤其需要她。飛艇本身沒有攻擊能力，但其防禦力很強。建議儘早建造此項目，後期噴氣式飛機航程大幅度提升，恐怕就不需要這艘老古董的支援了。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_PROTOTYPE_AIRSHIP_HEADING">
 			<Text>[COLOR_YELLOW]齊柏林號飛艇[ENDCOLOR]</Text>
@@ -12303,6 +12323,7 @@
 				[NEWLINE][ICON_BULLET]不受[COLOR_POSITIVE_TEXT]負面效果[ENDCOLOR]影響。
 				[NEWLINE][ICON_BULLET]處於境外每回合會-50HP且-25%[ICON_STRENGTH]戰鬥力。
 				[NEWLINE][ICON_BULLET]不能[COLOR_NEGATIVE_TEXT]移動[ENDCOLOR]，不能獲得[COLOR_NEGATIVE_TEXT]晉升[ENDCOLOR]。
+				[NEWLINE]
 				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]攻城單位[ENDCOLOR]克製。
 			</Text>
 		</Row>
@@ -12361,21 +12382,24 @@
 			<Text>方陣步兵</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_ANTI_MOUNTED_HELP">
-			<Text>克制[COLOR_POSITIVE_TEXT]騎乘[ENDCOLOR]單位，被[COLOR_NEGATIVE_TEXT]遠程攻擊[ENDCOLOR]克制。[NEWLINE]駐守時每回合額外回復15HP。</Text>
+			<Text>
+				造價低廉、專門對抗重裝騎兵的單位。
+				[NEWLINE][ICON_BULLET]駐守時每回合額外回複15HP。
+				[NEWLINE][NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]重裝騎兵[ENDCOLOR]單位。
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]陸軍遠程[ENDCOLOR]單位克制。
+			</Text>
 		</Replace>
-		<!--
-		<Replace Tag="TXT_KEY_PROMOTION_ANTI_MOUNTED_II">
-			<Text>長槍武器</Text>
-		</Replace>
-		<Replace Tag="TXT_KEY_PROMOTION_ANTI_MOUNTED_II_HELP" >
-			<Text>面對[COLOR_POSITIVE_TEXT]騎乘[ENDCOLOR]單位戰鬥力加成。</Text>
-		</Replace>
-		-->
+
 		<Replace Tag="TXT_KEY_PROMOTION_ANTI_TANK">
 			<Text>反裝甲單位</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_ANTI_TANK_HELP">
-			<Text>克制[COLOR_POSITIVE_TEXT]裝甲[ENDCOLOR]單位，被[COLOR_NEGATIVE_TEXT]防空單位[ENDCOLOR]克制。[NEWLINE]駐守時每回合額外回復15HP。</Text>
+			<Text>
+				造價低廉、專門對抗裝甲的單位。
+				[NEWLINE][ICON_BULLET]駐守時每回合額外回複15HP。
+				[NEWLINE][NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]裝甲[ENDCOLOR]單位。
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]陸軍遠程[ENDCOLOR]單位克制。
+			</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_PROMOTION_FORMATION_1_HELP">
@@ -12422,7 +12446,16 @@
 			<Text>重裝騎兵</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_KNIGHT_COMBAT_HELP">
-			<Text>克制[COLOR_POSITIVE_TEXT]攻城[ENDCOLOR]單位，被[COLOR_NEGATIVE_TEXT]方陣步兵[ENDCOLOR]克制。[COLOR_POSITIVE_TEXT]攻擊[ENDCOLOR]時+50%戰鬥力。能夠衝鋒擊退敵方單位，並對其同格單位造成50%的[COLOR_POSITIVE_TEXT]踐踏[ENDCOLOR]傷害。[NEWLINE]可攻擊後移動。[NEWLINE]攻擊[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]失去所有[ICON_MOVES]移動力。[NEWLINE]沒有地形防禦加成。</Text>
+			<Text>
+				快速且強力的單位，專用于突破敵軍防線及消滅敵方遠程單位。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]攻擊[ENDCOLOR]時+50%戰鬥力。
+				[NEWLINE][ICON_BULLET]能夠衝鋒擊退敵方單位，並對其同格單位造成50%的[COLOR_POSITIVE_TEXT]踐踏[ENDCOLOR]傷害。
+				[NEWLINE][ICON_BULLET]可攻擊後移動。
+				[NEWLINE][ICON_BULLET]沒有地形防禦加成。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]方陣步兵[ENDCOLOR]克制。
+				[NEWLINE][ICON_BULLET]攻擊[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]失去所有[ICON_MOVES]移動力。
+			</Text>
 		</Row>
 
 		<!--<Row Tag="TXT_KEY_PROMOTION_LANDIRONCLAD">
@@ -12436,7 +12469,16 @@
 			<Text>裝甲單位</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_TANK_COMBAT_HELP">
-			<Text>克制[COLOR_POSITIVE_TEXT]炮兵[ENDCOLOR]單位，被[COLOR_NEGATIVE_TEXT]反裝甲和直升機[ENDCOLOR]單位克制。[COLOR_POSITIVE_TEXT]攻擊[ENDCOLOR]時+50%戰鬥力。能夠衝鋒擊退敵方單位，並對其同格單位造成50%的[COLOR_POSITIVE_TEXT]碾壓[ENDCOLOR]傷害。[NEWLINE]可攻擊後移動。[NEWLINE]攻擊[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]失去所有[ICON_MOVES]移動力。[NEWLINE]沒有地形防禦加成。</Text>
+			<Text>
+				快速且強力的單位，專用于突破敵軍防線及消滅敵方遠程單位。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]攻擊[ENDCOLOR]時+50%戰鬥力。
+				[NEWLINE][ICON_BULLET]能夠衝鋒擊退敵方單位，並對其同格單位造成50%的[COLOR_POSITIVE_TEXT]碾壓[ENDCOLOR]傷害。
+				[NEWLINE][ICON_BULLET]可攻擊後移動。
+				[NEWLINE][ICON_BULLET]沒有地形防禦加成。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]反裝甲[ENDCOLOR]單位克制。
+				[NEWLINE][ICON_BULLET]攻擊[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]失去所有[ICON_MOVES]移動力。
+			</Text>
 		</Row>
 
 		<Replace Tag="TXT_KEY_PROMOTION_CHARGE_1">
@@ -12473,14 +12515,16 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_ARCHERY_COMBAT_HELP">
 			<Text>
-				[ICON_BULLET]克製[COLOR_POSITIVE_TEXT]方陣步兵[ENDCOLOR]，[COLOR_POSITIVE_TEXT]反裝甲[ENDCOLOR]和[COLOR_POSITIVE_TEXT]陸軍遊獵[ENDCOLOR]單位。
-				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]近戰[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]攻城[ENDCOLOR]單位克製。
+				遠程單位，具有遠程打擊與遲滯敵人效果。
 				[NEWLINE][ICON_BULLET]對[COLOR_POSITIVE_TEXT]開闊[ENDCOLOR]地形中的單位+25%[ICON_RANGE_STRENGTH]遠程戰鬥力。
 				[NEWLINE][ICON_BULLET]自身所處[COLOR_POSITIVE_TEXT]高度[ENDCOLOR]大於敵方單位時，每點高度+25%戰鬥力，上限50%。
 				[NEWLINE][ICON_BULLET]沒有地形防禦加成。
 				[NEWLINE][ICON_BULLET]當本單位與[COLOR_POSITIVE_TEXT]步兵[ENDCOLOR]、[COLOR_POSITIVE_TEXT]反製[ENDCOLOR]或[COLOR_POSITIVE_TEXT]炮臺[ENDCOLOR]單位重疊時，如果被敵方[COLOR_POSITIVE_TEXT]近戰[ENDCOLOR]單位攻擊，本單位會自動反擊。
 				[NEWLINE][ICON_BULLET]每回合反擊次數無限。
 				[NEWLINE][ICON_BULLET]如果你的掩護單位被消滅，則不能反擊。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]方陣步兵[ENDCOLOR]，[COLOR_POSITIVE_TEXT]反裝甲[ENDCOLOR]和[COLOR_POSITIVE_TEXT]陸軍遊獵[ENDCOLOR]單位。
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]近戰[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]攻城[ENDCOLOR]單位克制。
 			</Text>
 		</Row>
 
@@ -12488,7 +12532,13 @@
 			<Text>防空火力</Text>
 		</Replace>
 		<Row Tag="TXT_KEY_PROMOTION_ANTI_AIR_HELP">
-			<Text>每回合能夠進行一次對空攔截。對[COLOR_POSITIVE_TEXT]攻擊機[ENDCOLOR]和[COLOR_POSITIVE_TEXT]直升機[ENDCOLOR]單位擁有戰鬥力加成，被[COLOR_NEGATIVE_TEXT]近戰[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]攻城[ENDCOLOR]單位克制。[NEWLINE]沒有地形防禦加成。</Text>
+			<Text>
+				可以攔截試圖轟炸附近單位的敵軍飛機。
+				[NEWLINE][ICON_BULLET]每回合能夠進行一次對空攔截。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]對[COLOR_POSITIVE_TEXT]攻擊機[ENDCOLOR]和[COLOR_POSITIVE_TEXT]直升機[ENDCOLOR]單位擁有戰鬥力加成。
+				[NEWLINE][ICON_BULLET]攔截[COLOR_NEGATIVE_TEXT]戰略轟炸機[ENDCOLOR]時效果不佳。
+			</Text>
 		</Row>
 
 		<!--<Row Tag="TXT_KEY_PROMOTION_ANTI_INFANTRY">
@@ -12584,14 +12634,35 @@
 			<Text>騎射單位</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_HITANDRUN_HELP">
-			<Text>可進行遠程攻擊亦可近戰攻擊。[NEWLINE]可攻擊後移動。[NEWLINE]攻擊[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]戰鬥力減成。[NEWLINE]沒有地形防禦加成。</Text>
+			<Text>
+				遊擊作戰單位，專用于削弱敵方堅固防線或追擊受傷敵軍，同時擅長執行偵察任務。
+				[NEWLINE][ICON_BULLET]可[COLOR_POSITIVE_TEXT]遠程攻擊[ENDCOLOR]亦可[COLOR_POSITIVE_TEXT]近戰攻擊[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]可以攻擊後移動。
+				[NEWLINE][ICON_BULLET]不受敵方控制區域（ZOC）阻礙。
+				[NEWLINE][ICON_BULLET]沒有地形防禦加成。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]民兵[ENDCOLOR]單位及[COLOR_POSITIVE_TEXT]特戰[ENDCOLOR]單位。
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]陸軍遠程[ENDCOLOR]單位克制。
+				[NEWLINE][ICON_BULLET]攻擊[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]以及[COLOR_NEGATIVE_TEXT]海軍正規軍[ENDCOLOR]獲得戰鬥力減成。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_HELI_ATTACK">
 			<Text>直升機單位</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_HELI_ATTACK_HELP">
-			<Text>[COLOR_POSITIVE_TEXT]懸浮[ENDCOLOR]移動。[NEWLINE]可進行遠程攻擊亦可近戰攻擊。[NEWLINE]可攻擊後移動。[NEWLINE]克制[COLOR_POSITIVE_TEXT]攻城[ENDCOLOR]單位，被[COLOR_NEGATIVE_TEXT]防空[ENDCOLOR]單位克制。[NEWLINE]攻擊[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]戰鬥力減成。[NEWLINE]沒有地形防禦加成。</Text>
+			<Text>
+				懸浮單位，專用于削弱敵方堅固防線或追擊受傷敵軍，同時擅長執行偵察任務。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]懸浮[ENDCOLOR]移動。
+				[NEWLINE][ICON_BULLET]可[COLOR_POSITIVE_TEXT]遠程攻擊[ENDCOLOR]亦可[COLOR_POSITIVE_TEXT]近戰攻擊[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]可以攻擊後移動。
+				[NEWLINE][ICON_BULLET]不受敵方控制區域（ZOC）阻礙。
+				[NEWLINE][ICON_BULLET]沒有地形防禦加成。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]民兵[ENDCOLOR]單位及[COLOR_POSITIVE_TEXT]特戰[ENDCOLOR]單位。
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]防空[ENDCOLOR]單位克制。
+				[NEWLINE][ICON_BULLET]攻擊[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]獲得戰鬥力減成。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SUNDER_1">
@@ -12630,7 +12701,16 @@
 			<Text>攻城武器</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_CITY_SIEGE_HELP">
-			<Text>攻擊[COLOR_POSITIVE_TEXT]城市[ENDCOLOR]+200%[ICON_STRENGTH]戰鬥力，攻擊[COLOR_POSITIVE_TEXT]軍事要塞火力點[ENDCOLOR]+200%[ICON_STRENGTH]戰鬥力，攻擊[COLOR_POSITIVE_TEXT]駐紮單位[ENDCOLOR]和[COLOR_POSITIVE_TEXT]陸軍遠程[ENDCOLOR]+50%[ICON_STRENGTH]戰鬥力，被[COLOR_NEGATIVE_TEXT]近戰[ENDCOLOR]單位克制。[NEWLINE]攻擊目標時對同一格單位造成50%傷害。[NEWLINE]攻擊木制船只有幾率造成[COLOR_NEGATIVE_TEXT]局部損傷[ENDCOLOR]或[COLOR_NEGATIVE_TEXT]嚴重損傷[ENDCOLOR][NEWLINE]沒有地形防禦加成。</Text>
+			<Text>
+				攻城武器，用于攻擊敵方城市與要塞，能造成穿透傷害並打擊敵軍士氣。
+				[NEWLINE][ICON_BULLET]攻擊目標時對同一格單位造成50%傷害。
+				[NEWLINE][ICON_BULLET]攻擊木制船只有幾率造成[COLOR_NEGATIVE_TEXT]局部損傷[ENDCOLOR]或[COLOR_NEGATIVE_TEXT]嚴重損傷[ENDCOLOR]
+				[NEWLINE][ICON_BULLET]沒有地形防禦加成。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]攻擊[COLOR_POSITIVE_TEXT]城市[ENDCOLOR]、[COLOR_POSITIVE_TEXT]固定炮台[ENDCOLOR]+200%[ICON_STRENGTH]戰鬥力。
+				[NEWLINE][ICON_BULLET]攻擊[COLOR_POSITIVE_TEXT]駐紮單位[ENDCOLOR]和[COLOR_POSITIVE_TEXT]陸軍遠程[ENDCOLOR]+50%[ICON_STRENGTH]戰鬥力。
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]近戰[ENDCOLOR]單位克制。
+			</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_PROMOTION_VOLLEY">
@@ -12664,7 +12744,15 @@
 			<Text>覆蓋火力</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPLASH_DAMAGE_HELP">
-			<Text>對目標相鄰區域造成50%傷害，攻擊[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]駐防單位[ENDCOLOR]攻擊力較弱，被[COLOR_NEGATIVE_TEXT]近戰[ENDCOLOR]單位克制。[NEWLINE]沒有地形防禦加成。</Text>
+			<Text>
+				重型強力武器，可對敵軍單位造成範圍傷害。
+				[NEWLINE][ICON_BULLET]對目標單位每一個[COLOR_POSITIVE_TEXT]相鄰地塊[ENDCOLOR]的一個敵軍造成50%傷害。
+				[NEWLINE][ICON_BULLET]攻擊[COLOR_NEGATIVE_TEXT]城市[ENDCOLOR]不會對其中的單位造成傷害。
+				[NEWLINE][ICON_BULLET]沒有地形防禦加成。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]攻擊[COLOR_NEGATIVE_TEXT]駐紮單位[ENDCOLOR]獲得戰鬥力減成。
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]近戰[ENDCOLOR]單位克制。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_CLUSTER_ROCKET_1">
@@ -12752,10 +12840,11 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_RECON_UNIT_HELP">
 			<Text>
-				[ICON_BULLET]對其他單位隱形，能夠發現其他偽裝單位。
-				[NEWLINE][ICON_BULLET]不能掠奪和佔領城市。
+				偵察單位，專精于偵察與地圖探索。
+				[NEWLINE][ICON_BULLET]對其他單位隱形，能夠發現其他偽裝單位。
+				[NEWLINE][ICON_BULLET]能夠在[COLOR_POSITIVE_TEXT]境外友方地域[ENDCOLOR]恢複且恢複時額外+15點生命值。
 				[NEWLINE][ICON_BULLET]沒有地形防禦加成。
-				[NEWLINE][ICON_BULLET]能夠在[COLOR_POSITIVE_TEXT]境外友方地域[ENDCOLOR]恢復且恢復時額外+15點生命值。
+				[NEWLINE][ICON_BULLET]不能[COLOR_NEGATIVE_TEXT]掠奪[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]占領[ENDCOLOR]城市。
 			</Text>
 		</Row>
 
@@ -12811,7 +12900,19 @@
 			<Text>特戰單位</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPECIAL_FORCES_COMBAT_HELP">
-			<Text>對其他單位隱形，能夠發現其他偽裝單位。[NEWLINE]在友方地域之外回復時額外+15HP。[NEWLINE]能夠攻擊後移動。[NEWLINE][ICON_BULLET]能夠使用敵方道路。[NEWLINE]劫掠不消耗移動力。[NEWLINE][ICON_BULLET]空軍單位無法發現或攻擊此類單位。[NEWLINE]克制[COLOR_POSITIVE_TEXT]民兵[ENDCOLOR]單位，被[COLOR_NEGATIVE_TEXT]常規部隊[ENDCOLOR]克制。[NEWLINE]不能通過[ICON_GOLD]金幣[COLOR_NEGATIVE_TEXT]購買[ENDCOLOR]。</Text>
+			<Text>
+				具有多種獨特能力的特種部隊單位，可執行常規軍隊無法完成的特殊任務。
+				[NEWLINE][ICON_BULLET]對其他單位隱形，能夠發現其他僞裝單位。
+				[NEWLINE][ICON_BULLET]回複時額外+30HP。
+				[NEWLINE][ICON_BULLET]能夠攻擊後移動。
+				[NEWLINE][ICON_BULLET]能夠使用敵方道路。
+				[NEWLINE][ICON_BULLET]劫掠不消耗移動力。
+				[NEWLINE][ICON_BULLET]路基飛機無法發現或攻擊此類單位。
+				[NEWLINE][ICON_BULLET]不能通過[ICON_GOLD]金錢[COLOR_NEGATIVE_TEXT]購買[ENDCOLOR]。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]民兵[ENDCOLOR]單位
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]常規部隊[ENDCOLOR]尤其是[COLOR_NEGATIVE_TEXT]陸軍遊獵[ENDCOLOR]單位克制。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SP_FORCE_1">
@@ -12819,7 +12920,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SP_FORCE_1_HELP">
 			<Text>
-				[ICON_BULLET]攻擊目標單位如果處於友方地域之外，每回合會因為缺乏補給-20HP。
+				[ICON_BULLET]攻擊目標單位如果處于友方地域之外，每回合會因爲缺乏補給-20HP。
 				[NEWLINE][ICON_BULLET]境外作戰+33%[ICON_STRENGTH]戰鬥力
 			</Text>
 		</Row>
@@ -12900,14 +13001,28 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_MILITIA_COMBAT_HELP">
 			<Text>
-				廉價的民兵單位，適合駐防城市或者打遊擊戰。它可以做後勤單位來加速周圍其他單位HP恢復速度，因為便宜，也可以當炮灰使用。
-				[NEWLINE][ICON_BULLET]每回合額外恢復15HP。[NEWLINE][ICON_BULLET]可以轉職為工人單位。[NEWLINE][ICON_BULLET]友方地域內+25%[ICON_STRENGTH]戰鬥力。[NEWLINE][ICON_BULLET]攻擊[COLOR_POSITIVE_TEXT]城市[ENDCOLOR]時+50% [ICON_STRENGTH]戰鬥力。[NEWLINE][ICON_BULLET]境外作戰-25%[ICON_STRENGTH]戰鬥力。[NEWLINE]被[COLOR_NEGATIVE_TEXT]正規軍[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]特戰[ENDCOLOR]單位克制。</Text>
+				廉價的民兵單位，適合駐防城市或者打遊擊戰。它可以做後勤單位來加速周圍其他單位HP恢複速度，因爲便宜，也可以當炮灰使用。
+				[NEWLINE][ICON_BULLET]每回合額外恢複15HP。
+				[NEWLINE][ICON_BULLET]可以轉職爲工人單位。
+				[NEWLINE][ICON_BULLET]友方地域內+25%[ICON_STRENGTH]戰鬥力。
+				[NEWLINE][ICON_BULLET]攻擊[COLOR_POSITIVE_TEXT]城市[ENDCOLOR]時+50% [ICON_STRENGTH]戰鬥力。
+				[NEWLINE][ICON_BULLET]境外作戰-25%[ICON_STRENGTH]戰鬥力。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]正規軍[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]特戰[ENDCOLOR]單位克制。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_MILITIA_NAVAL_HELP">
 			<Text>
-				廉價的綠水海軍單位，適合近海防禦。它可以做後勤單位來加速周圍其他單位HP恢復速度，因為便宜，也可以當炮灰使用。
-				[NEWLINE][ICON_BULLET]每回合額外恢復15HP。[NEWLINE][ICON_BULLET]友方地域內+25%[ICON_STRENGTH]戰鬥力。[NEWLINE][ICON_BULLET]攻擊[COLOR_POSITIVE_TEXT]城市[ENDCOLOR]時+50% [ICON_STRENGTH]戰鬥力。[NEWLINE][ICON_BULLET]境外作戰-25%[ICON_STRENGTH]戰鬥力。[NEWLINE]被[COLOR_NEGATIVE_TEXT]正規軍[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]特戰[ENDCOLOR]單位克制。[NEWLINE]不能進入[COLOR_NEGATIVE_TEXT]大洋[ENDCOLOR]。</Text>
+				廉價的綠水海軍單位，適合近海防禦。它可以做後勤單位來加速周圍其他單位HP恢複速度，因爲便宜，也可以當炮灰使用。
+				[NEWLINE][ICON_BULLET]每回合額外恢複15HP。
+				[NEWLINE][ICON_BULLET]友方地域內+25%[ICON_STRENGTH]戰鬥力。
+				[NEWLINE][ICON_BULLET]攻擊[COLOR_POSITIVE_TEXT]城市[ENDCOLOR]時+50% [ICON_STRENGTH]戰鬥力。
+				[NEWLINE][ICON_BULLET]境外作戰-25%[ICON_STRENGTH]戰鬥力。
+				[NEWLINE][ICON_BULLET]不能進入[COLOR_NEGATIVE_TEXT]大洋[ENDCOLOR]。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]正規軍[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]特戰[ENDCOLOR]單位克制。
+			</Text>
 		</Row>
 
 		<Replace Tag="TXT_KEY_PROMOTION_MEDIC">
@@ -12948,7 +13063,16 @@
 			<Text>空優戰機</Text>
 		</Replace>
 		<Row Tag="TXT_KEY_PROMOTION_ANTI_AIR_II_HELP">
-			<Text>每回合能夠攔截一次。[NEWLINE]每回合能夠執行“空中游獵”指令且游獵時+50%戰鬥力。[NEWLINE]執行遊獵後仍然可以執行攔截。[COLOR_POSITIVE_TEXT]攻擊機[ENDCOLOR]和[COLOR_POSITIVE_TEXT]轟炸機[ENDCOLOR]單位擁有戰鬥力加成。[NEWLINE]擁有6格的偵查範圍。[NEWLINE]但無法攻擊地面和海面單位。[NEWLINE]不能轉場到航空母艦上。</Text>
+			<Text>
+				制空戰鬥機，專爲奪取戰場制空權與攔截敵方空中目標而設計。
+				[NEWLINE][ICON_BULLET]每回合能夠攔截一次。
+				[NEWLINE][ICON_BULLET]每回合能夠執行“空中遊獵”指令且遊獵時+75%戰鬥力。
+				[NEWLINE][ICON_BULLET]執行遊獵後仍然可以執行攔截。
+				[NEWLINE][ICON_BULLET]不能轉場到航空母艦上。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]對[COLOR_POSITIVE_TEXT]攻擊機[ENDCOLOR]和[COLOR_POSITIVE_TEXT]轟炸機[ENDCOLOR]單位擁有戰鬥力加成。
+				[NEWLINE][ICON_BULLET]無法攻擊[COLOR_NEGATIVE_TEXT]地面[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]海面[ENDCOLOR]單位。
+			</Text>
 		</Row>
 
 		<!--<Replace Tag="TXT_KEY_PROMOTION_ANTI_FIGHTER" >
@@ -12992,7 +13116,15 @@
 			<Text>攻擊機</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_AIR_ATTACK_HELP">
-			<Text>對所有[COLOR_POSITIVE_TEXT]陸軍單位[ENDCOLOR]有戰鬥力加成，被[COLOR_NEGATIVE_TEXT]戰鬥機[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]防空[ENDCOLOR]單位克制。[NEWLINE]不能攻擊隱形單位。[NEWLINE]不能轉場到航空母艦上。</Text>
+			<Text>
+				攻擊機，專用于打擊戰場或城內的敵軍地面及海軍單位。
+				[NEWLINE][ICON_BULLET]每回合可進行[COLOR_POSITIVE_TEXT]兩次[ENDCOLOR]攻擊。
+				[NEWLINE][ICON_BULLET]無法攻擊[COLOR_NEGATIVE_TEXT]隱形單位[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]不能轉場到航空母艦上。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]對[COLOR_POSITIVE_TEXT]地面[ENDCOLOR]和[COLOR_POSITIVE_TEXT]海面[ENDCOLOR]單位擁有戰鬥力加成。
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]戰鬥機[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]防空[ENDCOLOR]單位克制。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_AIR_BOMBARDMENT_1">
@@ -13038,7 +13170,14 @@
 			<Text>戰略轟炸機</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_STRATEGIC_BOMBER_HELP">
-			<Text>能對[COLOR_POSITIVE_TEXT]城市和固定炮台[ENDCOLOR]造成巨大傷害，被[COLOR_NEGATIVE_TEXT]戰鬥機[ENDCOLOR]單位克制。[NEWLINE]不能攻擊隱形單位。[NEWLINE]不能轉場到航空母艦上。</Text>
+			<Text>
+				戰略轟炸機，專爲攻擊敵方城市、摧毀敵國戰爭潛力而設計的戰略武器。
+				[NEWLINE][ICON_BULLET]能對[COLOR_POSITIVE_TEXT]城市和固定炮台[ENDCOLOR]造成巨大傷害。
+				[NEWLINE][ICON_BULLET]不能轉場到航空母艦上。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]戰鬥機[ENDCOLOR]單位克制。
+				[NEWLINE][ICON_BULLET]不能攻擊[COLOR_NEGATIVE_TEXT]隱形[ENDCOLOR]單位。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_NAPALMBOMB_1">
@@ -13121,7 +13260,7 @@
 				現代海軍近戰單位，擅長攻擊和護送單位，以及對抗敵方潛艇和提供有限的防空支援。
 				[NEWLINE][ICON_BULLET]能夠攻擊後移動。
 				[NEWLINE][ICON_BULLET]能夠擊退敵方單位（如果敵方受到的傷害高於妳受到的傷害）。
-				[NEWLINE][ICON_BULLET]能夠攔截敵方飛機（每回合壹次）。
+				[NEWLINE][ICON_BULLET]能夠攔截敵方飛機（每回合一次）。
 				[NEWLINE][ICON_BULLET]可以發現潛艇。
 				[NEWLINE]
 				[NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]海軍遊獵[ENDCOLOR]單位和[COLOR_POSITIVE_TEXT]潛艇[ENDCOLOR]單位。
@@ -13189,7 +13328,7 @@
 			<Text>
 				海軍遠程單位，專用於火力支援和破壞敵軍艦隊防禦。
 				[NEWLINE][ICON_BULLET]可以[COLOR_POSITIVE_TEXT]遠程攻擊[ENDCOLOR]也可以[COLOR_POSITIVE_TEXT]近戰攻擊[ENDCOLOR]。
-				[NEWLINE][ICON_BULLET]攻擊目標時對同壹格單位造成50%傷害。
+				[NEWLINE][ICON_BULLET]攻擊目標時對同一格單位造成50%傷害。
 				[NEWLINE]
 				[NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]海軍近戰[ENDCOLOR]單位和[COLOR_POSITIVE_TEXT]堡壘[ENDCOLOR]單位。
 				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]海軍遊獵[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]潛艇[ENDCOLOR]單位克制。
@@ -13203,10 +13342,10 @@
 			<Text>
 				現代海軍遠程部隊，專用於火力支援和破壞敵軍艦隊防禦，同時提供空中支援。
 				[NEWLINE][ICON_BULLET]可以[COLOR_POSITIVE_TEXT]遠程攻擊[ENDCOLOR]也可以[COLOR_POSITIVE_TEXT]近戰攻擊[ENDCOLOR]。
-				[NEWLINE][ICON_BULLET]對目標同壹地格的單位造成50%的傷害。
+				[NEWLINE][ICON_BULLET]對目標同一地格的單位造成50%的傷害。
 				[NEWLINE][ICON_BULLET]每回合可以執行2次攔截（3格內）。
 				[NEWLINE]
-				[NEWLINE][ICON_BULLET]面對[COLOR_POSITIVE_TEXT]空中遊獵[ENDCOLOR]戰鬥力加成
+				[NEWLINE][ICON_BULLET]面對[COLOR_POSITIVE_TEXT]空中遊獵[ENDCOLOR]獲得戰鬥力加成。
 				[NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]堡壘[ENDCOLOR]單位。
 				[NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]海軍近戰[ENDCOLOR]單位和[COLOR_POSITIVE_TEXT]導彈[ENDCOLOR]單位。
 				[NEWLINE][ICON_BULLET]克制[COLOR_POSITIVE_TEXT]戰鬥機[ENDCOLOR]單位和[COLOR_POSITIVE_TEXT]直升機[ENDCOLOR]單位。
@@ -13239,6 +13378,17 @@
 		<Row Tag="TXT_KEY_PROMOTION_ARMOR_BATTLESHIP_2_HELP">
 			<Text>+33%[ICON_STRENGTH]防禦力。</Text>
 		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_HEAVY_ARMOR">
+			<Text>重裝防禦</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HEAVY_ARMOR_HELP">
+			<Text>
+				[ICON_BULLET]+33%[ICON_STRENGTH]防禦力。
+				[NEWLINE][ICON_BULLET]受到的最終傷害-5。
+			</Text>
+		</Row>
+
 		<Row Tag="TXT_KEY_PROMOTION_DRONE_CARRIER">
 			<Text>無人機載體</Text>
 		</Row>
@@ -13276,7 +13426,7 @@
 				[NEWLINE][ICON_BULLET]能夠裝載艦載機。
 				[NEWLINE][ICON_BULLET]艦載機獲得的經驗會傳遞給所在航母。
 				[NEWLINE][ICON_BULLET]在友方地域內能夠補充艦載機。
-				[NEWLINE][ICON_BULLET]同壹格的單位每回合回復時額外+15HP。
+				[NEWLINE][ICON_BULLET]同一格的單位每回合回復時額外+15HP。
 				[NEWLINE][ICON_BULLET]本單位每回合回復時額外+15HP。
 				[NEWLINE]
 				[NEWLINE][ICON_BULLET]被[COLOR_NEGATIVE_TEXT]海軍遊獵[ENDCOLOR]和[COLOR_NEGATIVE_TEXT]潛艇[ENDCOLOR]單位克制。
@@ -13316,7 +13466,16 @@
 			<Text>艦載戰機</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_CARRIER_FIGHTER_HELP">
-			<Text>只能部署在航空母艦上。[NEWLINE]能夠與航空母艦共享經驗和晉升。[NEWLINE]每回合能夠攻擊兩次。[NEWLINE]每回合擁有兩次[COLOR_POSITIVE_TEXT]攔截[ENDCOLOR]或[COLOR_POSITIVE_TEXT]遊獵[ENDCOLOR]的機會。[NEWLINE]能夠在遊獵後繼續攔截。</Text>
+			<Text>
+				航空母艦攜帶的多用途戰鬥機
+				[NEWLINE][ICON_BULLET]只能部署在航空母艦上。
+				[NEWLINE][ICON_BULLET]能夠與航空母艦共享經驗和晉升。
+				[NEWLINE][ICON_BULLET]每回合能夠攻擊兩次。
+				[NEWLINE][ICON_BULLET]每回合擁有兩次[COLOR_POSITIVE_TEXT]攔截[ENDCOLOR]或[COLOR_POSITIVE_TEXT]遊獵[ENDCOLOR]的機會。
+				[NEWLINE][ICON_BULLET]能夠在遊獵後繼續攔截。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]對[COLOR_POSITIVE_TEXT]地面[ENDCOLOR]和[COLOR_POSITIVE_TEXT]海面[ENDCOLOR]單位擁有戰鬥力加成。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_CARRIER_FIGHTER_ANTI_AIR_1">
@@ -13802,6 +13961,14 @@
 		<Row Tag="TXT_KEY_PROMOTION_MULTIPURPOSE_DESTROYER_HELP">
 			<Text>+1攻擊次數（可疊加）。[NEWLINE]對潛艇和空軍單位+100%[ICON_STRENGTH]戰鬥力。+2[ICON_MOVES]移動力</Text>
 		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_GOLDEN_PERSONAL_GUARD">
+			<Text>黃金親衛</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_GOLDEN_PERSONAL_GUARD_HELP">
+			<Text>
+				[ICON_BULLET]兩環內每一個大軍事家為自身+25%戰鬥力（上限50%）。
+			</Text>
+		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SP_FULL_MOON_STRIKE">
 			<Text>滿月突擊</Text>
 		</Row>
@@ -13815,7 +13982,7 @@
 			<Text>英勇無畏</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_HUSSAR_HELP">
-			<Text>受傷時戰鬥力不減，每壹點損失生命值+1%攻擊力。</Text>
+			<Text>受傷時戰鬥力不減，每一點損失生命值+1%攻擊力。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_ROARING_ELEPHANT">
 			<Text>咆哮戰吼</Text>
@@ -14309,10 +14476,6 @@
 		</Replace>
 		<Replace Tag="TXT_KEY_PEDIA_DEFENSE_EXTRA_HEAL_PERCENT">
 			<Text>+{1_Heal}%最大生命值回復</Text>
-		</Replace>
-
-		<Replace Tag="TXT_KEY_FREEPROMOTIONS">
-			<Text>[COLOR_CYAN]免費晉升:[ENDCOLOR]</Text>
 		</Replace>
 
 		<Replace Tag="TXT_KEY_PEDIA_MAXHP_LABEL_SP">
@@ -14915,55 +15078,56 @@
 
 		<Row Tag="TXT_KEY_GAME_OPTION_HUMAN_ALL_UC">
 			<Text>
-				SP-開啟 [COLOR_YELLOW]人類玩家全UC[ENDCOLOR]
+				SP-拓展 [COLOR_GREY]人類玩家全UC[ENDCOLOR]
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_HUMAN_ALL_UC_HELP">
 			<Text>
-				開啟後，允許人類玩家建造或訓練所有文明的特殊建築、改良設施和單位。
+				勾選後，允許人類玩家建造或訓練所有文明的特殊建築、改良設施和單位。
 				[NEWLINE][COLOR_YELLOW]註[ENDCOLOR]：部分建築特效生效的前提是該文明在場，如伊斯蘭大學和諾曼營地等，若文明不在場，玩家只能取得其基礎產出。
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_GAME_OPTION_CIV_CONQUER">
 			<Text>
-				SP-開啟 [COLOR_YELLOW]文明征服[ENDCOLOR]
+				SP-拓展 [COLOR_GREY]文明征服[ENDCOLOR]
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_GAME_OPTION_CIV_CONQUER_HELP">
 			<Text>
-				開啟後，佔領文明的原始首都後，解鎖該文明的特殊建築、改良設施和單位。
+				勾選後，佔領文明的原始首都後，解鎖該文明的特殊建築、改良設施和單位。
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_GAME_OPTION_PROJECT_CAPTURE">
 			<Text>
-				SP-開啟 [COLOR_YELLOW]精英工程獲取[ENDCOLOR]
+				SP-拓展 [COLOR_GREY]精英工程獲取[ENDCOLOR]
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_GAME_OPTION_PROJECT_CAPTURE_HELP">
 			<Text>
-				開啟後允許玩家在攻占擁有精英工程的城市後在自己首都得到相同的精英工程（原擁有者不會失去工程）。
+				勾選後允許玩家在攻占擁有精英工程的城市後在自己首都得到相同的精英工程（原擁有者不會失去工程）。
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_GAME_OPTION_ABLE_GIFT_MILITIA">
 			<Text>
-				SP-開啟 [COLOR_YELLOW]贈送民兵單位[ENDCOLOR]
+				SP-拓展 [COLOR_GREY]贈送民兵單位[ENDCOLOR]
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_GAME_OPTION_ABLE_GIFT_MILITIA_HELP">
 			<Text>
-				開啟後允許向城邦贈送民兵單位以獲取影響力。
+				勾選後允許向城邦贈送民兵單位以獲取影響力。
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MISSION_SUPPLY_EXOTIC_GOODS_TOOLTIP">
 			<Text>
 				滿移動力時，可在擁有商站的城市中補充商品。
+				[NEWLINE][COLOR_POSITIVE_TEXT]右鍵點擊[ENDCOLOR]，對所有符合條件的單位執行該操作。
 			</Text>
 		</Row>
 
@@ -15323,7 +15487,7 @@
 			<Text>
 				[ICON_BULLET]替代露天劇場，造價更低。
 				[NEWLINE][ICON_BULLET]本城[ICON_WAR]軍事單位訓練速度+15%。
-				[NEWLINE][ICON_BULLET]軍事單位晉升時，每個伊紮卡使你獲得當前時代/2的[ICON_CULTURE]文化（至少為1）。
+				[NEWLINE][ICON_BULLET]非民兵單位晉升時，每個伊紮卡使你獲得當前時代/2的[ICON_CULTURE]文化（至少為1）。
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_ZULU_IZIKO_TEXT">
@@ -15657,8 +15821,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_BUILDING_SWEDEN_NOBEL_PRIZE_HELP">
 			<Text>
-				[ICON_BULLET]只需26人口即可建造。
-				[NEWLINE][ICON_BULLET]瑞典或盟友誕生一位大科學家時，為雙方帶來一次性[ICON_RESEARCH]科研產出，數值相當於該大科學家當前強度的15%。
+				[ICON_BULLET]科學家：+2[ICON_RESEARCH]科技值，+2[ICON_GOLD]維護費。
+				[NEWLINE][ICON_BULLET]瑞典或盟友誕生一位大科學家時，為雙方帶來一次性[ICON_RESEARCH]科研產出，數值相當於該大科學家當前強度的20%。
+				[NEWLINE][NEWLINE]文明的城市數量越多建造成本越高。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_YIELD_OVERFLOW">
@@ -15829,6 +15994,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_20">
 			<Text>向同一個AI購買大量資源後對方會坐地起價，請和多個AI交易保證自己的資源安全。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_SETUP_SCREEN_HELP_21">
+			<Text>SP的额外選項並非遊戲主線，請根據自身實際需求進行選擇。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_DIPLOMACY_MARRIAGE_TITLE">
@@ -16330,7 +16498,7 @@
 			<Text>石祭壇</Text>
 		</Row>
 		<Row Tag="TXT_KEY_IMPROVEMENT_CAIRN_SP_TEXT">
-			<Text>石祭壇指的是人造的石堆。石祭壇遍布世界各地，分布在高地、高沼地、山頂、水路附近和海上懸崖，也在貧瘠的沙漠和苔原地區。它們大小不壹，從小的石頭標記到整個人造山，復雜程度從松散的圓錐形石堆到微妙平衡的雕塑和精心制作的巨石工程。石祭壇可能被粉刷或裝飾，例如為了增加能見度或出於宗教原因。[NEWLINE][NEWLINE]在現代，石祭壇經常作為地標，自古以來就有這種用途。從史前開始，它們也被建造為墳墓紀念碑，或用於防禦、狩獵、儀式、天文和其他目的。</Text>
+			<Text>石祭壇遍布世界各地，分布在高地、高沼地、山頂、水路附近和海上懸崖，也在貧瘠的沙漠和苔原地區。它們大小不壹，從小的石頭標記到整個人造山，復雜程度從松散的圓錐形石堆到微妙平衡的雕塑和精心制作的巨石工程。石祭壇可能被粉刷或裝飾，例如為了增加能見度或出於宗教原因。[NEWLINE][NEWLINE]在現代，石祭壇經常作為地標，自古以來就有這種用途。從史前開始，它們也被建造為墳墓紀念碑，或用於防禦、狩獵、儀式、天文和其他目的。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_IMPROVEMENT_CAIRN_SP_HELP">
 			<Text>該改良設施為所建成地塊提供1[ICON_PEACE]信仰、1[ICON_GOLDEN_AGE]黃金時代點數。教育學後過時，無法再建造。</Text>
@@ -16428,5 +16596,21 @@
 		<Row Tag="TXT_KEY_MILITARY_PROMISE">
 			<Text>承諾撤軍</Text>
 		</Row>
+
+		<Replace Tag="TXT_KEY_FOODMOD_PLAYER">
+			<Text>[NEWLINE][ICON_BULLET]帝國修正值（余糧）：{1_Num}%</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_FOODMOD_CAPITAL">
+			<Text>[NEWLINE][ICON_BULLET][ICON_CAPITAL]首都修正值（余糧）：{1_Num}%</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_FOODMOD_RELIGION">
+			<Text>[NEWLINE][ICON_BULLET]宗教信條修正值（余糧）：{1_Num}%</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_FOODMOD_UNHAPPY">
+			<Text>[NEWLINE][ICON_BULLET][COLOR_WARNING_TEXT][ICON_HAPPINESS_4]不滿度修正值（余糧）：{1_Num}%[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_FOODMOD_WLTKD">
+			<Text>[NEWLINE][ICON_BULLET]王之日修正值（余糧）：{1_Num}%</Text>
+		</Replace>
 	</Language_zh_Hant_HK>
 </GameData>
