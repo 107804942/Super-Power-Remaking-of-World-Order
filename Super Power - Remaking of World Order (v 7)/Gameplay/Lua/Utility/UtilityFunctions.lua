@@ -113,7 +113,7 @@ end
 
 function SatelliteLaunchEffects(unit, city, player)
 	if unit == nil or city == nil or player == nil or player:GetNumCities() == 0
-		or not unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SATELLITE_UNIT"].ID)
+		or not unit:IsHasPromotion(GameInfoTypes.PROMOTION_SATELLITE_UNIT)
 	then
 		return
 	end
@@ -636,6 +636,14 @@ function ImproveTiles(bIsHuman)
 end
 
 -- Carriers Restore Cargos
+local SpecialQuery = DB.CreateQuery([[
+	SELECT Units.ID, Units.Class, Units.Special, Units.RangedCombat, Units.PrereqTech, Units.ProjectPrereq, Units.RangeAttackOnlyInDomain
+	FROM Units INNER JOIN UnitClasses ON Units.Class = UnitClasses.Type
+	WHERE UnitClasses.DefaultUnit = Units.Type
+	AND Units.Special = 'SPECIALUNIT_FIGHTER' OR Units.Special = 'SPECIALUNIT_STEALTH' OR Units.Special = 'SPECIALUNIT_MISSILE';
+]]);
+local SpecialTable = {}
+for row in SpecialQuery() do SpecialTable[row.ID] = row end
 g_CargoSetList = {};
 function SPCargoListSetup(iPlayerID)
 	if Players[iPlayerID] == nil then return end
@@ -649,7 +657,7 @@ function SPCargoListSetup(iPlayerID)
 	local iMisRangedCombat = 0;
 	local pCBAcraftUnit = nil;
 	local pASAcraftUnit = nil;
-	local pMissile_Unit = nil;
+	local pMissileUnit = nil;
 	local iCBAcraft = -1
 	local iASAcraft = -1
 	local iMissileU = -1
@@ -657,9 +665,8 @@ function SPCargoListSetup(iPlayerID)
 	local overrideASA = nil;
 	local overrideMis = nil;
 	local iCost = -1;
-	for unit in GameInfo.Units() do
-		if unit and unit.Special ~= nil and unit.Type == GameInfo.UnitClasses[unit.Class].DefaultUnit
-			and (unit.PrereqTech == nil or (unit.PrereqTech and Teams[pPlayer:GetTeam()]:IsHasTech(GameInfoTypes[unit.PrereqTech]))) then
+	for _, unit in pairs(SpecialTable) do
+		if unit.PrereqTech == nil or (unit.PrereqTech and Teams[pPlayer:GetTeam()]:IsHasTech(GameInfoTypes[unit.PrereqTech]))  then
 			if unit.Special == "SPECIALUNIT_FIGHTER" and unit.RangedCombat > iCBARangedCombat then
 				iCBARangedCombat = unit.RangedCombat;
 				pCBAcraftUnit = unit;
@@ -670,7 +677,7 @@ function SPCargoListSetup(iPlayerID)
 				iASAcraft = unit.ID
 			elseif unit.Special == "SPECIALUNIT_MISSILE" and unit.RangedCombat > iMisRangedCombat and unit.ProjectPrereq == nil then
 				iMisRangedCombat = unit.RangedCombat;
-				pMissile_Unit = unit;
+				pMissileUnit = unit;
 				iMissileU = unit.ID
 			end
 		end
@@ -681,8 +688,8 @@ function SPCargoListSetup(iPlayerID)
 	if pASAcraftUnit then
 		overrideASA = pPlayer:GetCivUnit(GameInfoTypes[pASAcraftUnit.Class]);
 	end
-	if pMissile_Unit then
-		overrideMis = pPlayer:GetCivUnit(GameInfoTypes[pMissile_Unit.Class]);
+	if pMissileUnit then
+		overrideMis = pPlayer:GetCivUnit(GameInfoTypes[pMissileUnit.Class]);
 	end
 
 	if iCBAcraft == GameInfoTypes["UNIT_CARRIER_FIGHTER_ADV"] 
@@ -764,7 +771,9 @@ function CarrierRestore(iPlayerID, iUnitID, iCargoUnit)
 				print("French Eurotiger Unique!");
 			end
 			while not pUnit:IsFull() do
-				pPlayer:InitUnit(iCargoUnit, pPlot:GetX(), pPlot:GetY(), UNITAI_MISSILE_AIR):SetMoves(0);
+				local Missile = pPlayer:InitUnit(iCargoUnit, pPlot:GetX(), pPlot:GetY(), UNITAI_MISSILE_AIR);
+				Missile:LoadUnit(pUnit);
+				Missile:SetMoves(0);
 				print("Missile restored!");
 			end
 		elseif sSpecialCargo == "SPECIALUNIT_FIGHTER" and iCost and iCost >= 0 and iCost <= pPlayer:GetGold() then
@@ -773,11 +782,13 @@ function CarrierRestore(iPlayerID, iUnitID, iCargoUnit)
 			if not pPlayer:IsHuman() then
 				pNewCargoUnit:PushMission(GameInfoTypes.MISSION_AIRPATROL);
 			end
+			pNewCargoUnit:LoadUnit(pUnit);
 			pNewCargoUnit:SetMoves(0);
 			if not pPlayer:IsHuman() and not pUnit:IsFull() and 2 * iCost <= pPlayer:GetGold() then
 				iCost = 2 * iCost;
 				pNewCargoUnit = pPlayer:InitUnit(iCargoUnit, pPlot:GetX(), pPlot:GetY(), UNITAI_ATTACK_AIR);
 				pNewCargoUnit:PushMission(GameInfoTypes.MISSION_AIRPATROL);
+				pNewCargoUnit:LoadUnit(pUnit);
 				pNewCargoUnit:SetMoves(0);
 				print("New Aircraft restored on Carrier twice for AI! Total Cost: " .. iCost);
 			end
@@ -839,7 +850,7 @@ function CarrierRestore(iPlayerID, iUnitID, iCargoUnit)
 			for _, unitPromotionID in ipairs(tUnitPromotions) do
 				pNewCargoUnit:SetHasPromotion(unitPromotionID, true);
 			end
-
+			pNewCargoUnit:LoadUnit(pUnit);
 			pNewCargoUnit:SetMoves(0);
 			return iCost;
 		end

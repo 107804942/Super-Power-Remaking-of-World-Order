@@ -16,7 +16,7 @@
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_VERSION">
-			<Text>[COLOR_YELLOW]版本号 10.94[ENDCOLOR]</Text>
+			<Text>[COLOR_YELLOW]版本号 10 Final A[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MOD_SETUP">
@@ -605,7 +605,11 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_INLAND_CANAL_HELP</Tag>
-			<Text>本城所有沿河地块+1[ICON_PRODUCTION]产能。[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]污染[ENDCOLOR]将会导致[ICON_FOOD]食物累积-5%。[NEWLINE][NEWLINE]需要1单位[ICON_RES_ELECTRICITY]电力。</Text>
+			<Text>
+				本城所有沿河地块+1[ICON_PRODUCTION]产能，河流对商路增益效果+20%。
+				[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]污染[ENDCOLOR]将会导致[ICON_FOOD]食物累积-5%。
+				[NEWLINE][NEWLINE]需要1单位[ICON_RES_ELECTRICITY]电力。
+			</Text>
 		</Row>
 
 		<Row>
@@ -621,7 +625,9 @@
 		<Row>
 			<Tag>TXT_KEY_BUILDING_DUTCH_GRACHTENGORDEL_HELP</Tag>
 			<Text>
-				本城所有沿河地块和水域+1[ICON_PRODUCTION]产能，+1[ICON_GOLD]金钱产出。[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]污染[ENDCOLOR]将会导致[ICON_FOOD]食物累积-5%。[NEWLINE][NEWLINE]不需要[ICON_RES_ELECTRICITY]电力。
+				本城所有沿河地块和水域+1[ICON_PRODUCTION]产能，+1[ICON_GOLD]金钱产出，河流对商路增益效果+40%。
+				[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]污染[ENDCOLOR]将会导致[ICON_FOOD]食物累积-5%。
+				[NEWLINE][NEWLINE]不需要[ICON_RES_ELECTRICITY]电力。
 			</Text>
 		</Row>
 
@@ -3812,7 +3818,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_BIO_LAB_HELP</Tag>
-			<Text>只能在特大城市（40人口）建造。</Text>
+			<Text>本城+33%[ICON_RESEARCH]科研产出。[NEWLINE][NEWLINE]只能在特大城市（40人口）建造。</Text>
 		</Row>
 
 		<Row>
@@ -3825,7 +3831,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_LOGISTICS_COMPANY_HELP</Tag>
-			<Text>只能在特大城市（40人口）建造。</Text>
+			<Text>本城+33%[ICON_GOLD]金钱产出。[NEWLINE][NEWLINE]只能在特大城市（40人口）建造。</Text>
 		</Row>
 
 		<Replace Tag="TXT_KEY_BUILDING_MEDICAL_LAB">
@@ -3901,7 +3907,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_GENE_LAB_HELP</Tag>
-			<Text>只能在巨型城市（60人口）建造。</Text>
+			<Text>本城+33%[ICON_RESEARCH]科研产出。[NEWLINE][NEWLINE]只能在巨型城市（60人口）建造。</Text>
 		</Row>
 
 		<Row>
@@ -3916,7 +3922,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_INTERNATIONAL_TRADE_COMPANY_HELP</Tag>
-			<Text>只能在巨型城市（60人口）建造。</Text>
+			<Text>本城+33%[ICON_GOLD]金钱产出。[NEWLINE][NEWLINE]只能在巨型城市（60人口）建造。</Text>
 		</Row>
 
 		<Row>
@@ -6065,6 +6071,7 @@
 			<Text>
 				[ICON_BULLET]所有专家+2[ICON_CULTURE]文化产出。
 				[NEWLINE][ICON_BULLET]允许使用[ICON_PEACE]信仰购买露天剧场、画廊、歌剧院。
+				[NEWLINE][ICON_BULLET]与拥有更多城市的文明的单位作战时获得25%战斗力加成。
 			</Text>
 		</Replace>
 
@@ -6531,25 +6538,25 @@
 			<Text>千乘之国</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_KING_HELP">
-			<Text>电脑在人口，产能，金钱，快乐和战斗力上有较大加成。电脑初始拥有2个移民，且每进入一个新时代，电脑的加成都会增加。与“天神”等级难度相当。</Text>
+			<Text>电脑在人口，产能，金钱，快乐和战斗力上有较大加成。电脑每进入一个新时代，加成都会增加。与“天神”等级难度相当。</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_EMPEROR">
 			<Text>一方霸主</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_EMPEROR_HELP">
-			<Text>电脑在人口，产能，金钱，快乐和战斗力上有很大加成。电脑初始拥有2个移民，且每进入一个新时代，电脑的加成都会大量增加。</Text>
+			<Text>电脑在人口，产能，金钱，快乐和战斗力上有很大加成。电脑进入一个新时代，加成都会大量增加。</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_IMMORTAL">
 			<Text>世界强权</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_IMMORTAL_HELP">
-			<Text>电脑在人口，产能，金钱，快乐和战斗力上有极大加成。电脑初始拥有3个移民，且每进入一个新时代，电脑的加成都会剧增。</Text>
+			<Text>电脑在人口，产能，金钱，快乐和战斗力上有极大加成。电脑每进入一个新时代，加成都会剧增。</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_DEITY">
 			<Text>超级大国</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_DEITY_HELP">
-			<Text>电脑在人口，产能，金钱，快乐和战斗力上的加成丧心病狂。电脑初始拥有4个移民，且每进入一个新时代，电脑的加成都会疯涨。 </Text>
+			<Text>电脑在人口，产能，金钱，快乐和战斗力上的加成丧心病狂。电脑每进入一个新时代，加成都会疯涨。 </Text>
 		</Replace>
 
 		<!-- *******************************New Resoultions Texts********************************************-->
@@ -6608,7 +6615,7 @@
 				[COLOR_POSITIVE_TEXT]传统政策[ENDCOLOR]适宜于繁荣精干的帝国。
 				[NEWLINE][NEWLINE]启用传统政策：
 				[NEWLINE][ICON_BULLET]使[ICON_CAPITAL]首都+3[ICON_CULTURE]文化、+3[ICON_RESEARCH]科研。
-				[NEWLINE][ICON_BULLET]首都出发的商路+3距离、+3[ICON_GOLD]金钱。
+				[NEWLINE][ICON_BULLET]首都出发的商路+3[ICON_GOLD]金钱、+3距离基数。
 				[NEWLINE][ICON_BULLET]城市地块扩张所需文化成本-25%。
 				[NEWLINE][ICON_BULLET]允许建造空中花园。
 				[NEWLINE][NEWLINE]推行所有传统政策：
@@ -8472,6 +8479,12 @@
 		<Replace Tag="TXT_KEY_BELIEF_RELIGIOUS_TEXTS">
 			<Text>宗教传播速度+25%(研发印刷机后+50%)，圣城每3点[ICON_PEACE]信仰提供1点基础[ICON_CULTURE]文化产出</Text>
 		</Replace>
+		<Row Tag="TXT_KEY_BELIEF_CURSADER_SHORT">
+			<Text>十字军</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_CURSADER">
+			<Text>在圣城征召6名拥有60点经验的圣殿骑士</Text>
+		</Row>
 
 
 		<!--Resources-->
@@ -10709,7 +10722,7 @@
 			<Plurality>2</Plurality>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_FRANCE_BATTERY_HELP">
-			<Text>快速且强大的攻城单位。法国特色单位，替代加农炮。具有间接火力，并且在攻击前不需要进行远程攻击准备。自带破阵1-2级晋升。</Text>
+			<Text>快速且强大的攻城单位。法国特色单位，替代加农炮。具有间接火力，并且进行远程攻击准备不消耗移动力。自带破阵1-2级晋升。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_FRANCE_BATTERY_HEADING">
 			<Text>大炮兵连</Text>
@@ -11076,7 +11089,7 @@
 			<Text>虎式武直</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_HELP_FRANCE_EUROCOPTER_TIGER">
-			<Text>替代武装直升机，自带长途行军晋升和双击晋升，装备了毒刺导弹，每回合可以拦截2次（范围为4格），对直升机单位和空军单位+200%战斗力。</Text>
+			<Text>替代武装直升机，自带长途行军晋升和双击晋升，装备了毒刺导弹，每回合可以拦截2次（范围为4格），对直升机单位和空军单位+200%战斗力，该单位不可转场。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_FRANCE_EUROCOPTER_TIGER_PEDIA">
 			<Text>
@@ -11804,7 +11817,7 @@
 			<Text>刀</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_JAPANESE_SAMURAI_HELP">
-			<Text>夹击加成+5%。</Text>
+			<Text>夹击加成+50%。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_JAPANESE_SAMURAI_CULTURE">
 			<Text>菊</Text>
@@ -14606,6 +14619,9 @@
 		<Replace Tag="TXT_KEY_TRLGB1">
 			<Text>陆地商路</Text>
 		</Replace>
+		<Replace Tag="TXT_KEY_TR_RIVER_BONUS">
+			<Text>商路河流增益</Text>
+		</Replace>
 		<Replace Tag="TXT_KEY_CSTRPM1111">
 			<Text>每条城邦商路使城市:</Text>
 		</Replace>
@@ -15863,10 +15879,19 @@
 		<Replace Tag="TXT_KEY_PROMOTION_ATTACK_COST_HALF">
 			<Text>连弩</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_PROMOTION_ATTACK_COST_HALF_HELP_TEXT">
+		<Replace Tag="TXT_KEY_PROMOTION_ATTACK_COST_HALF_HELP">
 			<Text>
 				[ICON_BULLET]+1额外攻击次数。
 				[NEWLINE][ICON_BULLET]远程攻击消耗移动力-33%。
+			</Text>
+		</Replace>
+
+		<Replace Tag="TXT_KEY_FAST_SET_UP">
+			<Text>快速部署</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_FAST_SET_UP_HELP">
+			<Text>
+				[ICON_BULLET]架设不消耗移动力。
 			</Text>
 		</Replace>
 
@@ -16221,7 +16246,7 @@
 		</Row>
 
 		<Replace Tag="TXT_KEY_SPECIALISTSANDGP_LANDMARK_HEADING4_BODY">
-			<Text>风景地标为城市产生许多文化和魅力。</Text>
+			<Text>风景地标为城市产生大量文化和魅力。</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_CIV5_IMPROVEMENTS_LANDMARK_TEXT">
 			<Text>风景地标是任何具有伟大的手工艺品、建筑、艺术品或者自然奇观，可以吸引参观者前往的地方。伦敦的纳尔逊纪念柱或是美国的拉什莫尔山都可以称得上是风景地标。但并不是每一个超大的物体都能被称为风景地标，比如说世界上最大的线球就无法达到如此的高度（即便它或许值得一看）。相比风景地标本身的时代，每跨越一个时代，它额外提供+1[ICON_CULTURE]文化、+1[ICON_TOURISM]魅力。</Text>
@@ -16706,6 +16731,9 @@
 		<Row Tag="TXT_KEY_ORIGINAL_CAPITAL_ONLY">
 			<Text>只能在原始首都城市建造</Text>
 		</Row>
+		<Row Tag="TXT_KEY_ALLOW_SS_LAUCH">
+			<Text>允许[COLOR:0:204:255:255]发射飞船组件[ENDCOLOR]</Text>
+		</Row>
 		<Replace Tag="TXT_KEY_RO_WR_FOUNDER">
 			<Text>宗教领袖</Text>
 		</Replace>
@@ -16800,6 +16828,15 @@
 		</Replace>
 		<Replace Tag="TXT_KEY_FOODMOD_WLTKD">
 			<Text>[NEWLINE][ICON_BULLET]我们爱领袖日修正（余粮）: {1_Num}%</Text>
+		</Replace>
+
+		<Replace Tag="TXT_KEY_MISSION_BUILD_CITY_DISABLED_HELP">
+			<Text>
+				其他城市X格范围内不能建立城市
+				[NEWLINE][ICON_BULLET]标准以上地图：X = 4。
+				[NEWLINE][ICON_BULLET]标准及以下地图：X = 3。
+				[NEWLINE][ICON_BULLET]异大陆城市：X = X - 1。
+			</Text>
 		</Replace>
 	</Language_zh_CN>
 </GameData>

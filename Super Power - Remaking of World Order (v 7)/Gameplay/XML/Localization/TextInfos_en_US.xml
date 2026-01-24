@@ -16,7 +16,7 @@
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_VERSION">
-			<Text>[COLOR_YELLOW]Version 10.94[ENDCOLOR]</Text>
+			<Text>[COLOR_YELLOW]Version 10 Final A[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MOD_SETUP">
@@ -248,6 +248,9 @@
 		</Replace>
 		<Replace Tag="TXT_KEY_TRLGB1">
 			<Text>Land Trade Route </Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_TR_RIVER_BONUS">
+			<Text>Trade Route River bonus </Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_CSTRPM1111">
 			<Text>Each Trade Route to City States Makes Cities: </Text>
@@ -2986,6 +2989,7 @@
 			<Tag>TXT_KEY_BUILDING_INLAND_CANAL_HELP</Tag>
 			<Text>
 				+1 [ICON_PRODUCTION] Production in every tile next to a River.
+				[NEWLINE]+20% River bonus to the trade.
 				[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]Pollution[ENDCOLOR] will cause -5% [ICON_FOOD] Food Growth.
 				[NEWLINE][NEWLINE]Requires 1 [ICON_RES_ELECTRICITY] Electricity.</Text>
 		</Row>
@@ -3006,6 +3010,7 @@
 			<Text>
 				+1 [ICON_PRODUCTION] Production and +1 [ICON_GOLD] Gold in every tile next to a River.
 				[NEWLINE]+1 [ICON_PRODUCTION] Production and +1 [ICON_GOLD] Gold for every water tiles worked by the city.
+				[NEWLINE]+40% River bonus to the trade.
 				[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]Pollution[ENDCOLOR] will cause -5% [ICON_FOOD] Food Growth.
 				[NEWLINE][NEWLINE]Not require [ICON_RES_ELECTRICITY] Electricity.
 			</Text>
@@ -6770,7 +6775,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_BIO_LAB_HELP</Tag>
-			<Text>Must be built in XL Cities.</Text>
+			<Text>+33% [ICON_RESEARCH] Science. [NEWLINE][NEWLINE]Must be built in XL Cities.</Text>
 		</Row>
 
 	
@@ -6787,7 +6792,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_LOGISTICS_COMPANY_HELP</Tag>
-			<Text>Must be built in XL Cities.</Text>
+			<Text>+33% [ICON_GOLD] Gold. [NEWLINE][NEWLINE]Must be built in XL Cities.</Text>
 		</Row>
 
 
@@ -6894,7 +6899,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_GENE_LAB_HELP</Tag>
-			<Text>Must be built in XXL Cities.</Text>
+			<Text>+33% [ICON_RESEARCH] Science. [NEWLINE][NEWLINE]Must be built in XXL Cities.</Text>
 		</Row>
 
 		<Row>
@@ -6909,7 +6914,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_INTERNATIONAL_TRADE_COMPANY_HELP</Tag>
-			<Text>Must be built in XXL Cities.</Text>
+			<Text>+33% [ICON_GOLD] Gold. [NEWLINE][NEWLINE]Must be built in XXL Cities.</Text>
 		</Row>
 		
 		<Row>
@@ -7130,25 +7135,25 @@
 			<Text>Regional Powers</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_KING_HELP" >
-			<Text>Aggressive AI with large bonuses on Growth, Production, Gold, Happiness and Combat. AI start with 2 settlers and AI will get stronger when enter a new era. Equals "Deity".</Text>
+			<Text>Aggressive AI with large bonuses on Growth, Production, Gold, Happiness and Combat. AI will get stronger when enter a new era. Equals "Deity".</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_EMPEROR" >
 			<Text>Great Powers</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_EMPEROR_HELP" >
-			<Text>Ferocious AI with great bonuses on Growth, Production, Gold, Happiness and Combat. AI start with 2 settlers and AI will get even stronger when enter a new era. </Text>
+			<Text>Ferocious AI with great bonuses on Growth, Production, Gold, Happiness and Combat. AI will get even stronger when enter a new era. </Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_IMMORTAL" >
 			<Text>Potential Superpowers</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_IMMORTAL_HELP" >
-			<Text>Crazy AI with huge bonuses on Growth, Production, Gold, Happiness and Combat. AI start with 3 settlers and AI will get much more stronger when enter a new era. </Text>
+			<Text>Crazy AI with huge bonuses on Growth, Production, Gold, Happiness and Combat. AI will get much more stronger when enter a new era. </Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_DEITY" >
 			<Text>Superpowers</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_DEITY_HELP" >
-			<Text>Insane AI with insane bonuses on Growth, Production, Gold, Happiness and Combat. AI start with 4 settlers and AI will get on steroids when enter a new era. </Text>
+			<Text>Insane AI with insane bonuses on Growth, Production, Gold, Happiness and Combat. AI will get on steroids when enter a new era. </Text>
 		</Replace>
 
 
@@ -7393,7 +7398,7 @@
 				[COLOR_POSITIVE_TEXT]Tradition[ENDCOLOR] is best for "tall" empires.
 				[NEWLINE][NEWLINE]Opening Effect:
 				[NEWLINE][ICON_BULLET]+3 [ICON_CULTURE] Culture and +3 [ICON_RESEARCH] Science in the [ICON_CAPITAL] Capital.
-				[NEWLINE][ICON_BULLET]International trade routes from your Capital City +3 range and +3 [ICON_GOLD] Gold.
+				[NEWLINE][ICON_BULLET]International trade routes from your Capital City +3 [ICON_GOLD] Gold and +3 base range.
 				[NEWLINE][ICON_BULLET]-25% [ICON_CULTURE] Culture Exponent cost for acquiring new plots in all cities.
 				[NEWLINE][ICON_BULLET]Wonder Unlocked: Hanging Gardens.
 				[NEWLINE][NEWLINE]Finishing Bonus:
@@ -7524,7 +7529,7 @@
 				[COLOR_POSITIVE_TEXT]Collective Rule[ENDCOLOR]
 				[NEWLINE][ICON_BULLET]+50% [ICON_PRODUCTION] Production for training [COLOR_POSITIVE_TEXT]Settlers[ENDCOLOR].
 				[NEWLINE][ICON_BULLET]One free Settler appears near the [ICON_CAPITAL] Capital. (Venice receives a Merchant of Venice instead of a Settler.)
-				[NEWLINE][ICON_BULLET]When enter Renaissance Era , +50% [ICON_PRODUCTION] Production for training [COLOR_POSITIVE_TEXT]Settlers[ENDCOLOR] again ,Settlers Into City will not emptying the city food any more.
+				[NEWLINE][ICON_BULLET]Gain an additional +50% [ICON_PRODUCTION] Production for training Settlers when entering the Renaissance Era, Settlers Move into the City will no longer clear the city's stacked [ICON_FOOD] Food.
 				</Text>
 		</Replace>
 		
@@ -9319,6 +9324,12 @@
 		<Replace Tag="TXT_KEY_BELIEF_RELIGIOUS_TEXTS">
 			<Text>Religion spreads 25% faster (50% with Printing Press), every 3 [ICON_PEACE] Faith output in Holy City offer additional +1 basic [ICON_CULTURE] Culture output</Text>
 		</Replace>
+		<Row Tag="TXT_KEY_BELIEF_CURSADER_SHORT">
+			<Text>Crusader</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_CURSADER">
+			<Text>Recruits 6 Knights Templar with 60 experience in the Holy City</Text>
+		</Row>
 
 
 
@@ -10623,6 +10634,7 @@
 			<Text>
 				[ICON_BULLET]+2 [ICON_CULTURE] Culture for all Specialists. 
 				[NEWLINE][ICON_BULLET]Allows purchasing Amphitheater, Art Gallery, and Opera House with [ICON_PEACE] Faith.
+				[NEWLINE][ICON_BULLET]All Units receive a [ICON_STRENGTH] Combat bonus (+25%)  when fighting units from a Civilization with more Cities than Ethiopia. 
 			</Text>
 		</Replace>
 
@@ -12402,7 +12414,7 @@
 		<Plurality>2</Plurality>
 	</Row>
 	<Row Tag="TXT_KEY_UNIT_FRANCE_BATTERY_HELP">
-		<Text>Fast and Powerful Sige Unit. Only the France may build it. It has indirect fire and doesn't need to set up before attacking. It has the promotion of Sunder I-II</Text>
+		<Text>Fast and Powerful Sige Unit. Only the France may build it. It has indirect fire and Set Up requires no Movement. It has the promotion of Sunder I-II</Text>
 	</Row>
 	<Row Tag="TXT_KEY_UNIT_FRANCE_BATTERY_HEADING">
 		<Text>Grand Battery</Text>
@@ -12737,7 +12749,7 @@
 			<Text>Eurocopter EC665 Tigre</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_HELP_FRANCE_EUROCOPTER_TIGER">
-			<Text>Eurocopter EC665 Tigre is a carrier-based attack helicopter. It can be automatically resupplied on a Mistral-class Amphibious Assault Ship. It is more powerful and has a longer flight range than the guided missile. It will transfer EXPs earned in battle and inherit all promotions of its carrier like other carrier-based aircrafts. </Text>
+			<Text>Eurocopter EC665 Tigre is a carrier-based attack helicopter. It can be automatically resupplied on a Mistral-class Amphibious Assault Ship. It is more powerful and has a longer flight range than the guided missile. It will transfer EXPs earned in battle and inherit all promotions of its carrier like other carrier-based aircrafts, this Unit cannot Rebase.</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_FRANCE_EUROCOPTER_TIGER_PEDIA">
 			<Text>The Airbus Helicopters Tiger, formerly known as the Eurocopter Tiger, is a four-bladed, twin-engined attack helicopter which first entered service in 2003. It is manufactured by Eurocopter (now Airbus Helicopters), the successor company to Aérospatiale's and DASA's respective helicopter divisions, which designate it as the EC665. In Germany it is known as the Tiger; in France and Spain it is called the Tigre.</Text>
@@ -13440,7 +13452,7 @@
 		<Text>The Sword</Text>
 	</Row>
 	<Row Tag = "TXT_KEY_PROMOTION_JAPANESE_SAMURAI_HELP">
-		<Text>Flank Attack bonus +5%.</Text>
+		<Text>Flank Attack bonus +50%.</Text>
 	</Row>
 	<Row Tag = "TXT_KEY_PROMOTION_JAPANESE_SAMURAI_CULTURE">
 		<Text>The Chrysanthemum</Text>
@@ -17411,10 +17423,19 @@
 		<Replace Tag="TXT_KEY_PROMOTION_ATTACK_COST_HALF">
 			<Text>Repeating Crossbow</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_PROMOTION_ATTACK_COST_HALF_HELP_TEXT">
+		<Replace Tag="TXT_KEY_PROMOTION_ATTACK_COST_HALF_HELP">
 			<Text>
 				[ICON_BULLET]+1 additional attack per turn.
-				[NEWLINE][ICON_BULLET]Moves consume of Range Attack -33%.
+				[NEWLINE][ICON_BULLET]Movement cost of range attack reduced by 33%.
+			</Text>
+		</Replace>
+
+		<Replace Tag="TXT_KEY_FAST_SET_UP">
+			<Text>Fast Set Up</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_FAST_SET_UP_HELP">
+			<Text>
+				[ICON_BULLET]Movement cost of Set Up reduced by 100%.
 			</Text>
 		</Replace>
 
@@ -18253,6 +18274,9 @@
 		<Row Tag="TXT_KEY_ORIGINAL_CAPITAL_ONLY">
 			<Text>Must in Original Capital</Text>
 		</Row>
+		<Row Tag="TXT_KEY_ALLOW_SS_LAUCH">
+			<Text>Allow [COLOR:0:204:255:255]Spaceship Lauch[ENDCOLOR]</Text>
+		</Row>
 		<Replace Tag="TXT_KEY_RO_WR_FOUNDER">
 			<Text>Religion Leader</Text>
 		</Replace>
@@ -18346,6 +18370,15 @@
 		</Replace>
 		<Replace Tag="TXT_KEY_FOODMOD_WLTKD">
 			<Text>[NEWLINE][ICON_BULLET]We Love the King Day Modifier (Difference): {1_Num}%</Text>
+		</Replace>
+
+		<Replace Tag="TXT_KEY_MISSION_BUILD_CITY_DISABLED_HELP">
+			<Text>
+				Cannot found a City within X Tiles of another City.
+				[NEWLINE][ICON_BULLET]Standard+ maps: X = 4.
+				[NEWLINE][ICON_BULLET]Standard(-) maps: X = 3.
+				[NEWLINE][ICON_BULLET]foreign continent: X = X - 1.
+			</Text>
 		</Replace>
 	</Language_en_US>
 </GameData>

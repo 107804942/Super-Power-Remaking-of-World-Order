@@ -16,7 +16,7 @@
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_VERSION">
-			<Text>[COLOR_YELLOW]版本號 10.94[ENDCOLOR]</Text>
+			<Text>[COLOR_YELLOW]版本號 10 Final A[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MOD_SETUP">
@@ -588,7 +588,11 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_INLAND_CANAL_HELP</Tag>
-			<Text>本城所有沿河地塊+1[ICON_PRODUCTION]生產力。[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]污染[ENDCOLOR]將會導致[ICON_FOOD]食物累積-5%。[NEWLINE][NEWLINE]需要1單位[ICON_RES_ELECTRICITY]電力。</Text>
+			<Text>
+				本城所有沿河地塊+1[ICON_PRODUCTION]生產力，河流對商路增益效果+20%。
+				[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]污染[ENDCOLOR]將會導致[ICON_FOOD]食物累積-5%。
+				[NEWLINE][NEWLINE]需要1單位[ICON_RES_ELECTRICITY]電力。
+			</Text>
 		</Row>
 
 		<Row>
@@ -602,7 +606,10 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_DUTCH_GRACHTENGORDEL_HELP</Tag>
-			<Text>本城所有沿河地塊和水域+1[ICON_PRODUCTION]生產力，+1[ICON_GOLD]金幣產出。[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]污染[ENDCOLOR]將會導致[ICON_FOOD]食物累積-5%。[NEWLINE][NEWLINE]不需要[ICON_RES_ELECTRICITY]電力。
+			<Text>
+				本城所有沿河地塊和水域+1[ICON_PRODUCTION]生產力，+1[ICON_GOLD]金幣產出，河流對商路增益效果+40%。
+				[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]污染[ENDCOLOR]將會導致[ICON_FOOD]食物累積-5%。
+				[NEWLINE][NEWLINE]不需要[ICON_RES_ELECTRICITY]電力。
 			</Text>
 		</Row>
 
@@ -3734,7 +3741,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_BIO_LAB_HELP</Tag>
-			<Text>只能在特大城市（40人口）建造。</Text>
+			<Text>+33%[ICON_RESEARCH]科技值產出。[NEWLINE][NEWLINE]只能在特大城市（40人口）建造。</Text>
 		</Row>
 
 		<Row>
@@ -3747,7 +3754,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_LOGISTICS_COMPANY_HELP</Tag>
-			<Text>只能在特大城市（40人口）建造。</Text>
+			<Text>+33%[ICON_GOLD]金幣產出。[NEWLINE][NEWLINE]只能在特大城市（40人口）建造。</Text>
 		</Row>
 
 		<Replace Tag="TXT_KEY_BUILDING_MEDICAL_LAB">
@@ -3820,7 +3827,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_GENE_LAB_HELP</Tag>
-			<Text>只能在巨型城市（60人口）建造。</Text>
+			<Text>+33%[ICON_RESEARCH]科技值產出。[NEWLINE][NEWLINE]只能在巨型城市（60人口）建造。</Text>
 		</Row>
 
 		<Row>
@@ -3834,7 +3841,7 @@
 		</Row>
 		<Row>
 			<Tag>TXT_KEY_BUILDING_INTERNATIONAL_TRADE_COMPANY_HELP</Tag>
-			<Text>只能在巨型城市（60人口）建造。</Text>
+			<Text>+33%[ICON_GOLD]金幣產出。[NEWLINE][NEWLINE]只能在巨型城市（60人口）建造。</Text>
 		</Row>
 
 		<Row>
@@ -5966,6 +5973,7 @@
 			<Text>
 				[ICON_BULLET]所有專家+2[ICON_CULTURE]文化産出。
 				[NEWLINE][ICON_BULLET]允許使用[ICON_PEACE]信仰購買露天劇場、畫廊、歌劇院。
+				[NEWLINE][ICON_BULLET]與擁有更多城市的文明的單位作戰時獲得25%戰鬥力加成。
 			</Text>
 		</Replace>
 
@@ -6431,25 +6439,25 @@
 			<Text>千乘之國</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_KING_HELP">
-			<Text>電腦在人口，產能，金幣，幸福度和戰鬥力上有較大加成。電腦初始擁有2個移民，且每進入一個新時代，電腦的加成都會增加。與“天神”等級難度相當。</Text>
+			<Text>電腦在人口，產能，金幣，幸福度和戰鬥力上有較大加成。電腦每進入一個新時代，加成都會增加。與“天神”等級難度相當。</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_EMPEROR">
 			<Text>一方霸主</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_EMPEROR_HELP">
-			<Text>電腦在人口，產能，金幣，幸福度和戰鬥力上有很大加成。電腦初始擁有2個移民，且每進入一個新時代，電腦的加成都會大量增加。</Text>
+			<Text>電腦在人口，產能，金幣，幸福度和戰鬥力上有很大加成。電腦每進入一個新時代，加成都會大量增加。</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_IMMORTAL">
 			<Text>世界強權</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_IMMORTAL_HELP">
-			<Text>電腦在人口，產能，金幣，幸福度和戰鬥力上有極大加成。電腦初始擁有3個移民，且每進入一個新時代，電腦的加成都會劇增。</Text>
+			<Text>電腦在人口，產能，金幣，幸福度和戰鬥力上有極大加成。電腦每進入一個新時代，加成都會劇增。</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_DEITY">
 			<Text>超級大國</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_HANDICAP_DEITY_HELP">
-			<Text>電腦在人口，產能，金幣，幸福度和戰鬥力上的加成喪心病狂。電腦初始擁有4個移民，且每進入一個新時代，電腦的加成都會瘋漲。 </Text>
+			<Text>電腦在人口，產能，金幣，幸福度和戰鬥力上的加成喪心病狂。電腦每進入一個新時代，加成都會瘋漲。 </Text>
 		</Replace>
 
 		<!-- *******************************New Resoultions Texts********************************************-->
@@ -6507,7 +6515,7 @@
 				[COLOR_POSITIVE_TEXT]傳統政策[ENDCOLOR]適宜於繁榮精幹的帝國。
 				[NEWLINE][NEWLINE]啟用傳統政策：
 				[NEWLINE][ICON_BULLET]使[ICON_CAPITAL]首都+3[ICON_CULTURE]文化、+3[ICON_RESEARCH]科研。
-				[NEWLINE][ICON_BULLET]首都出發的商路+3距離、+3[ICON_GOLD]金錢。
+				[NEWLINE][ICON_BULLET]首都出發的商路+3[ICON_GOLD]金錢、+3距離基數。
 				[NEWLINE][ICON_BULLET]城市地塊擴張所需文化成本-25%。
 				[NEWLINE][ICON_BULLET]允許建造空中花園。
 				[NEWLINE][NEWLINE]推行所有傳統政策：
@@ -8367,6 +8375,12 @@
 		<Replace Tag="TXT_KEY_BELIEF_RELIGIOUS_TEXTS">
 			<Text>宗教傳播速度+25%(研發印刷機後+50%)，聖城每3點[ICON_PEACE]信仰提供1點基礎[ICON_CULTURE]文化產出</Text>
 		</Replace>
+		<Row Tag="TXT_KEY_BELIEF_CURSADER_SHORT">
+			<Text>十字軍</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_CURSADER">
+			<Text>在聖城征召6名擁有60點經驗的聖殿騎士</Text>
+		</Row>
 
 
 		<!--Resources-->
@@ -10575,7 +10589,7 @@
 			<Plurality>2</Plurality>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_FRANCE_BATTERY_HELP">
-			<Text>快速且強大的攻城單位。法國特色單位，替代加農炮。具有間接火力，並且在攻擊前不需要進行遠程攻擊準備。自帶破陣1-2級晉升。</Text>
+			<Text>快速且強大的攻城單位。法國特色單位，替代加農炮。具有間接火力，並且進行遠程攻擊準備不消耗移動力。自帶破陣1-2級晉升。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_FRANCE_BATTERY_HEADING">
 			<Text>大炮兵連</Text>
@@ -10935,7 +10949,7 @@
 			<Text>虎式武直</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_HELP_FRANCE_EUROCOPTER_TIGER">
-			<Text>替代武裝直升機，自帶長途行軍晉升和雙擊晉升，裝備了毒刺導彈，每回合可以攔截2次（範圍為4格），對直升機單位和空軍單位+200%戰鬥力。</Text>
+			<Text>替代武裝直升機，自帶長途行軍晉升和雙擊晉升，裝備了毒刺導彈，每回合可以攔截2次（範圍為4格），對直升機單位和空軍單位+200%戰鬥力，該單位不可轉場。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_FRANCE_EUROCOPTER_TIGER_PEDIA">
 			<Text>歐洲虎式（英語：Eurocopter Tiger，法語：L'Eurocopter Tigre，歐直編號EC-665）是法國和德國聯合研製，德國戴姆勒宇航和法國馬特拉宇航（1992年合併為歐洲直升機公司）生產的四旋翼、雙發多任務武裝直升機，是世界上第一種將制空作戰納入設計思想並付諸實施的武裝直升機。
@@ -11652,7 +11666,7 @@
 			<Text>刀</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_JAPANESE_SAMURAI_HELP">
-			<Text>夹击加成+5%。</Text>
+			<Text>夹击加成+50%。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_JAPANESE_SAMURAI_CULTURE">
 			<Text>菊</Text>
@@ -14428,6 +14442,9 @@
 		<Replace Tag="TXT_KEY_TRLGB1">
 			<Text>陸地商路</Text>
 		</Replace>
+		<Replace Tag="TXT_KEY_TR_RIVER_BONUS">
+			<Text>商路河流增益</Text>
+		</Replace>
 		<Replace Tag="TXT_KEY_CSTRPM1111">
 			<Text>每條城邦商路使城市:</Text>
 		</Replace>
@@ -15673,10 +15690,19 @@
 		<Replace Tag="TXT_KEY_PROMOTION_ATTACK_COST_HALF">
 			<Text>連弩</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_PROMOTION_ATTACK_COST_HALF_HELP_TEXT">
+		<Replace Tag="TXT_KEY_PROMOTION_ATTACK_COST_HALF_HELP">
 			<Text>
 				[ICON_BULLET]+1額外攻擊次數。
 				[NEWLINE][ICON_BULLET]遠程攻擊消耗移動力-33%。
+			</Text>
+		</Replace>
+
+		<Replace Tag="TXT_KEY_FAST_SET_UP">
+			<Text>快速部署</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_FAST_SET_UP_HELP">
+			<Text>
+				[ICON_BULLET]架設不消耗移動力。
 			</Text>
 		</Replace>
 
@@ -16030,7 +16056,7 @@
 			<Text>如何與其他主要文明建立二元帝國？ </Text>
 		</Row>
 		<Replace Tag="TXT_KEY_SPECIALISTSANDGP_LANDMARK_HEADING4_BODY">
-			<Text>風景地標為城市產生許多文化和魅力。</Text>
+			<Text>風景地標為城市產生大量文化和魅力。</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_CIV5_IMPROVEMENTS_LANDMARK_TEXT">
 			<Text>地標是任何一種華麗的文物、建築物、藝術品或可吸引遊客的自然奇觀。英國倫敦的納爾遜紀念碑是處地標，而美國的拉什莫爾山也是處地標。但並不是所有巨型物體都是地標：儘管世界上最大的籐球值得一看，但層次還不夠。自最初的手工藝時代後，每額外經過一個時代，地標可提供+1[ICON_CULTURE]文化值、+1[ICON_TOURISM]魅力值。</Text>
@@ -16518,6 +16544,9 @@
 		<Row Tag="TXT_KEY_ORIGINAL_CAPITAL_ONLY">
 			<Text>只能在原始首都城市建造</Text>
 		</Row>
+		<Row Tag="TXT_KEY_ALLOW_SS_LAUCH">
+    		<Text>允許[COLOR:0:204:255:255]發射太空船组件[ENDCOLOR]</Text>
+		</Row>
 		<Replace Tag="TXT_KEY_RO_WR_FOUNDER">
 			<Text>宗教領袖</Text>
 		</Replace>
@@ -16611,6 +16640,15 @@
 		</Replace>
 		<Replace Tag="TXT_KEY_FOODMOD_WLTKD">
 			<Text>[NEWLINE][ICON_BULLET]王之日修正值（余糧）：{1_Num}%</Text>
+		</Replace>
+
+		<Replace Tag="TXT_KEY_MISSION_BUILD_CITY_DISABLED_HELP">
+			<Text>
+				其他城市X格範圍內不能建立城市
+				[NEWLINE][ICON_BULLET]標準以上地圖：X = 4。
+				[NEWLINE][ICON_BULLET]標準及以下地圖：X = 3。
+				[NEWLINE][ICON_BULLET]異大陸城市：X = X - 1。
+			</Text>
 		</Replace>
 	</Language_zh_Hant_HK>
 </GameData>

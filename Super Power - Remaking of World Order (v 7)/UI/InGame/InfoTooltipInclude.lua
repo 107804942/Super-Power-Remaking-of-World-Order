@@ -964,7 +964,7 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 	local thisBuildingType = { BuildingType = buildingType }
 	local thisBuildingAndResourceTypes =  { BuildingType = buildingType }
 	local thisBuildingClassType = { BuildingClassType = buildingClassType }
-	local tip, tips, items, item, yieldID, yieldChange, yieldModifier, yieldPerPop,yieldPerPopGlobal, yieldPerReligion, tradeRouteSeaGoldBonus, tradeRouteLandGoldBonus, resource, tradeRouteSeaGoldBonusGlobal, tradeRouteLandGoldBonusGlobal
+	local tip, tips, items, item, yieldID, yieldChange, yieldModifier, yieldPerPop,yieldPerPopGlobal, yieldPerReligion, resource
 
 	if g_isReligionEnabled and activePlayer then
 		local religionID = activePlayer:GetReligionCreatedByPlayer()
@@ -1083,7 +1083,8 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 		EnableCrops = L"TXT_KEY_ENABLE_CROPS",
 		EnableArmee = L"TXT_KEY_ENABLE_ARMEE",
 		CapitalOnly = L"TXT_KEY_CAPITAL_ONLY",
-		OriginalCapitalOnly = L"TXT_KEY_ORIGINAL_CAPITAL_ONLY"
+		OriginalCapitalOnly = L"TXT_KEY_ORIGINAL_CAPITAL_ONLY",
+		AllowSpaceshipLaunch = L"TXT_KEY_ALLOW_SS_LAUCH"
 	--n	CityWall = "",
 	--n	ArtInfoCulturalVariation = "",
 	--n	ArtInfoEraVariation = "",
@@ -1316,7 +1317,7 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 			tip = format("%s%s%s %s[ICON_RELIGION]", tip, yieldPerReligion, yield.IconString or "?", L"TXT_KEY_CITYVIEW_EACH" )
 		end
 		if yield.Type == "YIELD_GOLD" and building.TradeRouteSeaGoldBonus > 0 then
-			tradeRouteSeaGoldBonus = (building.TradeRouteSeaGoldBonus)/100
+			local tradeRouteSeaGoldBonus = (building.TradeRouteSeaGoldBonus)/100
 			if tradeRouteSeaGoldBonus > 0 then
 				tradeRouteSeaGoldBonus = format("+%s", tradeRouteSeaGoldBonus);
 			end
@@ -1326,9 +1327,9 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 			tip = format("%s[ICON_INTERNATIONAL_TRADE]%s%s%s", tip, L"TXT_KEY_TRSGB1", tradeRouteSeaGoldBonus, yield.IconString or "?" )
 		end
 		if yield.Type == "YIELD_GOLD" and building.TradeRouteLandGoldBonus > 0 then
-			tradeRouteLandGoldBonus = (building.TradeRouteLandGoldBonus)/100
+			local tradeRouteLandGoldBonus = (building.TradeRouteLandGoldBonus)/100
 			if tradeRouteLandGoldBonus > 0 then
-				tradeRouteSeaGoldBonus = format("+%s", tradeRouteLandGoldBonus);
+				tradeRouteLandGoldBonus = format("+%s", tradeRouteLandGoldBonus);
 			end
 			if tip ~= "" then
 				tip = format("%s, ", tip )
@@ -1337,7 +1338,7 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 		end
 
 		if yield.Type == "YIELD_GOLD" and building.TradeRouteSeaGoldBonusGlobal > 0 then
-			tradeRouteSeaGoldBonusGlobal = (building.TradeRouteSeaGoldBonusGlobal)/100
+			local tradeRouteSeaGoldBonusGlobal = (building.TradeRouteSeaGoldBonusGlobal)/100
 			if tradeRouteSeaGoldBonusGlobal > 0 then
 				tradeRouteSeaGoldBonusGlobal = format("+%s", tradeRouteSeaGoldBonusGlobal);
 			end
@@ -1347,7 +1348,7 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 			tip = format("%s[ICON_INTERNATIONAL_TRADE]%s%s%s", tip, L"TXT_KEY_GLOBAL1" .. L"TXT_KEY_TRSGB1", tradeRouteSeaGoldBonusGlobal, yield.IconString or "?" )
 		end
 		if yield.Type == "YIELD_GOLD" and building.TradeRouteLandGoldBonusGlobal > 0 then
-			tradeRouteLandGoldBonusGlobal = (building.TradeRouteLandGoldBonusGlobal)/100
+			local tradeRouteLandGoldBonusGlobal = (building.TradeRouteLandGoldBonusGlobal)/100
 			if tradeRouteLandGoldBonusGlobal > 0 then
 				tradeRouteLandGoldBonusGlobal = format("+%s", tradeRouteLandGoldBonusGlobal);
 			end
@@ -1355,6 +1356,17 @@ function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader, bNoMa
 				tip = format("%s, ", tip )
 			end
 			tip = format("%s[ICON_INTERNATIONAL_TRADE]%s%s%s", tip, L"TXT_KEY_GLOBAL1" .. L"TXT_KEY_TRLGB1", tradeRouteLandGoldBonusGlobal, yield.IconString or "?" )
+		end
+
+		if yield.Type == "YIELD_GOLD" and building.TradeRouteRiverBonusModifier > 0 then
+			local tradeRouteRiverBonus = building.TradeRouteRiverBonusModifier
+			if tradeRouteRiverBonus > 0 then
+				tradeRouteRiverBonus = format("+%s", tradeRouteRiverBonus);
+			end
+			if tip ~= "" then
+				tip = format("%s, ", tip )
+			end
+			tip = format("%s[ICON_INTERNATIONAL_TRADE]%s%s%%", tip, L"TXT_KEY_LOCAL_POP_SP" .. L"TXT_KEY_TR_RIVER_BONUS", tradeRouteRiverBonus)
 		end
 
 		if tip ~= "" then
@@ -3113,7 +3125,7 @@ if Game then
 	-- Yield Tooltip Helper
 	function GetYieldTooltipHelper( city, yieldID, yieldIconString )
 
-		return GetYieldTooltip( city, yieldID, city:GetBaseYieldRate( yieldID ) + city:GetYieldPerPopTimes100( yieldID ) * city:GetPopulation() / 100, yieldID == YieldTypes.YIELD_FOOD and city:FoodDifferenceTimes100()/100 or city:GetYieldRateTimes100( yieldID )/100, yieldIconString, city:GetYieldModifierTooltip( yieldID ) )
+		return GetYieldTooltip( city, yieldID, city:GetBaseYieldRate( yieldID ) + city:GetExtraBaseYieldRateTimes100( yieldID ) / 100, yieldID == YieldTypes.YIELD_FOOD and city:FoodDifferenceTimes100()/100 or city:GetYieldRateTimes100( yieldID )/100, yieldIconString, city:GetYieldModifierTooltip( yieldID ) )
 	end
 	local GetYieldTooltipHelper = GetYieldTooltipHelper
 
@@ -3279,7 +3291,7 @@ if Game then
 				strModifiersString = strModifiersString .. L( "TXT_KEY_PRODMOD_FOOD_CONVERSION", productionFromFood / 100 )
 			end
 		end
-		tipText = GetYieldTooltip( city, YieldTypes.YIELD_PRODUCTION, city:GetBaseYieldRate( YieldTypes.YIELD_PRODUCTION ), productionPerTurn100 / 100, "[ICON_PRODUCTION]", strModifiersString ) .. "[NEWLINE][NEWLINE]" .. tipText
+		tipText = GetYieldTooltip( city, YieldTypes.YIELD_PRODUCTION, city:GetBaseYieldRate( YieldTypes.YIELD_PRODUCTION )  + city:GetExtraBaseYieldRateTimes100( YieldTypes.YIELD_PRODUCTION ) / 100, productionPerTurn100 / 100, "[ICON_PRODUCTION]", strModifiersString ) .. "[NEWLINE][NEWLINE]" .. tipText
 
 		-- Basic explanation of production
 		if isNoob then

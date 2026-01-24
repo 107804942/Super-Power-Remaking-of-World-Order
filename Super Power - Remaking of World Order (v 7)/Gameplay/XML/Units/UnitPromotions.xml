@@ -43,6 +43,7 @@
 			<PediaEntry>TXT_KEY_PROMOTION_CORPS_1</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
 			<IsCrops>true</IsCrops>
+			<ShowInFlag>1</ShowInFlag>
 		</Row>
 		<Row>
 			<Type>PROMOTION_CORPS_2</Type>
@@ -59,6 +60,7 @@
 			<CannotBeChosen>true</CannotBeChosen>
 			<IsArmee>true</IsArmee>
 			<CannotBeEstablishedCorps>true</CannotBeEstablishedCorps>
+			<ShowInFlag>2</ShowInFlag>
 		</Row>
 		<Row>
 			<Type>PROMOTION_CANNOT_BE_CORPS</Type>
@@ -88,12 +90,13 @@
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_AZTEC_HUEY_TEOCALLI</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
+			<ShowInFlag>100</ShowInFlag>
 		</Row>
 
 		<Row>
 			<Type>PROMOTION_ATTACK_COST_HALF</Type>
 			<Description>TXT_KEY_PROMOTION_ATTACK_COST_HALF</Description>
-			<Help>TXT_KEY_PROMOTION_ATTACK_COST_HALF_HELP_TEXT</Help>
+			<Help>TXT_KEY_PROMOTION_ATTACK_COST_HALF_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<OrderPriority>1</OrderPriority>
 			<PortraitIndex>42</PortraitIndex>
@@ -104,6 +107,19 @@
 			<RangeAttackCostModifier>-33</RangeAttackCostModifier>
 			<CanMoveAfterAttacking>true</CanMoveAfterAttacking>
 			<ExtraAttacks>1</ExtraAttacks>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_FAST_SET_UP</Type>
+			<Description>TXT_KEY_FAST_SET_UP</Description>
+			<Help>TXT_KEY_FAST_SET_UP_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_FAST_SET_UP</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+			<SetUpCostModifier>-100</SetUpCostModifier>
 		</Row>
 		
 		<!--*****************************Heroic Carrier*******************************************-->
@@ -155,6 +171,7 @@
 			<MovesChange>2</MovesChange>
 			<SeeInvisible>INVISIBLE_SUBMARINE</SeeInvisible>
 			<Recon>true</Recon>
+			<ShowInFlag>10</ShowInFlag>
 		</Row>
 		<Row>
 			<Type>PROMOTION_LUCKYE</Type>
@@ -2622,6 +2639,7 @@
 			<CollateralDamagePlotUnitLimit>8</CollateralDamagePlotUnitLimit>
 			<CollateralXP>1</CollateralXP>
 			<MilitaryMightMod>300</MilitaryMightMod>
+			<ShowInFlag>10</ShowInFlag>
 		</Row>
 		<Row>
 			<Type>PROMOTION_GUN_BARRER_1</Type>
@@ -3809,6 +3827,7 @@
 			<PediaEntry>TXT_KEY_PROMOTION_CARRIER_HELICOPTER</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
 			<CarrierEXPGivenModifier>100</CarrierEXPGivenModifier>
+			<LostWithUpgrade>true</LostWithUpgrade>
 		</Row>
 
 		<Row>
@@ -5631,7 +5650,6 @@
 			<IconAtlas>SP_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_GENERAL_STACKING</PediaEntry>
-			<RemovePromotionUpgrade>PROMOTION_MUST_SET_UP</RemovePromotionUpgrade>
 		</Row>
 		<Row>
 			<Type>PROMOTION_ONLY_ATTACKS_CITIES</Type>
@@ -6393,6 +6411,7 @@
 			<NeutralHealChange>10</NeutralHealChange>
 			<FriendlyHealChange>10</FriendlyHealChange>
 			<MilitaryMightMod>400</MilitaryMightMod>
+			<ShowInFlag>10</ShowInFlag>
 		</Row>
 
 		<Row>
@@ -6405,6 +6424,7 @@
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_NUMIDIAN_MARCH</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
+			<ShowInFlag>10</ShowInFlag>
 		</Row>
 
 
@@ -6420,6 +6440,7 @@
 			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_RANGED</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_RANGE</PediaEntry>
+			<ShowInFlag>10</ShowInFlag>
 		</Row>
 
 
@@ -6599,6 +6620,7 @@
 			<AttackChanceFromAttackDamage>FORMULA_ATTACK_CHANCE_FROM_ATTACK_DAMAGE</AttackChanceFromAttackDamage>
 			<MovementFromAttackDamage>FORMULA_MOVEMENT_FROM_ATTACK_DAMAGE</MovementFromAttackDamage>
 			<MilitaryMightMod>500</MilitaryMightMod>
+			<ShowInFlag>10</ShowInFlag>
 		</Row>
 		<Row>
 			<Type>PROMOTION_FULL_FIRE</Type>
