@@ -16,7 +16,7 @@
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_VERSION">
-			<Text>[COLOR_YELLOW]版本號 10 Final A[ENDCOLOR]</Text>
+			<Text>[COLOR_YELLOW]版本號 10 Final B[ENDCOLOR]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_MOD_SETUP">
@@ -703,6 +703,26 @@
 		<Row>
 			<Tag>TXT_KEY_BUILDING_COAL_TO_URANIUM_HELP</Tag>
 			<Text>將10單位[ICON_RES_COAL]煤資源轉化為4單位[ICON_RES_URANIUM]鈾資源。[NEWLINE][NEWLINE]城市必須先擁有工廠。[NEWLINE][NEWLINE]需要4單位[ICON_RES_ELECTRICITY]電力。</Text>
+		</Row>
+
+		<Row>
+			<Tag>TXT_KEY_BUILDING_ELECTRICITY_TO_ALUMINUM</Tag>
+			<Text>[ICON_PRODUCTION][ICON_RES_ALUMINUM]智能電解工廠</Text>
+		</Row>
+		<Row>
+			<Tag>TXT_KEY_CIV5_BUILDING_ELECTRICITY_TO_ALUMINUM_TEXT</Tag>
+			<Text>
+				智能電解工廠代表了電化學工業自動化進程的頂峰。其通過集成高度自動化的計算機過程控制系統、傳感器網絡和機器人操作單元，實現了對複雜電解過程的精確管控。該系統能根據實時數據自動調整電解槽的電壓、溫度與物料平衡，將單位能耗降至極限，並穩定産出高純度金屬。其自動化物流和閉環控制系統大幅減少了人工幹預與排放，是依托先進自動化技術將能源高效轉化爲戰略資源的關鍵設施。
+			</Text>
+		</Row>
+		<Row>
+			<Tag>TXT_KEY_BUILDING_ELECTRICITY_TO_ALUMINUM_HELP</Tag>
+			<Text>
+				提供5單位的[ICON_RES_ALUMINUM]鋁資源。
+				[NEWLINE]本城市的每處[ICON_RES_GOLD]黃金、[ICON_RES_SILVER]白銀、[ICON_RES_COPPER]赤銅和[ICON_RES_ALUMINUM]鋁+1[ICON_PRODUCTION]産能。
+				[NEWLINE][NEWLINE]城市必須先擁有工廠。
+				[NEWLINE][NEWLINE]需要5單位[ICON_RES_ELECTRICITY]電力。
+			</Text>
 		</Row>
 
 		<Replace Tag="TXT_KEY_BUILDING_SPACESHIP_FACTORY_HELP">
@@ -12799,7 +12819,7 @@
 			<Text>
 				對[COLOR_POSITIVE_TEXT]相鄰區域[ENDCOLOR]目標傷害+40%，對[COLOR_POSITIVE_TEXT]目標地格[ENDCOLOR]的其他單位+50%的傷害。
 				[NEWLINE]每對一個敵軍造成[COLOR_POSITIVE_TEXT]濺射或穿透[ENDCOLOR]傷害+1XP。
-				[NEWLINE]解鎖[COLOR_POSITIVE_TEXT]獨特[ENDCOLOR]晉升線（單位升級後將無法選擇獨特晉升）。
+				[NEWLINE]解鎖[COLOR_POSITIVE_TEXT]獨特[ENDCOLOR]晉升線。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_GUN_BARRER_1">
@@ -15849,7 +15869,8 @@
 			<Text>
 				[ICON_BULLET]科學家：+2[ICON_RESEARCH]科技值，+2[ICON_GOLD]維護費。
 				[NEWLINE][ICON_BULLET]瑞典或盟友誕生一位大科學家時，為雙方帶來一次性[ICON_RESEARCH]科研產出，數值相當於該大科學家當前強度的20%。
-				[NEWLINE][NEWLINE]文明的城市數量越多建造成本越高。
+				[NEWLINE][NEWLINE]只能在大型城市（26人口）建造。文明的城市數量越多建造成本越高。
+				[NEWLINE]另外需要文明擁有一座特大城市（40人口），研發炸藥後移除該要求。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_YIELD_OVERFLOW">
@@ -16650,5 +16671,17 @@
 				[NEWLINE][ICON_BULLET]異大陸城市：X = X - 1。
 			</Text>
 		</Replace>
+		<Row Tag="TXT_KEY_PEDIA_REQ_PROMOTIONS_AND_LABEL">
+			<Text>所需強化(所有):</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PEDIA_REQ_PROMOTIONS_OR_LABEL">
+			<Text>所需強化(其一):</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PEDIA_EXCLUSION_PROMOTIONS_LABEL">
+			<Text>衝突强化:</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PEDIA_FREE_FROM_PROJECT_LABEL">
+			<Text>獲得自項目:</Text>
+		</Row>
 	</Language_zh_Hant_HK>
 </GameData>
